@@ -1,12 +1,22 @@
-def cd_hit_run(input, output, threshold):
+import sys
+cdhit = "/opt/cd-hit/bin/cd-hit"
 
-
+def cd_hit_run(input_name, output_name, threshold):
+	subprocess.Popen([cdhit, "-i", input_name, "-o", output_name, "-c", threshold])
+#enddef
 
 def count_non_redundant_seq(out_file):
-
-
-	return 0
-
+	nr = 0
+	out = open(out_file, "r")
+	line = out.readline()
+	while line:
+		if line[0] == '>':
+			nr+=1
+		#endif
+		line = out.readline()
+	#endwhile
+	return nr
+#enddef
 
 
 
@@ -14,8 +24,11 @@ def count_non_redundant_seq(out_file):
 #Main
 
 
-//All thresholds to run CD-HIT on
-	//Don't run on anything lower than .7 or cluster may crash
+#All thresholds to run CD-HIT on
+	#Don't run on anything lower than .7 or cluster may crash
 
 tholds = [.7, .8, .9]
+file_in = sys.argv[1]
+
+
 
