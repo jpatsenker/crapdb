@@ -1,4 +1,5 @@
 import sys
+import os
 cdhit = "/opt/cd-hit/bin/cd-hit"
 
 def cd_hit_run(input_name, output_name, threshold):
@@ -29,6 +30,16 @@ def count_non_redundant_seq(out_file):
 
 tholds = [.7, .8, .9]
 file_in = sys.argv[1]
+fout = open("outputs/cdhit_outs")
 
+
+
+for i in range(len(tholds)):
+	cd_hit_run(file_in, "tmp/out", tholds[i])
+	result = count_non_redundant_seq("tmp/out")
+	fout(result)
+	os.remove("tmp/out")
+	os.remove("tmp/out.clstr")
+#endfor
 
 
