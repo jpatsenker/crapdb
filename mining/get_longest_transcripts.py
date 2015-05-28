@@ -25,7 +25,7 @@ while line:
 	gene_id = line[1:line.find("|")]
 	transcript_length = line[(line.rfind("|")+1):]
 	
-	if protein_dictionary[gene_id]:
+	if gene_id in protein_dictionary:
 		if protein_dictionary[gene_id]>transcript_length:
 			protein_dictionary[gene_id] = transcript_length
 		#endif
