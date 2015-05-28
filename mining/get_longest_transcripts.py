@@ -27,15 +27,15 @@ while line:
 	print "READING: " + gene_id
 	if gene_id in protein_dictionary:
 		if not isinstance(transcript_length, numbers.Integral):
-			protein_dictionary.insert(gene_id, 0)
+			protein_dictionary[gene_id] = 0
 		elif protein_dictionary[gene_id]>transcript_length:
-			protein_dictionary.insert(gene_id, transcript_length)
+			protein_dictionary[gene_id] = transcript_length
 		#endif
 	else:
 		if not isinstance(transcript_length, numbers.Integral):
-			protein_dictionary.insert(gene_id, 0)
+			protein_dictionary[gene_id] = 0
 		else:
-			protein_dictionary.insert(gene_id, transcript_length)
+			protein_dictionary[gene_id] = transcript_length
 		#endif
 	#endif
 
