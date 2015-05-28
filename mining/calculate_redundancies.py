@@ -42,7 +42,7 @@ for i in range(len(tholds)):
 	p1 = cd_hit_run(file_in, "tmp/out", tholds[i])
 	p1.wait()
 	result = count_non_redundant_seq("tmp/out")
-	fout(result)
+	fout.write(result)
 #endfor
 
 
