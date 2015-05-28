@@ -7,7 +7,7 @@ cdhit = "/opt/cd-hit/bin/cd-hit" #orchestra
 #cdhit = "../../../cd-hit/cd-hit" #local
 
 def cd_hit_run(input_name, output_name, threshold):
-	subprocess.Popen([cdhit, "-i", input_name, "-o", output_name, "-c", str(threshold)])
+	return subprocess.Popen([cdhit, "-i", input_name, "-o", output_name, "-c", str(threshold)])
 #enddef
 
 def count_non_redundant_seq(out_file):
@@ -39,7 +39,8 @@ fout = open("outputs/cdhit_outs", "w")
 
 
 for i in range(len(tholds)):
-	cd_hit_run(file_in, "tmp/out", tholds[i])
+	p1 = cd_hit_run(file_in, "tmp/out", tholds[i])
+	p1.wait()
 	result = count_non_redundant_seq("tmp/out")
 	fout(result)
 #endfor
