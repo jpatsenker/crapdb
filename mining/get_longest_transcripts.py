@@ -27,14 +27,14 @@ while line:
 	transcript_length = line[(line.rfind("|")+1):-1]
 	#print "READING: " + gene_id
 	if gene_id in protein_dictionary:
-		if not isinstance(transcript_length, int):
+		if not unicode(transcript_length, "utf-8").isnumeric():
 			protein_dictionary[gene_id] = 0
 		elif protein_dictionary[gene_id]>transcript_length:
 			protein_dictionary[gene_id] = transcript_length
 		#endif
 	else:
 		print "check"
-		if not isinstance(transcript_length, int):
+		if not unicode(transcript_length, "utf-8").isnumeric():
 			print str(transcript_length)
 			protein_dictionary[gene_id] = 0
 		else:
@@ -60,7 +60,7 @@ line = file_in.readline()
 while line:
 	gene_id = line[1:line.find("|")]
 	transcript_length = line[(line.rfind("|")+1):-1]
-	if not isinstance(transcript_length, int):
+	if not unicode(transcript_length, "utf-8").isnumeric():
 		transcript_length = 0
 	#endif
 	write = 0
