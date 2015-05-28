@@ -66,7 +66,7 @@ while line:
 	write = 0
 	if protein_dictionary[gene_id] == transcript_length:
 		write = 1
-		print "WRITING: " + gene_id
+		#print "WRITING: " + gene_id
 	#endif
 	if write:
 		file_out.write(line)
