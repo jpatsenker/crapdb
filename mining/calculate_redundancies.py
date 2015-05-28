@@ -45,6 +45,4 @@ for i in range(len(tholds)):
 	fout.write(str(result) + " ")
 #endfor
 
-
-file_in.close()
 fout.close()
