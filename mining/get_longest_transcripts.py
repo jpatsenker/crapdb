@@ -25,6 +25,8 @@ while line:
 	gene_id = line[1:line.find("|")]
 	transcript_length = line[(line.rfind("|")+1):]
 	
+	print "READING: " + gene_id
+	
 	if gene_id in protein_dictionary:
 		if protein_dictionary[gene_id]>transcript_length:
 			protein_dictionary[gene_id] = transcript_length
@@ -47,8 +49,12 @@ while line:
 
 	write = 0
 
+
+
+
 	if protein_dictionary[gene_id] == transcript_length:
 		write = 1
+		print "WRITING: " + gene_id
 	#endif
 
 	while line[0]!='>':
