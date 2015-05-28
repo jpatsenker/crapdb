@@ -35,7 +35,7 @@ while line:
 	else:
 		print "check"
 		if not isinstance(transcript_length, numbers.Integral):
-			print "mate"
+			print str(transcript_length)
 			protein_dictionary[gene_id] = 0
 		else:
 			protein_dictionary[gene_id] = transcript_length
