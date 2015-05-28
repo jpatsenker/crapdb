@@ -1,8 +1,8 @@
 import sys
 import io
 import os
-#cdhit = "/opt/cd-hit/bin/cd-hit" #orchestra
-cdhit = "../../../cd-hit/cd-hit" #local
+cdhit = "/opt/cd-hit/bin/cd-hit" #orchestra
+#cdhit = "../../../cd-hit/cd-hit" #local
 
 def cd_hit_run(input_name, output_name, threshold):
 	subprocess.Popen([cdhit, "-i", input_name, "-o", output_name, "-c", threshold])
@@ -32,7 +32,7 @@ def count_non_redundant_seq(out_file):
 
 tholds = [.7, .8, .9]
 file_in = sys.argv[1]
-fout = open("outputs/cdhit_outs")
+fout = open("outputs/cdhit_outs", "w")
 
 
 
