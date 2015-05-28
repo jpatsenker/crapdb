@@ -26,7 +26,7 @@ while line:
 	transcript_length = line[(line.rfind("|")+1):]
 	print "READING: " + gene_id
 	if gene_id in protein_dictionary:
-		if not isinstance(transcript_length, nubmers.Integral):
+		if not isinstance(transcript_length, numbers.Integral):
 			protein_dictionary[gene_id] = 0
 		elif protein_dictionary[gene_id]>transcript_length:
 			protein_dictionary[gene_id] = transcript_length
@@ -50,7 +50,7 @@ line = file_in.readline()
 while line:
 	gene_id = line[1:line.find("|")]
 	transcript_length = line[(line.rfind("|")+1):]
-	if not isinstance(transcript_length, nubmers.Integral):
+	if not isinstance(transcript_length, numbers.Integral):
 		transcript_length = 0
 	#endif
 	write = 0
