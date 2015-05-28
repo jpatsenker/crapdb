@@ -1,4 +1,5 @@
 import sys
+import io
 import os
 #cdhit = "/opt/cd-hit/bin/cd-hit" #orchestra
 cdhit = "../../../cd-hit/cd-hit" #local
