@@ -22,13 +22,9 @@ file_out = open("inputs/" + file_in_name + "_LT.fasta", "w");
 line = file_in.readline()
 
 while line:
-	
 	gene_id = line[1:line.find("|")]
 	transcript_length = line[(line.rfind("|")+1):]
-	
 	print "READING: " + gene_id
-	
-
 	if gene_id in protein_dictionary:
 		if not isinstance(transcript_length, nubmers.Integral):
 			protein_dictionary[gene_id] = 0
@@ -36,12 +32,15 @@ while line:
 			protein_dictionary[gene_id] = transcript_length
 		#endif
 	#endif
-
 	line = file_in.readline()
-	while line[0]!='>':
-		line = file_in.readline()
-	#endwhile
-
+	if line:
+		while line[0]!='>':
+			line = file_in.readline()
+			if not line:
+				continue
+			#endif
+		#endwhile
+	#endif
 #endwhile
 
 file_in.seek(0,0)
@@ -51,35 +50,26 @@ line = file_in.readline()
 while line:
 	gene_id = line[1:line.find("|")]
 	transcript_length = line[(line.rfind("|")+1):]
-
 	if not isinstance(transcript_length, nubmers.Integral):
 		transcript_length = 0
 	#endif
-
 	write = 0
-
-
-
-
 	if protein_dictionary[gene_id] == transcript_length:
 		write = 1
 		print "WRITING: " + gene_id
 	#endif
-	
 	if write:
 		file_out.write(line)
 	#endif
 	line = file_in.readline()
-
-	while line[0]!='>':
-		if write:
-			file_out.write(line)
-		#endif
-		line = file_in.readline()
-	#endwhile
-
-
-
+	if line:
+		while line[0]!='>':
+			if write:
+				file_out.write(line)
+			#endif
+			line = file_in.readline()
+		#endwhile
+	#endif
 #endwhile
 
 close(file_in)
