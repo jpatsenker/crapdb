@@ -42,8 +42,6 @@ for i in range(len(tholds)):
 	cd_hit_run(file_in, "tmp/out", tholds[i])
 	result = count_non_redundant_seq("tmp/out")
 	fout(result)
-	os.remove("tmp/out")
-	os.remove("tmp/out.clstr")
 #endfor
 
 
