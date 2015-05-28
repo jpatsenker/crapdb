@@ -37,7 +37,7 @@ while line:
 		while line[0]!='>':
 			line = file_in.readline()
 			if not line:
-				continue
+				break
 			#endif
 		#endwhile
 	#endif
@@ -68,6 +68,8 @@ while line:
 				file_out.write(line)
 			#endif
 			line = file_in.readline()
+			if not line:
+				break
 		#endwhile
 	#endif
 #endwhile
