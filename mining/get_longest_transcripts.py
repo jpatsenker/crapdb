@@ -1,5 +1,6 @@
 import sys
 import os
+import numbers
 
 
 
@@ -27,8 +28,11 @@ while line:
 	
 	print "READING: " + gene_id
 	
+
 	if gene_id in protein_dictionary:
-		if protein_dictionary[gene_id]>transcript_length:
+		if !isinstance(transcript_length, nubmers.Integral):
+			protein_dictionary[gene_id] = 0
+		elif protein_dictionary[gene_id]>transcript_length:
 			protein_dictionary[gene_id] = transcript_length
 		#endif
 	#endif
@@ -47,6 +51,10 @@ line = file_in.readline()
 while line:
 	gene_id = line[1:line.find("|")]
 	transcript_length = line[(line.rfind("|")+1):]
+
+	if !isinstance(transcript_length, nubmers.Integral):
+		transcript_length = 0
+	#endif
 
 	write = 0
 
