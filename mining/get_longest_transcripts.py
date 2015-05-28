@@ -33,6 +33,7 @@ while line:
 		#endif
 	#endif
 
+	line = file_in.readline()
 	while line[0]!='>':
 		line = file_in.readline()
 	#endwhile
@@ -56,6 +57,11 @@ while line:
 		write = 1
 		print "WRITING: " + gene_id
 	#endif
+	
+	if write:
+		file_out.write(line)
+	#endif
+	line = file_in.readline()
 
 	while line[0]!='>':
 		if write:
