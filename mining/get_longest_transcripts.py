@@ -82,5 +82,5 @@ while line:
 	#endif
 #endwhile
 
-close(file_in)
-close(file_out)
+file_in.close()
+file_out.close()

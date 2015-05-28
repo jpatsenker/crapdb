@@ -45,5 +45,5 @@ for i in range(len(tholds)):
 #endfor
 
 
-close(file_in)
-close(fout)
+file_in.close()
+fout.close()
