@@ -13,17 +13,17 @@ file_in_name = sys.argv[1]
 file_in = open(file_in_name, "r")
 
 if "/" in file_in_name:
-	file_in_name = file_in_name[file_in_name.rfind("/"):file_in_name.rfind(".")]
+	file_in_name = file_in_name[(file_in_name.rfind("/")+1):file_in_name.rfind(".")]
 #endif
 
-file_out = open("inputs/" + file_in_name + "_LT.fasta");
+file_out = open("inputs/" + file_in_name + "_LT.fasta", "w");
 
 line = file_in.readline()
 
 while line:
 	
 	gene_id = line[1:line.find("|")]
-	transcript_length = line[line.rfind("|"):]
+	transcript_length = line[(line.rfind("|")+1):]
 	
 	if protein_dictionary[gene_id]:
 		if protein_dictionary[gene_id]>transcript_length:
@@ -43,7 +43,7 @@ line = file_in.readline()
 
 while line:
 	gene_id = line[1:line.find("|")]
-	transcript_length = line[line.rfind("|"):]
+	transcript_length = line[(line.rfind("|")+1):]
 
 	write = 0
 
