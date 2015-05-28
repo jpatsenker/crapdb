@@ -30,7 +30,7 @@ while line:
 	
 
 	if gene_id in protein_dictionary:
-		if !isinstance(transcript_length, nubmers.Integral):
+		if not isinstance(transcript_length, nubmers.Integral):
 			protein_dictionary[gene_id] = 0
 		elif protein_dictionary[gene_id]>transcript_length:
 			protein_dictionary[gene_id] = transcript_length
@@ -52,7 +52,7 @@ while line:
 	gene_id = line[1:line.find("|")]
 	transcript_length = line[(line.rfind("|")+1):]
 
-	if !isinstance(transcript_length, nubmers.Integral):
+	if not isinstance(transcript_length, nubmers.Integral):
 		transcript_length = 0
 	#endif
 
