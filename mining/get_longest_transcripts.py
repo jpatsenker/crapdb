@@ -31,7 +31,14 @@ while line:
 		elif protein_dictionary[gene_id]>transcript_length:
 			protein_dictionary.insert(gene_id, transcript_length)
 		#endif
+	else:
+		if not isinstance(transcript_length, numbers.Integral):
+			protein_dictionary.insert(gene_id, 0)
+		else:
+			protein_dictionary.insert(gene_id, transcript_length)
+		#endif
 	#endif
+
 	line = file_in.readline()
 	if line:
 		while line[0]!='>':
