@@ -9,8 +9,12 @@ def 0j_run(input_name, output_name):
 	return subprocess.Popen(["python", 0j, input_name, ">", "tmp/0j_out/" + output_name])
 #enddef
 
-def retrieve_points_of_interest(points):
+def retrieve_points_of_interest(points, output_name):
+	unparsed = open("tmp/0j_out/" + output_name, "r");
+	line = unparsed.readline();
+	while line:
 	
+	#endwhile
 
 
 #enddef
