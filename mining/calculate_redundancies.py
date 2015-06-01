@@ -34,15 +34,17 @@ def count_non_redundant_seq(out_file):
 
 tholds = [.7, .75, .8, .85, .9, .95]
 file_in = sys.argv[1]
-fout = open("outputs/cdhit_outs", "w")
+file_out = sys.argv[2]
+fout = open("outputs/cdhit_out/" + file_out, "w")
 
 
 
 for i in range(len(tholds)):
-	p1 = cd_hit_run(file_in, "tmp/out", tholds[i])
+	p1 = cd_hit_run(file_in, "tmp/cdhit_out/out/"+file_out, tholds[i])
 	p1.wait()
-	result = count_non_redundant_seq("tmp/out")
-	fout.write(str(result) + " ")
+	result = count_non_redundant_seq("tmp/cdhit_out/out"+file_out)
+	
+	fout.write(tholds[i] + str(result) + " ")
 #endfor
 
 fout.close()
