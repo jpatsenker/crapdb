@@ -13,7 +13,16 @@ def retrieve_points_of_interest(points, output_name):
 	unparsed = open("tmp/0j_out/" + output_name, "r");
 	line = unparsed.readline();
 	while line:
-	
+		while not "|" in line and line:
+			line = unparsed.readline()
+		#endwhile
+		if not line:
+			break
+		#endif
+		
+		
+		
+		line = unparsed.readline();
 	#endwhile
 
 
