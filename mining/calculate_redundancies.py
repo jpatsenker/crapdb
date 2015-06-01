@@ -32,7 +32,7 @@ def count_non_redundant_seq(out_file):
 #All thresholds to run CD-HIT on
 	#Don't run on anything lower than .7 or cluster may crash
 
-tholds = [.7, .8, .9]
+tholds = [.7, .75, .8, .85, .9, .95]
 file_in = sys.argv[1]
 fout = open("outputs/cdhit_outs", "w")
 
