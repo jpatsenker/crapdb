@@ -44,7 +44,7 @@ for i in range(len(tholds)):
 	p1.wait()
 	result = count_non_redundant_seq("tmp/cdhit_out/out"+file_out)
 	
-	fout.write(tholds[i] + str(result) + " ")
+	fout.write(tholds[i] + "," str(result) + "-")
 #endfor
 
 fout.close()
