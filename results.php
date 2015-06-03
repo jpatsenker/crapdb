@@ -13,10 +13,10 @@
                 echo '<p style="color:#FF0000"> Bad File </p>';
             }else{
 
-                exec('perl ' . $fastaCheck . ' ' . $target_file . ' 0 > ' . $target_file);
+                exec('perl ' . $fastaCheck . ' ' . $target_file . ' 0 > ' . $target_file . ' 2> tmp/errors.txt');
                 fopen($target_file, "r");
-                $stderr = fopen("php://stderr", "r");
-                if(fread($stderr, 1)){
+                $stderr = fopen("errors.txt", "r");
+                if(filesize("tmp/errors.txt") != 0){
                     echo '<p style="color:#FF9933"> Warning: File Was Modified by FASTA Checker</p>';
                 }
 
