@@ -14,7 +14,7 @@
                     echo '<p style="color:#FF0000"> Bad File </p>';
             }else{
 
-                exec('perl ' . $fastaCheck . ' ' . $target_file . ' 0');
+                exec('perl ' . $fastaCheck . ' ' . $target_file . ' 0 > ' . $target_file);
                 
 
                 $headers = "From: CRAP DB <noreply@kirschner.med.harvard.edu>" . "\r\n";
