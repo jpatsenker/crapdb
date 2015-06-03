@@ -20,7 +20,7 @@
                 $stderr = fopen("tmp/errors.txt", "r");
 
                 if(filesize("tmp/errors.txt") != 0){
-                    $score = '1';
+                    $score = 1;
                     echo '<p style="color:#FF9933"> Warning: File Was Modified by FASTA Checker</p>';
                 }
 
