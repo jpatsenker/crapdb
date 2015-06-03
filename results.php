@@ -16,7 +16,7 @@
                 exec('perl ' . $fastaCheck . ' ' . $target_file . ' 0 > tmp/output 2> tmp/errors.txt');
                 exec('mv tmp/output ' . $target_file);
                 fopen($target_file, "r");
-                $stderr = fopen("errors.txt", "r");
+                $stderr = fopen("tmp/errors.txt", "r");
 
                 if(filesize("tmp/errors.txt") != 0){
                     echo '<p style="color:#FF9933"> Warning: File Was Modified by FASTA Checker</p>';
