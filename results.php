@@ -25,7 +25,7 @@
                 if(mail($email, "CRAP Results", "this is your crap score: 1", $headers)){
                     echo '<p style="color:green"> Sending email with results to ' . $email . ' </p>';
                 }
-                unlink($target_file);
+                //unlink($target_file);
             }
     	}
     
