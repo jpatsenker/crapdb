@@ -27,6 +27,6 @@
     	}
     
     
-    include "index.html";
+    include "index.php";
 
 ?>
