@@ -8,13 +8,14 @@
             $email = $_POST['email'];
             $target_dir = "uploaded_fasta/";
             $target_file = $target_dir . basename($_FILES['fastaseq']['name']);
+            $fixed_file = $target_dir . 'fix_' . basename($_FILES['fastaseq']['name']);
 
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
                 echo '<p style="color:#FF0000"> Bad File </p>';
             }else{
-                echo 'perl ' . $fastaCheck . ' ' . $target_file . ' 0 > tmp/output 2> tmp/errors.txt';
-                exec('perl ' . $fastaCheck . ' ' . $target_file . ' 0 > tmp/output 2> tmp/errors.txt');
-                exec('mv tmp/output ' . $target_file);
+                echo 'perl ' . $fastaCheck . ' ' . $target_file . ' 0 > ' . $fixed_file . ' 2> tmp/errors.txt';
+                exec('perl ' . $fastaCheck . ' ' . $target_file . ' 0 > ' . $fixed_file . ' 2> tmp/errors.txt');
+                //exec('mv tmp/output ' . $target_file);
                 fopen($target_file, "r");
                 $stderr = fopen("tmp/errors.txt", "r");
 
