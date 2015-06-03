@@ -13,7 +13,7 @@
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
                 echo '<p style="color:#FF0000"> Bad File </p>';
             }else{
-                echo 'bsub -q short -K -W 1 -o ' . $fixed_file . ' -e tmp/errors.txt perl ' . $fastaCheck . ' ' . $target_file . ' 0';
+                //echo 'bsub -q short -K -W 1 -o ' . $fixed_file . ' -e tmp/errors.txt perl ' . $fastaCheck . ' ' . $target_file . ' 0';
                 exec('./opt/lsf/conf/profile.lsf');
                 exec('bsub -q short -K -W 1 -o ' . $fixed_file . ' -e tmp/errors.txt perl ' . $fastaCheck . ' ' . $target_file . ' 0');
                 
