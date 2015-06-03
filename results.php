@@ -13,9 +13,11 @@
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
                 echo '<p style="color:#FF0000"> Bad File </p>';
             }else{
-                echo 'perl ' . $fastaCheck . ' ' . $target_file . ' 0 > ' . $fixed_file . ' 2> tmp/errors.txt';
-                exec('perl ' . $fastaCheck . ' ' . $target_file . ' 0 > ' . $fixed_file . ' 2> tmp/errors.txt');
-                //exec('mv tmp/output ' . $target_file);
+                echo 'bsub -q short -K -o' . $fixed_file . ' -e tmp/errors.txt perl ' . $fastaCheck . ' ' . $target_file . ' 0';
+                exec('bsub -q short -K -o' . $fixed_file . ' -e tmp/errors.txt perl ' . $fastaCheck . ' ' . $target_file . ' 0');
+                
+                
+                
                 $fastaFile = fopen($fixed_file, "r");
                 $stderr = fopen("tmp/errors.txt", "r");
 
