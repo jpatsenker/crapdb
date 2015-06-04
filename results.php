@@ -41,6 +41,8 @@
                 if(mail($email, "CRAP Results", "this is your crap score: " . $score, $headers)){
                     echo '<p style="color:green"> Sending email with results to ' . $email . ' </p>';
                 }
+                exec('./opt/lsf/conf/profile.lsf');
+
                 unlink($target_file);
             }
     	}
