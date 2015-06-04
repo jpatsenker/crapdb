@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php parse_ini_file("php.ini"); ?>
+
 <html>
 
 	<head>
