@@ -2,6 +2,8 @@
         $fastaCheck = '/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker.pl';
         $score = 0;
         
+        parse_ini_file("php.ini");
+        
 	if(!$_POST['email']){
             echo '<p style="color:#FF0000">  Please fill in all fields </p>';
     	}else{
