@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php parse_ini_file("php.ini"); ?>
+<?php parse_ini_file("php.ini"); phpinfo();?>
 
 <html>
 
