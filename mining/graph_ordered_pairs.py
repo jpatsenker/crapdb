@@ -8,6 +8,7 @@ import string
 
 
 file_in = open(sys.argv[1], "r")
+name = sys.argv[2]
 
 line = file_in.readline()
 pairs = []
@@ -34,5 +35,5 @@ for i in range(len(pairs)):
 scat = Scatter(x=data[0], y=data[1])
 
 dat = Data([scat])
-plot_url = py.plot(dat, filename='basic-line', world_readable=False)
+plot_url = py.plot(dat, filename=name, world_readable=False)
 plot_url.append(".html")
