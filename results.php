@@ -12,6 +12,7 @@
             $target_dir = "uploaded_fasta/";
             $target_file = $target_dir . basename($_FILES['fastaseq']['name']);
             $fixed_file = $target_dir . 'fix_' . basename($_FILES['fastaseq']['name']);
+            $fixed_file_with_lengths = $target_dir . 'lengths_fix_' . basename($_FILES['fastaseq']['name']);
             
             #move file into uploaded folder
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
@@ -31,19 +32,24 @@
 
                 if(filesize("tmp/errors.txt") != 0){
                     $score = 1;
-                    echo '<p style="color:red">Error Processing File</p>';
+                    echo '<p style="color:red">Error Processing File: Fasta Check</p>';
+                }
+                
+                exec('bsub -q short -K -W 1 -e tmp/errors.txt python mining/add_lengths.py ' . $fixed_file . ' ' . $fixed_file_with_lengths);
+                
+                if(filesize("tmp/errors.txt") != 0){
+                    $score = 1;
+                    echo '<p style="color:red">Error Processing File: Adding Lengths</p>';
                 }
                 
                 
-                
-
                 $headers = "From: CRAP DB <noreply@kirschner.med.harvard.edu>" . "\r\n";
                 if(mail($email, "CRAP Results", "this is your crap score: " . $score, $headers)){
                     echo '<p style="color:green"> Sending email with results to ' . $email . ' </p>';
                 }
                 exec('./opt/lsf/conf/profile.lsf');
 
-                unlink($target_file);
+                //unlink($target_file);
             }
     	}
     
