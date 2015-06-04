@@ -16,7 +16,10 @@
                 echo '<p style="color:#FF0000"> Error Moving File </p>';
             }else{
                 echo 'bsub -q short -K -W 1 -o ' . $fixed_file . ' -e tmp/errors.txt perl ' . $fastaCheck . ' ' . $target_file . ' 0';
+                #set up orchestra profile
                 exec('./opt/lsf/conf/profile.lsf');
+                
+                #do a fasta check - submitting job to short queue, waiting for it to end, setting 1 hour of wait time, outputing to file, and sending error to another file
                 exec('bsub -q short -K -W 1 -o ' . $fixed_file . ' -e tmp/errors.txt perl ' . $fastaCheck . ' ' . $target_file . ' 0');
                 
                 
