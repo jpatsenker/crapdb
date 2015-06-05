@@ -34,9 +34,9 @@ checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[inpu
 
 
 #MAKE LSF PROFILE FOR ORCHESTRA
-process_makeProf = subprocess.Popen('./opt/lsf/conf/profile.lsf');
+#process_makeProf = subprocess.Popen('./opt/lsf/conf/profile.lsf');
 
-process_makeProf.wait()
+#process_makeProf.wait()
 
 
 #PERFORM A FASTA CHECK
