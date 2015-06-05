@@ -12,7 +12,7 @@ def send_email(info, email):
 
 	try:
 		smtpObj = smtplib.SMTP('localhost')
-			smtpObj.sendmail(sender, receivers, message)
+		smtpObj.sendmail(sender, receivers, message)
 		print "Successfully sent email"
 	except SMTPException:
 		print "Error: unable to send email"
@@ -67,5 +67,5 @@ file_with_lengths = checked_file[:input_file.rfind('.')] + '_lengths' + checked_
 outstr = "Fasta is in proper format"
 
 
-
+#SEND EMAIL WITH RESULTS
 send_email(outstr, mail_address)

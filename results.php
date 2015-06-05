@@ -21,7 +21,7 @@
                 exec('cd mining');
                 exec('python process_data.py ' . $target_file . ' ' . $email);
                 
-                echo '<p style="color:green"> Your request is being processed. You will receive an email when your CRAP is ready" </p>';
+                echo '<p style="color:green"> Your request is being processed. You will receive an email when your CRAP is ready. </p>';
             }
     	}
     
