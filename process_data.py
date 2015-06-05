@@ -40,7 +40,7 @@ checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[inpu
 
 
 #PERFORM A FASTA CHECK
-#print 'bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0'
+print 'bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0'
 #sys.exit(0)
 process_fastaCheck = subprocess.Popen('bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0')
 
