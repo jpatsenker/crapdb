@@ -38,7 +38,6 @@ file_out = sys.argv[2]
 fout = open("outputs/cdhit_out/" + file_out, "w")
 
 
-
 for i in range(len(tholds)):
 	p1 = cd_hit_run(file_in, "tmp/cdhit_out/out/"+file_out, tholds[i])
 	p1.wait()

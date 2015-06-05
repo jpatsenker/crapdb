@@ -14,11 +14,13 @@
             $fixed_file = $target_dir . 'fix_' . basename($_FILES['fastaseq']['name']);
             $fixed_file_with_lengths = $target_dir . 'lengths_fix_' . basename($_FILES['fastaseq']['name']);
             
-            exec('./opt/lsf/conf/profile.lsf');
             #move file into uploaded folder
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){          
                 echo '<p style="color:#FF0000"> Error Moving File </p>';
             }else{
+                exec('cd mining');
+                exec('python process_data.py ' . $target_file);
+                
                 echo 'bsub -q short -K -W 1 -o ' . $fixed_file . ' -e tmp/errors.txt perl ' . $fastaCheck . ' ' . $target_file . ' 0';
                 #set up orchestra profile
                 exec('./opt/lsf/conf/profile.lsf');
