@@ -27,7 +27,7 @@ def send_email(info, email):
 
 fastaChecker = '/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker.pl';
 
-input_file = "mining/" + sys.argv[1]
+input_file = sys.argv[1]
 mail_address = sys.argv[2]
 
 checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[input_file.rfind('.'):]
