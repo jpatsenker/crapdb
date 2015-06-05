@@ -40,7 +40,7 @@ checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[inpu
 
 
 #PERFORM A FASTA CHECK
-process_fastaCheck = subprocess.Popen('bsub -q short -K -W 1 -o ' + fixed_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + target_file + ' 0')
+process_fastaCheck = subprocess.Popen('bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + target_file + ' 0')
 
 
 process_fastaCheck.wait() #wait for fasta to finish before continuing
