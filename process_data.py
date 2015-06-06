@@ -25,7 +25,7 @@ def send_email(info, email):
 
 #launch from main dir
 
-fastaChecker = '/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker.pl';
+fastaChecker = '/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker.pl'
 
 input_file = sys.argv[1]
 mail_address = sys.argv[2]
@@ -33,23 +33,20 @@ mail_address = sys.argv[2]
 checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[input_file.rfind('.'):]
 
 
-#MAKE LSF PROFILE FOR ORCHESTRA
-#process_makeProf = subprocess.Popen('/opt/lsf/conf/profile.lsf');
-#
-#process_makeProf.wait()
+
 
 
 #PERFORM A FASTA CHECK
-print 'bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0'
+print '. /opt/lsf/conf/profile.lsf; bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0'
 #sys.exit(0)
-process_fastaCheck = subprocess.Popen('bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0')
+process_fastaCheck = subprocess.Popen('. /opt/lsf/conf/profile.lsf; bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0')
 
 
 process_fastaCheck.wait() #wait for fasta to finish before continuing
 
 
 #CHECK IF ITS OK TO CONTINUE
-with open('tmp/errors.txt') as fastaErrors:
+with open('tmp/errors.txt', "r") as fastaErrors:
 	if fastaErrors.readline():
 		fastaErrors.seek(0,0)
 		errorStr = fastaErrors.read()
@@ -58,15 +55,37 @@ with open('tmp/errors.txt') as fastaErrors:
 	#endif
 #endwith
 
+#CHANGE INTO MINING DIRECTORY
+try:
+	os.chdir('mining')
+except OSError:
+	print "Error, couldn't get into directory mining"
+	sys.exit(0)
+
+
+#THE OUTSTRING
+outstr = "Fasta is in proper format \n"
+
+
+#TOOLS
+addLengths = 'add_lengths.py'
+
+
 
 #ADD LENGTHS TO THE FILE
 
 file_with_lengths = checked_file[:input_file.rfind('.')] + '_lengths' + checked_file[input_file.rfind('.'):]
 
+process_addLengths = subprocess.Popen('. /opt/lsf/conf/profile.lsf; bsub -q short -K -W 1 python ' + addLengths + ' ' + checked_file + ' ' + file_with_lengths)
 
 
+#GET LONG AND SHORT SEQS
 
-outstr = "Fasta is in proper format"
+#long_short =  input_file[:input_file.rfind('.')] + '_long_short' + input_file[input_file.rfind('.'):]
+#
+#with open(long_short) as stream_long_short:
+#	outstr += '\n' + stream_file_with_lengths.read()
+##endwith
 
 
 #SEND EMAIL WITH RESULTS
