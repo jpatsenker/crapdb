@@ -33,6 +33,10 @@ mail_address = sys.argv[2]
 checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[input_file.rfind('.'):]
 
 
+test = subprocess.Popen('. /opt/lst/conf/profile.lsf')
+test.wait()
+sys.exit(0)
+
 
 
 
