@@ -1,3 +1,3 @@
-#!bin/bash
+#!/bin/bash
 . /opt/lsf/conf/profile.lsf
 $@
