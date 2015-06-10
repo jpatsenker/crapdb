@@ -78,7 +78,7 @@ addLengths = 'add_lengths.py'
 
 file_with_lengths = checked_file[:input_file.rfind('.')] + '_lengths' + checked_file[input_file.rfind('.'):]
 
-process_addLengths = subprocess.Popen('./run_with_profile.sh bsub -q short -K -W 1 python ' + addLengths + ' ' + checked_file + ' ' + file_with_lengths)
+process_addLengths = subprocess.Popen('./run_with_profile.sh -q short -K -W 1 python ' + addLengths + ' ' + checked_file + ' ' + file_with_lengths)
 
 
 #GET LONG AND SHORT SEQS
