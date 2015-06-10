@@ -41,7 +41,7 @@ checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[inpu
 #PERFORM A FASTA CHECK
 #print '. /opt/lsf/conf/profile.lsf; bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0'
 #sys.exit(0)
-process_fastaCheck = subprocess.Popen('/bin/sh -c ./run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0')
+process_fastaCheck = subprocess.Popen(['/bin/sh', '-c', './run_with_profile.sh', '-q', 'short', '-K', '-W', '1', '-o', checked_file, '-e', 'tmp/errors.txt', 'perl', fastaChecker, input_file, '0'])
 
 
 process_fastaCheck.wait() #wait for fasta to finish before continuing
@@ -78,7 +78,7 @@ addLengths = 'add_lengths.py'
 
 file_with_lengths = checked_file[:input_file.rfind('.')] + '_lengths' + checked_file[input_file.rfind('.'):]
 
-process_addLengths = subprocess.Popen('/bin/sh -c ./run_with_profile.sh -q short -K -W 1 python ' + addLengths + ' ' + checked_file + ' ' + file_with_lengths)
+process_addLengths = subprocess.Popen(['/bin/sh', '-c', './run_with_profile.sh', '-q', 'short', '-K', '-W', '1', 'python', addLengths, checked_file, file_with_lengths])
 
 
 #GET LONG AND SHORT SEQS
