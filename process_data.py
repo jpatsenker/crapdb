@@ -93,7 +93,7 @@ process_longShort = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -
 
 process_longShort.wait()
 
-with open(long_short) as stream_long_short:
+with open('../' + long_short) as stream_long_short:
 	outstr += '\n' + stream_long_short.read()
 #endwith
 
