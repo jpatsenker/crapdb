@@ -17,7 +17,7 @@
                 echo '<p style="color:#FF0000"> Error Moving File </p>';
             }else{
                 #echo 'python process_data.py ' . $target_file . ' ' . $email;
-                exec('python process_data.py ' . $target_file . ' ' . $email . ' &');
+                exec('python process_data.py ' . $target_file . ' ' . $email . ' > /dev/null 2>&1 &');
                 
                 echo '<p style="color:green"> Your request is being processed. You will receive an email when your CRAP is ready. </p>';
             }
