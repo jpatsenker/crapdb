@@ -20,7 +20,7 @@ while line:
 			seq_line = input.readline()
 		#endwhile
 		sequence.replace('\n', '')
-		temp_out.write(line + " length: " + len(sequence))
+		temp_out.write(line + " length: " + str(len(sequence)))
 		temp_out.write(sequence)
 		line = sequence[sequence.rfind('>'):]
 		print "next line--"
