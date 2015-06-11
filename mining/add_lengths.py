@@ -12,13 +12,16 @@ temp_out = open(sys.argv[2], "w")
 line = input.readline()
 
 while line:
+	if line[0] == '-':
+		break
+	#endif
+
 	if line[0] == '>':
 		sequence = ''
 		seq_line = input.readline()
 		while seq_line and seq_line[0] != '>':
 			sequence += seq_line
 			seq_line = input.readline()
-			print "hi"
 			print seq_line
 		#endwhile
 		sequence.replace('\n', '')
