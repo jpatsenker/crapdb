@@ -79,7 +79,7 @@ getLongShort = 'get_longest_and_shortest.py'
 
 file_with_lengths = checked_file[:input_file.rfind('.')] + '_lengths' + checked_file[input_file.rfind('.'):]
 
-process_addLengths = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ../' + addLengths + ' ' + checked_file + ' ../' + file_with_lengths])
+process_addLengths = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + addLengths + ' ' + checked_file + ' ../' + file_with_lengths])
 process_addLengths.wait()
 
 #GET LONG AND SHORT SEQS
@@ -89,7 +89,7 @@ process_addLengths.wait()
 long_short =  input_file[:input_file.rfind('.')] + '_long_short' + input_file[input_file.rfind('.'):]
 
 
-process_longShort = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ../' + getLongShort + ' ' + file_with_lengths + ' ' + long_short])
+process_longShort = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getLongShort + ' ' + file_with_lengths + ' ' + long_short])
 
 process_longShort.wait()
 
