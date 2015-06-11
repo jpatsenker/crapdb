@@ -27,6 +27,7 @@ while line:
 		line = sequence[sequence.rfind('>'):]
 		print "next gene--"
 	#endif
+	print "no"
 #endwhile
 
 #subprocess.Popen(["mv", "tmp/withlengths", argv[1]])
