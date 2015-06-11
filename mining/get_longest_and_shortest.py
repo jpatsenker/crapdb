@@ -18,7 +18,6 @@ def get_longest(stream):
 	while line:
 		if line[0] == '>' and max < int(line[line.rfind("length=")+7:-1]):
 			max = int(line[line.rfind("length=")+7:-1])
-			print max
 		#endif
 		line = stream.readline()
 	#endwhile
@@ -54,7 +53,6 @@ def get_shortest(stream):
 	while line:
 		if line[0] == '>' and min > int(line[line.rfind("length=")+7:-1]):
 			min = int(line[line.rfind("length=")+7:-1])
-			print min
 		#endif
 		line = stream.readline()
 	#endwhile
