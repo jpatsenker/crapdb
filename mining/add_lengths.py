@@ -26,8 +26,10 @@ while line:
 		temp_out.write(sequence)
 		line = sequence[sequence.rfind('>'):]
 		print "next gene--"
+	else:
+		print "no"
+		line = input.readline()
 	#endif
-	print "no"
 #endwhile
 
 #subprocess.Popen(["mv", "tmp/withlengths", argv[1]])
