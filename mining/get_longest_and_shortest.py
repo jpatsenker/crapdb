@@ -66,7 +66,7 @@ def get_shortest(stream):
 	line = stream.readline()
 	while line:
 		if line[0] == '>' and int(line[line.rfind("length=")+7:-1]) == min :
-			lstring += line
+			sstring += line
 			break
 		#endif
 		line = stream.readline()
