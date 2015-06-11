@@ -25,7 +25,7 @@ while line:
 			print seq_line
 		#endwhile
 		sequence.replace('\n', '')
-		temp_out.write(line + " length: " + str(len(sequence)) + '\n')
+		temp_out.write(line[:-1] + " length: " + str(len(sequence)) + '\n')
 		temp_out.write(sequence)
 		line = seq_line
 		print "next gene--"
