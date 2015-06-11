@@ -18,12 +18,13 @@ while line:
 		while not sequence or seq_line[0] != '>':
 			sequence += seq_line
 			seq_line = input.readline()
+			print seq_line
 		#endwhile
 		sequence.replace('\n', '')
 		temp_out.write(line + " length: " + str(len(sequence)))
 		temp_out.write(sequence)
 		line = sequence[sequence.rfind('>'):]
-		print "next line--"
+		print "next gene--"
 	#endif
 #endwhile
 
