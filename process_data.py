@@ -71,23 +71,29 @@ outstr = "Fasta is in proper format \n"
 
 #TOOLS
 addLengths = 'add_lengths.py'
+getLongShort = 'get_longest_and_shortest.py'
 
 
 
 #ADD LENGTHS TO THE FILE
 
-#file_with_lengths = checked_file[:input_file.rfind('.')] + '_lengths' + checked_file[input_file.rfind('.'):]
+file_with_lengths = checked_file[:input_file.rfind('.')] + '_lengths' + checked_file[input_file.rfind('.'):]
 
-#process_addLengths = subprocess.Popen(['/bin/sh', '-c', './run_with_profile.sh', '-q', 'short', '-K', '-W', '1', 'python', addLengths, checked_file, file_with_lengths])
+process_addLengths = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh', '-q short -K -W 1 python ../' + addLengths + ' ' + checked_file + ' ../' + file_with_lengths])
 
 
 #GET LONG AND SHORT SEQS
 
-#long_short =  input_file[:input_file.rfind('.')] + '_long_short' + input_file[input_file.rfind('.'):]
-#
-#with open(long_short) as stream_long_short:
-#	outstr += '\n' + stream_file_with_lengths.read()
-##endwith
+
+
+long_short =  input_file[:input_file.rfind('.')] + '_long_short' + input_file[input_file.rfind('.'):]
+
+
+process_longShort = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh', '-q short -K -W 1 python ../' + getLongShort + ' ' + file_with_lengths + ' ' + long_short])
+
+with open(long_short) as stream_long_short:
+	outstr += '\n' + stream_long_short.read()
+#endwith
 
 
 #SEND EMAIL WITH RESULTS
