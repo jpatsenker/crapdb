@@ -15,7 +15,7 @@ while line:
 	if line[0] == '>':
 		sequence = ''
 		seq_line = input.readline()
-		while not sequence or sequence[0] != '>':
+		while not sequence or seq_line[0] != '>':
 			sequence += seq_line
 			seq_line = input.readline()
 		#endwhile
