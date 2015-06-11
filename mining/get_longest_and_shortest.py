@@ -29,6 +29,7 @@ def get_longest(stream):
 			lstring += line
 			break
 		#endif
+		line = stream.readline()
 	#endwhile
 
 	return lstring
@@ -60,6 +61,7 @@ def get_shortest(stream):
 			lstring += line
 			break
 		#endif
+		line = stream.readline()
 	#endwhile
 
 	return sstring
