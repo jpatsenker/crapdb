@@ -27,7 +27,7 @@ while line:
 		sequence.replace('\n', '')
 		temp_out.write(line + " length: " + str(len(sequence)))
 		temp_out.write(sequence)
-		line = sequence[sequence.rfind('>'):]
+		line = seq_line
 		print "next gene--"
 	else:
 		print "no"
