@@ -6,8 +6,8 @@ import os
 
 
 
-input = open(argv[1], "r")
-temp_out = open(argv[2], "w")
+input = open(sys.argv[1], "r")
+temp_out = open(sys.argv[2], "w")
 
 line = input.readline()
 
