@@ -23,6 +23,7 @@ while line:
 		temp_out.write(line + " length: " + len(sequence))
 		temp_out.write(sequence)
 		line = sequence[sequence.rfind('>'):]
+		print "next line--"
 	#endif
 #endwhile
 
