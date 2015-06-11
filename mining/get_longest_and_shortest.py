@@ -43,10 +43,11 @@ def get_shortest(stream):
 	
 	min = sys.maxint
 	
-	#FIND MAXIMUM
+	#FIND MINIMUM
 	while line:
 		if line[0] == '>' and min > line[line.rfind("length=")+7:]:
 			min = line[line.rfind("length=")+7:]
+			print min
 		#endif
 		line = stream.readline()
 	#endwhile
