@@ -22,15 +22,12 @@ while line:
 		while seq_line and seq_line[0] != '>' and seq_line[0] != '-':
 			sequence += seq_line
 			seq_line = input.readline()
-			print seq_line
 		#endwhile
 		sequence.replace('\n', '')
 		temp_out.write(line[:-1] + " length: " + str(len(sequence)) + '\n')
 		temp_out.write(sequence)
 		line = seq_line
-		print "next gene--"
 	else:
-		print "no"
 		line = input.readline()
 	#endif
 #endwhile
