@@ -18,6 +18,7 @@ while line:
 		while seq_line and seq_line[0] != '>':
 			sequence += seq_line
 			seq_line = input.readline()
+			print "hi"
 			print seq_line
 		#endwhile
 		sequence.replace('\n', '')
