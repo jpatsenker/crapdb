@@ -18,6 +18,7 @@ def get_longest(stream):
 	while line:
 		if line[0] == '>' and max < line[line.rfind("length=")+7:]:
 			max = line[line.rfind("length=")+7:]
+			print max
 		#endif
 		line = stream.readline()
 	#endwhile
