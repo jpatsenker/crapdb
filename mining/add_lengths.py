@@ -6,8 +6,8 @@ import os
 
 
 
-input = fopen(argv[1], "r")
-temp_out = fopen(argv[2], "w")
+input = open(argv[1], "r")
+temp_out = open(argv[2], "w")
 
 line = input.readline()
 
@@ -27,3 +27,7 @@ while line:
 #endwhile
 
 #subprocess.Popen(["mv", "tmp/withlengths", argv[1]])
+
+
+input.close()
+temp_out.close()
