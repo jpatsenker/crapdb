@@ -77,7 +77,7 @@ getLongShort = 'get_longest_and_shortest.py'
 
 #ADD LENGTHS TO THE FILE
 
-file_with_lengths = checked_file[:input_file.rfind('.')] + '_lengths' + checked_file[input_file.rfind('.'):]
+file_with_lengths = checked_file[:checked_file.rfind('.')] + '_lengths' + checked_file[checked_file.rfind('.'):]
 
 process_addLengths = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + addLengths + ' ../' + checked_file + ' ../' + file_with_lengths])
 process_addLengths.wait()
