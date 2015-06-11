@@ -5,6 +5,9 @@ import io
 
 #Get longest sequence and put into displayable string
 def get_longest(stream):
+	
+	stream.seek(0,0)
+	
 	lstring = 'Longest: '
 
 	line = stream.readline()
@@ -37,6 +40,9 @@ def get_longest(stream):
 
 #Get shortest sequence and put into displayable string
 def get_shortest(stream):
+	
+	stream.seek(0,0)
+	
 	sstring = 'Shortest: '
 	
 	line = stream.readline()
