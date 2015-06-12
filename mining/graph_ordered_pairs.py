@@ -1,12 +1,13 @@
 import numpy as np
 import pylab as pl
 import sys
+import collection
 
 
 
 file_in = open(sys.argv[1], "r")
 
-pairs = {}
+d = {}
 
 line = file_in.readline()
 
@@ -15,8 +16,11 @@ tmp.pop() #gets rid of \n char
 
 for pair in tmp:
 	p = pair.split(',')
-	pairs[int(p[0])]=int(p[1])
+	d[int(p[0])]=int(p[1])
 #endfor
+
+pairs = OrderedDict(sorted(d.items(), key = lambda t: t[1]))
+
 
 X = np.arange(len(pairs))
 pl.bar(X, pairs.values(), align='center', width=0.5)
