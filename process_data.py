@@ -17,13 +17,14 @@ def send_email(info, email, files):
 	message = MIMEMultipart()
 	message['Subject'] = "CRAP Score"
 	message['From'] = "CRAP DB <noreply@kirschner.med.harvard.edu>"
+	
 
 	body = MIMEText(info)
 	message.attach(body)
 	
 	for f in files or []:
 		with open(f, "rb") as fil:
-			message.attach(MIMEApplication(fil.read(), Content_Disposition='attachment; filename="%s"' % f))
+			message.attach(MIMEApplication(fil.read(), Content_Disposition='attachment; filename="Length Distributions"'))
 		#endwith
 	#endfor
 
