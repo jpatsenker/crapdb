@@ -93,6 +93,8 @@ outfiles = []
 addLengths = 'add_lengths.py'
 getLongShort = 'get_longest_and_shortest.py'
 getLenDist = 'get_length_distribution.py'
+graphMe = 'graph_ordered_pairs.py'
+
 
 
 
@@ -130,6 +132,11 @@ with open('../' + long_short) as stream_long_short:
 
 
 process_lenDistribution.wait()
+process_graph = subprocess.Popen(['python', graphMe, len_dist])
+process_graph.wait()
+
+
+
 outfiles.append(len_dist + '.png')
 
 
