@@ -1,7 +1,6 @@
 import numpy as np
 import pylab as pl
 import sys
-import collections
 
 
 
@@ -19,7 +18,7 @@ for pair in tmp:
 	d[int(p[0])]=int(p[1])
 #endfor
 
-pairs = collections.OrderedDict(sorted(d.items(), key = lambda t: t[1]))
+pairs = sorted(d.items(), key = lambda t: t[1])
 
 
 X = np.arange(len(pairs))
