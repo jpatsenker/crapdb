@@ -33,6 +33,7 @@ lengths = {}
 while line:
 	while line and line[0]!='>':
 		line = input.readline()
+		print "hi"
 	#endwhile
 	if not line:
 		break
