@@ -114,7 +114,7 @@ process_longShort = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -
 
 len_dist = 'tmp' + input_file[input_file.rfind('/'):] + '.hist'
 
-process_lenDistribution = subprocress.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getLenDist + ' ../' + file_with_lengths + ' ' + len_dist + ' 100'])
+process_lenDistribution = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getLenDist + ' ../' + file_with_lengths + ' ' + len_dist + ' 100'])
 
 
 #PULLING ANALYSIS
