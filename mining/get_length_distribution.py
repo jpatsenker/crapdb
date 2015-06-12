@@ -12,7 +12,12 @@ import subprocess
 
 
 #get histogram bin size
-bin_size = sys.argv[3]
+bin_size
+try:
+	bin_size = int(sys.argv[3])
+except ValueError:
+	print "NO!!!!!"
+	sys.exit(0)
 
 #Open file streams
 input = open(sys.argv[1], "r")
