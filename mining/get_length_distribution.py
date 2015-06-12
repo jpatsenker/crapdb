@@ -32,7 +32,6 @@ lengths = {}
 
 while line:
 	if line[0]=='>':
-		print line
 		l = int(line[line.rfind("length=")+7:-1])/bin_size
 		if l in lengths:
 			lengths[l]+=1
