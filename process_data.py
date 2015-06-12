@@ -5,6 +5,7 @@ import subprocess
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEBase import MIMEBase
+from email.mime.text import MIMEText
 from email import Encoders
 
 def send_email(info, email, files):

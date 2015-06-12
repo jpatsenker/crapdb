@@ -51,5 +51,5 @@ output.close()
 
 
 
-process_graph = subprocess.Popen(['python', graphMe, sys.argv[2])
+process_graph = subprocess.Popen(['python', graphMe, sys.argv[2]])
 process_graph.wait()
