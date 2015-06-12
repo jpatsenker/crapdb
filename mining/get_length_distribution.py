@@ -31,22 +31,16 @@ lengths = {}
 #LOOP OVER INPUT FILE, AND READ ALL LENGTHS, INCREMENTING FOR EACH LENGTH
 
 while line:
-	while line and line[0]!='>':
+	if line[0]=='>':
+		print line
+		l = int(line[line.rfind("length=")+7:-1])/bin_size
+		if l in lengths:
+			lengths[l]+=1
+		else:
+			lengths[l] = 1
+		#endif
 		line = input.readline()
-		print "hi"
-	#endwhile
-	if not line:
-		break
 	#endif
-	print line
-	l = int(line[line.rfind("length=")+7:-1])/bin_size
-
-	if l in lengths:
-		lengths[l]+=1
-	else:
-		lengths[l] = 1
-	#endif
-	line = input.readline()
 #endwhile
 input.close()
 
