@@ -31,7 +31,7 @@ def send_email(info, email, files):
 		smtpObj = smtplib.SMTP('localhost')
 		smtpObj.sendmail(sender, receivers, message.as_string)
 		print "Successfully sent email"
-	except SMTPException:
+	except smtplib.SMTPException:
 		print "Error: unable to send email"
 	#endtry
 
