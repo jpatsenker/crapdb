@@ -28,7 +28,7 @@ for x in xs:
 
 X = np.arange(len(xs))
 pl.bar(X, ys, align='center', width=1)
-pl.xticks(X, xs)
+pl.xticks(X, xs, rotation='vertical')
 ymax = max(ys) + 1
 pl.ylim(0, ymax)
 pl.savefig(sys.argv[1] + ".png")
