@@ -1,6 +1,7 @@
 import sys
 import io
 import os
+from os.path import basename
 import subprocess
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
@@ -21,7 +22,7 @@ def send_email(info, email, files):
 	
 	for f in files or []:
 		with open(f, "rb") as fil:
-			msg.attach(MIMEApplication(fil.read(), Content_Disposition='attachment; filename="%s"' % basename(f)))
+			messagd.attach(MIMEApplication(fil.read(), Content_Disposition='attachment; filename="%s"' % f))
 		#endwith
 	#endfor
 
