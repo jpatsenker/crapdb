@@ -24,7 +24,9 @@ def send_email(info, email, files):
 	
 	for f in files or []:
 		with open(f, "rb") as fil:
-			message.attach(MIMEApplication(fil.read(), Content_Disposition='attachment; filename="Length Distributions"'))
+			attach_file = MIMEApplication(fil.read())
+			attach_file.add_header('Content_Disposition', 'attachment', filename="length_distribution.png")
+			message.attach()
 		#endwith
 	#endfor
 
