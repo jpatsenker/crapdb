@@ -35,7 +35,7 @@ while line:
 	l = int(line[line.rfind("length=")+7:-1])/bin_size
 
 	if l in lengths:
-		lengths[l]++
+		lengths[l]+=1
 	else:
 		lengths[l] = 1
 	#endif
