@@ -132,7 +132,7 @@ with open('../' + long_short) as stream_long_short:
 
 
 process_lenDistribution.wait()
-process_graph = subprocess.Popen(['python', graphMe, len_dist, '2>err.log'])
+process_graph = subprocess.Popen(['python', graphMe, len_dist], stderr="err.log")
 process_graph.wait()
 
 
