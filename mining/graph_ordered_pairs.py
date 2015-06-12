@@ -30,7 +30,7 @@ pl.bar(X, ys, align='center', width=1)
 pl.xticks(X, xs)
 ymax = max(ys) + 1
 pl.ylim(0, ymax)
-pl.show()
+pl.savefig(sys.argv[1] + ".png")
 
 
 
