@@ -26,7 +26,7 @@ def send_email(info, email, files):
 		with open(f, "rb") as fil:
 			attach_file = MIMEApplication(fil.read())
 			attach_file.add_header('Content_Disposition', 'attachment', filename="length_distribution.png")
-			message.attach()
+			message.attach(attach_file)
 		#endwith
 	#endfor
 
