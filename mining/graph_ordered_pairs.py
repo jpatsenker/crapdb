@@ -21,7 +21,7 @@ for pair in tmp:
 xs = sorted(d)
 ys = []
 for x in xs:
-	ys[] = d[x]
+	ys.append(d[x])
 #endfor
 
 
