@@ -16,7 +16,7 @@ bin_size = sys.argv[3]
 
 #Open file streams
 input = open(sys.argv[1], "r")
-output = open(sys.argv[2], "r")
+output = open(sys.argv[2], "w")
 
 line = input.readline()
 
