@@ -5,7 +5,6 @@ import sys
 
 
 file_in = open(sys.argv[1], "r")
-name = sys.argv[2]
 
 pairs = {}
 
