@@ -27,7 +27,7 @@ for x in xs:
 
 
 X = np.arange(len(xs))
-pl.bar(X, ys, align='center', width=1)
+pl.bar(X, ys, align='left', width=1)
 pl.xticks(X, xs, rotation='vertical')
 ymax = max(ys) + 1
 pl.ylim(0, ymax)
