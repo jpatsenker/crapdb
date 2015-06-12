@@ -19,7 +19,7 @@ for pair in tmp:
 	d[int(p[0])]=int(p[1])
 #endfor
 
-pairs = OrderedDict(sorted(d.items(), key = lambda t: t[1]))
+pairs = collections.OrderedDict(sorted(d.items(), key = lambda t: t[1]))
 
 
 X = np.arange(len(pairs))
