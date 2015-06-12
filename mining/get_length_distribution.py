@@ -39,8 +39,8 @@ while line:
 		else:
 			lengths[l] = 1
 		#endif
-		line = input.readline()
 	#endif
+	line = input.readline()
 #endwhile
 input.close()
 
