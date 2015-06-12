@@ -37,6 +37,7 @@ while line:
 	if not line:
 		break
 	#endif
+	print line
 	l = int(line[line.rfind("length=")+7:-1])/bin_size
 
 	if l in lengths:
