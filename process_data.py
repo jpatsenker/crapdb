@@ -22,7 +22,7 @@ def send_email(info, email, files):
 	
 	for f in files or []:
 		with open(f, "rb") as fil:
-			messagd.attach(MIMEApplication(fil.read(), Content_Disposition='attachment; filename="%s"' % f))
+			message.attach(MIMEApplication(fil.read(), Content_Disposition='attachment; filename="%s"' % f))
 		#endwith
 	#endfor
 
