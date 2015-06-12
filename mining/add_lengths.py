@@ -25,7 +25,7 @@ while line:
 		#endwhile
 		sequence = sequence.replace('\n', '')
 		temp_out.write(line[:-1] + " length=" + str(len(sequence)) + '\n')
-		temp_out.write(sequence)
+		temp_out.write(sequence + '\n')
 		line = seq_line
 	else:
 		line = input.readline()
