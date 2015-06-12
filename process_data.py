@@ -5,6 +5,7 @@ from os.path import basename
 import subprocess
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
+from email.mime.application import MIMEApplication
 from email.MIMEBase import MIMEBase
 from email.mime.text import MIMEText
 from email import Encoders
