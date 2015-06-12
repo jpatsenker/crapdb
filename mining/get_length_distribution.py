@@ -8,7 +8,7 @@ import subprocess
 #CMD ARGV 2 - Output File Name
 #CMD ARGV 3 - Bin Size in amino acids
 
-
+graphMe = "graph_ordered_pairs.py"
 
 
 #get histogram bin size
@@ -48,3 +48,8 @@ for key in lengths:
 	output.write(str(key*bin_size) + "," + str(lengths[key]) + "-")
 #endfor
 output.close()
+
+
+
+process_graph = subprocess.Popen(['python', graphMe, sys.argv[2])
+process_graph.wait()

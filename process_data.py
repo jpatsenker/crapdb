@@ -3,16 +3,30 @@ import io
 import os
 import subprocess
 import smtplib
+from email.MIMEMultipart import MIMEMultipart
+from email.MIMEBase import MIMEBase
+from email import Encoders
 
-def send_email(info, email):
+def send_email(info, email, files):
 	sender = 'noreply@kirschner.med.harvard.edu'
 	receivers = email
 
-	message = "From: CRAP DB <noreply@kirschner.med.harvard.edu> "+'\n' + "Subject: CRAP Score" + '\n' + info
+	message = MIMEMultipart()
+	message['Subject'] = "CRAP Score"
+	message['From'] = "CRAP DB <noreply@kirschner.med.harvard.edu>"
+
+	body = MIMEText(info)
+	message.attach(body)
+	
+	for f in files or []:
+		with open(f, "rb") as fil:
+			msg.attach(MIMEApplication(fil.read(), Content_Disposition='attachment; filename="%s"' % basename(f)))
+		#endwith
+	#endfor
 
 	try:
 		smtpObj = smtplib.SMTP('localhost')
-		smtpObj.sendmail(sender, receivers, message)
+		smtpObj.sendmail(sender, receivers, message.as_string)
 		print "Successfully sent email"
 	except SMTPException:
 		print "Error: unable to send email"
@@ -68,10 +82,14 @@ except OSError:
 #THE OUTSTRING
 outstr = "Fasta is in proper format \n"
 
+#FILES TO BE ATTACHED
+outfiles = []
+
 
 #TOOLS
 addLengths = 'add_lengths.py'
 getLongShort = 'get_longest_and_shortest.py'
+getLenDist = 'get_length_distribution.py'
 
 
 
@@ -91,6 +109,16 @@ long_short =  input_file[:input_file.rfind('.')] + '_long_short' + input_file[in
 
 process_longShort = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getLongShort + ' ../' + file_with_lengths + ' ../' + long_short])
 
+
+#GET LENGTH DISTRIBUTION
+
+len_dist = 'tmp' + input_file[input_file.rfind('/'):] + '.hist'
+
+process_lenDistribution = subprocress.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getLenDist + ' ' + file_with_lengths + ' ' + len_dist + ' 100'])
+
+
+#PULLING ANALYSIS
+
 process_longShort.wait()
 
 with open('../' + long_short) as stream_long_short:
@@ -98,5 +126,10 @@ with open('../' + long_short) as stream_long_short:
 #endwith
 
 
+process_lenDistribution.wait()
+outfiles.append(len_dist + '.png')
+
+
+
 #SEND EMAIL WITH RESULTS
-send_email(outstr, mail_address)
+send_email(outstr, mail_address, outfiles)
