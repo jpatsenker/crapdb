@@ -25,7 +25,6 @@ for x in xs:
 	ys.append(d[x])
 #endfor
 
-xs.insert(0, 0)
 
 X = np.arange(len(xs))
 pl.bar(X, ys, align='edge', width=1)
