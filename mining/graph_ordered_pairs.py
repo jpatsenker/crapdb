@@ -18,13 +18,17 @@ for pair in tmp:
 	d[int(p[0])]=int(p[1])
 #endfor
 
-pairs = sorted(d.items(), key = lambda t: t[1])
+xs = sorted(d)
+ys = []
+for x in xs:
+	ys[] = d[x]
+#endfor
 
 
-X = np.arange(len(pairs))
-pl.bar(X, pairs.values(), align='center', width=0.5)
-pl.xticks(X, pairs.keys())
-ymax = max(pairs.values()) + 1
+X = np.arange(len(xs))
+pl.bar(X, ys, align='center', width=0.5)
+pl.xticks(X, xs)
+ymax = max(ys) + 1
 pl.ylim(0, ymax)
 pl.show()
 
