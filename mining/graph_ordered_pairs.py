@@ -2,8 +2,6 @@ import numpy as np
 import pylab as pl
 import sys
 
-dakjs;a
-
 file_in = open(sys.argv[1], "r")
 
 d = {}
