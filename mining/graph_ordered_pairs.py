@@ -18,7 +18,7 @@ for pair in tmp:
 	pairs[int(p[0])]=int(p[1])
 #endfor
 
-X = np.arrange(len(pairs))
+X = np.arange(len(pairs))
 pl.bar(X, pairs.values(), align='center', width=0.5)
 pl.xticks(X, pairs.keys())
 ymax = max(pairs.values()) + 1
