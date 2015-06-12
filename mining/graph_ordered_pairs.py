@@ -26,13 +26,15 @@ for x in xs:
 
 
 X = np.arange(len(xs))
-pl.bar(X, ys, align='center', width=0.5)
+pl.bar(X, ys, align='center', width=1)
 pl.xticks(X, xs)
 ymax = max(ys) + 1
 pl.ylim(0, ymax)
 pl.show()
 
 
+
+##OLD PLOTLY CODE DOESN"T WORK ON ORCHESTRA
 #import plotly.plotly as py
 #from plotly.graph_objs import *
 #import io
