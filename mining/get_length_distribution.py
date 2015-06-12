@@ -12,7 +12,7 @@ import subprocess
 
 
 #get histogram bin size
-bin_size
+bin_size = 0
 try:
 	bin_size = int(sys.argv[3])
 except ValueError:
