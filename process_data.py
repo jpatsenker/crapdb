@@ -54,8 +54,8 @@ checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[inpu
 
 
 
-clear_errors = subprocess.Popen(['>', 'tmp/fasta_errors.txt'])
-clear_errors.wait()
+#clear_errors = subprocess.Popen(['>', 'tmp/fasta_errors.txt'])
+#clear_errors.wait()
 
 
 
