@@ -54,17 +54,17 @@ checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[inpu
 
 
 
-clear_errors = subprocess.Popen(['>', 'tmp/fasta_errors.txt'])
+clear_errors = subprocess.Popen(['>', 'tmp/fasta_errors.txt;', 'chmod', '777', 'tmp/fasta_errors.txt'])
 clear_errors.wait()
 
 
 
 #PERFORM A FASTA CHECK
-print './run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker +' '+ input_file +' 0 2>tmp/fasta_errors.txt'
+#print './run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker +' '+ input_file +' 0 2>tmp/fasta_errors.txt'
 
 
 
-process_fastaCheck = subprocess.Popen(['/bin/bash', '-c', './run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker +' '+ input_file +' 0 2>tmp/fasta_errors.txt'])
+process_fastaCheck = subprocess.Popen(['/bin/bash', '-c', './run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/fasta_errors.txt perl ' + fastaChecker +' '+ input_file +' 0 2>tmp/errors.txt'])
 
 
 process_fastaCheck.wait() #wait for fasta to finish before continuing
