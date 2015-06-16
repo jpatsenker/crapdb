@@ -72,7 +72,7 @@ with open('tmp/errors.txt', "r") as fastaErrors:
 	if fastaErrors.readline():
 		fastaErrors.seek(0,0)
 		errorStr = fastaErrors.read()
-		send_email("Fasta file improperly formatted: \n" + errorStr, mail_address);
+		send_email("Fasta file improperly formatted: \n" + errorStr, mail_address, []);
 		sys.exit(0);
 	#endif
 #endwith
