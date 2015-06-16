@@ -135,7 +135,6 @@ process_lenDistribution = subprocess.Popen(['/bin/sh', '-c', '../run_with_profil
 
 too_s_too_l =  input_file[:input_file.rfind('.')] + '_bad_length' + input_file[input_file.rfind('.'):]
 
-print '../run_with_profile.sh -q short -K -W 1 python ' + getLenDist + ' ../' + file_with_lengths + ' ' + too_s_too_l + ' ' + str(too_short) + ' ' + str(too_long)
 
 process_badLength = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getTooLongTooShort + ' ../' + file_with_lengths + ' ' + too_s_too_l + ' ' + str(too_short) + ' ' + str(too_long)])
 
