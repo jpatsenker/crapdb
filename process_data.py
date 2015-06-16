@@ -132,7 +132,7 @@ process_lenDistribution = subprocess.Popen(['/bin/sh', '-c', '../run_with_profil
 
 #GET SEQUENCES THAT ARE TOO SHORT AND TOO LONG
 
-too_s_too_l =  input_file[:input_file.rfind('.')] + '_bad_lenth' + input_file[input_file.rfind('.'):]
+too_s_too_l =  input_file[:input_file.rfind('.')] + '_bad_length' + input_file[input_file.rfind('.'):]
 
 
 process_badLength = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getLenDist + ' ../' + file_with_lengths + ' ' + too_s_too_l + ' '])
@@ -147,7 +147,7 @@ process_badLength = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -
 #LONGEST?SHORTEST
 process_longShort.wait()
 
-with open('../' + long_short) as stream_long_short:
+with open('../' + long_short, "r") as stream_long_short:
 	outstr += '\n' + stream_long_short.read()
 #endwith
 
@@ -155,7 +155,7 @@ with open('../' + long_short) as stream_long_short:
 #TOO LONG TOO SHORT
 process_badLength.wait()
 
-with open('../' + too_s_too_l) as stream_too_s_too_l:
+with open('../' + too_s_too_l, "r") as stream_too_s_too_l:
 	outstr += '\n' + stream_too_s_too_l.read()
 #endwith
 

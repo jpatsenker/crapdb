@@ -44,9 +44,9 @@ while line:
 			too_short.append(line)
 		elif l > highlim:
 			too_long.append(line)
+		#endif
 	#endif
-#endif
-line = input.readline()
+	line = input.readline()
 #endwhile
 input.close()
 
