@@ -102,6 +102,7 @@ addLengths = 'add_lengths.py'
 getLongShort = 'get_longest_and_shortest.py'
 getLenDist = 'get_length_distribution.py'
 getTooLongTooShort = 'get_too_long_too_short.py'
+getSimpleStats = 'get_simple_stats.py'
 graphMe = 'graph_ordered_pairs.py'
 
 
@@ -135,16 +136,30 @@ process_lenDistribution = subprocess.Popen(['/bin/sh', '-c', '../run_with_profil
 
 too_s_too_l =  input_file[:input_file.rfind('.')] + '_bad_length' + input_file[input_file.rfind('.'):]
 
-#print '../run_with_profile.sh -q short -K -W 1 python ' + getTooLongTooShort + ' ../' + file_with_lengths + ' ' + too_s_too_l + ' ' + str(too_short) + ' ' + str(too_long)
 
 process_badLength = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getTooLongTooShort + ' ../' + file_with_lengths + ' ../' + too_s_too_l + ' ' + str(too_short) + ' ' + str(too_long)])
 
+#JUST SOME SIMPLE STATS
+
+simple_stats =  input_file + '.stat'
+
+
+process_simple = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getSimpleStats + ' ../' + file_with_lengths + ' ../' + simple_stats])
 
 
 
 
-#-------PULLING ANALYSIS
 
+#-------PULLING ANALYSIS-------
+
+
+#PROCESS SIMPLE
+
+process_simple.wait()
+
+with open('../' + simple_stats, "r") as stream_simp:
+	outstr += '\n' + stream_simp.read()
+#endwith
 
 #LONGEST?SHORTEST
 process_longShort.wait()

@@ -58,6 +58,4 @@ for line in linesNoM:
 	output.write(line)
 #endfor
 
-
-
 output.close()
