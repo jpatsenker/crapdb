@@ -54,21 +54,23 @@ checked_file = input_file[:input_file.rfind('.')] + '_checked' + input_file[inpu
 
 
 
-
+clear_errors = subprocess.Popen(['rm', 'tmp/fasta_errors.txt'])
+clear_errors.wait()
 
 
 
 #PERFORM A FASTA CHECK
 #print '. /opt/lsf/conf/profile.lsf; bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0'
 #sys.exit(0)
-process_fastaCheck = subprocess.Popen(['/bin/bash', '-c', './run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker +' '+ input_file +' 0'])
+
+process_fastaCheck = subprocess.Popen(['/bin/bash', '-c', './run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker +' '+ input_file +' 0 2>tmp/fasta_errors.txt'])
 
 
 process_fastaCheck.wait() #wait for fasta to finish before continuing
 
 
 #CHECK IF ITS OK TO CONTINUE
-with open('tmp/errors.txt', "r") as fastaErrors:
+with open('tmp/fasta_errors.txt', "r") as fastaErrors:
 	if fastaErrors.readline():
 		fastaErrors.seek(0,0)
 		errorStr = fastaErrors.read()
