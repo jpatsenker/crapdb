@@ -60,8 +60,9 @@ clear_errors.wait()
 
 
 #PERFORM A FASTA CHECK
-#print '. /opt/lsf/conf/profile.lsf; bsub -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker + ' ' + input_file + ' 0'
-#sys.exit(0)
+print './run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker +' '+ input_file +' 0 2>tmp/fasta_errors.txt'
+
+
 
 process_fastaCheck = subprocess.Popen(['/bin/bash', '-c', './run_with_profile.sh -q short -K -W 1 -o ' + checked_file + ' -e tmp/errors.txt perl ' + fastaChecker +' '+ input_file +' 0 2>tmp/fasta_errors.txt'])
 
