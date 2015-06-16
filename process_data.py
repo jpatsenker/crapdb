@@ -101,7 +101,7 @@ too_long = 30000
 addLengths = 'add_lengths.py'
 getLongShort = 'get_longest_and_shortest.py'
 getLenDist = 'get_length_distribution.py'
-getTooLongTooShort = 'g'
+getTooLongTooShort = 'get_too_long_too_short.py'
 graphMe = 'graph_ordered_pairs.py'
 
 
