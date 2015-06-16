@@ -91,6 +91,11 @@ outstr = "Fasta is in proper format \n"
 #FILES TO BE ATTACHED
 outfiles = []
 
+#CONSTANTS
+
+too_short = 30
+too_long = 30000
+
 
 #TOOLS
 addLengths = 'add_lengths.py'
@@ -125,8 +130,21 @@ len_dist = 'tmp' + input_file[input_file.rfind('/'):] + '.hist'
 process_lenDistribution = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getLenDist + ' ../' + file_with_lengths + ' ' + len_dist + ' 100'])
 
 
-#PULLING ANALYSIS
+#GET SEQUENCES THAT ARE TOO SHORT AND TOO LONG
 
+too_s_too_l =  input_file[:input_file.rfind('.')] + '_bad_lenth' + input_file[input_file.rfind('.'):]
+
+
+process_badLength = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getLenDist + ' ../' + file_with_lengths + ' ' + too_s_too_l + ' '])
+
+
+
+
+
+#-------PULLING ANALYSIS
+
+
+#LONGEST?SHORTEST
 process_longShort.wait()
 
 with open('../' + long_short) as stream_long_short:
@@ -134,12 +152,21 @@ with open('../' + long_short) as stream_long_short:
 #endwith
 
 
+#TOO LONG TOO SHORT
+process_badLength.wait()
+
+with open('../' + too_s_too_l) as stream_too_s_too_l:
+	outstr += '\n' + stream_too_s_too_l.read()
+#endwith
+
+
+
+#WAIT FOR LENGTH DIST. TO FINISH
 process_lenDistribution.wait()
+
+#GRAPHIT
 process_graph = subprocess.Popen(['python', graphMe, len_dist], stderr=open("err.log", "w"))
 process_graph.wait()
-
-
-
 outfiles.append(len_dist + '.png')
 
 
