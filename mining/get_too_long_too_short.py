@@ -51,14 +51,14 @@ while line:
 input.close()
 
 
-output.write("Sequences that are too short (" + len(too_short) + ": ")
+output.write("Sequences that are too short (" + str(len(too_short)) + ": ")
 
 #WRITE TO FILE
 for short in too_short:
 	output.write(short)
 #endfor
 
-output.write("Sequences that are too long (" + len(too_long) + ": ")
+output.write("Sequences that are too long (" + str(len(too_long)) + ": ")
 
 #WRITE TO FILE
 for long in too_long:
