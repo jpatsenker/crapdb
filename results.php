@@ -16,7 +16,7 @@
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){          
                 echo '<p style="color:#FF0000"> Error Moving File </p>';
             }else{
-                #echo 'python process_data.py ' . $target_file . ' ' . $email;
+                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes", 'From: "CRAP DB" <noreply@kirschner.med.harvard.edu>');
                 echo "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes";
                 exec('python process_data.py ' . $target_file . ' ' . $email . ' > /dev/null 2>&1 &');
                 

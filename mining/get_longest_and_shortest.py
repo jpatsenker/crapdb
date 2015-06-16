@@ -8,7 +8,7 @@ def get_longest(stream):
 	
 	stream.seek(0,0)
 	
-	lstring = 'Longest Sequence: '
+	lstring = 'Longest Sequence: \n'
 
 	line = stream.readline()
 
@@ -43,7 +43,7 @@ def get_shortest(stream):
 	
 	stream.seek(0,0)
 	
-	sstring = 'Shortest Sequence: '
+	sstring = 'Shortest Sequence: \n'
 	
 	line = stream.readline()
 	
