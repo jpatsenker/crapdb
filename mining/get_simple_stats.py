@@ -25,7 +25,7 @@ linesNoM = []
 
 while line:
 	if line[0]=='>':
-		numSeq++
+		numSeq+=1
 
 	#endif
 	sequence = input.readline()
