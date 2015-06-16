@@ -101,7 +101,7 @@ too_long = 30000
 addLengths = 'add_lengths.py'
 getLongShort = 'get_longest_and_shortest.py'
 getLenDist = 'get_length_distribution.py'
-getTooLongTooShort = 'get_too_long_too_short.py'
+getTooLongTooShort = 'g'
 graphMe = 'graph_ordered_pairs.py'
 
 
@@ -135,6 +135,7 @@ process_lenDistribution = subprocess.Popen(['/bin/sh', '-c', '../run_with_profil
 
 too_s_too_l =  input_file[:input_file.rfind('.')] + '_bad_length' + input_file[input_file.rfind('.'):]
 
+print '../run_with_profile.sh -q short -K -W 1 python ' + getTooLongTooShort + ' ../' + file_with_lengths + ' ' + too_s_too_l + ' ' + str(too_short) + ' ' + str(too_long)
 
 process_badLength = subprocess.Popen(['/bin/sh', '-c', '../run_with_profile.sh -q short -K -W 1 python ' + getTooLongTooShort + ' ../' + file_with_lengths + ' ' + too_s_too_l + ' ' + str(too_short) + ' ' + str(too_long)])
 
