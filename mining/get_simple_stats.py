@@ -1,61 +1,50 @@
 import sys
-import io
-import os
-import subprocess
 
 
-#CMD ARGV 1 - Input File Name
-#CMD ARGV 2 - Output File Name
+# CMD ARGV 1 - Input File Name
+# CMD ARGV 2 - Output File Name
 
 
 
 
-#Open file streams
-input = open(sys.argv[1], "r")
-output = open(sys.argv[2], "w")
+# Open file streams
+input_file_stream = open(sys.argv[1], "r")
+output_file_stream = open(sys.argv[2], "w")
 
-line = input.readline()
+line = input_file_stream.readline()
 
 numSeq = 0
 
 linesWithX = []
 linesNoM = []
 
-#LOOP OVER INPUT FILE, AND READ ALL LENGTHS, PUTTING IN PROPER BIN
+# LOOP OVER INPUT FILE, AND READ ALL LENGTHS, PUTTING IN PROPER BIN
 
 while line:
-	if line[0]=='>':
-		numSeq+=1
+    if line[0] == '>':
+        numSeq += 1
 
-	#endif
-	sequence = input.readline()
-	if sequence:
-		if 'X' in sequence:
-			linesWithX.append(line)
-		#endif
-		if sequence[0] != 'M':
-			linesNoM.append(line)
-		#endif
-	#endif
-	line = input.readline()
-#endwhile
-input.close()
+    sequence = input_file_stream.readline()
+    if sequence:
+        if 'X' in sequence:
+            linesWithX.append(line)
+        if sequence[0] != 'M':
+            linesNoM.append(line)
+    line = input_file_stream.readline()
+input_file_stream.close()
 
+output_file_stream.write("Total Number of Sequences: " + str(numSeq) + "\n")
 
-output.write("Total Number of Sequences: " + str(numSeq) + "\n")
+output_file_stream.write("Sequences with X's (" + str(len(linesWithX)) + "):" + '\n')
 
-output.write("Sequences with X's (" + str(len(linesWithX)) + "):" + '\n')
-
-#WRITE TO FILE
+# WRITE TO FILE
 for line in linesWithX:
-	output.write(line)
-#endfor
+    output_file_stream.write(line)
 
-output.write("Sequences that don't start with M (" + str(len(linesNoM)) + "):" + '\n')
+output_file_stream.write("Sequences that don't start with M (" + str(len(linesNoM)) + "):" + '\n')
 
-#WRITE TO FILE
+# WRITE TO FILE
 for line in linesNoM:
-	output.write(line)
-#endfor
+    output_file_stream.write(line)
 
-output.close()
+output_file_stream.close()

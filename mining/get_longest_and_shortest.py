@@ -1,79 +1,63 @@
 import sys
-import os
-import io
 
-
-#Get longest sequence and put into displayable string
+# Get longest sequence and put into displayable string
 def get_longest(stream):
-	
-	stream.seek(0,0)
-	
-	lstring = 'Longest Sequence: \n'
+    stream.seek(0, 0)
 
-	line = stream.readline()
+    lstring = 'Longest Sequence: \n'
 
-	max = 0
-	
-	#FIND MAXIMUM
-	while line:
-		if line[0] == '>' and max < int(line[line.rfind("length=")+7:-1]):
-			max = int(line[line.rfind("length=")+7:-1])
-		#endif
-		line = stream.readline()
-	#endwhile
+    line = stream.readline()
 
-	#SEEK BEGGINING
-	stream.seek(0,0)
-	
-	#GET MORE INFO ON IT
-	line = stream.readline()
-	while line:
-		if line[0] == '>' and int(line[line.rfind("length=")+7:-1]) == max :
-			lstring += line
-			break
-		#endif
-		line = stream.readline()
-	#endwhile
+    maximum = 0
 
-	return lstring
-#enddef
+    # FIND MAXIMUM
+    while line:
+        if line[0] == '>' and maximum < int(line[line.rfind("length=") + 7:-1]):
+            maximum = int(line[line.rfind("length=") + 7:-1])
+        line = stream.readline()
 
-#Get shortest sequence and put into displayable string
+    # SEEK BEGINNING
+    stream.seek(0, 0)
+
+    # GET MORE INFO ON IT
+    line = stream.readline()
+    while line:
+        if line[0] == '>' and int(line[line.rfind("length=") + 7:-1]) == maximum:
+            lstring += line
+            break
+        line = stream.readline()
+
+    return lstring
+
+
+# Get shortest sequence and put into displayable string
 def get_shortest(stream):
-	
-	stream.seek(0,0)
-	
-	sstring = 'Shortest Sequence: \n'
-	
-	line = stream.readline()
-	
-	min = sys.maxint
-	
-	#FIND MINIMUM
-	while line:
-		if line[0] == '>' and min > int(line[line.rfind("length=")+7:-1]):
-			min = int(line[line.rfind("length=")+7:-1])
-		#endif
-		line = stream.readline()
-	#endwhile
-	
-	#SEEK BEGGINING
-	stream.seek(0,0)
-	
-	#GET MORE INFO ON IT
-	line = stream.readline()
-	while line:
-		if line[0] == '>' and int(line[line.rfind("length=")+7:-1]) == min :
-			sstring += line
-			break
-		#endif
-		line = stream.readline()
-	#endwhile
+    stream.seek(0, 0)
 
-	return sstring
-#enddef
+    sstring = 'Shortest Sequence: \n'
 
+    line = stream.readline()
 
+    minimum = sys.maxint
+
+    # FIND MINIMUM
+    while line:
+        if line[0] == '>' and minimum > int(line[line.rfind("length=") + 7:-1]):
+            minimum = int(line[line.rfind("length=") + 7:-1])
+        line = stream.readline()
+
+    # SEEK BEGGINING
+    stream.seek(0, 0)
+
+    # GET MORE INFO ON IT
+    line = stream.readline()
+    while line:
+        if line[0] == '>' and int(line[line.rfind("length=") + 7:-1]) == minimum:
+            sstring += line
+            break
+        line = stream.readline()
+
+    return sstring
 
 
 input_file = sys.argv[1]
@@ -84,16 +68,14 @@ shortest = ''
 
 
 
-#INPUT
+# INPUT
 with open(input_file, "r") as stream_in:
-	longest = get_longest(stream_in)
-	shortest = get_shortest(stream_in)
-#endwith
+    longest = get_longest(stream_in)
+    shortest = get_shortest(stream_in)
 
 
 
-#OUTPUT
+# OUTPUT
 with open(output_file, "w") as stream_out:
-	stream_out.write(longest)
-	stream_out.write(shortest)
-#endwith
+    stream_out.write(longest)
+    stream_out.write(shortest)

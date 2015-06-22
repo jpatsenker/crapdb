@@ -1,4 +1,5 @@
 import matplotlib
+
 matplotlib.use('Agg')
 
 import numpy as np
@@ -12,19 +13,16 @@ d = {}
 line = file_in.readline()
 
 tmp = line.split('-')
-tmp.pop() #gets rid of \n char
+tmp.pop()  # gets rid of \n char
 
 for pair in tmp:
-	p = pair.split(',')
-	d[int(p[0])]=int(p[1])
-#endfor
+    p = pair.split(',')
+    d[int(p[0])] = int(p[1])
 
 xs = sorted(d)
 ys = []
 for x in xs:
-	ys.append(d[x])
-#endfor
-
+    ys.append(d[x])
 
 X = np.arange(len(xs))
 pl.bar(X, ys, align='edge', width=1)
