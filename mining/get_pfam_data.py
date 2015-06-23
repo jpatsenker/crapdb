@@ -50,7 +50,7 @@ with open(input_name, "r") as stream_input:
         if line[0] == ">":
             sequence = stream_input.readline()
             if sequence:
-                with open(tmp_dir + basename(input_name) + "_" + str(count), "a") as stream_tmp:
+                with open(tmp_dir + str(count) + "_" + basename(input_name), "a") as stream_tmp:
                     stream_tmp.write(line)
                     stream_tmp.write(sequence)
             else:
@@ -65,5 +65,5 @@ with open(input_name, "r") as stream_input:
         line = stream_input.readline()
 
 for fileNum in range(count):
-    run_pfam(tmp_dir + basename(input_name) + "_" + str(fileNum),
-             tmp_dir + "pfam_out_" + basename(input_name) + "_" + str(fileNum))
+    run_pfam(tmp_dir + str(count) + "_" +  basename(input_name),
+             tmp_dir + str(fileNum) + "_" + "pfam_out_" + basename(input_name))
