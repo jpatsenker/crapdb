@@ -16,7 +16,7 @@ pfam = "pfam_scan.pl"
 
 def run_pfam(input_file, output_file):
     process_pfam = subprocess.Popen(
-        ["/bin/bash", "-c", "./run_with_profile.sh " + pfam + "-fasta" + input_file + "-o" + output_file])
+        ["/bin/bash", "-c", "../run_with_profile.sh " + pfam + "-fasta" + input_file + "-o" + output_file])
     process_pfam.wait()
 
 
