@@ -15,9 +15,10 @@ pfam = "pfam_scan.pl"
 
 
 def run_pfam(input_file, output_file):
-    process_pfam = subprocess.Popen(
-        ["/bin/bash", "-c", "../run_with_profile.sh -q long -K -W 1 " + pfam + "-fasta" + input_file + "-o" + output_file])
-    process_pfam.wait()
+    # process_pfam = subprocess.Popen(
+    #     ["/bin/bash", "-c", "../run_with_profile.sh -q long -K -W 1 " + pfam + "-fasta" + input_file + "-o" + output_file])
+    # process_pfam.wait()
+    print "run"
 
 
 if len(sys.argv) < 3:
