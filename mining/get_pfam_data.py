@@ -65,5 +65,5 @@ with open(input_name, "r") as stream_input:
         line = stream_input.readline()
 
 for fileNum in range(count):
-    run_pfam(tmp_dir + str(count) + "_" +  basename(input_name),
+    run_pfam(tmp_dir + str(count) + "_" + basename(input_name),
              tmp_dir + str(fileNum) + "_" + "pfam_out_" + basename(input_name))
