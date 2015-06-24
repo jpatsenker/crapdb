@@ -34,4 +34,4 @@ poi = [.1, .2, .3, .4, .5, .6, .7, .8, .9]
 file_in = sys.argv[1]
 file_out = sys.argv[2]
 
-run_0j(file_in, file_out);
+run_0j(file_in, file_out)

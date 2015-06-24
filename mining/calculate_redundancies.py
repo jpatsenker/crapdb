@@ -1,6 +1,4 @@
 import sys
-import io
-import os
 import subprocess
 
 cdhit = "/opt/cd-hit/bin/cd-hit"  # orchestra
@@ -20,6 +18,7 @@ def count_non_redundant_seq(out_file):
         # endif
         line = out.readline()
     # endwhile
+    out.close()
     return nr
 
 
@@ -35,12 +34,12 @@ def count_non_redundant_seq(out_file):
 tholds = [.7, .75, .8, .85, .9, .95]
 file_in = sys.argv[1]
 file_out = sys.argv[2]
-fout = open("outputs/cdhit_out/" + file_out, "w")
+fout = open(file_out, "w")
 
 for i in range(len(tholds)):
-    p1 = cd_hit_run(file_in, "tmp/cdhit_out/out/" + file_out, tholds[i])
+    p1 = cd_hit_run(file_in, file_out, tholds[i])
     p1.wait()
-    result = count_non_redundant_seq("tmp/cdhit_out/out" + file_out)
+    result = count_non_redundant_seq(file_out)
 
     fout.write(tholds[i] + "," + str(result) + "-")
 # endfor
