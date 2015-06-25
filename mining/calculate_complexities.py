@@ -75,6 +75,6 @@ process_run_0j.wait()
 data = retrieve_points_of_interest(poi, file_in, "tmp/0j_out/" + os.path.basename(file_out))
 
 with open(file_out, "w") as stream_out:
-    for key, value in data:
+    for key, value in data.items():
         stream_out.write(key + "," + value + "-")
     stream_out.write("\n")
