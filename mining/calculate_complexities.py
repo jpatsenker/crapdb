@@ -25,28 +25,20 @@ def run_0j(input_name, output_name):
         return subprocess.Popen(["python", _0j, "-scores_only", input_name], stdout=out)
 
 
-def retrieve_points_of_interest(points, input_name, output_name):
+def retrieve_points_of_interest(points, output_name):
     compressed_lengths = []
     lengths = []
     with open(output_name, "r") as unparsed:
         line = unparsed.readline()
         while line:
             try:
-                compressed_lengths.append(int(line.split()[1]))
+                compressed_lengths.append(int(line.split()[1]) - int(line.split()[2]))
+                lengths.append(int(line.split())[1])
             except ValueError:
                 print "Incorrect Parse of 0j out file"
                 exit(1)
             line = unparsed.readline()
-    with open(input_name, "r") as stream_in:
-        line = stream_in.readline()
-        while line:
-            if line[0] == ">":
-                try:
-                    lengths.append(int(line[line.rfind("length=") + 7:-1]))
-                except ValueError:
-                    print "Incorrect Parse of lengths"
-                    exit(1)
-            line = stream_in.readline()
+
     compression_ratios = []
     for i in range(len(lengths)):
         compression_ratios.append(compressed_lengths[i] / lengths[i])
