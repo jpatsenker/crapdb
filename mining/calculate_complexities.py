@@ -45,6 +45,7 @@ def retrieve_points_of_interest(points, input_name, output_name):
                 except ValueError:
                     print "Incorrect Parse of lengths"
                     exit(1)
+            line = stream_in.readline()
     compression_ratios = []
     for i in range(len(lengths)):
         compression_ratios.append(compressed_lengths[i] / lengths[i])
