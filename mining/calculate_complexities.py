@@ -19,6 +19,7 @@ def perform_bin(range_list, num):
 
 
 def run_0j(input_name, output_name):
+    print "python " + _0j + " -scores_only " + input_name + " > " + output_name
     return subprocess.Popen(["python", _0j, "-scores_only", input_name, ">", output_name])
 
 
