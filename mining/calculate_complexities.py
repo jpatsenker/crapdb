@@ -66,7 +66,8 @@ poi = [.1, .2, .3, .4, .5, .6, .7, .8, .9]
 file_in = sys.argv[1]
 file_out = sys.argv[2]
 
-run_0j(file_in, "tmp/0j_out/" + os.path.basename(file_out))
+process_run_0j = run_0j(file_in, "tmp/0j_out/" + os.path.basename(file_out))
+process_run_0j.wait()
 data = retrieve_points_of_interest(poi, file_in, "tmp/0j_out/" + os.path.basename(file_out))
 
 with open(file_out, "w") as stream_out:
