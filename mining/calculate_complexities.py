@@ -58,7 +58,7 @@ def retrieve_points_of_interest(points, output_name):
 # Main:
 
 # points of interest (% compressability) in order to compute complexity points
-poi = [.1, .2, .3, .4, .5, .6, .7, .8, .9]
+poi = [.91, .92, .93, .94, .95, .96, .97, .98, .99, 1.00]
 
 # get file names as commandline arguments
 file_in = sys.argv[1]
