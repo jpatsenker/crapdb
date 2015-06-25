@@ -15,14 +15,9 @@ def count_non_redundant_seq(out_file):
     while line:
         if line[0] == '>':
             nr += 1
-        # endif
         line = out.readline()
-    # endwhile
     out.close()
     return nr
-
-
-
 
 
 # Main
@@ -42,6 +37,5 @@ for i in range(len(tholds)):
     result = count_non_redundant_seq(file_out)
 
     fout.write(tholds[i] + "," + str(result) + "-")
-# endfor
 
 fout.close()
