@@ -66,7 +66,7 @@ file_out = sys.argv[2]
 
 process_run_0j = run_0j(file_in, "tmp/0j_out/" + os.path.basename(file_out))
 process_run_0j.wait()
-data = retrieve_points_of_interest(poi, file_in, "tmp/0j_out/" + os.path.basename(file_out))
+data = retrieve_points_of_interest(poi, "tmp/0j_out/" + os.path.basename(file_out))
 
 with open(file_out, "w") as stream_out:
     for key, value in data.items():
