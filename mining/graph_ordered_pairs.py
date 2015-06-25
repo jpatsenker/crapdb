@@ -17,7 +17,7 @@ tmp.pop()  # gets rid of \n char
 
 for pair in tmp:
     p = pair.split(',')
-    d[int(p[0])] = int(p[1])
+    d[float(p[0])] = float(p[1])
 
 xs = sorted(d)
 ys = []
