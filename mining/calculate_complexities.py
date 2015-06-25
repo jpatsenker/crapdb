@@ -19,7 +19,7 @@ def perform_bin(range_list, num):
 
 
 def run_0j(input_name, output_name):
-    print "python " + _0j + " -scores_only " + input_name + " > " + output_name
+    # print "python " + _0j + " -scores_only " + input_name + " > " + output_name
     with open(output_name, "w") as out:
         return subprocess.Popen(["python", _0j, "-scores_only", input_name], stdout=out)
 
@@ -30,6 +30,7 @@ def retrieve_points_of_interest(points, input_name, output_name):
     with open(output_name, "r") as unparsed:
         line = unparsed.readline()
         while line:
+            print line[line.find("    ") + 1:line.find("    ", line.find("  "))] + "\n"
             try:
                 compressed_lengths.append(int(line[line.find("    ") + 1:line.find("    ", line.find("  "))]))
             except ValueError:
