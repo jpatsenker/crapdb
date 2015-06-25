@@ -76,5 +76,5 @@ data = retrieve_points_of_interest(poi, file_in, "tmp/0j_out/" + os.path.basenam
 
 with open(file_out, "w") as stream_out:
     for key, value in data.items():
-        stream_out.write(key + "," + value + "-")
+        stream_out.write(str(key) + "," + str(value) + "-")
     stream_out.write("\n")
