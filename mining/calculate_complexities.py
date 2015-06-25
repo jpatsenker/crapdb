@@ -33,7 +33,7 @@ def retrieve_points_of_interest(points, output_name):
         while line:
             try:
                 compressed_lengths.append(int(line.split()[1]) - int(line.split()[2]))
-                lengths.append(int(line.split())[1])
+                lengths.append(int(line.split()[1]))
             except ValueError:
                 print "Incorrect Parse of 0j out file"
                 exit(1)
