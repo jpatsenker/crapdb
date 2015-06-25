@@ -55,9 +55,9 @@ def retrieve_points_of_interest(points, input_name, output_name):
     for ratio in compression_ratios:
         bin_ratio = perform_bin(points, ratio)
         try:
-            binned_data[bin_ratio] += 1
+            binned_data[bin_ratio[1]] += 1
         except KeyError:
-            binned_data[bin_ratio] = 1
+            binned_data[bin_ratio[1]] = 1
 
     return binned_data
 
