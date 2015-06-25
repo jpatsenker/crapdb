@@ -30,9 +30,9 @@ def retrieve_points_of_interest(points, input_name, output_name):
     with open(output_name, "r") as unparsed:
         line = unparsed.readline()
         while line:
-            print line[line.find(9) + 1:line.find(9, line.find(9))] + "\n"
+            print line[line.find(chr(9)) + 1:line.find(chr(9), line.find(chr(9)))] + "\n"
             try:
-                compressed_lengths.append(int(line[line.find("    ") + 1:line.find("    ", line.find("  "))]))
+                compressed_lengths.append(int(line[line.find(chr(9)) + 1:line.find(chr(9), line.find(chr(9)))]))
             except ValueError:
                 print "Incorrect Parse of 0j out file"
                 exit(1)
