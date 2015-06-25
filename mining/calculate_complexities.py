@@ -41,7 +41,7 @@ def retrieve_points_of_interest(points, output_name):
 
     compression_ratios = []
     for i in range(len(lengths)):
-        compression_ratios.append(compressed_lengths[i] / lengths[i])
+        compression_ratios.append(float(compressed_lengths[i]) / float(lengths[i]))
 
     binned_data = {}
     for ratio in compression_ratios:
