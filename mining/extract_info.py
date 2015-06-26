@@ -16,16 +16,18 @@ with open("0j_info_better", "w") as write:
                 points = info.split("-")
                 for point in points:
                     opair = point.split(",")
+                    hello = 0
+                    hi = 0
                     try:
-                        x=float(opair[0])
-                        y=float(opair[1])
+                        hello=float(opair[0])
+                        hi=float(opair[1])
                     except ValueError:
                         print "NO!"
                         exit(1)
-                    my_info[x] = y
+                    my_info[hello] = hi
                 for q, p in my_info.items():
                     if q > .95:
                         final += p
                     sum += p
-                write.write(f + ": " + final + "/" + sum + "=" + float(final)/float(sum) + "\n")
+                write.write(f + ": " + str(final) + "/" + str(sum) + "=" + str(float(final)/float(sum)) + "\n")
             print "File " + f + "\n"
