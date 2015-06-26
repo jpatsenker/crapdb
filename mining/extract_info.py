@@ -1,6 +1,6 @@
 import os
 
-files = os.listdir("outputs/sample/0j_out/")
+files = os.listdir("outputs/0j_out/sample")
 
 with open("0j_info", "w") as write:
     for f in files:
