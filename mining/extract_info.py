@@ -13,6 +13,7 @@ with open("0j_info_better", "w") as write:
         if f != "empty_file_for_git":
             with open("outputs/0j_out/sample/" + f, "r") as stream:
                 info = stream.read()
+                info = info.replace("\n", "")
                 points = info.split("-")
                 for point in points:
                     opair = point.split(",")
