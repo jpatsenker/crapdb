@@ -70,8 +70,8 @@ data = retrieve_points_of_interest(poi, "tmp/0j_out/" + os.path.basename(file_ou
 
 with open(file_out, "w") as stream_out:
     for p in poi:
-        stream_out.write(str(p) + "," + str())
-
-    for key, value in data.items():
-        stream_out.write(str(key) + "," + str(value) + "-")
-    stream_out.write("\n")
+        try:
+            stream_out.write(str(p) + "," + str(data[p]) + "-")
+        except KeyError:
+            stream_out.write(str(p) + ",0-")
+        stream_out.write("\n")

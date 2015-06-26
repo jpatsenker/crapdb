@@ -1,5 +1,6 @@
 import sys
 import subprocess
+import os
 
 cdhit = "/opt/cd-hit/bin/cd-hit"  # orchestra
 
@@ -32,9 +33,9 @@ file_out = sys.argv[2]
 fout = open(file_out, "w")
 
 for i in range(len(tholds)):
-    p1 = cd_hit_run(file_in, file_out, tholds[i])
+    p1 = cd_hit_run(file_in, "tmp/cdhit_out/" + os.path.basename(file_out), tholds[i])
     p1.wait()
-    result = count_non_redundant_seq(file_out)
+    result = count_non_redundant_seq("tmp/cdhit_out/" + os.path.basename(file_out))
 
     fout.write(tholds[i] + "," + str(result) + "-")
 
