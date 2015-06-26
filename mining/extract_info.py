@@ -20,7 +20,7 @@ with open("0j_info_better", "w") as write:
                     hello = 0
                     hi = 0
                     try:
-                        print hello + " " + hi + "\n"
+                        print opair[2] + " " + opair[1] + "\n"
                         hello=float(opair[0])
                         hi=float(opair[1])
                     except ValueError:
