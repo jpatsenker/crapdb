@@ -9,7 +9,7 @@ with open("0j_info", "w") as write:
                 info = stream.read()
                 try:
                     val = int(info[info.find(".95,")+4:info.find("-",info.find(".95,"))])
-                    write.write(f[0:5] + ": " + val)
+                    write.write(f[0:5] + ": " + str(val))
                 except ValueError:
                     print "NO!"
                     exit(1)
