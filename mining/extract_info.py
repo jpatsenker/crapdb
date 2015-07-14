@@ -9,7 +9,7 @@ with open("0j_info_better", "w") as write:
     for f in files:
         my_info = {}
         final = 0
-        sum = 0
+        total = 0
         if f != "empty_file_for_git":
             with open("outputs/0j_out/sample/" + f, "r") as stream:
                 info = stream.read()
@@ -30,6 +30,6 @@ with open("0j_info_better", "w") as write:
                 for q, p in my_info.items():
                     if q > .95:
                         final += p
-                    sum += p
-                write.write(f + ": " + str(final) + "/" + str(sum) + "=" + str(float(final)/float(sum)) + "\n")
+                    total += p
+                write.write(f + ": " + str(final) + "/" + str(total) + "=" + str(float(final)/float(total)) + "\n")
             print "File " + f + "\n"
