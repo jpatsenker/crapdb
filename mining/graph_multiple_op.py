@@ -8,7 +8,7 @@ import sys
 
 streams = []
 wid = 1/(len(sys.argv)-1)
-print wid
+print str(len(sys.argv)-1)
 
 for arg in sys.argv[1:]:
     #print "Using " + arg

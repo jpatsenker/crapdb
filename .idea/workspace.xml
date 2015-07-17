@@ -37,8 +37,8 @@
       <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14578834">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.16198704">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -409,18 +409,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00010" summary="complexity">
-      <created>1435252161136</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1435252161136</updated>
-    </task>
-    <task id="LOCAL-00011" summary="complexity">
-      <created>1435252246818</created>
-      <option name="number" value="00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1435252246818</updated>
-    </task>
     <task id="LOCAL-00012" summary="complexity">
       <created>1435252422037</created>
       <option name="number" value="00012" />
@@ -703,7 +691,19 @@
       <option name="project" value="LOCAL" />
       <updated>1437154877159</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="complexity">
+      <created>1437155122682</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1437155122683</updated>
+    </task>
+    <task id="LOCAL-00060" summary="complexity">
+      <created>1437155221604</created>
+      <option name="number" value="00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1437155221604</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1089,8 +1089,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14578834">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.16198704">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
           <folding />
         </state>
       </provider>
