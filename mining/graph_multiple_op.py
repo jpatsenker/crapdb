@@ -34,6 +34,7 @@ for i in range(len(streams)):
     #print tmp
 
     for pair in tmp:
+        print pair
         p = pair.split(',')
         try:
             d[float(p[0])] = float(p[1])
