@@ -9,7 +9,7 @@ import sys
 streams = []
 wid = 1
 
-for arg in sys.argv:
+for arg in sys.argv[1:]:
     print "Using " + arg
     streams.append(open(arg, "r"))
 
