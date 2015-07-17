@@ -14,6 +14,9 @@ for arg in sys.argv[1:]:
     streams.append(open(arg, "r"))
 
 for i in range(len(streams)):
+
+    print "Working " + sys.argv[i+1]
+
     d = {}
 
     line = streams[i].readline()
