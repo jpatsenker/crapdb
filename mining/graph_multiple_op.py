@@ -44,7 +44,7 @@ for i in range(len(streams)):
 
     allys.extend(ys)
     X = np.arange(len(xs))
-    pl.bar(X+wid*i, ys, align='edge', width=wid, color=('a' + i))
+    pl.bar(X+wid*i, ys, align='edge', width=wid, color=i)
     pl.xticks(X, xs, rotation='vertical')
     streams[i].close()
 

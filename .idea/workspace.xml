@@ -37,10 +37,10 @@
       <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7451404">
-              <caret line="46" column="64" selection-start-line="46" selection-start-column="64" selection-end-line="46" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.76133907">
+              <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
               <folding>
-                <marker date="1437164241000" expanded="true" signature="146:220" placeholder="..." />
+                <marker date="1437164333000" expanded="true" signature="146:220" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -425,12 +425,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00020" summary="complexity">
-      <created>1435257853756</created>
-      <option name="number" value="00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1435257853756</updated>
-    </task>
     <task id="LOCAL-00021" summary="complexity">
       <created>1435257991139</created>
       <option name="number" value="00021" />
@@ -719,7 +713,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437163739510</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="complexity">
+      <created>1437164249345</created>
+      <option name="number" value="00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1437164249345</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -785,7 +785,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding>
-            <marker date="1437164241000" expanded="true" signature="146:220" placeholder="..." />
+            <marker date="1437164333000" expanded="true" signature="146:220" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1107,10 +1107,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7451404">
-          <caret line="46" column="64" selection-start-line="46" selection-start-column="64" selection-end-line="46" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.76133907">
+          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
           <folding>
-            <marker date="1437164241000" expanded="true" signature="146:220" placeholder="..." />
+            <marker date="1437164333000" expanded="true" signature="146:220" placeholder="..." />
           </folding>
         </state>
       </provider>
