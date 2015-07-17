@@ -37,8 +37,8 @@
       <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4049676">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.14578834">
+              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -409,12 +409,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00008" summary="pfam">
-      <created>1435098226681</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1435098226681</updated>
-    </task>
     <task id="LOCAL-00009" summary="stuff">
       <created>1435185297730</created>
       <option name="number" value="00009" />
@@ -703,7 +697,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437154413517</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="complexity">
+      <created>1437154475897</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1437154475897</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1089,8 +1089,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4049676">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.14578834">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
           <folding />
         </state>
       </provider>

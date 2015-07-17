@@ -7,7 +7,7 @@ import pylab as pl
 import sys
 
 streams = []
-wid = 1
+wid = .05
 
 for arg in sys.argv[1:]:
     print "Using " + arg
