@@ -10,6 +10,7 @@ streams = []
 wid = 1
 
 for arg in sys.argv:
+    print "Using " + arg
     streams.append(open(arg, "r"))
 
 for i in range(len(streams)):
