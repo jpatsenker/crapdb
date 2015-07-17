@@ -6,6 +6,8 @@ import numpy as np
 import pylab as pl
 import sys
 
+cols = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'm']
+
 streams = []
 wid = float(.9)/float(len(sys.argv)-1)
 # print str(len(sys.argv)-1)
@@ -44,7 +46,7 @@ for i in range(len(streams)):
 
     allys.extend(ys)
     X = np.arange(len(xs))
-    pl.bar(X+wid*i, ys, align='edge', width=wid, color=i)
+    pl.bar(X+wid*i, ys, align='edge', width=wid, color=cols[i%len(cols)])
     pl.xticks(X, xs, rotation='vertical')
     streams[i].close()
 
