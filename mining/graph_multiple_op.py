@@ -54,6 +54,6 @@ for i in range(len(streams)):
 
 
 ymax = max(allys) + 1
-pl.ylim(0, ymax)
+pl.ylim(0, .4)
 pl.savefig("multi.png")
 pl.show()
