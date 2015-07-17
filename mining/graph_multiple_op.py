@@ -7,10 +7,10 @@ import pylab as pl
 import sys
 
 streams = []
-wid = 1/(len(sys.argv)-1)
+wid = float(1)/float(len(sys.argv)-1)
 print str(len(sys.argv)-1)
 print str(1/len(sys.argv)-1)
-print wid
+print str(wid)
 
 for arg in sys.argv[1:]:
     #print "Using " + arg
