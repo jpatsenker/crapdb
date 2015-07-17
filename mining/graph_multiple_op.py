@@ -7,10 +7,10 @@ import pylab as pl
 import sys
 
 streams = []
-wid = float(1)/float(len(sys.argv)-1)
-print str(len(sys.argv)-1)
-print str(1/len(sys.argv)-1)
-print str(wid)
+wid = float(.9)/float(len(sys.argv)-1)
+# print str(len(sys.argv)-1)
+# print str(1/len(sys.argv)-1)
+# print str(wid)
 
 allys = []
 
