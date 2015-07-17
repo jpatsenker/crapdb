@@ -19,7 +19,7 @@ for i in range(len(streams)):
 
     d = {}
 
-    line = streams[i].readline()
+    line = streams[i].read()
 
     tmp = line.split('-')
     tmp.pop()  # gets rid of \n char
