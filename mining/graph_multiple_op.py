@@ -8,14 +8,15 @@ import sys
 
 streams = []
 wid = 1/(len(sys.argv)-1)
+print wid
 
 for arg in sys.argv[1:]:
-    print "Using " + arg
+    #print "Using " + arg
     streams.append(open(arg, "r"))
 
 for i in range(len(streams)):
 
-    print "Working " + sys.argv[i+1]
+    #print "Working " + sys.argv[i+1]
 
     d = {}
 
@@ -23,7 +24,7 @@ for i in range(len(streams)):
 
     tmp = line.split('-')
     tmp.pop()  # gets rid of \n char
-    print tmp
+    #print tmp
 
     for pair in tmp:
         p = pair.split(',')
