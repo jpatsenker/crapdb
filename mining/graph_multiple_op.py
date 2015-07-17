@@ -51,10 +51,7 @@ for i in range(len(streams)):
     pl.xticks(X, xs, rotation='vertical')
     streams[i].close()
 
-    patch = matplotlib.patches.Patch(color=cols[i%len(cols)], label=sys.argv[i+1])
-    patches.append(patch)
 
-pl.legend(handles=patches)
 ymax = max(allys) + 1
 pl.ylim(0, ymax)
 pl.savefig("multi.png")
