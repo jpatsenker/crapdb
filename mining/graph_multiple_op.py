@@ -23,9 +23,9 @@ for i in range(len(streams)):
 
     tmp = line.split('-')
     tmp.pop()  # gets rid of \n char
+    print tmp
 
     for pair in tmp:
-        print pair
         p = pair.split(',')
         d[float(p[0])] = float(p[1])
 
