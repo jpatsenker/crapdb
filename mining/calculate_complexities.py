@@ -58,7 +58,7 @@ def retrieve_points_of_interest(points, output_name):
 # Main:
 
 # points of interest (% compressability) in order to compute complexity points
-poi = [.91, .92, .93, .94, .95, .96, .97, .98, .99, 1.00]
+poi = [.80, .81, .82, .83, .84, .85, .86, .87, .88, .89, .90, .91, .92, .93, .94, .95, .96, .97, .98, .99, 1.00]
 
 # get file names as commandline arguments
 file_in = sys.argv[1]
@@ -71,7 +71,7 @@ data = retrieve_points_of_interest(poi, "tmp/0j_out/" + os.path.basename(file_ou
 with open(file_out, "w") as stream_out:
     for p in poi:
         try:
-            stream_out.write(str(p) + "," + str(data[p]) + "-")
+            stream_out.write(str(p) + "," + str(data[p]/sum(data.values())) + "-")
         except KeyError:
             stream_out.write(str(p) + ",0-")
         stream_out.write("\n")
