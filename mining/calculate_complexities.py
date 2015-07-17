@@ -55,6 +55,13 @@ def retrieve_points_of_interest(points, output_name):
 
     return binned_data
 
+def get_total_num_seq(stream_infile):
+    num = 0
+    line = stream_infile.readline()
+    while line:
+        num += 1
+        line = stream_infile.readline()
+    return num/2
 # Main:
 
 # points of interest (% compressability) in order to compute complexity points
@@ -64,6 +71,11 @@ poi = [.80, .81, .82, .83, .84, .85, .86, .87, .88, .89, .90, .91, .92, .93, .94
 file_in = sys.argv[1]
 file_out = sys.argv[2]
 
+total = 0
+
+with open(file_in, "r") as stream_in:
+    total = get_total_num_seq(stream_in)
+
 process_run_0j = run_0j(file_in, "tmp/0j_out/" + os.path.basename(file_out))
 process_run_0j.wait()
 data = retrieve_points_of_interest(poi, "tmp/0j_out/" + os.path.basename(file_out))
@@ -71,7 +83,7 @@ data = retrieve_points_of_interest(poi, "tmp/0j_out/" + os.path.basename(file_ou
 with open(file_out, "w") as stream_out:
     for p in poi:
         try:
-            stream_out.write(str(p) + "," + str(data[p]/sum(data.values())) + "-")
+            stream_out.write(str(p) + "," + str(float(data[p])/float(total)) + "-")
         except KeyError:
             stream_out.write(str(p) + ",0-")
         stream_out.write("\n")
