@@ -52,7 +52,6 @@ for i in range(len(streams)):
     pl.xticks(X, xs, rotation='vertical')
     streams[i].close()
 
-
 ymax = max(allys) + 1
 pl.ylim(0, .4)
 pl.savefig("multi.png")
