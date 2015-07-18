@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/calculate_complexities.py" afterPath="$PROJECT_DIR$/mining/calculate_complexities.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/graph_multiple_op.py" afterPath="$PROJECT_DIR$/mining/graph_multiple_op.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -128,8 +127,8 @@
       <file leaf-file-name="calculate_complexities.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6604303">
-              <caret line="69" column="2" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.85968196">
+              <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -426,12 +425,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00027" summary="complexity">
-      <created>1435259651711</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1435259651711</updated>
-    </task>
     <task id="LOCAL-00028" summary="complexity">
       <created>1435259803547</created>
       <option name="number" value="00028" />
@@ -720,7 +713,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437172059421</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="complexity">
+      <created>1437244324939</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1437244324941</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1108,8 +1107,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6604303">
-          <caret line="69" column="2" selection-start-line="69" selection-start-column="2" selection-end-line="69" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.85968196">
+          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

@@ -83,7 +83,7 @@ data = retrieve_points_of_interest(poi, "tmp/0j_out/" + os.path.basename(file_ou
 with open(file_out, "w") as stream_out:
     for p in poi:
         try:
-            stream_out.write(str(p) + "," + str(float(data[p])/float(total)) + "-")
+            stream_out.write(str(p) + "," + str(float(data[p])/float(total)))
         except KeyError:
-            stream_out.write(str(p) + ",0-")
+            stream_out.write(str(p) + ",0")
         stream_out.write("\n")
