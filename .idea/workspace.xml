@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/calculate_complexities.py" afterPath="$PROJECT_DIR$/mining/calculate_complexities.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/graph_multiple_op.py" afterPath="$PROJECT_DIR$/mining/graph_multiple_op.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -34,13 +34,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.44901776">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
-                <marker date="1437244183000" expanded="true" signature="195:269" placeholder="..." />
+                <marker date="1437247494000" expanded="true" signature="195:269" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -124,10 +124,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calculate_complexities.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calculate_complexities.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85968196">
+            <state vertical-scroll-proportion="0.0">
               <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -164,8 +164,8 @@
         <option value="$PROJECT_DIR$/mining/calculate_redundancies.py" />
         <option value="$PROJECT_DIR$/mining/run_samples_redundancy_complexity.py" />
         <option value="$PROJECT_DIR$/mining/extract_info.py" />
-        <option value="$PROJECT_DIR$/mining/graph_multiple_op.py" />
         <option value="$PROJECT_DIR$/mining/calculate_complexities.py" />
+        <option value="$PROJECT_DIR$/mining/graph_multiple_op.py" />
       </list>
     </option>
   </component>
@@ -424,12 +424,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00028" summary="complexity">
-      <created>1435259803547</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1435259803547</updated>
     </task>
     <task id="LOCAL-00029" summary="complexity">
       <created>1435259916348</created>
@@ -719,7 +713,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437244324941</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="complexity">
+      <created>1437246363815</created>
+      <option name="number" value="00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1437246363815</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -785,7 +785,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding>
-            <marker date="1437244183000" expanded="true" signature="195:269" placeholder="..." />
+            <marker date="1437247494000" expanded="true" signature="195:269" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1085,16 +1085,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-          <folding>
-            <marker date="1437244183000" expanded="true" signature="195:269" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mining/calculate_redundancies.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1107,10 +1097,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85968196">
+        <state vertical-scroll-proportion="0.0">
           <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="12" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44901776">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <marker date="1437247494000" expanded="true" signature="195:269" placeholder="..." />
           </folding>
         </state>
       </provider>

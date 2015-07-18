@@ -29,8 +29,7 @@ for i in range(len(streams)):
 
     line = streams[i].read()
 
-    tmp = line.split('-')
-    tmp.pop()  # gets rid of \n char
+    tmp = line.split('\n')
     #print tmp
 
     for pair in tmp:
