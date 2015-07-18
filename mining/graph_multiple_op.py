@@ -35,11 +35,13 @@ for i in range(len(streams)):
     for pair in tmp:
         print pair
         p = pair.split(',')
-        try:
-            d[float(p[0])] = float(p[1])
-        except ValueError:
-            d[float(p[0])] = float(0)
-
+        if len(p) > 1:
+            try:
+                d[float(p[0])] = float(p[1])
+            except ValueError:
+                d[float(p[0])] = float(0)
+        else:
+            break
     xs = sorted(d)
     ys = []
     for x in xs:
