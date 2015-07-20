@@ -1,6 +1,9 @@
 import sys
 import os
 import matplotlib
+
+matplotlib.use('Agg')
+
 import numpy as np
 import pylab as pl
 
@@ -43,7 +46,7 @@ d = {}
 
 for f in files:
     if f[f.rfind("."):] == ".0j":
-        with open(f) as stream_f:
+        with open(direc + f) as stream_f:
             everything = stream_f.read()
             pairs = everything.split("\n")
             pairs.pop() #rid of last empty pair
