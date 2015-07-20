@@ -63,7 +63,7 @@ xs = d.keys()
 ys = d.values()
 
 X = np.arange(len(xs))
-pl.bar(X, ys, align = 'edge', width = 1)
+pl.bar(X, ys, align = 'edge')
 pl.xticks(X, xs, rotation='vertical')
 
 pl.ylim(0,.4)
