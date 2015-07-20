@@ -49,8 +49,8 @@
       <file leaf-file-name="graph_mult_0j.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/graph_mult_0j.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7775378">
-              <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.83801293">
+              <caret line="66" column="11" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -426,12 +426,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00032" summary="complexity">
-      <created>1435347825738</created>
-      <option name="number" value="00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1435347825738</updated>
-    </task>
     <task id="LOCAL-00033" summary="complexity">
       <created>1435348543857</created>
       <option name="number" value="00033" />
@@ -720,7 +714,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437408162478</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="complexity">
+      <created>1437410329924</created>
+      <option name="number" value="00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1437410329924</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1118,8 +1118,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/graph_mult_0j.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7775378">
-          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.83801293">
+          <caret line="66" column="11" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

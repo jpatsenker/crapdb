@@ -64,7 +64,7 @@ ys = d.values()
 
 X = np.arange(len(xs))
 pl.bar(X, ys, align = 'edge', width = 1)
-pl.xticks(X+.5, xs, rotation='vertical')
+pl.xticks(X, xs, rotation='vertical')
 
 pl.ylim(0,.4)
 pl.savefig(outfile)
