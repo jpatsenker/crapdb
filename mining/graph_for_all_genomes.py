@@ -45,7 +45,7 @@ except ValueError:
 d = {}
 
 for f in files:
-    if f[f.rfind("."):] == ".0j":
+    if f[f.rfind("."):] == ".0j" or f[f.rfind("."):] == ".cdhit":
         with open(direc + f) as stream_f:
             everything = stream_f.read()
             pairs = everything.split("\n")
