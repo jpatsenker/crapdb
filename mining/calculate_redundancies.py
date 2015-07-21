@@ -37,6 +37,6 @@ for i in range(len(tholds)):
     p1.wait()
     result = count_non_redundant_seq("tmp/cdhit_out/" + os.path.basename(file_out))
 
-    fout.write(tholds[i] + "," + str(result) + "-")
+    fout.write(str(tholds[i]) + "," + str(result) + "\n")
 
 fout.close()

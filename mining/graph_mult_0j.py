@@ -54,7 +54,7 @@ for f in files:
                 ord_pair = pair.split(",")
                 try:
                     if float(ord_pair[0]) == poi:
-                        d[f] = ord_pair[1]
+                        d[f] = float(ord_pair[1])
                 except (IndexError, ValueError):
                     print "Improperly Formatted File"
                     exit(1)
