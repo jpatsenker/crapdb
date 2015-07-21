@@ -20,6 +20,13 @@ def count_non_redundant_seq(out_file):
     out.close()
     return nr
 
+def get_total_num_seq(stream_infile):
+    num = 0
+    line = stream_infile.readline()
+    while line:
+        num += 1
+        line = stream_infile.readline()
+    return num/2
 
 # Main
 
@@ -31,12 +38,17 @@ tholds = [.7, .75, .8, .85, .9, .95]
 file_in = sys.argv[1]
 file_out = sys.argv[2]
 fout = open(file_out, "w")
+total = 0
+
+with open(file_in) as stream_in:
+    total = get_total_num_seq(stream_in)
+
 
 for i in range(len(tholds)):
     p1 = cd_hit_run(file_in, "tmp/cdhit_out/" + os.path.basename(file_out), tholds[i])
     p1.wait()
     result = count_non_redundant_seq("tmp/cdhit_out/" + os.path.basename(file_out))
 
-    fout.write(str(tholds[i]) + "," + str(result) + "\n")
+    fout.write(str(tholds[i]) + "," + str(float(result)/float(total)) + "\n")
 
 fout.close()
