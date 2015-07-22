@@ -16,6 +16,7 @@ wid = float(.9)/float(len(sys.argv)-3)
 
 allys = []
 patches = []
+bars = []
 
 for arg in sys.argv[3:]:
     #print "Using " + arg
@@ -49,7 +50,7 @@ for i in range(len(streams)):
 
     allys.extend(ys)
     X = np.arange(len(xs))
-    pl.bar(X+wid*i, ys, align='edge', width=wid, color=cols[i%len(cols)])
+    bars.append(pl.bar(X+wid*i, ys, align='edge', width=wid, color=cols[i%len(cols)])[0])
     pl.xticks(X, xs, rotation='vertical')
     streams[i].close()
 
@@ -68,6 +69,8 @@ if sys.argv[3][sys.argv[3].find(".")+1:] == "cdhit":
 else:
     pl.xlabel( "% Complexity" )
     pl.ylabel( "% of Corpus" )
+
+pl.legend(bars, sys.argv[3:])
 
 fig.tight_layout()
 
