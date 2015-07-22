@@ -55,6 +55,7 @@ for f in files:
                 try:
                     if float(ord_pair[0]) == poi:
                         d[f] = float(ord_pair[1])
+                        print f + " " + d[f] + "\n"
                 except (IndexError, ValueError):
                     print "Improperly Formatted File"
                     exit(1)
