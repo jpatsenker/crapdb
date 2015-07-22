@@ -9,7 +9,7 @@ import sys
 cols = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'm']
 
 streams = []
-wid = float(.9)/float(len(sys.argv)-2)
+wid = float(.9)/float(len(sys.argv)-3)
 # print str(len(sys.argv)-1)
 # print str(1/len(sys.argv)-1)
 # print str(wid)
@@ -17,7 +17,7 @@ wid = float(.9)/float(len(sys.argv)-2)
 allys = []
 patches = []
 
-for arg in sys.argv[2:]:
+for arg in sys.argv[3:]:
     #print "Using " + arg
     streams.append(open(arg, "r"))
 
@@ -55,7 +55,7 @@ for i in range(len(streams)):
 
 ymax = max(allys) + 1
 try:
-    pl.ylim(0, float(sys.argv[1]))
+    pl.ylim(float(sys.argv[1]), float(sys.argv[2]))
 except ValueError:
     pl.ylim(0, ymax)
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/graph_for_all_genomes.py" afterPath="$PROJECT_DIR$/mining/graph_for_all_genomes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/graph_multiple_op.py" afterPath="$PROJECT_DIR$/mining/graph_multiple_op.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -34,13 +34,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.09287257">
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
               <folding>
-                <marker date="1437511034000" expanded="true" signature="195:269" placeholder="..." />
+                <marker date="1437585465000" expanded="true" signature="195:269" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -124,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_for_all_genomes.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph_for_all_genomes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.91900647">
-              <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -165,9 +165,9 @@
         <option value="$PROJECT_DIR$/mining/extract_info.py" />
         <option value="$PROJECT_DIR$/mining/calculate_complexities.py" />
         <option value="$PROJECT_DIR$/mining/graph_mult_0j.py" />
-        <option value="$PROJECT_DIR$/mining/graph_multiple_op.py" />
         <option value="$PROJECT_DIR$/mining/calculate_redundancies.py" />
         <option value="$PROJECT_DIR$/mining/graph_for_all_genomes.py" />
+        <option value="$PROJECT_DIR$/mining/graph_multiple_op.py" />
       </list>
     </option>
   </component>
@@ -426,12 +426,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00044" summary="complexity">
-      <created>1435355680261</created>
-      <option name="number" value="00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1435355680261</updated>
     </task>
     <task id="LOCAL-00045" summary="complexity">
       <created>1435355704988</created>
@@ -721,7 +715,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437584870997</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="stuff">
+      <created>1437585425790</created>
+      <option name="number" value="00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1437585425790</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -787,7 +787,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding>
-            <marker date="1437511034000" expanded="true" signature="195:269" placeholder="..." />
+            <marker date="1437585465000" expanded="true" signature="195:269" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1034,16 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <marker date="1437511034000" expanded="true" signature="195:269" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mining/get_too_long_too_short.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1118,10 +1108,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.91900647">
-          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09287257">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding>
+            <marker date="1437585465000" expanded="true" signature="195:269" placeholder="..." />
           </folding>
         </state>
       </provider>
