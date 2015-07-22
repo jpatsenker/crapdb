@@ -77,6 +77,16 @@ except IndexError:
     except IndexError:
         pl.ylim(0,1)
 
-pl.gcf().tight_layout()
+fig = pl.gcf()
+for axis in fig.axes:
+    #axis.set_title( "" )
+    if files[0][files[0].find(".")+1:] == "cdhit":
+        axis.xaxis.set_label( "Threshold (%)" )
+        axis.yaxis.set_label( "Fraction Clusters to Total Sequences" )
+    else:
+        axis.xaxis.set_label( "% Complexity" )
+        axis.yaxis.set_label( "% of Corpus" )
+
+fig.tight_layout()
 pl.savefig(outfile)
 pl.show()

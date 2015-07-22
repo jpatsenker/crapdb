@@ -59,5 +59,19 @@ try:
 except ValueError:
     pl.ylim(0, ymax)
 
+
+
+fig = pl.gcf()
+for axis in fig.axes:
+    #axis.set_title( "" )
+    if sys.argv[3][sys.argv[3].find(".")+1:] == "cdhit":
+        axis.xaxis.set_label( "Threshold (%)" )
+        axis.yaxis.set_label( "Fraction Clusters to Total Sequences" )
+    else:
+        axis.xaxis.set_label( "% Complexity" )
+        axis.yaxis.set_label( "% of Corpus" )
+
+fig.tight_layout()
+
 pl.savefig("multi.png")
 pl.show()
