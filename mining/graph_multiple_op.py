@@ -70,7 +70,12 @@ else:
     pl.xlabel( "% Complexity" )
     pl.ylabel( "% of Corpus" )
 
-pl.legend(bars, sys.argv[3:])
+labs = []
+
+for a in sys.argv[3:]:
+    labs.append(a[a.rfind("/")+1:a.rfind(".")])
+
+pl.legend(bars, labs)
 
 fig.tight_layout()
 
