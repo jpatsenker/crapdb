@@ -75,7 +75,7 @@ labs = []
 for a in sys.argv[3:]:
     labs.append(a[a.rfind("/")+1:a.rfind(".")])
 
-pl.legend(bars, labs)
+pl.legend(bars, labs, loc = 'best')
 
 fig.tight_layout()
 
