@@ -76,5 +76,7 @@ except IndexError:
         pl.ylim(0,float(sys.argv[4]))
     except IndexError:
         pl.ylim(0,1)
+
+pl.gcf().tight_layout()
 pl.savefig(outfile)
 pl.show()
