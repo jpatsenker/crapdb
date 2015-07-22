@@ -65,7 +65,7 @@ ys = d.values()
 
 X = np.arange(len(xs))
 pl.bar(X, ys, align = 'edge')
-pl.xticks(X, xs, rotation='vertical')
+pl.xticks(X+.5, xs, rotation='horizontal')
 
 try:
     pl.ylim(0,float(sys.argv[4]))
