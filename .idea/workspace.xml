@@ -128,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6922246">
-              <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+              <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -427,12 +427,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00040" summary="complexity">
-      <created>1435355022750</created>
-      <option name="number" value="00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1435355022750</updated>
-    </task>
     <task id="LOCAL-00041" summary="complexity">
       <created>1435355057562</created>
       <option name="number" value="00041" />
@@ -721,7 +715,13 @@
       <option name="project" value="LOCAL" />
       <updated>1437514537255</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="stuff">
+      <created>1437584503639</created>
+      <option name="number" value="00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1437584503639</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1120,7 +1120,7 @@
     <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6922246">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
+          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
