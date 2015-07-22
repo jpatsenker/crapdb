@@ -68,10 +68,13 @@ pl.bar(X, ys, align = 'edge')
 pl.xticks(X+.5, xs, rotation='horizontal')
 
 try:
-    pl.ylim(0,float(sys.argv[4]))
+    pl.ylim(float(sys.argv[4]),float(sys.argv[5]))
 except ValueError:
     print "Improper limit"
 except IndexError:
-    pl.ylim(0,1)
+    try:
+        pl.ylim(0,float(sys.argv[4]))
+    except IndexError:
+        pl.ylim(0,1)
 pl.savefig(outfile)
 pl.show()
