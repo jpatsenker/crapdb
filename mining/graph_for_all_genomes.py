@@ -67,6 +67,11 @@ X = np.arange(len(xs))
 pl.bar(X, ys, align = 'edge')
 pl.xticks(X, xs, rotation='vertical')
 
-pl.ylim(0,.4)
+try:
+    pl.ylim(0,float(sys.argv[4]))
+except ValueError:
+    print "Improper limit"
+except IndexError:
+    pl.ylim(0,1)
 pl.savefig(outfile)
 pl.show()
