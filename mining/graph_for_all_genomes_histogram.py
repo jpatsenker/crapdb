@@ -59,7 +59,7 @@ for f in files:
                         try:
                             d[float(ord_pair[0])] = d[float(ord_pair[1])] + 1
                         except KeyError:
-                            d[float(ord_pair[1])] = 1
+                            d[float(ord_pair[0])] = 1
                 except (IndexError, ValueError):
                     print "Improperly Formatted File"
                     exit(1)
