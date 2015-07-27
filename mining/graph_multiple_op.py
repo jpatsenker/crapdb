@@ -53,6 +53,11 @@ for i in range(len(streams)):
     bars.append(pl.bar(X+wid*i, ys, align='edge', width=wid, color=cols[i%len(cols)])[0])
     pl.xticks(X, xs, rotation='vertical')
     streams[i].close()
+    with open(sys.argv[1], "w") as out_stream:
+        b = streams[i].name
+        out_stream.write(b[b.rfind("/")+1:b.find(".", b.rfind("/"))])
+        for key in d:
+            out_stream.write(str(key) + "," + str(d[key]) + "\n")
 
 ymax = max(allys) + 1
 try:
@@ -60,9 +65,7 @@ try:
 except ValueError:
     pl.ylim(0, ymax)
 
-with open(sys.argv[1], "w") as out_stream:
-    for key in d:
-        out_stream.write(str(key) + "," + str(d[key]) + "\n")
+
 
 
 fig = pl.gcf()
@@ -76,7 +79,7 @@ else:
 labs = []
 
 for a in sys.argv[4:]:
-    labs.append(a[a.rfind("/")+1:a.rfind(".")])
+    labs.append(a[a.rfind("/")+1:a.find(".", a.rfind("/"))])
 
 pl.legend(bars, labs, loc = 'best')
 
