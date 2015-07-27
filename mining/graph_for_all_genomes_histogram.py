@@ -52,11 +52,12 @@ for f in files:
             pairs = everything.split("\n")
             pairs.pop() #rid of last empty pair
             for pair in pairs:
+                print pair + "\n"
                 ord_pair = pair.split(",")
                 try:
                     if float(ord_pair[0]) == poi:
                         try:
-                            d[float(ord_pair[1])] = d[float(ord_pair[1])] + 1
+                            d[float(ord_pair[0])] = d[float(ord_pair[1])] + 1
                         except KeyError:
                             d[float(ord_pair[1])] = 1
                 except (IndexError, ValueError):
