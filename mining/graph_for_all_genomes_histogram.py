@@ -57,7 +57,7 @@ for f in files:
                     if float(ord_pair[0]) == poi:
                         try:
                             d[float(ord_pair[1])] = d[float(ord_pair[1])] + 1
-                        except IndexError:
+                        except KeyError:
                             d[float(ord_pair[1])] = 1
                         print str(f) + " " + str(d[f]) + "\n"
                 except (IndexError, ValueError):
