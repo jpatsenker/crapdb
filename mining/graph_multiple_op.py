@@ -18,6 +18,8 @@ allys = []
 patches = []
 bars = []
 
+open(sys.argv[1], 'w').close()
+
 for arg in sys.argv[4:]:
     #print "Using " + arg
     streams.append(open(arg, "r"))
@@ -53,9 +55,9 @@ for i in range(len(streams)):
     bars.append(pl.bar(X+wid*i, ys, align='edge', width=wid, color=cols[i%len(cols)])[0])
     pl.xticks(X, xs, rotation='vertical')
     streams[i].close()
-    with open(sys.argv[1], "w") as out_stream:
+    with open(sys.argv[1], "a") as out_stream:
         b = streams[i].name
-        out_stream.write(b[b.rfind("/")+1:b.find(".", b.rfind("/"))])
+        out_stream.write(b[b.rfind("/")+1:b.find(".", b.rfind("/"))] + "\n")
         for key in d:
             out_stream.write(str(key) + "," + str(d[key]) + "\n")
 
