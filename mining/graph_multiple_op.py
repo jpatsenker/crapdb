@@ -9,7 +9,7 @@ import sys
 cols = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'm']
 
 streams = []
-wid = float(.9)/float(len(sys.argv)-3)
+wid = float(.9)/float(len(sys.argv)-4)
 # print str(len(sys.argv)-1)
 # print str(1/len(sys.argv)-1)
 # print str(wid)
@@ -18,7 +18,7 @@ allys = []
 patches = []
 bars = []
 
-for arg in sys.argv[3:]:
+for arg in sys.argv[4:]:
     #print "Using " + arg
     streams.append(open(arg, "r"))
 
@@ -56,14 +56,17 @@ for i in range(len(streams)):
 
 ymax = max(allys) + 1
 try:
-    pl.ylim(float(sys.argv[1]), float(sys.argv[2]))
+    pl.ylim(float(sys.argv[2]), float(sys.argv[3]))
 except ValueError:
     pl.ylim(0, ymax)
 
+with open(sys.argv[1], "w") as out_stream:
+    for key, value in d:
+        out_stream.write(str(key) + "," + str(value) + "\n")
 
 
 fig = pl.gcf()
-if sys.argv[3][sys.argv[3].find(".")+1:] == "cdhit":
+if sys.argv[4][sys.argv[4].find(".")+1:] == "cdhit":
     pl.xlabel( "Threshold (%)" )
     pl.ylabel( "Fraction Clusters to Total Sequences" )
 else:
@@ -72,7 +75,7 @@ else:
 
 labs = []
 
-for a in sys.argv[3:]:
+for a in sys.argv[4:]:
     labs.append(a[a.rfind("/")+1:a.rfind(".")])
 
 pl.legend(bars, labs, loc = 'best')
