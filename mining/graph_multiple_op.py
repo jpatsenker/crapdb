@@ -61,8 +61,8 @@ except ValueError:
     pl.ylim(0, ymax)
 
 with open(sys.argv[1], "w") as out_stream:
-    for key, value in d:
-        out_stream.write(str(key) + "," + str(value) + "\n")
+    for key in d:
+        out_stream.write(str(key) + "," + str(d[key]) + "\n")
 
 
 fig = pl.gcf()
