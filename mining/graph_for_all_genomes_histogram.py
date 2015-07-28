@@ -57,7 +57,7 @@ except ValueError:
 
 d = {}
 
-bins = [.01] * 13
+bins = [.002] * 65
 for i in range(len(bins)):
     bins[i] = bins[i]*i
     d[bins[i]] = 0
