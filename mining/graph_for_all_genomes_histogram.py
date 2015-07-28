@@ -77,7 +77,9 @@ for f in files:
                 print pair + "\n"
                 ord_pair = pair.split(",")
                 try:
-                    if float(ord_pair[0]) <= poi:
+                    if float(ord_pair[0]) <= poi and files[0][files[0].find(".")+1:] != "cdhit":
+                        cumulative += float(ord_pair[1])
+                    if float(ord_pair[0]) == poi and files[0][files[0].find(".")+1:] == "cdhit":
                         cumulative += float(ord_pair[1])
                     if float(ord_pair[0]) == poi:
                         try:
