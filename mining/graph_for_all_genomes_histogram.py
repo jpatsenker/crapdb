@@ -114,7 +114,7 @@ except IndexError:
 fig = pl.gcf()
 #axis.set_title( "" )
 print files[0]
-if files[0][files[0].find(".")+1:] == "cdhit":
+if files[0][files[0].rfind(".")+1:] == "cdhit":
     pl.xlabel( "Fraction Clusters to Total Sequences at redundancy threshold of .7" )
     pl.ylabel( "Fraction Clusters to Total Sequences" )
 else:
