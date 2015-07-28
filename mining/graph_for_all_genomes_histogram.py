@@ -57,7 +57,9 @@ except ValueError:
 
 d = {}
 
-bins = [0,.01,.02,.03,.04,.05,.06,1]
+bins = [.01] * 100
+for i in range(len(bins)):
+    bins[i] = bins[i]*i
 
 
 
