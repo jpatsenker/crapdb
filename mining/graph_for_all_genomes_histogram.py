@@ -83,7 +83,7 @@ for f in files:
                         cumulative += float(ord_pair[1])
                     if float(ord_pair[0]) == poi:
                         try:
-                            d[perform_bin(bins, cumulative)[0]] = d[perform_bin(bins, cumulative)[0]] + 1
+                            d[perform_bin(bins, cumulative)[0]] += 1
                         except KeyError:
                             d[perform_bin(bins, cumulative)[0]] = 1
                 except (IndexError, ValueError):
@@ -114,7 +114,7 @@ except IndexError:
 fig = pl.gcf()
 #axis.set_title( "" )
 if files[0][files[0].find(".")+1:] == "cdhit":
-    pl.xlabel( "Threshold (%)" )
+    pl.xlabel( "Fraction Clusters to Total Sequences at redundancy threshold of .7" )
     pl.ylabel( "Fraction Clusters to Total Sequences" )
 else:
     pl.xlabel( "% of Corpus at complexity of less than .9" )
