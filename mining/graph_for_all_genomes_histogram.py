@@ -57,7 +57,7 @@ except ValueError:
 
 d = {}
 
-subdivide = 26
+subdivide = 25
 
 bins = [1/subdivide] * subdivide
 for i in range(len(bins)):
