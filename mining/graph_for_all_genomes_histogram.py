@@ -85,8 +85,10 @@ for f in files:
 
 
 
-xs = sorted(d).keys()
-ys = sorted(d).values()
+xs = sorted(d.keys())
+ys = []
+for i in range(len(xs)):
+    ys[i] = d[xs[i]]
 
 X = np.arange(len(xs))
 pl.bar(X, ys, align = 'edge', width=1)
