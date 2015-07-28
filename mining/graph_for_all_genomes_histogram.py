@@ -85,11 +85,11 @@ for f in files:
 
 
 
-xs = d.keys()
-ys = d.values()
+xs = sorted(d).keys()
+ys = sorted(d).values()
 
 X = np.arange(len(xs))
-pl.bar(X, ys, align = 'edge')
+pl.bar(X, ys, align = 'edge', width=1)
 pl.xticks(X, xs, rotation='vertical')
 
 try:
