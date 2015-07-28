@@ -115,8 +115,8 @@ if files[0][files[0].find(".")+1:] == "cdhit":
     pl.xlabel( "Threshold (%)" )
     pl.ylabel( "Fraction Clusters to Total Sequences" )
 else:
-    pl.xlabel( "% Complexity" )
-    pl.ylabel( "% of Corpus" )
+    pl.xlabel( "% of Corpus at complexity of less than .9" )
+    pl.ylabel( "Number of Genomes" )
 
 fig.tight_layout()
 pl.savefig(outfile)
