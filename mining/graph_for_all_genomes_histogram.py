@@ -55,6 +55,18 @@ except ValueError:
     print "Improper Parameter: % of interest must be a float"
     exit(1)
 
+try:
+    xleft = float(sys.argv[4])
+except (IndexError, ValueError):
+    print "Improper Parameter: Left x limit"
+    exit(1)
+
+try:
+    xright = float(sys.argv[5])
+except (IndexError, ValueError):
+    print "Improper Parameter: Right x limit"
+    exit(1)
+
 d = {}
 
 subdivide = 25
@@ -102,12 +114,12 @@ pl.bar(X, ys, align = 'edge', width=1)
 pl.xticks(X, xs, rotation='vertical')
 
 try:
-    pl.ylim(float(sys.argv[4]),float(sys.argv[5]))
+    pl.ylim(float(sys.argv[6]),float(sys.argv[7]))
 except ValueError:
     print "Improper limit"
 except IndexError:
     try:
-        pl.ylim(0,float(sys.argv[4]))
+        pl.ylim(0,float(sys.argv[6]))
     except IndexError:
         pl.ylim(0,1)
 
