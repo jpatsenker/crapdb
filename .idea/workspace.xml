@@ -117,8 +117,8 @@
       <file leaf-file-name="graph_for_all_genomes_histogram.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes_histogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93520516">
-              <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.7084233">
+              <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -436,12 +436,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00092" summary="stuff">
-      <created>1437584870997</created>
-      <option name="number" value="00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1437584870997</updated>
-    </task>
     <task id="LOCAL-00093" summary="stuff">
       <created>1437585425790</created>
       <option name="number" value="00093" />
@@ -730,7 +724,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438122974265</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="stuff">
+      <created>1438123459458</created>
+      <option name="number" value="00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1438123459458</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1140,8 +1140,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes_histogram.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93520516">
-          <caret line="94" column="56" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.7084233">
+          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

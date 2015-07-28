@@ -123,6 +123,8 @@ except IndexError:
     except IndexError:
         pl.ylim(0,1)
 
+pl.xlim(xleft, xright)
+
 fig = pl.gcf()
 #axis.set_title( "" )
 print files[0]
