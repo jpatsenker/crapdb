@@ -86,7 +86,7 @@ for f in files:
 
 
 xs = sorted(d.keys())
-ys = []
+ys = [] * len(xs)
 for i in range(len(xs)):
     ys[i] = d[xs[i]]
 
