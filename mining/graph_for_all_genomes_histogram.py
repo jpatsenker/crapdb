@@ -61,7 +61,7 @@ subdivide = 26
 
 bins = [.13/subdivide] * subdivide
 for i in range(len(bins)):
-    bins[i] = bins[i]*i
+    bins[i] *= i
     d[bins[i]] = 0
 
 
