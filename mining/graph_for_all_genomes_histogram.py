@@ -57,7 +57,10 @@ except ValueError:
 
 d = {}
 
-bins = [.002] * 65
+subdivide = 50
+
+bins = [.12/subdivide] * subdivide
+bins.append(1)
 for i in range(len(bins)):
     bins[i] = bins[i]*i
     d[bins[i]] = 0
