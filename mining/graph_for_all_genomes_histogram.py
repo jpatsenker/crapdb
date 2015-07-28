@@ -59,7 +59,7 @@ d = {}
 
 subdivide = 25
 
-bins = [1/subdivide] * subdivide
+bins = [1.0/subdivide] * subdivide
 for i in range(len(bins)):
     bins[i] *= i
     d[bins[i]] = 0
