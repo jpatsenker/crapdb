@@ -66,11 +66,17 @@ except (IndexError, ValueError):
     print "Improper Parameter: Right x limit"
     exit(1)
 
+try:
+    subdivide = int(sys.argv[6])
+except (IndexError, ValueError):
+    print "Improper Subdivision"
+    exit(1)
+
+
 d = {}
 
-subdivide = 25
 
-bins = [(xright-xleft)/subdivide] * subdivide
+bins = [1.0/subdivide] * subdivide
 for i in range(len(bins)):
     bins[i] *= i
     bins[i] += xleft
@@ -123,7 +129,7 @@ except IndexError:
     except IndexError:
         pl.ylim(0,1)
 
-pl.xlim(xleft*subdivide/(xright-xleft), xright*subdivide/(xright-xleft))
+pl.xlim(xleft*subdivide), xright*subdivide)
 
 fig = pl.gcf()
 #axis.set_title( "" )
