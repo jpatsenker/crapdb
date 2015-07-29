@@ -19,7 +19,6 @@ def perform_bin(range_list, num):
     else:
         return range_list[beg - 1:beg + 1]
 
-
 poi = 0
 direc = ""
 outfile = ""
@@ -77,7 +76,6 @@ for i in range(len(bins)):
     d[bins[i]] = 0
 
 
-
 for f in files:
     if f[f.rfind("."):] == ".0j" or f[f.rfind("."):] == ".cdhit":
         with open(direc + f) as stream_f:
@@ -102,8 +100,6 @@ for f in files:
                     print "Improperly Formatted File"
                     exit(1)
 
-
-
 xs = sorted(d.keys())
 ys = [None] * len(xs)
 for i in range(len(xs)):
@@ -123,7 +119,7 @@ except IndexError:
     except IndexError:
         pl.ylim(0,1)
 
-pl.xlim(xleft, xright)
+pl.xlim(xleft*25, xright*25)
 
 fig = pl.gcf()
 #axis.set_title( "" )
