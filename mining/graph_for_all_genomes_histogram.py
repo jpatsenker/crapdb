@@ -82,7 +82,7 @@ for i in range(len(bins)):
     d[bins[i]] = 0
 
 
-print bins;
+#print bins;
 
 
 for f in files:
@@ -96,6 +96,7 @@ for f in files:
                 #print pair + "\n"
                 ord_pair = pair.split(",")
                 try:
+                    print ord_pair
                     if float(ord_pair[0]) <= poi and f[f.find("."):] != ".cdhit":
                         cumulative += float(ord_pair[1])
                     if float(ord_pair[0]) == poi and f[f.find("."):] == ".cdhit":
