@@ -129,7 +129,7 @@ except IndexError:
     except IndexError:
         pl.ylim(0,1)
 
-pl.xlim(xleft*subdivide), xright*subdivide)
+pl.xlim(xleft*subdivide, xright*subdivide)
 
 fig = pl.gcf()
 #axis.set_title( "" )
