@@ -120,12 +120,12 @@ pl.bar(X, ys, align = 'edge', width=1)
 pl.xticks(X, xs, rotation='vertical')
 
 try:
-    pl.ylim(float(sys.argv[6]),float(sys.argv[7]))
+    pl.ylim(float(sys.argv[7]),float(sys.argv[8]))
 except ValueError:
     print "Improper limit"
 except IndexError:
     try:
-        pl.ylim(0,float(sys.argv[6]))
+        pl.ylim(0,float(sys.argv[7]))
     except IndexError:
         pl.ylim(0,1)
 
