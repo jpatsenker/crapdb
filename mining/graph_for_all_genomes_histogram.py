@@ -73,7 +73,9 @@ subdivide = 25
 bins = [(xright-xleft)/subdivide] * subdivide
 for i in range(len(bins)):
     bins[i] *= i
+    bins[i] += xleft
     d[bins[i]] = 0
+
 
 print bins;
 
