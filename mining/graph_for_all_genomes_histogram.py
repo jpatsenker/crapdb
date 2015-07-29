@@ -96,11 +96,11 @@ for f in files:
                 #print pair + "\n"
                 ord_pair = pair.split(",")
                 try:
-                    print ord_pair
                     if float(ord_pair[0]) <= poi and f[f.find("."):] != ".cdhit":
                         cumulative += float(ord_pair[1])
                     if float(ord_pair[0]) == poi and f[f.find("."):] == ".cdhit":
                         cumulative += float(ord_pair[1])
+                        print ord_pair
                     if float(ord_pair[0]) == poi:
                         try:
                             d[perform_bin(bins, cumulative)[0]] += 1
