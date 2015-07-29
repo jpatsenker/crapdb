@@ -79,7 +79,6 @@ d = {}
 bins = [1.0/subdivide] * subdivide
 for i in range(len(bins)):
     bins[i] *= i
-    bins[i] += xleft
     d[bins[i]] = 0
 
 
