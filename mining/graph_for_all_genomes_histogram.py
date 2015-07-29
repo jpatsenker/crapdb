@@ -75,6 +75,8 @@ for i in range(len(bins)):
     bins[i] *= i
     d[bins[i]] = 0
 
+print bins;
+
 
 for f in files:
     if f[f.rfind("."):] == ".0j" or f[f.rfind("."):] == ".cdhit":
@@ -84,7 +86,7 @@ for f in files:
             pairs.pop() #rid of last empty pair
             cumulative = 0
             for pair in pairs:
-                print pair + "\n"
+                #print pair + "\n"
                 ord_pair = pair.split(",")
                 try:
                     if float(ord_pair[0]) <= poi and f[f.find("."):] != ".cdhit":
@@ -123,7 +125,7 @@ pl.xlim(xleft*25, xright*25)
 
 fig = pl.gcf()
 #axis.set_title( "" )
-print files[0]
+#print files[0]
 if files[0][files[0].rfind(".")+1:] == "cdhit":
     pl.xlabel( "Fraction Clusters to Total Sequences at redundancy threshold of .7" )
     pl.ylabel( "Fraction Clusters to Total Sequences" )
