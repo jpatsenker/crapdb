@@ -96,9 +96,9 @@ for f in files:
                 #print pair + "\n"
                 ord_pair = pair.split(",")
                 try:
-                    if float(ord_pair[0]) <= poi and f[f.find("."):] != ".cdhit":
+                    if float(ord_pair[0]) <= poi and f[f.rfind("."):] != ".cdhit":
                         cumulative += float(ord_pair[1])
-                    if float(ord_pair[0]) == poi and f[f.find("."):] == ".cdhit":
+                    if float(ord_pair[0]) == poi and f[f.rfind("."):] == ".cdhit":
                         cumulative += float(ord_pair[1])
                         print ord_pair
                     if float(ord_pair[0]) == poi:
