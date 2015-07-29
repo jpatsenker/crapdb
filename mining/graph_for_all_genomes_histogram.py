@@ -70,7 +70,7 @@ d = {}
 
 subdivide = 25
 
-bins = [1.0/subdivide] * subdivide
+bins = [(xright-xleft)/subdivide] * subdivide
 for i in range(len(bins)):
     bins[i] *= i
     d[bins[i]] = 0
