@@ -116,7 +116,7 @@ for i in range(len(xs)):
     ys[i] = d[xs[i]]
 
 with open("out.csv", "w") as csv_stream:
-    for tick in d:
+    for tick in sorted(d.keys()):
         csv_stream.write(str(tick) + "," + str(d[tick]) + "\n")
 
 X = np.arange(len(xs))
