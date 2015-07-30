@@ -65,7 +65,7 @@ def get_total_num_seq(stream_infile):
 # Main:
 
 # points of interest (% compressability) in order to compute complexity points
-poi = [0, .05, .1, .15, .2, .25, .3, .35, .4, .45, .5, .55, .6, .65, .7, .75, .8, .85, .9, .95, 1.00]
+poi = [.8, .81, .82, .83, .84, .85, .86, .87, .88, .89, .9, .91, .92, .93, .94, .95, .96, .97, .98, .99, 1.00]
 
 # get file names as commandline arguments
 file_in = sys.argv[1]

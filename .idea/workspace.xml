@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/graph_multiple_op.py" afterPath="$PROJECT_DIR$/mining/graph_multiple_op.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/calculate_complexities.py" afterPath="$PROJECT_DIR$/mining/calculate_complexities.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -36,21 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43304536">
-              <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="get_simple_stats.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mining/get_simple_stats.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+              <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -62,6 +52,18 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_samples_redundancy_complexity.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mining/run_samples_redundancy_complexity.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calculate_complexities.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="calculate_complexities.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.562635">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -165,10 +167,10 @@
         <option value="$PROJECT_DIR$/mining/graph_mult_0j.py" />
         <option value="$PROJECT_DIR$/mining/graph_ordered_pairs.py" />
         <option value="$PROJECT_DIR$/mining/graph_for_all_genomes_histogram.py" />
-        <option value="$PROJECT_DIR$/mining/calculate_complexities.py" />
         <option value="$PROJECT_DIR$/mining/calculate_redundancies.py" />
         <option value="$PROJECT_DIR$/mining/graph_for_all_genomes.py" />
         <option value="$PROJECT_DIR$/mining/graph_multiple_op.py" />
+        <option value="$PROJECT_DIR$/mining/calculate_complexities.py" />
       </list>
     </option>
   </component>
@@ -433,12 +435,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00126" summary="stuff">
-      <created>1438102767865</created>
-      <option name="number" value="00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1438102767865</updated>
     </task>
     <task id="LOCAL-00127" summary="stuff">
       <created>1438102780079</created>
@@ -728,7 +724,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438279473778</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="stuff">
+      <created>1438279572839</created>
+      <option name="number" value="00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1438279572839</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1040,16 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mining/run_samples_redundancy_complexity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mining/get_simple_stats.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1124,21 +1116,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
+    <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mining/run_samples_redundancy_complexity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
+    <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43304536">
-          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="0.562635">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
