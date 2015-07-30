@@ -63,7 +63,7 @@ for f in files:
 
 with open("out.csv", "w") as csv_stream:
     for f in d:
-        csv_stream.write(f[:f.find(".")] + "," + d[f] + "\n")
+        csv_stream.write(f[:f.find(".")] + "," + str(d[f]) + "\n")
 
 
 
