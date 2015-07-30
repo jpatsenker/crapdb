@@ -74,6 +74,7 @@ except (IndexError, ValueError):
 
 
 d = {}
+info = {}
 
 
 bins = [1.0/subdivide] * subdivide
@@ -106,6 +107,7 @@ for f in files:
                             d[perform_bin(bins, cumulative)[0]] += 1
                         except KeyError:
                             d[perform_bin(bins, cumulative)[0]] = 1
+                        info[f.rfind("/")+1:f.find(".", f.rfind("/"))] = perform_bin(bins, cumulative)[0]
                 except (IndexError, ValueError):
                     print "Improperly Formatted File"
                     exit(1)
@@ -117,7 +119,11 @@ for i in range(len(xs)):
 
 with open("out.csv", "w") as csv_stream:
     for tick in sorted(d.keys()):
-        csv_stream.write(str(tick) + "," + str(d[tick]) + "\n")
+        csv_stream.write(str(tick) + "," + str(d[tick]))
+        for gen in info:
+            if info[gen] == tick:
+                csv_stream.write("," + gen)
+        csv_stream.write("\n")
 
 X = np.arange(len(xs))
 pl.bar(X, ys, align = 'edge', width=1)
