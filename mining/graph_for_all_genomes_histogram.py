@@ -107,7 +107,7 @@ for f in files:
                             d[perform_bin(bins, cumulative)[0]] += 1
                         except KeyError:
                             d[perform_bin(bins, cumulative)[0]] = 1
-                        info[:f.find(".")] = perform_bin(bins, cumulative)[0]
+                        info[f[:f.find(".")]] = perform_bin(bins, cumulative)[0]
                 except (IndexError, ValueError):
                     print "Improperly Formatted File"
                     exit(1)

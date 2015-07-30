@@ -116,7 +116,7 @@
         <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes_histogram.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.15766738">
-              <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
+              <caret line="109" column="44" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -434,12 +434,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00110" summary="stuff">
-      <created>1438015808635</created>
-      <option name="number" value="00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1438015808635</updated>
-    </task>
     <task id="LOCAL-00111" summary="stuff">
       <created>1438016100850</created>
       <option name="number" value="00111" />
@@ -728,7 +722,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438272557030</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="stuff">
+      <created>1438272736798</created>
+      <option name="number" value="00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1438272736798</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1135,7 +1135,7 @@
     <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes_histogram.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15766738">
-          <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
+          <caret line="109" column="44" selection-start-line="109" selection-start-column="44" selection-end-line="109" selection-end-column="44" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
