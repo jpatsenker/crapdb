@@ -117,7 +117,7 @@ for i in range(len(xs)):
 
 with open("out.csv", "w") as csv_stream:
     for tick in d:
-        csv_stream.write(tick + "," + d[tick] + "\n")
+        csv_stream.write(str(tick) + "," + str(d[tick]) + "\n")
 
 X = np.arange(len(xs))
 pl.bar(X, ys, align = 'edge', width=1)
