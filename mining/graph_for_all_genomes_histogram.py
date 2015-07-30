@@ -115,6 +115,10 @@ ys = [None] * len(xs)
 for i in range(len(xs)):
     ys[i] = d[xs[i]]
 
+with open("out.csv", "w") as csv_stream:
+    for tick in d:
+        csv_stream.write(tick + "," + d[tick] + "\n")
+
 X = np.arange(len(xs))
 pl.bar(X, ys, align = 'edge', width=1)
 pl.xticks(X, xs, rotation='vertical')
@@ -136,7 +140,7 @@ fig = pl.gcf()
 #print files[0]
 if files[0][files[0].rfind(".")+1:] == "cdhit":
     pl.xlabel( "Fraction Clusters to Total Sequences at redundancy threshold of .7" )
-    pl.ylabel( "Fraction Clusters to Total Sequences" )
+    pl.ylabel( "Number of Genomes" )
 else:
     pl.xlabel( "% of Corpus at complexity of less than .9" )
     pl.ylabel( "Number of Genomes" )
