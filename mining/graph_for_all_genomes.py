@@ -45,7 +45,7 @@ except ValueError:
 d = {}
 
 for f in files:
-    if f[f.rfind("."):] == ".0j":
+    if f[f.rfind("."):] == ".cdhit":
         with open(direc + f) as stream_f:
             everything = stream_f.read()
             pairs = everything.split("\n")
@@ -59,7 +59,7 @@ for f in files:
                 except (IndexError, ValueError):
                     print "Improperly Formatted File"
                     exit(1)
-    #if f[f.rfind("."):] == ".0j":
+    if f[f.rfind("."):] == ".0j":
         with open(direc + f) as stream_f:
             everything = stream_f.read()
             pairs = everything.split("\n")
@@ -68,7 +68,7 @@ for f in files:
             for pair in pairs:
                 ord_pair = pair.split(",")
                 if float(ord_pair[0]) <= poi:
-                    cumulative += ord_pair[1]
+                    cumulative += float(ord_pair[1])
                 if float(ord_pair[0]) == poi:
                     d[f] = cumulative
 
