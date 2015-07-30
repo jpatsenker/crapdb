@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/calculate_redundancies.py" afterPath="$PROJECT_DIR$/mining/calculate_redundancies.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mining/graph_for_all_genomes.py" afterPath="$PROJECT_DIR$/mining/graph_for_all_genomes.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -88,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calculate_redundancies.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calculate_redundancies.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mining/calculate_redundancies.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.712743">
+            <state vertical-scroll-proportion="0.0">
               <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
@@ -124,11 +124,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_for_all_genomes.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="graph_for_all_genomes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.2062635">
+              <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -167,8 +167,8 @@
         <option value="$PROJECT_DIR$/mining/graph_multiple_op.py" />
         <option value="$PROJECT_DIR$/mining/graph_for_all_genomes_histogram.py" />
         <option value="$PROJECT_DIR$/mining/calculate_complexities.py" />
-        <option value="$PROJECT_DIR$/mining/graph_for_all_genomes.py" />
         <option value="$PROJECT_DIR$/mining/calculate_redundancies.py" />
+        <option value="$PROJECT_DIR$/mining/graph_for_all_genomes.py" />
       </list>
     </option>
   </component>
@@ -433,12 +433,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00120" summary="stuff">
-      <created>1438101741234</created>
-      <option name="number" value="00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1438101741234</updated>
     </task>
     <task id="LOCAL-00121" summary="stuff">
       <created>1438101870576</created>
@@ -728,7 +722,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438276846874</updated>
     </task>
-    <option name="localTasksCounter" value="169" />
+    <task id="LOCAL-00169" summary="stuff">
+      <created>1438277689046</created>
+      <option name="number" value="00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1438277689046</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1122,20 +1122,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes.py">
+    <entry file="file://$PROJECT_DIR$/mining/calculate_redundancies.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mining/calculate_redundancies.py">
+    <entry file="file://$PROJECT_DIR$/mining/graph_for_all_genomes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.712743">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2062635">
+          <caret line="47" column="63" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
