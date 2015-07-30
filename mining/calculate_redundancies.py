@@ -43,8 +43,6 @@ total = 0
 with open(file_in) as stream_in:
     total = get_total_num_seq(stream_in)
 
-print total
-exit(0)
 
 for i in range(len(tholds)):
     p1 = cd_hit_run(file_in, "tmp/cdhit_out/" + os.path.basename(file_out), tholds[i])
