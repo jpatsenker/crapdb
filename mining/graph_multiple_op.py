@@ -58,7 +58,7 @@ for i in range(len(streams)):
     with open(sys.argv[1], "a") as out_stream:
         b = streams[i].name
         out_stream.write(b[b.rfind("/")+1:b.find(".", b.rfind("/"))] + "\n")
-        for key in sorted(d.keys):
+        for key in sorted(d.keys()):
             out_stream.write(str(key) + "," + str(d[key]) + "\n")
 
 ymax = max(allys) + 1
