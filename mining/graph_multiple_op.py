@@ -59,7 +59,10 @@ for i in range(len(streams)):
         b = streams[i].name
         out_stream.write(b[b.rfind("/")+1:b.find(".", b.rfind("/"))] + "\n")
         for key in sorted(d.keys()):
-            out_stream.write(str(key) + "," + str(d[key]) + "\n")
+            if sys.argv[4][sys.argv[4].find(".")+1:] == "cdhit":
+                out_stream.write(str(key) + "," + str(d[key]) + "\n")
+            else:
+                out_stream.write(str(key-.05) + "," + str(key) + "," + str(d[key]) + "\n")
 
 ymax = max(allys) + 1
 try:
