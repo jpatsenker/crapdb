@@ -62,7 +62,7 @@ for f in files:
 
 
 with open("out.csv", "w") as csv_stream:
-    for f in d:
+    for f in sorted(d.keys()):
         csv_stream.write(f[:f.find(".")] + "," + str(d[f]) + "\n")
 
 
