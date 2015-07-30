@@ -63,6 +63,14 @@ for f in files:
         with open(direc + f) as stream_f:
             everything = stream_f.read()
             pairs = everything.split("\n")
+            pairs.pop()
+            cumulative = 0
+            for pair in pairs:
+                ord_pair = pair.split(",")
+                if float(ord_pair[0]) <= poi:
+                    cumulative += ord_pair[1]
+                if float(ord_pair[0]) == poi:
+                    d[f] = cumulative
 
 with open("out.csv", "w") as csv_stream:
     for f in sorted(d.keys()):
