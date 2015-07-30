@@ -49,9 +49,9 @@ def retrieve_points_of_interest(points, output_name):
         bin_ratio = perform_bin(points, ratio)
         print str(bin_ratio) + "\n"
         try:
-            binned_data[bin_ratio[1]] += 1
+            binned_data[bin_ratio[0]] += 1
         except KeyError:
-            binned_data[bin_ratio[1]] = 1
+            binned_data[bin_ratio[0]] = 1
 
     return binned_data
 
