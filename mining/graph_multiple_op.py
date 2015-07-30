@@ -62,7 +62,8 @@ for i in range(len(streams)):
             if sys.argv[4][sys.argv[4].find(".")+1:] == "cdhit":
                 out_stream.write(str(key) + "," + str(d[key]) + "\n")
             else:
-                out_stream.write(str(key-.05) + "," + str(key) + "," + str(d[key]) + "\n")
+                if key != 0:
+                    out_stream.write(str(key-.05) + "," + str(key) + "," + str(d[key]) + "\n")
 
 ymax = max(allys) + 1
 try:
