@@ -60,6 +60,13 @@ for f in files:
                     print "Improperly Formatted File"
                     exit(1)
 
+
+with open("out.csv", "w") as csv_stream:
+    for f in d:
+        csv_stream.write(f[:f.find(".")] + "," + d[f] + "\n")
+
+
+
 xs = d.keys()
 ys = d.values()
 
