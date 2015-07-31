@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/0j_filter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cdhit_filter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fastacheck_filter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sewagefilter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sewagesystem.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mining/run_single_0j_cdhit.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -28,23 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="graph_multiple_op.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mining/graph_multiple_op.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="run_samples_redundancy_complexity.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mining/run_samples_redundancy_complexity.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <caret line="11" column="41" selection-start-line="7" selection-start-column="8" selection-end-line="11" selection-end-column="41" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run_single_0j_cdhit.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mining/run_single_0j_cdhit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.16198704">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,10 +90,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sewagefilter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sewagefilter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sewagefilter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14578834">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
               <folding />
             </state>
@@ -172,6 +170,7 @@
         <option value="$PROJECT_DIR$/cdhitfilter.py" />
         <option value="$PROJECT_DIR$/fastacheckfilter.py" />
         <option value="$PROJECT_DIR$/sewagefilter.py" />
+        <option value="$PROJECT_DIR$/mining/run_single_0j_cdhit.py" />
       </list>
     </option>
   </component>
@@ -439,12 +438,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00132" summary="stuff">
-      <created>1438112122150</created>
-      <option name="number" value="00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1438112122150</updated>
     </task>
     <task id="LOCAL-00133" summary="stuff">
       <created>1438112221908</created>
@@ -734,7 +727,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438301239998</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="stuff">
+      <created>1438360636039</created>
+      <option name="number" value="00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1438360636040</updated>
+    </task>
+    <option name="localTasksCounter" value="182" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1122,16 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mining/run_samples_redundancy_complexity.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1200,9 +1189,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sewagefilter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14578834">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mining/run_samples_redundancy_complexity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="41" selection-start-line="7" selection-start-column="8" selection-end-line="11" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mining/run_single_0j_cdhit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16198704">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
