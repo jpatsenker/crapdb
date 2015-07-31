@@ -51,8 +51,8 @@
       <file leaf-file-name="calculate_complexities.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75701946">
-              <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.7408207">
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -441,12 +441,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00135" summary="stuff">
-      <created>1438113154516</created>
-      <option name="number" value="00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1438113154516</updated>
-    </task>
     <task id="LOCAL-00136" summary="stuff">
       <created>1438113280398</created>
       <option name="number" value="00136" />
@@ -735,7 +729,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438362649719</updated>
     </task>
-    <option name="localTasksCounter" value="184" />
+    <task id="LOCAL-00184" summary="stuff">
+      <created>1438366406518</created>
+      <option name="number" value="00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1438366406518</updated>
+    </task>
+    <option name="localTasksCounter" value="185" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1209,8 +1209,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75701946">
-          <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.7408207">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
