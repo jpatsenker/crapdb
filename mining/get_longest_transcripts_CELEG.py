@@ -12,12 +12,13 @@ with open(f, "r") as in_stream:
         sequence = protein[protein.find("\n")+1:]
         descrip = protein[:protein.find("\n")]
         sequence = sequence.replace("\n", "")
+        descrip_arr = descrip.split("\t")
 
-        if descrip[:descrip.find(".")] in final_proteins:
-            if len(sequence) > len(final_proteins[descrip[:descrip.find(".")]]):
-                final_proteins[descrip[:descrip.find(".")]] = sequence
+        if descrip_arr[2] in final_proteins:
+            if len(sequence) > len(final_proteins[descrip_arr[2]]):
+                final_proteins[descrip_arr[2]] = sequence
         else:
-            final_proteins[descrip[:descrip.find(".")]] = sequence
+            final_proteins[descrip_arr[2]] = sequence
 
 
 with open(f, "w") as out_stream:
