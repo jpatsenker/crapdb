@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mining/run_single_0j_cdhit.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -39,8 +38,8 @@
       <file leaf-file-name="run_single_0j_cdhit.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/run_single_0j_cdhit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16198704">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.14578834">
+              <caret line="9" column="165" selection-start-line="9" selection-start-column="165" selection-end-line="9" selection-end-column="165" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -439,12 +438,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00133" summary="stuff">
-      <created>1438112221908</created>
-      <option name="number" value="00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1438112221908</updated>
-    </task>
     <task id="LOCAL-00134" summary="stuff">
       <created>1438112994409</created>
       <option name="number" value="00134" />
@@ -733,7 +726,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438360636040</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="stuff">
+      <created>1438362494966</created>
+      <option name="number" value="00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1438362494967</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1207,8 +1206,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/run_single_0j_cdhit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16198704">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.14578834">
+          <caret line="9" column="165" selection-start-line="9" selection-start-column="165" selection-end-line="9" selection-end-column="165" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
