@@ -76,8 +76,8 @@ total = 0
 with open(file_in, "r") as stream_in:
     total = get_total_num_seq(stream_in)
 
-process_run_0j = run_0j(file_in, "tmp/0j_out/" + os.path.basename(file_out))
-process_run_0j.wait()
+#process_run_0j = run_0j(file_in, "tmp/0j_out/" + os.path.basename(file_out))
+#process_run_0j.wait()
 data = retrieve_points_of_interest(poi, "tmp/0j_out/" + os.path.basename(file_out))
 
 with open(file_out, "w") as stream_out:
