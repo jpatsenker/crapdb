@@ -8,8 +8,8 @@ final_proteins = {}
 with open(f, "r") as in_stream:
     everything = in_stream.read()
     proteins = everything.split(">")
+    proteins = proteins[1:]
     for protein in proteins:
-        print "hi"
         sequence = protein[protein.find("\n")+1:]
         descrip = protein[:protein.find("\n")]
         sequence = sequence.replace("\n", "")
