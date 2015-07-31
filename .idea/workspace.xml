@@ -95,8 +95,8 @@
       <file leaf-file-name="get_longest_transcripts_CELEG.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mining/get_longest_transcripts_CELEG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27537796">
-              <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.17818575">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -425,12 +425,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00129" summary="stuff">
-      <created>1438102902760</created>
-      <option name="number" value="00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1438102902761</updated>
-    </task>
     <task id="LOCAL-00130" summary="stuff">
       <created>1438102946381</created>
       <option name="number" value="00130" />
@@ -719,7 +713,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438300394479</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="stuff">
+      <created>1438300833973</created>
+      <option name="number" value="00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1438300833973</updated>
+    </task>
+    <option name="localTasksCounter" value="179" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1145,8 +1145,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mining/get_longest_transcripts_CELEG.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27537796">
-          <caret line="17" column="67" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.17818575">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding />
         </state>
       </provider>
