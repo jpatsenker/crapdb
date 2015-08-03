@@ -1,7 +1,6 @@
 from os.path import basename
 from sewagefilter import SewageFilter
-import subprocess
-
+import lsftools as lsf
 
 
 class ComplexityFilter(SewageFilter):
@@ -13,4 +12,4 @@ class ComplexityFilter(SewageFilter):
     def filter_crap(self, input_file, output_file):
         temporary = "tmp/" + basename(input_file)
         with open(temporary, "w") as out:
-            return subprocess.Popen(["python", self.__zero_j__, "-scores_only", input_file], stdout=out)
+            lsf.run_job("python " + self.__zero_j__ + " -scores_only " + input_file, output=out)
