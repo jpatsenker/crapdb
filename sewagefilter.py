@@ -16,7 +16,7 @@ class SewageFilter:
         Method for filtering proteomes based on certain statistic (i.e. redundancy, complexity, fission/fusion, lengths, etc)
         :param input_file: name of input fasta file
         :param output_file: name of output fasta file that is cleaned of extra sequences
-        :param diagnostics_file: name of diagnostics file with all problematic sequences
+        :param diagnostics_file: name of diagnostics file with all problematic sequences (appended to)
         :return:
         """
         pass

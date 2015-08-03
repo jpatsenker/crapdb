@@ -16,6 +16,13 @@ class ComplexityFilter(SewageFilter):
         self.__threshold_level__ = thresh
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
+        """
+        Run 0j on input file and strip of compressable sequences
+        :param input_file: fasta input
+        :param output_file: fasta output with fewer sequences than input
+        :param diagnostics_file: fasta output with compressable sequences (appended to)
+        :return:
+        """
         temporary = "tmp/" + basename(input_file) #temporary file for 0j raw output
         lsf.run_job("python " + self.__zero_j__ + " -scores_only " + input_file, output=temporary) #submit lsf job
         with open(temporary, "r") as complexity_data: #open output
