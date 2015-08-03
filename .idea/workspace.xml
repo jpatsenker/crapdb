@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/0j_filter.py" afterPath="$PROJECT_DIR$/0j_filter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lsftools.py" afterPath="$PROJECT_DIR$/lsftools.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sewagefilter.py" afterPath="$PROJECT_DIR$/sewagefilter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -35,23 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="run_single_0j_cdhit.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mining/run_single_0j_cdhit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="165" selection-start-line="9" selection-start-column="165" selection-end-line="9" selection-end-column="165" />
-              <folding>
-                <marker date="1438362489000" expanded="true" signature="0:28" placeholder="import ..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="calculate_complexities.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="88" selection-start-line="23" selection-start-column="4" selection-end-line="24" selection-end-column="88" />
+              <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -69,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sewagefilter.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sewagefilter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sewagefilter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3887689">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -93,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/0j_filter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="97" selection-start-line="13" selection-start-column="97" selection-end-line="13" selection-end-column="97" />
+              <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -101,10 +89,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lsftools.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lsftools.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lsftools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3401728">
+            <state vertical-scroll-proportion="0.0">
               <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
               <folding />
             </state>
@@ -175,10 +163,10 @@
         <option value="$PROJECT_DIR$/mining/run_single_0j_cdhit.py" />
         <option value="$PROJECT_DIR$/mining/calculate_complexities.py" />
         <option value="$PROJECT_DIR$/sewagesystem.py" />
-        <option value="$PROJECT_DIR$/sewagefilter.py" />
         <option value="$PROJECT_DIR$/fastacheck_filter.py" />
-        <option value="$PROJECT_DIR$/0j_filter.py" />
         <option value="$PROJECT_DIR$/lsftools.py" />
+        <option value="$PROJECT_DIR$/0j_filter.py" />
+        <option value="$PROJECT_DIR$/sewagefilter.py" />
       </list>
     </option>
   </component>
@@ -446,12 +434,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00143" summary="stuff">
-      <created>1438184492433</created>
-      <option name="number" value="00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1438184492433</updated>
     </task>
     <task id="LOCAL-00144" summary="stuff">
       <created>1438184645094</created>
@@ -741,7 +723,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438620926964</updated>
     </task>
-    <option name="localTasksCounter" value="192" />
+    <task id="LOCAL-00192" summary="stuff">
+      <created>1438621288365</created>
+      <option name="number" value="00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1438621288365</updated>
+    </task>
+    <option name="localTasksCounter" value="193" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1121,14 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/348993582/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="30.478401">
-          <caret line="2146" column="8" selection-start-line="2146" selection-start-column="8" selection-end-line="2146" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mining/get_longest_transcripts_CELEG.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1160,7 +1140,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="165" selection-start-line="9" selection-start-column="165" selection-end-line="9" selection-end-column="165" />
           <folding>
-            <marker date="1438362489000" expanded="true" signature="0:28" placeholder="import ..." />
+            <marker date="1438362489000" expanded="true" signature="-1:-1" placeholder="import ..." />
           </folding>
         </state>
       </provider>
@@ -1173,29 +1153,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sewagefilter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="84" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="84" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="88" selection-start-line="23" selection-start-column="4" selection-end-line="24" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1227,20 +1189,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lsftools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mining/calculate_complexities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm40/python_stubs/348993582/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33261338">
+          <caret line="2014" column="8" selection-start-line="2014" selection-start-column="8" selection-end-line="2014" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/0j_filter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="97" selection-start-line="13" selection-start-column="97" selection-end-line="13" selection-end-column="97" />
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lsftools.py">
+    <entry file="file://$PROJECT_DIR$/sewagefilter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3401728">
-          <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.3887689">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding />
         </state>
       </provider>
