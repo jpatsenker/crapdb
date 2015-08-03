@@ -3,7 +3,7 @@ def run_job(command, output="/dev/null", queue = "short", timelim = 1, wait = Fa
     a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + output + " " + command])
     if wait:
         a.wait()
-    if clean && output!="/dev/null":
+    if clean and output!="/dev/null":
         clean_file(output)
     if return_process:
         return a
