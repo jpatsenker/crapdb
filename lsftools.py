@@ -5,3 +5,10 @@ def run_job(command, output="/dev/null", queue = "short", timelim = 1, wait = Fa
         a.wait()
     if return_process:
         return a
+
+def clean_file(file_name):
+    with open(file_name, "r") as raw_file:
+        everything = raw_file.read()
+    split_stream = everything.split("------------------------------------------------------------" + "\n" + "Sender: LSF System")
+    with open(file_name, "w") as out_here:
+        out_here.write(split_stream[0])
