@@ -1,3 +1,4 @@
+from email.mime.multipart import MIMEMultipart
 import sys
 import os
 import subprocess
@@ -10,9 +11,10 @@ def send_email(info, email, files):
     sender = 'noreply@kirschner.med.harvard.edu'
     receivers = email
 
-    message = MIMEApplication()
-    message['Subject'] = "CRAP Score"
-    message['From'] = "CRAP DB <noreply@kirschner.med.harvard.edu>"
+    message = MIMEMultipart(
+        From="CRAP DB <noreply@kirschner.med.harvard.edu>",
+        Subject="CRAP Score"
+    )
 
     body = MIMEText(info)
     message.attach(body)
