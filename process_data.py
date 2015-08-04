@@ -10,7 +10,7 @@ def send_email(info, email, files):
     sender = 'noreply@kirschner.med.harvard.edu'
     receivers = email
 
-    message = ()
+    message = MIMEApplication()
     message['Subject'] = "CRAP Score"
     message['From'] = "CRAP DB <noreply@kirschner.med.harvard.edu>"
 
