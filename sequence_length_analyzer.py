@@ -5,7 +5,7 @@ class SeqLengthAnalyzer(SewageAnalyzer):
 
     __name__ = "LENGTH_DISTRIBUTION_ANALYZER"
 
-    def analyze_crap(self, input_file, analysis_file, graphic=True):
+    def analyze_crap(self, input_file, analysis_file, graphic=False):
         lengths = {}
         with open(input_file, "r") as input_stream:
             line = input_stream.readline()
@@ -21,3 +21,6 @@ class SeqLengthAnalyzer(SewageAnalyzer):
         with open(analysis_file, "w") as analysis_stream:
             for l in lengths:
                 analysis_stream.write(str(l) + "," + str(lengths[l]) + "\n")
+        if graphic:
+            #GRAPH IT HERE!!!!!
+            pass

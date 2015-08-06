@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphtools.py" afterPath="$PROJECT_DIR$/graphtools.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sequence_length_analyzer.py" afterPath="$PROJECT_DIR$/sequence_length_analyzer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -28,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/mining/graph_ordered_pairs.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="32" selection-start-line="4" selection-start-column="0" selection-end-line="31" selection-end-column="32" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -54,21 +55,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sequence_length_analyzer.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sequence_length_analyzer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sequence_length_analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4049676">
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graphtools.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graphtools.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graphtools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14578834">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -175,9 +176,9 @@
         <option value="$PROJECT_DIR$/0j_filter.py" />
         <option value="$PROJECT_DIR$/cdhit_filter.py" />
         <option value="$PROJECT_DIR$/sewagefilter.py" />
-        <option value="$PROJECT_DIR$/sequence_length_analyzer.py" />
         <option value="$PROJECT_DIR$/sewageanalyzer.py" />
         <option value="$PROJECT_DIR$/graphtools.py" />
+        <option value="$PROJECT_DIR$/sequence_length_analyzer.py" />
       </list>
     </option>
   </component>
@@ -445,12 +446,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00150" summary="stuff">
-      <created>1438185261963</created>
-      <option name="number" value="00150" />
-      <option name="project" value="LOCAL" />
-      <updated>1438185261963</updated>
     </task>
     <task id="LOCAL-00151" summary="stuff">
       <created>1438185548860</created>
@@ -740,7 +735,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438894299189</updated>
     </task>
-    <option name="localTasksCounter" value="199" />
+    <task id="LOCAL-00199" summary="stuff">
+      <created>1438894314005</created>
+      <option name="number" value="00199" />
+      <option name="project" value="LOCAL" />
+      <updated>1438894314005</updated>
+    </task>
+    <option name="localTasksCounter" value="200" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1218,26 +1219,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence_length_analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mining/graph_ordered_pairs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="32" selection-start-line="4" selection-start-column="0" selection-end-line="31" selection-end-column="32" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphtools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14578834">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_length_analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4049676">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding />
         </state>
       </provider>
