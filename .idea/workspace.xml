@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/graphtools.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sequence_length_analyzer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sewageanalyzer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graphtools.py" afterPath="$PROJECT_DIR$/graphtools.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -69,8 +67,8 @@
       <file leaf-file-name="graphtools.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graphtools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21058315">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.14578834">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -448,12 +446,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00149" summary="stuff">
-      <created>1438185214890</created>
-      <option name="number" value="00149" />
-      <option name="project" value="LOCAL" />
-      <updated>1438185214890</updated>
-    </task>
     <task id="LOCAL-00150" summary="stuff">
       <created>1438185261963</created>
       <option name="number" value="00150" />
@@ -742,7 +734,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438892324750</updated>
     </task>
-    <option name="localTasksCounter" value="198" />
+    <task id="LOCAL-00198" summary="stuff">
+      <created>1438894299189</created>
+      <option name="number" value="00198" />
+      <option name="project" value="LOCAL" />
+      <updated>1438894299189</updated>
+    </task>
+    <option name="localTasksCounter" value="199" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1238,8 +1236,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/graphtools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21058315">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.14578834">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding />
         </state>
       </provider>
