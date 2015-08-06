@@ -23,7 +23,7 @@ class ComplexityFilter(SewageFilter):
         :param diagnostics_file: fasta output with compressable sequences (appended to)
         :return:
         """
-        temporary = "tmp/" + basename(input_file) #temporary file for 0j raw output
+        temporary = "tmp/" + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
         lsf.run_job("python " + self.__zero_j__ + " -scores_only " + input_file, output=temporary) #submit lsf job
         with open(temporary, "r") as complexity_data: #open output
             with open(input_file, "r") as check_stream: #open input_file for lengths of sequences as well as checking names
