@@ -24,3 +24,10 @@ class SewageFilter:
 
     def get_name(self):
         return self.__name__
+
+    @staticmethod
+    def break_filter():
+        raise BrokenFilterError
+
+class BrokenFilterError(Exception):
+    pass
