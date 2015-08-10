@@ -1,12 +1,18 @@
 from sewagefilter import SewageFilter
 
 
-class SeqLengthAnalyzer(SewageFilter):
+class SeqLengthFilter(SewageFilter):
 
     __name__ = "LENGTH_DISTRIBUTION_ANALYZER"
 
-    __lower_thresh__ = 30 #smallest protein
-    __upper_thresh__ = 30000 #longest protein
+    __lower_thresh__ = None #smallest protein
+    __upper_thresh__ = None #longest protein
+
+    def __init__(self, lthresh, uthresh):
+        super(SewageFilter, self).__init__()
+        self.__lower_thresh__ = lthresh
+        self.__upper_thresh__ = uthresh
+
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         open(output_file, "w").close()
