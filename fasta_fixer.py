@@ -10,5 +10,5 @@ def fix_file(input_file):
                 else:
                     ofile.write(line)
             except IndexError:
-                print line + "\n"
+                pass
     shutil.move(input_file + ".tmp", input_file)
