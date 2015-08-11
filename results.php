@@ -1,7 +1,17 @@
 <?php
 
         function get_next_id(){
-            return 'nextone';
+            $file_handle = fopen("INCREMENTFILE.num", "r+");
+            while (!flock($file_handle, LOCK_EX)){}
+            $id = fread($file_handle);
+            if ($id === NULL){
+                $id = 0;
+            }
+            $next = $id+1;
+            ftruncate($file_handle, 0);
+            fwrite($file_handle, $next);
+            fclose($file_handle);
+            return $id;
         }
         
 
@@ -23,10 +33,10 @@
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
                 echo '<p style="color:#FF0000"> Error Moving File </p>';
             }else{
-                #mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes", 'From: "CRAP DB" <noreply@kirschner.med.harvard.edu>');
+                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes", 'From: "CRAP DB" <noreply@kirschner.med.harvard.edu>');
                 echo "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes";
-                echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
-                #exec('python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &');
+                #echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
+                exec('python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &');
                 
                 echo '<p style="color:green"> You will receive an email when your CRAP is ready. </p>';
             }
