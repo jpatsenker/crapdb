@@ -10,6 +10,7 @@
             $next = $id+1;
             ftruncate($file_handle, 0);
             fwrite($file_handle, $next);
+            flock($file_handle, LOCK_UN);
             fclose($file_handle);
             return $id;
         }
