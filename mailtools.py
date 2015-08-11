@@ -17,10 +17,15 @@ def send_email(info, email, files):
     message.attach(body)
 
     for f in files or []:
-        with open(f, "rb") as fil:
-            attach_file = MIMEApplication(fil.read())
-            attach_file.add_header('Content-Disposition', 'attachment', filename=f)
-            message.attach(attach_file)
+        try:
+            with open(f, "rb") as fil:
+                attach_file = MIMEApplication(fil.read())
+        except IOError:
+            open(f, "w").close()
+            with open(f, "rb") as fil:
+                attach_file = MIMEApplication(fil.read())
+        attach_file.add_header('Content-Disposition', 'attachment', filename=f)
+        message.attach(attach_file)
 
     try:
         smtpObj = smtplib.SMTP('localhost')
