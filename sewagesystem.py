@@ -8,7 +8,7 @@ class SewageSystem:
     filters = None
 
     def __init__(self):
-        self.filters = [SewageFilter]
+        self.filters = []
 
     def add_filter(self, sfilter):
         assert isinstance(sfilter, SewageFilter)
