@@ -43,4 +43,4 @@ ss.add_filter(len_filter)
 
 ss.filter_crap(iFile, oFile, dFile, tDir)
 
-mailtools.send_email("Nothing yet", eAddress, [oFile, dFile])
+mailtools.send_email("Nothing yet\n", eAddress, [oFile, dFile])
