@@ -43,5 +43,8 @@ class SewageSystem:
             except BrokenFilterError:
                 print "Oh no! Broken filter: " + self.filters[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
                 exit(1)
+            except TypeError:
+                print "Yo its this type: " + self.filters[fnum]
+                exit(1)
 
         shutil.copyfile(tfiles[-1], output_file)
