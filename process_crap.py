@@ -25,14 +25,16 @@ if "@" not in eAddress:
     exit(1)
 
 if not os.path.isdir(tDir):
-    print "Invalid temporary directory"
+    print "Invalid temporary directory\n"
     exit(1)
 
+if not os.path.exists(iFile):
+    print "Invalid input fasta\n"
+    exit(1)
 
 ss = SewageSystem()
 
 len_filter = SeqLengthFilter(30, 30000)
-
 
 ss.add_filter(len_filter)
 

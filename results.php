@@ -1,4 +1,10 @@
 <?php
+
+        function get_next_id(){
+            return 0;
+        }
+        
+
         $fastaCheck = '/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker.pl';
         $score = 0;
         
@@ -10,10 +16,11 @@
             #get information
             $email = $_POST['email'];
             $target_dir = "uploaded_fasta/";
-            $target_file = $target_dir . basename($_FILES['fastaseq']['name']);
+            $next_id = get_next_id();
+            $target_file = $target_dir . $next_id;
             
             #move file into uploaded folder
-            if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){          
+            if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
                 echo '<p style="color:#FF0000"> Error Moving File </p>';
             }else{
                 mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes", 'From: "CRAP DB" <noreply@kirschner.med.harvard.edu>');
