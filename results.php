@@ -7,7 +7,7 @@
             if ($id === NULL){
                 $id = 0;
             }
-            $next = $id+1;
+            $next = ($id+1)%1000000;
             ftruncate($file_handle, 0);
             fwrite($file_handle, $next);
             flock($file_handle, LOCK_UN);
