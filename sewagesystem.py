@@ -17,8 +17,8 @@ class SewageSystem:
     def delete_filter(self, name):
         assert isinstance(name, str)
         for fil in self.filters:
-            if fil.getName() == name:
-                self.filters.remove(self.filters.index(fil))
+            if fil.get_name() == name:
+                self.filters.remove(fil)
                 return True
         return False
 
@@ -26,7 +26,7 @@ class SewageSystem:
         if exclude_filters is None:
             exclude_filters = []
 
-        shutil.copyfile(input_file, temp_dir)
+        shutil.copyfile(input_file, temp_dir + os.path.basename(input_file))
 
         tfile_base = temp_dir + os.path.basename(input_file)
         tfiles = [tfile_base]
