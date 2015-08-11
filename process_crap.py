@@ -3,6 +3,7 @@ from sewagesystem import SewageSystem
 import mailtools
 import sys
 import os
+import fasta_fixer
 
 
 iFile = None
@@ -31,6 +32,8 @@ if not os.path.isdir(tDir):
 if not os.path.exists(iFile):
     print "Invalid input fasta\n"
     exit(1)
+
+fasta_fixer.fix_file(iFile)
 
 ss = SewageSystem()
 
