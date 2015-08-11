@@ -37,7 +37,7 @@
                 mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes", 'From: "CRAP DB" <noreply@kirschner.med.harvard.edu>');
                 echo "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes";
                 #echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
-                exec('python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &');
+                exec('python process_crap.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . ' > /dev/null 2>&1 &');
                 
                 echo '<p style="color:green"> You will receive an email when your CRAP is ready. </p>';
             }
