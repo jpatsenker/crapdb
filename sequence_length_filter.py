@@ -1,4 +1,5 @@
 from sewagefilter import SewageFilter
+import logtools
 
 
 class SeqLengthFilter(SewageFilter):

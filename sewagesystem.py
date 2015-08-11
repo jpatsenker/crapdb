@@ -2,6 +2,7 @@ from sewagefilter import SewageFilter
 from sewagefilter import BrokenFilterError
 import shutil
 import os
+import logtools
 
 class SewageSystem:
 
@@ -22,7 +23,7 @@ class SewageSystem:
                 return True
         return False
 
-    def filter_crap(self, input_file, output_file, diagnostics_file, temp_dir, exclude_filters = None):
+    def filter_crap(self, input_file, output_file, diagnostics_file, temp_dir, exclude_filters = None, log=None):
         if exclude_filters is None:
             exclude_filters = []
 
@@ -40,6 +41,8 @@ class SewageSystem:
                     continue
             try:
                 self.filters[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
+                if log is not None:
+                    logtools.add_to_log(self.filters[fnum].get_name(), log, description="Running lengths. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
             except BrokenFilterError:
                 print "Oh no! Broken filter: " + self.filters[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
                 exit(1)

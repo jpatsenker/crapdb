@@ -4,6 +4,7 @@ import mailtools
 import sys
 import os
 import fasta_fixer
+import logtools
 
 
 iFile = None
@@ -32,6 +33,8 @@ if not os.path.isdir(tDir):
 if not os.path.exists(iFile):
     print "Invalid input fasta\n"
     exit(1)
+
+logtools.start_new_log(iFile, eAddress, iFile + ".log")
 
 fasta_fixer.fix_file(iFile)
 
