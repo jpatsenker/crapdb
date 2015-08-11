@@ -19,7 +19,11 @@ class SeqLengthFilter(SewageFilter):
         with open(input_file, "r") as input_stream:
             line = input_stream.readline()
             while line:
-                assert line[0] == ">"
+                try:
+                    assert line[0] == ">"
+                except AssertionError:
+                    print line
+                    exit(1)
                 sequence = input_stream.readline()
                 sequence = sequence.rstrip("\n")
                 if len(sequence) > self.__upper_thresh__:
