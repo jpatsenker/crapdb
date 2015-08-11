@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="stuff">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fasta_fixer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process_crap.py" afterPath="$PROJECT_DIR$/process_crap.py" />
+    <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fasta_fixer.py" afterPath="$PROJECT_DIR$/fasta_fixer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -45,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fasta_fixer.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fasta_fixer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fasta_fixer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.16198704">
+              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -67,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_crap.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="process_crap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_crap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5669547">
+            <state vertical-scroll-proportion="0.0">
               <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -189,8 +188,8 @@
         <option value="$PROJECT_DIR$/sewagesystem.py" />
         <option value="$PROJECT_DIR$/mailtools.py" />
         <option value="$PROJECT_DIR$/sequence_length_filter.py" />
-        <option value="$PROJECT_DIR$/fasta_fixer.py" />
         <option value="$PROJECT_DIR$/process_crap.py" />
+        <option value="$PROJECT_DIR$/fasta_fixer.py" />
       </list>
     </option>
   </component>
@@ -458,12 +457,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00168" summary="stuff">
-      <created>1438276846873</created>
-      <option name="number" value="00168" />
-      <option name="project" value="LOCAL" />
-      <updated>1438276846874</updated>
     </task>
     <task id="LOCAL-00169" summary="stuff">
       <created>1438277689046</created>
@@ -753,7 +746,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439316223403</updated>
     </task>
-    <option name="localTasksCounter" value="217" />
+    <task id="LOCAL-00217" summary="stuff">
+      <created>1439316537148</created>
+      <option name="number" value="00217" />
+      <option name="project" value="LOCAL" />
+      <updated>1439316537148</updated>
+    </task>
+    <option name="localTasksCounter" value="218" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1176,16 +1175,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fasta_filter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/process_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1234,11 +1223,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fasta_fixer.py">
+    <entry file="file://$PROJECT_DIR$/process_crap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fasta_filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1250,13 +1251,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_crap.py">
+    <entry file="file://$PROJECT_DIR$/fasta_fixer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5669547">
-          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.16198704">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
