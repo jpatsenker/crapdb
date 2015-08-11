@@ -47,8 +47,8 @@
       <file leaf-file-name="fasta_fixer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fasta_fixer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16198704">
-              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.19438446">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -458,12 +458,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00169" summary="stuff">
-      <created>1438277689046</created>
-      <option name="number" value="00169" />
-      <option name="project" value="LOCAL" />
-      <updated>1438277689046</updated>
-    </task>
     <task id="LOCAL-00170" summary="stuff">
       <created>1438277884441</created>
       <option name="number" value="00170" />
@@ -752,7 +746,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439316537148</updated>
     </task>
-    <option name="localTasksCounter" value="218" />
+    <task id="LOCAL-00218" summary="stuff">
+      <created>1439316660405</created>
+      <option name="number" value="00218" />
+      <option name="project" value="LOCAL" />
+      <updated>1439316660406</updated>
+    </task>
+    <option name="localTasksCounter" value="219" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1253,8 +1253,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fasta_fixer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16198704">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.19438446">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
           <folding />
         </state>
       </provider>

@@ -4,8 +4,11 @@ def fix_file(input_file):
         everything = ifile.read()
     with open(input_file + ".tmp", "w") as ofile:
         for line in everything.split("\n"):
-            if line[0] == ">":
-                ofile.write("\n" + line + "\n")
-            else:
-                ofile.write(line)
+            try:
+                if line[0] == ">":
+                    ofile.write("\n" + line + "\n")
+                else:
+                    ofile.write(line)
+            except IndexError:
+                print line + "\n"
     shutil.move(input_file + ".tmp", input_file)
