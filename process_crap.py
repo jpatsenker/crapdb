@@ -1,4 +1,5 @@
 from sequence_length_filter import SeqLengthFilter
+from num_seq_analyzer import NumSeqAnalyzer
 from sewagesystem import SewageSystem
 import mailtools
 import sys
@@ -42,10 +43,22 @@ fasta_fixer.fix_file(iFile)
 
 ss = SewageSystem()
 
+num_seq_bef_anlzr = NumSeqAnalyzer()
+num_seq_aft_anlzr = NumSeqAnalyzer()
 len_filter = SeqLengthFilter(30, 30000)
 
-ss.add_filter(len_filter)
+ss.add_module(num_seq_bef_anlzr)
+ss.add_module(len_filter)
+ss.add_module(num_seq_aft_anlzr)
 
-ss.filter_crap(iFile, oFile, dFile, tDir, log=logfil)
+aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
 
-mailtools.send_email("Nothing yet\n", eAddress, [oFile, dFile])
+assert len(aFiles) == 2
+with open(aFiles[0], "r") as analysisFile:
+    before_seq = analysisFile.read()
+with open(aFiles[1], "r") as analysisFile:
+    after_seq = analysisFile.read()
+
+crap_score = 1 - float(after_seq)/float(before_seq)
+
+mailtools.send_email("Final Crap Score: " + str(crap_score) + '\n See clean and messy files below, and log here: <a href="' +  logfil + '"> Log file for job </a>', eAddress, [oFile, dFile])

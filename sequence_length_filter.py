@@ -3,7 +3,7 @@ from sewagefilter import SewageFilter
 
 class SeqLengthFilter(SewageFilter):
 
-    __name__ = "LENGTH_DISTRIBUTION_ANALYZER"
+    __name__ = "LENGTH_DISTRIBUTION_FILTER"
 
     __lower_thresh__ = None #smallest protein
     __upper_thresh__ = None #longest protein

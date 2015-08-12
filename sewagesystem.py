@@ -1,53 +1,71 @@
 from sewagefilter import SewageFilter
 from sewagefilter import BrokenFilterError
+from sewageanalyzer import SewageAnalyzer
 import shutil
 import os
 import logtools
 
 class SewageSystem:
 
-    filters = None
+    modules = None
 
     def __init__(self):
-        self.filters = []
+        self.modules = []
 
-    def add_filter(self, sfilter):
-        assert isinstance(sfilter, SewageFilter)
-        self.filters.append(sfilter)
+    def add_module(self, smod):
+        assert isinstance(smod, SewageFilter) or isinstance(smod, SewageAnalyzer)
+        self.modules.append(smod)
 
-    def delete_filter(self, name):
+    def delete_module(self, name):
         assert isinstance(name, str)
-        for fil in self.filters:
+        for fil in self.modules:
             if fil.get_name() == name:
-                self.filters.remove(fil)
+                self.modules.remove(fil)
                 return True
         return False
 
-    def filter_crap(self, input_file, output_file, diagnostics_file, temp_dir, exclude_filters = None, log=None):
-        if exclude_filters is None:
-            exclude_filters = []
+    def flush_the_toilet(self, input_file, output_file, diagnostics_file, temp_dir, exclude_modules = None, log=None):
+        aFiles = []
+        if exclude_modules is None:
+            exclude_modules = []
 
         shutil.copyfile(input_file, temp_dir + os.path.basename(input_file))
 
         tfile_base = temp_dir + os.path.basename(input_file)
         tfiles = [tfile_base]
 
-        for fnum in range(len(self.filters) - len(exclude_filters)):
+        for fnum in range(len(self.modules) - len(exclude_modules)):
             tfiles.append(tfile_base + "." + str(fnum))
 
-        for fnum in range(len(self.filters)):
-            for exnum in exclude_filters:
-                if self.filters[exnum] == self.filters[fnum]:
-                    continue
-            try:
-                self.filters[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
-                if log is not None:
-                    logtools.add_to_log(self.filters[fnum].get_name(), log, description="Running lengths. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
-            except BrokenFilterError:
-                print "Oh no! Broken filter: " + self.filters[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
-                exit(1)
-            except TypeError:
-                print "Yo its this type: " + str(self.filters[fnum])
-                exit(1)
+        for fnum in range(len(self.modules)):
+            con = False
+            for exnum in exclude_modules:
+                if self.modules[exnum] == self.modules[fnum]:
+                    con = True
+            if con:
+                continue
+            if isinstance(self.modules[fnum], SewageFilter):
+                try:
+                    self.modules[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
+                    if log is not None:
+                        logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running filter. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
+                except BrokenFilterError:
+                    print "Oh no! Broken filter: " + self.modules[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
+                    exit(1)
+                except TypeError:
+                    print "Yo its this type: " + str(self.modules[fnum] + "\n")
+                    exit(1)
+            else:
+                assert isinstance(self.modules[fnum], SewageAnalyzer)
+                try:
+                    aFile = tfile_base + self.modules[fnum].get_name() + fnum
+                    self.modules[fnum].analyze_crap(tfiles[fnum], aFile, graphic=False)
+                    aFiles.append(aFile)
+                    if log is not None:
+                        logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running analysis. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
+                except TypeError:
+                    print "Yo its this type: " + str(self.modules[fnum] + "\n")
+                    exit(1)
 
         shutil.copyfile(tfiles[-1], output_file)
+        return aFiles
