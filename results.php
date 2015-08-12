@@ -1,7 +1,7 @@
 <?php
 
         function get_next_id(){
-            $file_handle = fopen("test.txt", "r+");
+            $file_handle = fopen("INCREMENTFILE.num", "r+");
             while (!flock($file_handle, LOCK_EX)){}
             $id = stream_get_contents($file_handle);
             $next = ($id+1)%10000;
