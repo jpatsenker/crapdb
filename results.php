@@ -40,6 +40,7 @@
                 exec('python process_crap.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . ' > /dev/null 2>&1 &');
                 
                 echo '<p style="color:green"> You will receive an email when your CRAP is ready. </p>';
+                echo '<p><a href="logs/' . $next_id . '"> Log file for job </a></p>';
             }
     	}
     

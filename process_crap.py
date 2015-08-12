@@ -34,7 +34,7 @@ if not os.path.exists(iFile):
     print "Invalid input fasta\n"
     exit(1)
 
-logtools.start_new_log(iFile, eAddress, iFile + ".log")
+logtools.start_new_log(iFile, eAddress, "logs/" + os.path.basename(iFile) + ".log")
 
 fasta_fixer.fix_file(iFile)
 
