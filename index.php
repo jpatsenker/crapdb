@@ -22,7 +22,7 @@
                             <div class="subtitle"> <b>C</b>omprehensive <b>R</b>edundancy <b>A</b>nalysis for Complete <b>P</b>roteomes </div>
                             
                             <div class="general">
-                                <form name="download" action="results.php" method="POST" enctype="multipart/form-data" autocomplete="on">
+                                <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
 
                                     <div id="download_area">
                                         <p><b>FASTA</b></p>
