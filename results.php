@@ -51,7 +51,7 @@
             }else{
                echo '<div class="outputs">';
 
-                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes", 'From: "CRAP DB" <noreply@kirschner.med.harvard.edu>');
+                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes.\n <a href='logs/" . $next_id . ".log'> Log file for job </a>", 'From: "CRAP DB" <noreply@kirschner.med.harvard.edu>');
                 
                 echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
                 #echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
