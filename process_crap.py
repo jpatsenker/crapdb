@@ -37,6 +37,22 @@ if not os.path.exists(iFile):
 
 logfil = "logs/" + os.path.basename(iFile) + ".log"
 
+try:
+    os.remove(logfil)
+except OSError:
+    pass
+
+try:
+    os.remove(oFile)
+except OSError:
+    pass
+
+
+try:
+    os.remove(dFile)
+except OSError:
+    pass
+
 logtools.start_new_log(iFile, eAddress, logfil)
 
 fasta_fixer.fix_file(iFile)

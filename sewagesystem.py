@@ -58,7 +58,11 @@ class SewageSystem:
             else:
                 assert isinstance(self.modules[fnum], SewageAnalyzer)
                 try:
-                    aFile = tfile_base + self.modules[fnum].get_name() + fnum
+                    aFile = str(tfile_base) + self.modules[fnum].get_name() + str(fnum)
+                    try:
+                        os.remove(aFile)
+                    except OSError:
+                        pass
                     self.modules[fnum].analyze_crap(tfiles[fnum], aFile, graphic=False)
                     aFiles.append(aFile)
                     if log is not None:
