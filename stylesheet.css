@@ -26,7 +26,10 @@
     color:#333333;
     background-color:#998066;
     padding:.5em;
-    display:inline-block;
     margin:auto;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.general{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
