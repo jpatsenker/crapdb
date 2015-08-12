@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheet.css" afterPath="$PROJECT_DIR$/stylesheet.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Vonique 64 Bold Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Vonique 64 Bold.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Vonique 64 Italic.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Vonique 64.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Vonique 64.ttf" afterPath="" />
     </list>
     <ignored path="crapdb.iws" />
     <ignored path=".idea/workspace.xml" />
