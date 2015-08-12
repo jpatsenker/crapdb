@@ -12,12 +12,11 @@
     padding-right:.4em;
     display:inline-block;
     margin:auto;
-    width:100%;
 }
 
 .bigblock{
     background-color:#cccccc;
     padding:1em;
     display:inline-block;
-    width:100%;
+    margin:auto;
 }

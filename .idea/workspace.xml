@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheet.css" afterPath="$PROJECT_DIR$/stylesheet.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -454,18 +456,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00206" summary="stuff">
-      <created>1439250696134</created>
-      <option name="number" value="00206" />
-      <option name="project" value="LOCAL" />
-      <updated>1439250696134</updated>
-    </task>
-    <task id="LOCAL-00207" summary="stuff">
-      <created>1439307299198</created>
-      <option name="number" value="00207" />
-      <option name="project" value="LOCAL" />
-      <updated>1439307299198</updated>
-    </task>
     <task id="LOCAL-00208" summary="stuff">
       <created>1439313320858</created>
       <option name="number" value="00208" />
@@ -748,7 +738,19 @@
       <option name="project" value="LOCAL" />
       <updated>1439411335638</updated>
     </task>
-    <option name="localTasksCounter" value="255" />
+    <task id="LOCAL-00255" summary="stuff">
+      <created>1439411377060</created>
+      <option name="number" value="00255" />
+      <option name="project" value="LOCAL" />
+      <updated>1439411377061</updated>
+    </task>
+    <task id="LOCAL-00256" summary="stuff">
+      <created>1439411401122</created>
+      <option name="number" value="00256" />
+      <option name="project" value="LOCAL" />
+      <updated>1439411401122</updated>
+    </task>
+    <option name="localTasksCounter" value="257" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
