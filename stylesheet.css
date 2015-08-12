@@ -37,18 +37,22 @@
 
 .outputs{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style:italic;
     background-color:#CCFFCC;
+    color:#333333;
     display:inline-block;
-    padding-right:.5em;
-    padding-left:.5em;
+    padding-right:1.2em;
+    padding-left:1.2em;
 
     
 }
 
 .notout{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style:italic;
     background-color:#FF9999;
     display:inline-block;
-    padding-right:.5em;
-    padding-left:.5em;
+    color:#333333;
+    padding-right:1.2em;
+    padding-left:1.2em;
 }
