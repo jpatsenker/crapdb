@@ -1,3 +1,14 @@
+<HTML>
+    <HEAD>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>
+            CRAP
+        </title>
+        
+    </HEAD>
+    <BODY>
+
+
 <?php
 
         function get_next_id(){
@@ -50,6 +61,9 @@
     	}
     
     
-    include "index.php";
+    include "mainframe.php";
 
 ?>
+
+    </BODY>
+</HTML>
