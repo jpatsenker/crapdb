@@ -3,6 +3,7 @@
     src: url("vonique_64/Vonique\ 64\ Bold.ttf") format("truetype");
 }
 
+
 .headline {
     font-family: "Vonique";
     font-size:500%;
@@ -17,6 +18,15 @@
 .bigblock{
     background-color:#cccccc;
     padding:1em;
+    display:inline-block;
+    margin:auto;
+}
+
+.subtitle{
+    color:#333333;
+    background-color:#996666
+    padding-left:.4em;
+    padding-right:.4em;
     display:inline-block;
     margin:auto;
 }
