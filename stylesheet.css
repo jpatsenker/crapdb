@@ -39,7 +39,9 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color:#CCFFCC;
     display:inline-block;
-    padding:.5em;
+    padding-right:.5em;
+    padding-left:.5em;
+
     
 }
 
@@ -47,5 +49,6 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color:#FF9999;
     display:inline-block;
-    padding:.5em;
+    padding-right:.5em;
+    padding-left:.5em;
 }
