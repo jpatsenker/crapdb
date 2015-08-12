@@ -1,4 +1,8 @@
-@headline {
-    font-family: "Vonique"
-    src: url("vonique_64") format("eot"),
+@font-face {
+    font-family: "Vonique";
+    src: url("vonique_64") format("eot");
+}
+
+.classname {
+    font-family: 'Vonique';
 }
