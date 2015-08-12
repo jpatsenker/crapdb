@@ -2,6 +2,7 @@ from sewagefilter import SewageFilter
 from sewagefilter import BrokenFilterError
 from sewageanalyzer import SewageAnalyzer
 import shutil
+import subprocess
 import os
 import logtools
 
@@ -28,6 +29,8 @@ class SewageSystem:
         aFiles = []
         if exclude_modules is None:
             exclude_modules = []
+
+        subprocess.Popen(['rm', '-f', temp_dir + os.path.basename(input_file) + "*"])
 
         shutil.copyfile(input_file, temp_dir + os.path.basename(input_file))
 
