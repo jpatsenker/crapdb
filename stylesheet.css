@@ -6,7 +6,7 @@
 .headline {
     font-family: "Vonique";
     font-size:5em;
-    color:#444444;
+    color:#333333;
     background-color:#996666;
     padding-left:.4em;
     padding-right:.4em;
@@ -14,5 +14,7 @@
 }
 
 .bigblock{
-    background-color:#444444;
+    background-color:#cccccc;
+    padding:1em;
+    display:inline-block;
 }
