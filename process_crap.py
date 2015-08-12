@@ -34,7 +34,9 @@ if not os.path.exists(iFile):
     print "Invalid input fasta\n"
     exit(1)
 
-logtools.start_new_log(iFile, eAddress, "logs/" + os.path.basename(iFile) + ".log")
+logfil = "logs/" + os.path.basename(iFile) + ".log"
+
+logtools.start_new_log(iFile, eAddress, logfil)
 
 fasta_fixer.fix_file(iFile)
 
@@ -44,6 +46,6 @@ len_filter = SeqLengthFilter(30, 30000)
 
 ss.add_filter(len_filter)
 
-ss.filter_crap(iFile, oFile, dFile, tDir)
+ss.filter_crap(iFile, oFile, dFile, tDir, log=logfil)
 
 mailtools.send_email("Nothing yet\n", eAddress, [oFile, dFile])
