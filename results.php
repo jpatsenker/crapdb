@@ -59,10 +59,10 @@
                 echo '<p><a href="logs/' . $next_id . '.log"> Log file for job </a></p>';
             }
             
-            echo "</div>";
     	}
     
-    
+    echo "</div>";
+
     include "mainframe.php";
 
 ?>
