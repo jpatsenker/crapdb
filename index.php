@@ -3,29 +3,31 @@
 
 <html>
 
-	<head>
-		<title>
-			
-			CRAP
+    <head>
+            <title>
 
-		</title>
-	</head>
+                    CRAP
 
-	<body>
+            </title>
+    </head>
 
-		<form name="download" action="results.php" method="POST" enctype="multipart/form-data">
-                
-            		<div id="download_area">
-               			<p><b>FASTA</b></p>
-                		<input type="file" name="fastaseq">
-                		<p><b>EMAIL</b></p>
-                		<textarea name="email"></textarea>
-                		<p></p>
-                		<input type="submit"/>
-            		</div>
-        	</form>
+    <body>
 
-	</body>
+        <div class="headline"> C.R.A.P. Web Server</div>
+
+        <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
+
+            <div id="download_area">
+                <p><b>FASTA</b></p>
+                <input type="file" name="fastaseq">
+                <p><b>EMAIL</b></p>
+                <textarea name="email"></textarea>
+                <p></p>
+                <input type="submit"/>
+            </div>
+        </form>
+
+    </body>
 
 
 
