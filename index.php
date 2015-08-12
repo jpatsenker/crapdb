@@ -17,7 +17,7 @@
                     <td></td>
                     <td>
                         <div class="bigblock">
-                            <div class="headline">C.R.A.P. web server</div>
+                            <div class="headline">C.R.A.P. web server</div> <p>
                             
                             <div class="subtitle"> <b>C</b>omprehensive <b>R</b>edundancy <b>A</b>nalysis for Complete <b>P</b>roteomes </div>
 
