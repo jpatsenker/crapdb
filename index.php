@@ -4,11 +4,10 @@
 <html>
 
     <head>
-            <title>
-
-                    CRAP
-
-            </title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>
+            CRAP
+        </title>
     </head>
 
     <body>
