@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheet.css" afterPath="$PROJECT_DIR$/stylesheet.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -23,10 +24,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sequence_length_filter.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sequence_length_filter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sequence_length_filter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.45356372">
               <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
@@ -35,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_crap.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="process_crap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_crap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76133907">
+            <state vertical-scroll-proportion="0.0">
               <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -454,18 +455,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00189" summary="stuff">
-      <created>1438620229770</created>
-      <option name="number" value="00189" />
-      <option name="project" value="LOCAL" />
-      <updated>1438620229770</updated>
-    </task>
-    <task id="LOCAL-00190" summary="stuff">
-      <created>1438620888739</created>
-      <option name="number" value="00190" />
-      <option name="project" value="LOCAL" />
-      <updated>1438620888739</updated>
-    </task>
     <task id="LOCAL-00191" summary="stuff">
       <created>1438620926964</created>
       <option name="number" value="00191" />
@@ -748,7 +737,19 @@
       <option name="project" value="LOCAL" />
       <updated>1439409411154</updated>
     </task>
-    <option name="localTasksCounter" value="238" />
+    <task id="LOCAL-00238" summary="stuff">
+      <created>1439409448269</created>
+      <option name="number" value="00238" />
+      <option name="project" value="LOCAL" />
+      <updated>1439409448269</updated>
+    </task>
+    <task id="LOCAL-00239" summary="stuff">
+      <created>1439409491297</created>
+      <option name="number" value="00239" />
+      <option name="project" value="LOCAL" />
+      <updated>1439409491297</updated>
+    </task>
+    <option name="localTasksCounter" value="240" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1221,16 +1222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sequence_length_filter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sewagesystem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1243,10 +1234,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/process_crap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76133907">
+        <state vertical-scroll-proportion="0.0">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sequence_length_filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45356372">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
