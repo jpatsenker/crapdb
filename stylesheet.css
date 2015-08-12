@@ -34,3 +34,14 @@
 .general{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+.outputs{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color:#CCFFCC;
+    
+}
+
+.notout{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color:#FF9999;
+}
