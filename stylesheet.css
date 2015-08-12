@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Vonique";
-    src: url("vonique_64/Vonique\ 64\ Bold.ttf") format("ttf");
+    src: url("vonique_64/Vonique\ 64\ Bold.ttf") format("truetype");
 }
 
 .headline {
