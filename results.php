@@ -1,21 +1,18 @@
 <?php
 
         function get_next_id(){
-            $file_handle = fopen("INCREMENTFILE.num", "r+");
+            $file_handle = fopen("test.txt", "r+");
             while (!flock($file_handle, LOCK_EX)){}
-            $id = fread($file_handle);
-            if ($id === NULL){
-                $id = 0;
-            }
-            $next = ($id+1)%1000000;
-            ftruncate($file_handle, 0);
+            $id = stream_get_contents($file_handle);
+            $next = ($id+1)%10000;
+            fseek($file_handle,0);
+            ftruncate($file_handle,0);
             fwrite($file_handle, $next);
             flock($file_handle, LOCK_UN);
             fclose($file_handle);
             return $id;
         }
         
-        echo "test";
         
         parse_ini_file("php.ini");
         
