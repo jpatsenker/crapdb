@@ -4,8 +4,9 @@
         <tr>
             <td>
                 <div class="bigblock">
-                    <div class="headline">C.R.A.P. web server</div> <p>
-
+                    <a href="index.php">
+                        <div class="headline">C.R.A.P. web server</div> <p>
+                    </a>
                     <div class="subtitle"> <b>C</b>omprehensive <b>R</b>edundancy <b>A</b>nalysis for Complete <b>P</b>roteomes </div>
 
                     <div class="general">
