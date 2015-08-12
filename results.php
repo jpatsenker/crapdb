@@ -24,6 +24,8 @@
             $target_dir = "uploaded_fasta/";
             $next_id = get_next_id();
             $target_file = $target_dir . $next_id;
+            echo $next_id;
+            exit(0);
             
             #move file into uploaded folder
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
