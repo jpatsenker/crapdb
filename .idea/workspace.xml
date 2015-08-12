@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="" />
     <ignored path="crapdb.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +24,8 @@
       <file leaf-file-name="sequence_length_filter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sequence_length_filter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45356372">
-              <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.61555076">
+              <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -454,18 +452,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00196" summary="stuff">
-      <created>1438704938931</created>
-      <option name="number" value="00196" />
-      <option name="project" value="LOCAL" />
-      <updated>1438704938931</updated>
-    </task>
-    <task id="LOCAL-00197" summary="stuff">
-      <created>1438892324750</created>
-      <option name="number" value="00197" />
-      <option name="project" value="LOCAL" />
-      <updated>1438892324750</updated>
-    </task>
     <task id="LOCAL-00198" summary="stuff">
       <created>1438894299189</created>
       <option name="number" value="00198" />
@@ -748,7 +734,19 @@
       <option name="project" value="LOCAL" />
       <updated>1439410329711</updated>
     </task>
-    <option name="localTasksCounter" value="245" />
+    <task id="LOCAL-00245" summary="stuff">
+      <created>1439410592728</created>
+      <option name="number" value="00245" />
+      <option name="project" value="LOCAL" />
+      <updated>1439410592728</updated>
+    </task>
+    <task id="LOCAL-00246" summary="stuff">
+      <created>1439410636224</created>
+      <option name="number" value="00246" />
+      <option name="project" value="LOCAL" />
+      <updated>1439410636224</updated>
+    </task>
+    <option name="localTasksCounter" value="247" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1243,8 +1241,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sequence_length_filter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45356372">
-          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.61555076">
+          <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
