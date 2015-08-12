@@ -12,7 +12,7 @@
 
     <body>
 
-        <div class="headline"> C.R.A.P. Web Server</div>
+        <div class="headline"> crap web server</div>
 
         <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
 
