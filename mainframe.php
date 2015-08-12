@@ -2,7 +2,6 @@
 <div style="width:100%;">
     <table>
         <tr>
-            <td></td>
             <td>
                 <div class="bigblock">
                     <div class="headline">C.R.A.P. web server</div> <p>
@@ -24,6 +23,5 @@
                     </div>
                 </div>
             </td>
-            <td></td>
     </table>
 </div>
