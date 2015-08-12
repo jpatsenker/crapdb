@@ -11,21 +11,21 @@
     </head>
 
     <body>
+        <div class="bigblock">
+            <div class="headline"> crap web server</div>
 
-        <div class="headline"> crap web server</div>
+            <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
 
-        <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
-
-            <div id="download_area">
-                <p><b>FASTA</b></p>
-                <input type="file" name="fastaseq">
-                <p><b>EMAIL</b></p>
-                <textarea name="email"></textarea>
-                <p></p>
-                <input type="submit"/>
-            </div>
-        </form>
-
+                <div id="download_area">
+                    <p><b>FASTA</b></p>
+                    <input type="file" name="fastaseq">
+                    <p><b>EMAIL</b></p>
+                    <textarea name="email"></textarea>
+                    <p></p>
+                    <input type="submit"/>
+                </div>
+            </form>
+        </div>
     </body>
 
 

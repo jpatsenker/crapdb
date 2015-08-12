@@ -6,5 +6,13 @@
 .headline {
     font-family: "Vonique";
     font-size:5em;
-    background-color:"996666";
+    color:#444444;
+    background-color:#996666;
+    padding-left:.4em;
+    padding-right:.4em;
+    display:inline-block;
+}
+
+.bigblock{
+    background-color:#444444;
 }
