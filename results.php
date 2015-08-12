@@ -15,9 +15,7 @@
             return $id;
         }
         
-
-        $fastaCheck = '/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker.pl';
-        $score = 0;
+        echo "test";
         
         parse_ini_file("php.ini");
         
