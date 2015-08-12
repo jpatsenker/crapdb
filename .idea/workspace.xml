@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -455,12 +454,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00215" summary="stuff">
-      <created>1439315921953</created>
-      <option name="number" value="00215" />
-      <option name="project" value="LOCAL" />
-      <updated>1439315921953</updated>
-    </task>
     <task id="LOCAL-00216" summary="stuff">
       <created>1439316223403</created>
       <option name="number" value="00216" />
@@ -749,7 +742,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439413256869</updated>
     </task>
-    <option name="localTasksCounter" value="264" />
+    <task id="LOCAL-00264" summary="stuff">
+      <created>1439413328860</created>
+      <option name="number" value="00264" />
+      <option name="project" value="LOCAL" />
+      <updated>1439413328860</updated>
+    </task>
+    <option name="localTasksCounter" value="265" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
