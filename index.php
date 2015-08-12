@@ -14,7 +14,7 @@
         <div style="width:100%;">
             <table>
                 <tr>
-                    <td width="20%"><div style="width:30%;"></div></td>
+                    <td width="20%"></td>
                     <td>
                         <div class="bigblock">
                             <div class="headline"> crap web server</div>
@@ -32,7 +32,7 @@
                             </form>
                         </div>
                     </td>
-                    <td width="20%"><div style="width:30%;"></div></td>
+                    <td width="20%"></td>
             </table>
         </div>
     </body>
