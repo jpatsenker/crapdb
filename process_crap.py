@@ -77,4 +77,4 @@ with open(aFiles[1], "r") as analysisFile:
 
 crap_score = 1 - float(after_seq)/float(before_seq)
 
-mailtools.send_email("Final Crap Score: " + str(crap_score) + '\n See clean and messy files below, and log here: <a href="' +  logfil + '"> Log file for job </a>', eAddress, [oFile, dFile])
+mailtools.send_email("Final Crap Score: " + str(crap_score) + '\n See clean and messy files below, and log here: <a href="' +  logfil + '"> Log file for job </a> \n', eAddress, [oFile, dFile])

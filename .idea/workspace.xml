@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mailtools.py" afterPath="$PROJECT_DIR$/mailtools.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sewagesystem.py" afterPath="$PROJECT_DIR$/sewagesystem.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process_crap.py" afterPath="$PROJECT_DIR$/process_crap.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.php" afterPath="$PROJECT_DIR$/results.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process_crap.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="process_crap.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/process_crap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.35205182">
+              <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -51,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/results.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mailtools.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mailtools.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mailtools.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19438446">
+            <state vertical-scroll-proportion="0.0">
               <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
               <folding />
             </state>
@@ -182,9 +182,9 @@
         <option value="$PROJECT_DIR$/logtools.py" />
         <option value="$PROJECT_DIR$/sequence_length_filter.py" />
         <option value="$PROJECT_DIR$/num_seq_analyzer.py" />
-        <option value="$PROJECT_DIR$/process_crap.py" />
         <option value="$PROJECT_DIR$/sewagesystem.py" />
         <option value="$PROJECT_DIR$/mailtools.py" />
+        <option value="$PROJECT_DIR$/process_crap.py" />
       </list>
     </option>
   </component>
@@ -452,12 +452,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00242" summary="stuff">
-      <created>1439410165158</created>
-      <option name="number" value="00242" />
-      <option name="project" value="LOCAL" />
-      <updated>1439410165167</updated>
     </task>
     <task id="LOCAL-00243" summary="stuff">
       <created>1439410311218</created>
@@ -747,7 +741,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439577207849</updated>
     </task>
-    <option name="localTasksCounter" value="291" />
+    <task id="LOCAL-00291" summary="stuff">
+      <created>1439577514271</created>
+      <option name="number" value="00291" />
+      <option name="project" value="LOCAL" />
+      <updated>1439577514271</updated>
+    </task>
+    <option name="localTasksCounter" value="292" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1109,7 +1109,7 @@
     <entry file="file://$PROJECT_DIR$/results.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1162,16 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_crap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sewagesystem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1184,9 +1174,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mailtools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19438446">
+        <state vertical-scroll-proportion="0.0">
           <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_crap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35205182">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

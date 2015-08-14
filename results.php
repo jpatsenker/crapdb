@@ -49,9 +49,14 @@
                 echo '<div class="notout">';
                 echo 'Error Moving File <br>';
             }else{
-               echo '<div class="outputs">';
+                echo '<div class="outputs">';
 
-                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes.\n <a href='logs/" . $next_id . ".log'> Log file for job </a>", 'From: "CRAP DB" <noreply@kirschner.med.harvard.edu>');
+                $headers = 'From: "CRAP Pipeline" <noreply@kirschner.med.harvard.edu>\r\n';
+                $headers .= "MIME-Version: 1.0\r\n";
+                $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+                
+                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes.\n <a href='logs/" . $next_id . ".log'> Log file for job </a>", $headers);
                 
                 echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
                 #echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
