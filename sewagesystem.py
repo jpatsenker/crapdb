@@ -69,6 +69,7 @@ class SewageSystem:
                     except (OSError, IOError):
                         pass
                     self.modules[fnum].analyze_crap(tfiles[fnum], aFile, graphic=False)
+                    shutil.copyfile(tfiles[fnum], tfiles[fnum+1])
                     aFiles.append(aFile)
                     if log is not None:
                         logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running analysis. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
