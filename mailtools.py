@@ -13,7 +13,7 @@ def send_email(info, email, files):
         Subject="CRAP Score"
     )
 
-    body = MIMEText(info)
+    body = MIMEText(info, 'html')
     message.attach(body)
 
     for f in files or []:
