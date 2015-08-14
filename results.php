@@ -56,7 +56,7 @@
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
                 $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $next_id . ".log";
-                str_replace("/docroot/", "/", $fullpath);
+                $fullpath = str_replace("/docroot/", "/", $fullpath);
                 mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
                 
                 echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
