@@ -65,7 +65,7 @@ class SewageSystem:
                     aFile = str(tfile_base) + self.modules[fnum].get_name() + str(fnum)
                     try:
                         os.remove(aFile)
-                    except OSError:
+                    except (OSError, IOError):
                         pass
                     self.modules[fnum].analyze_crap(tfiles[fnum], aFile, graphic=False)
                     aFiles.append(aFile)
