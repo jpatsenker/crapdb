@@ -57,7 +57,7 @@
 
                 $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $next_id . ".log";
                 str_replace("/docroot/", "/", $fullpath);
-                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> <a href="' . $fullpath . '.log"> Log file for job </a>', $headers);
+                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
                 
                 echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
                 #echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
