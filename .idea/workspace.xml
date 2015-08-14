@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process_crap.py" afterPath="$PROJECT_DIR$/process_crap.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.php" afterPath="$PROJECT_DIR$/results.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="crapdb.iws" />
@@ -38,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/process_crap.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.9028078">
-              <caret line="79" column="133" selection-start-line="79" selection-start-column="133" selection-end-line="79" selection-end-column="133" />
+              <caret line="79" column="137" selection-start-line="79" selection-start-column="137" selection-end-line="79" selection-end-column="137" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -452,12 +453,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00247" summary="stuff">
-      <created>1439410898297</created>
-      <option name="number" value="00247" />
-      <option name="project" value="LOCAL" />
-      <updated>1439410898297</updated>
-    </task>
     <task id="LOCAL-00248" summary="stuff">
       <created>1439411041633</created>
       <option name="number" value="00248" />
@@ -746,7 +741,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439578980372</updated>
     </task>
-    <option name="localTasksCounter" value="296" />
+    <task id="LOCAL-00296" summary="stuff">
+      <created>1439579098061</created>
+      <option name="number" value="00296" />
+      <option name="project" value="LOCAL" />
+      <updated>1439579098062</updated>
+    </task>
+    <option name="localTasksCounter" value="297" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1182,7 +1183,7 @@
     <entry file="file://$PROJECT_DIR$/process_crap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9028078">
-          <caret line="79" column="133" selection-start-line="79" selection-start-column="133" selection-end-line="79" selection-end-column="133" />
+          <caret line="79" column="137" selection-start-line="79" selection-start-column="137" selection-end-line="79" selection-end-column="137" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
