@@ -40,6 +40,7 @@ class SewageSystem:
 
         for fnum in range(len(self.modules) - len(exclude_modules)):
             tfiles.append(tfile_base + "." + str(fnum))
+            open(tfiles[-1], "w").close()
 
         for fnum in range(len(self.modules)):
             con = False
