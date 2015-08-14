@@ -38,8 +38,8 @@
       <file leaf-file-name="process_crap.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/process_crap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9028078">
-              <caret line="79" column="137" selection-start-line="79" selection-start-column="137" selection-end-line="79" selection-end-column="137" />
+            <state vertical-scroll-proportion="0.93520516">
+              <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -51,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/results.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -453,12 +453,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00248" summary="stuff">
-      <created>1439411041633</created>
-      <option name="number" value="00248" />
-      <option name="project" value="LOCAL" />
-      <updated>1439411041633</updated>
-    </task>
     <task id="LOCAL-00249" summary="stuff">
       <created>1439411048943</created>
       <option name="number" value="00249" />
@@ -747,7 +741,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439579098062</updated>
     </task>
-    <option name="localTasksCounter" value="297" />
+    <task id="LOCAL-00297" summary="stuff">
+      <created>1439579228396</created>
+      <option name="number" value="00297" />
+      <option name="project" value="LOCAL" />
+      <updated>1439579228396</updated>
+    </task>
+    <option name="localTasksCounter" value="298" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1101,7 +1101,7 @@
     <entry file="file://$PROJECT_DIR$/results.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1182,8 +1182,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/process_crap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9028078">
-          <caret line="79" column="137" selection-start-line="79" selection-start-column="137" selection-end-line="79" selection-end-column="137" />
+        <state vertical-scroll-proportion="0.93520516">
+          <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>

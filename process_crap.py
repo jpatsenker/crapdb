@@ -77,4 +77,8 @@ with open(aFiles[1], "r") as analysisFile:
 
 crap_score = 1 - float(after_seq)/float(before_seq)
 
-mailtools.send_email("Final Crap Score: " + str(crap_score) + '\n See clean and messy files below, and log here: <a href="' + os.getcwd() +  "/" +  logfil + '"> log </a> <br>', eAddress, [oFile, dFile])
+fullpath = os.getcwd()[os.getcwd().find("/www/") + 5:] +  "/" +  logfil
+
+fullpath = fullpath.replace("/docroot/", '/')
+
+mailtools.send_email("Final Crap Score: " + str(crap_score) + '\n See clean and messy files below, and log here: <a href="' + fullpath + '"> log </a> <br>', eAddress, [oFile, dFile])

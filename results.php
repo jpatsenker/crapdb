@@ -55,8 +55,9 @@
                 $headers .= "MIME-Version: 1.0\r\n";
                 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-                
-                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> <a href="' . getcwd() . "/logs/" . $next_id . ".log" . '.log"> Log file for job </a>', $headers);
+                $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $next_id . ".log";
+                str_replace("/docroot/", "/", $fullpath);
+                mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> <a href="' . $fullpath . '.log"> Log file for job </a>', $headers);
                 
                 echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
                 #echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
