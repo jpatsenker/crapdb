@@ -112,7 +112,7 @@
         <entry file="file://$PROJECT_DIR$/sewagesystem.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.35205182">
-              <caret line="32" column="85" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
+              <caret line="32" column="80" selection-start-line="32" selection-start-column="80" selection-end-line="32" selection-end-column="80" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -454,12 +454,6 @@
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
     </task>
-    <task id="LOCAL-00257" summary="stuff">
-      <created>1439411475641</created>
-      <option name="number" value="00257" />
-      <option name="project" value="LOCAL" />
-      <updated>1439411475641</updated>
-    </task>
     <task id="LOCAL-00258" summary="stuff">
       <created>1439412559913</created>
       <option name="number" value="00258" />
@@ -748,7 +742,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439831353992</updated>
     </task>
-    <option name="localTasksCounter" value="306" />
+    <task id="LOCAL-00306" summary="stuff">
+      <created>1439831445376</created>
+      <option name="number" value="00306" />
+      <option name="project" value="LOCAL" />
+      <updated>1439831445377</updated>
+    </task>
+    <option name="localTasksCounter" value="307" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1179,7 +1179,7 @@
     <entry file="file://$PROJECT_DIR$/sewagesystem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35205182">
-          <caret line="32" column="85" selection-start-line="32" selection-start-column="85" selection-end-line="32" selection-end-column="85" />
+          <caret line="32" column="80" selection-start-line="32" selection-start-column="80" selection-end-line="32" selection-end-column="80" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
