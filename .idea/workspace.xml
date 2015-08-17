@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="">
+    <list default="true" id="727b7208-de7d-428b-8499-99bfbe95c4ef" name="Default" comment="stuff">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cdhit_filter.py" afterPath="$PROJECT_DIR$/cdhit_filter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/process_crap.py" afterPath="$PROJECT_DIR$/process_crap.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zeroj_filter.py" afterPath="$PROJECT_DIR$/zeroj_filter.py" />
     </list>
     <ignored path="crapdb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,21 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="sequence_length_filter.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sequence_length_filter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="process_crap.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/process_crap.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+              <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -56,11 +47,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zeroj_filter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zeroj_filter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zeroj_filter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64794815">
-              <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cdhit_filter.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cdhit_filter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.59935206">
+              <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -172,7 +175,6 @@
         <option value="$PROJECT_DIR$/lsftools.py" />
         <option value="$PROJECT_DIR$/process_data.py" />
         <option value="$PROJECT_DIR$/0j_filter.py" />
-        <option value="$PROJECT_DIR$/cdhit_filter.py" />
         <option value="$PROJECT_DIR$/sewageanalyzer.py" />
         <option value="$PROJECT_DIR$/graphtools.py" />
         <option value="$PROJECT_DIR$/sequence_length_analyzer.py" />
@@ -184,9 +186,10 @@
         <option value="$PROJECT_DIR$/sequence_length_filter.py" />
         <option value="$PROJECT_DIR$/num_seq_analyzer.py" />
         <option value="$PROJECT_DIR$/mailtools.py" />
-        <option value="$PROJECT_DIR$/process_crap.py" />
         <option value="$PROJECT_DIR$/sewagesystem.py" />
         <option value="$PROJECT_DIR$/zeroj_filter.py" />
+        <option value="$PROJECT_DIR$/process_crap.py" />
+        <option value="$PROJECT_DIR$/cdhit_filter.py" />
       </list>
     </option>
   </component>
@@ -454,12 +457,6 @@
       <created>1434988030619</created>
       <option name="number" value="Default" />
       <updated>1434988030619</updated>
-    </task>
-    <task id="LOCAL-00261" summary="stuff">
-      <created>1439412645526</created>
-      <option name="number" value="00261" />
-      <option name="project" value="LOCAL" />
-      <updated>1439412645526</updated>
     </task>
     <task id="LOCAL-00262" summary="stuff">
       <created>1439413131079</created>
@@ -749,7 +746,13 @@
       <option name="project" value="LOCAL" />
       <updated>1439831832544</updated>
     </task>
-    <option name="localTasksCounter" value="310" />
+    <task id="LOCAL-00310" summary="stuff">
+      <created>1439832041137</created>
+      <option name="number" value="00310" />
+      <option name="project" value="LOCAL" />
+      <updated>1439832041137</updated>
+    </task>
+    <option name="localTasksCounter" value="311" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1095,13 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cdhit_filter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24298055">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sequence_length_filter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1160,16 +1156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process_crap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fasta_fixer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1180,8 +1166,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zeroj_filter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64794815">
-          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process_crap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="1" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cdhit_filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59935206">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

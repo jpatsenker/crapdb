@@ -2,6 +2,7 @@ from sequence_length_filter import SeqLengthFilter
 from num_seq_analyzer import NumSeqAnalyzer
 from sewagesystem import SewageSystem
 from zeroj_filter import ComplexityFilter
+from cdhit_filter import RedundancyFilter
 import mailtools
 import sys
 import os
@@ -63,14 +64,14 @@ ss = SewageSystem()
 num_seq_bef_anlzr = NumSeqAnalyzer()
 num_seq_aft_anlzr = NumSeqAnalyzer()
 len_filter = SeqLengthFilter(30, 30000)
-comp_filter = ComplexityFilter(.9)
+#red_filter = RedundancyFilter(.9, .75)
 
 ss.add_module(num_seq_bef_anlzr) #check before
 
 
 #FILTERS
 ss.add_module(len_filter)
-ss.add_module(comp_filter)
+#ss.add_module(comp_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
