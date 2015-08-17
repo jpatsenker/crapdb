@@ -29,7 +29,7 @@
         parse_ini_file("php.ini");
         
         echo '<table><tr><td>';
-        echo '<div>'
+        echo '<div>';
 //	if(!$_POST['email']){
 //            echo '<div class="notout">';
 //
