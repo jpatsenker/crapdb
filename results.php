@@ -13,9 +13,10 @@
 
         function get_next_id(){
             $file_handle = fopen("INCREMENTFILE.num", "r+");
-            while (!flock($file_handle, LOCK_EX)){
+            if (!flock($file_handle, LOCK_EX)){
                 print "no";
-                sleep(1);
+                #sleep(1);
+                exit(1);
             }
             print "yes";
             $id = stream_get_contents($file_handle);
