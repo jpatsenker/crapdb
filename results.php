@@ -27,9 +27,9 @@
         }
         
         parse_ini_file("php.ini");
-//        
-//        echo '<table><tr><td>';
-//        
+        
+        echo '<table><tr><td>';
+        echo '<div>'
 //	if(!$_POST['email']){
 //            echo '<div class="notout">';
 //
@@ -68,9 +68,9 @@
 //            
 //    	}
 //    
-//    echo "</div></td></tr></table>";
-//
-//    include "mainframe.php";
+    echo "</div></td></tr></table>";
+
+    include "mainframe.php";
 
 ?>
 
