@@ -14,6 +14,7 @@
         function get_next_id(){
             $file_handle = fopen("INCREMENTFILE.num", "r+");
             while (!flock($file_handle, LOCK_EX)){
+                print "no";
                 sleep(1);
             }
             $id = stream_get_contents($file_handle);
@@ -38,7 +39,7 @@
             #get information
             $email = $_POST['email'];
             $target_dir = "uploaded_fasta/";
-            #$next_id = get_next_id();
+            $next_id = get_next_id();
             $target_file = $target_dir . $next_id;
 //                     
 //            
