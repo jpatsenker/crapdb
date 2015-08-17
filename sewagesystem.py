@@ -32,7 +32,7 @@ class SewageSystem:
 
         #print ['rm', '-f', temp_dir + os.path.basename(input_file) + "*"]
         subprocess.Popen(['rm', '-f', temp_dir + os.path.basename(input_file) + "*"]).wait()
-
+        exit(1)
         shutil.copyfile(input_file, temp_dir + os.path.basename(input_file))
 
         tfile_base = temp_dir + os.path.basename(input_file)
