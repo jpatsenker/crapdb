@@ -17,6 +17,7 @@
                 print "no";
                 sleep(1);
             }
+            print "yes";
             $id = stream_get_contents($file_handle);
             $next = ($id+1)%10000;
             fseek($file_handle,0);
