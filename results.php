@@ -14,10 +14,9 @@
         function get_next_id(){
             $file_handle = fopen("INCREMENTFILE.num", "r+");
             if (!flock($file_handle, LOCK_EX)){
-                print "no";
+                print "Please reset INCREMENTFILE.num, php flock() error";
                 exit(1);
             }
-            print "yes";
             $id = stream_get_contents($file_handle);
             $next = ($id+1)%10000;
             fseek($file_handle,0);
