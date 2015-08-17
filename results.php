@@ -11,22 +11,22 @@
 
 <?php
 
-//        function get_next_id(){
-//            $file_handle = fopen("INCREMENTFILE.num", "r+");
-//            while (!flock($file_handle, LOCK_EX)){
-//                sleep(1);
-//            }
-//            $id = stream_get_contents($file_handle);
-//            $next = ($id+1)%10000;
-//            fseek($file_handle,0);
-//            ftruncate($file_handle,0);
-//            fwrite($file_handle, $next);
-//            flock($file_handle, LOCK_UN);
-//            fclose($file_handle);
-//            return $id;
-//        }
-//        
-//        parse_ini_file("php.ini");
+        function get_next_id(){
+            $file_handle = fopen("INCREMENTFILE.num", "r+");
+            while (!flock($file_handle, LOCK_EX)){
+                sleep(1);
+            }
+            $id = stream_get_contents($file_handle);
+            $next = ($id+1)%10000;
+            fseek($file_handle,0);
+            ftruncate($file_handle,0);
+            fwrite($file_handle, $next);
+            flock($file_handle, LOCK_UN);
+            fclose($file_handle);
+            return $id;
+        }
+        
+        parse_ini_file("php.ini");
 //        
 //        echo '<table><tr><td>';
 //        
