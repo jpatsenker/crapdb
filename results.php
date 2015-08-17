@@ -35,11 +35,11 @@
 
             echo '<p>  Please fill in all fields </p>';
     	}else{
-//            #get information
-//            $email = $_POST['email'];
-//            $target_dir = "uploaded_fasta/";
-//            $next_id = get_next_id();
-//            $target_file = $target_dir . $next_id;
+            #get information
+            $email = $_POST['email'];
+            $target_dir = "uploaded_fasta/";
+            $next_id = get_next_id();
+            $target_file = $target_dir . $next_id;
 //                     
 //            
 //            
