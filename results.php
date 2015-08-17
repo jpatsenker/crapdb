@@ -26,7 +26,7 @@
             return $id;
         }
         
-        
+        echo "hi";
         parse_ini_file("php.ini");
         
         echo '<table><tr><td>';
