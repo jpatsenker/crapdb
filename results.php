@@ -30,11 +30,11 @@
         
         echo '<table><tr><td>';
         echo '<div>';
-//	if(!$_POST['email']){
-//            echo '<div class="notout">';
-//
-//            echo '<p>  Please fill in all fields </p>';
-//    	}else{
+	if(!$_POST['email']){
+            echo '<div class="notout">';
+
+            echo '<p>  Please fill in all fields </p>';
+    	}else{
 //            #get information
 //            $email = $_POST['email'];
 //            $target_dir = "uploaded_fasta/";
@@ -66,8 +66,8 @@
 //                echo '<p><a href="logs/' . $next_id . '.log"> Log file for job </a></p>';
 //            }
 //            
-//    	}
-//    
+    	}
+    
     echo "</div></td></tr></table>";
 
     include "mainframe.php";
