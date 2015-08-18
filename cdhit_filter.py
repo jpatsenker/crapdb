@@ -59,6 +59,6 @@ class RedundancyFilter(SewageFilter):
                                 out_stream.write(find_corresponding_line(tline, in_stream))
                     else:
                         with open(diagnostics_file, "a") as d_stream:
-                            with open(input_file, "r") as in_stream
+                            with open(input_file, "r") as in_stream:
                                 d_stream.write(find_corresponding_line(tline, in_stream, bad="Sequence caught in redundancy filter"))
                 tline = temp_stream.readline()
