@@ -8,7 +8,8 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
     while l:
         prot = cdhitline.split()[2].rstrip(".")
         r = len(prot)
-
+        if l[:r] == ">gi|4557876|ref|NP_0":
+            print "Yes \n"
         if prot == l[:r]:
             print prot + "\n"
             print l[:r] + "\n"
