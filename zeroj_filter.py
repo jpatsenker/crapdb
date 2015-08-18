@@ -37,6 +37,7 @@ class ComplexityFilter(SewageFilter):
                         try:
                             assert info[0] == corresponding_line #make sure same sequence being analyzed
                         except AssertionError:
+                            print "ass err \n"
                             print str(info) + "\n" + corresponding_line + "\n"
                             exit(1)
                         try:
