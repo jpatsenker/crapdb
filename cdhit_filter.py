@@ -8,12 +8,13 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
     while l:
         prot = cdhitline.split()[2].rstrip(".")
         r = len(prot)
-        print prot + "\n"
-        print l[:r] + "\n"
+
         if prot == l[:r]:
+            print prot + "\n"
+            print l[:r] + "\n"
             seq = in_stream.readline()
             if bad is not None:
-                l = l.rstrip("\n") + bad + seq
+                l = l.rstrip("\n") + bad + "\n" + seq
             else:
                 l = l + seq
             return l
