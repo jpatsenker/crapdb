@@ -19,6 +19,7 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
                 l = l + seq
             return l
         l = in_stream.readline()
+    print cdhitline + "\n"
     assert 1 == 0
 
 
