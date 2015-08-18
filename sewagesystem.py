@@ -74,7 +74,7 @@ class SewageSystem:
                     if log is not None:
                         logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running analysis. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
                 except TypeError:
-                    print "Yo its this type: " + str(self.modules[fnum] + "\n")
+                    print "Yo its this type: " + str(self.modules[fnum]) + "\n"
                     exit(1)
 
         shutil.copyfile(tfiles[-1], output_file)
