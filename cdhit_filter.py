@@ -43,7 +43,7 @@ class RedundancyFilter(SewageFilter):
         open(output_file, "w").close() #open and close out file so that it is blank
 
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
-        lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + self.__threshold_level__) #submit lsf job
+        lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)) #submit lsf job
         with open(temporary + ".clstr", "r") as temp_stream:
             with open(input_file, "r") as in_stream:
                 tline = temp_stream.readline()
