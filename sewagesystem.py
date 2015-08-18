@@ -43,6 +43,7 @@ class SewageSystem:
             open(tfiles[-1], "w").close()
 
         for fnum in range(len(self.modules)):
+            print "next"
             con = False
             for exnum in exclude_modules:
                 if self.modules[exnum] == self.modules[fnum]:
@@ -57,10 +58,10 @@ class SewageSystem:
                 except BrokenFilterError:
                     print "Oh no! Broken filter: " + self.modules[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
                     exit(1)
-                # except TypeError as e:
-                #     print "Yo its this type: " + str(self.modules[fnum]) + "\n"
-                #     print str(e) + "\n"
-                #     exit(1)
+                except TypeError as e:
+                    print "Yo its this type: " + str(self.modules[fnum]) + "\n"
+                    print str(e) + "\n"
+                    exit(1)
             else:
                 assert isinstance(self.modules[fnum], SewageAnalyzer)
                 try:
