@@ -24,7 +24,7 @@ class ComplexityFilter(SewageFilter):
         :return:
         """
         temporary = "tmp/" + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
-        lsf.run_job("python " + self.__zero_j__ + " -scores_only " + input_file, output=temporary, wait=True) #submit lsf job
+        lsf.run_job(self.__zero_j__ + " -scores_only " + input_file, output=temporary, wait=True) #submit lsf job
         with open(temporary, "r") as complexity_data: #open output
             with open(input_file, "r") as check_stream: #open input_file for lengths of sequences as well as checking names
                 with open(output_file, "w") as out_stream: #open out_file
@@ -37,7 +37,7 @@ class ComplexityFilter(SewageFilter):
                         try:
                             assert info[0] == corresponding_line #make sure same sequence being analyzed
                         except AssertionError:
-                            print "ass err \n"
+                            print "Caught assert err\n"
                             print str(info) + "\n" + corresponding_line + "\n"
                             exit(1)
                         try:
