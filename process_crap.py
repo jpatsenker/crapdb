@@ -64,14 +64,16 @@ ss = SewageSystem()
 num_seq_bef_anlzr = NumSeqAnalyzer()
 num_seq_aft_anlzr = NumSeqAnalyzer()
 len_filter = SeqLengthFilter(30, 30000)
-#red_filter = RedundancyFilter(.9, .75)
+comp_filter = ComplexityFilter(.9)
+red_filter = RedundancyFilter(.9, .75)
 
 ss.add_module(num_seq_bef_anlzr) #check before
 
 
 #FILTERS
 ss.add_module(len_filter)
-#ss.add_module(comp_filter)
+ss.add_module(comp_filter)
+ss.add_module(red_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
 

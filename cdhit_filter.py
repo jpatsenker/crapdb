@@ -3,6 +3,21 @@ from sewagefilter import SewageFilter
 import lsftools as lsf
 
 
+def find_corresponding_line(cdhitline, in_stream, bad=None):
+    l = in_stream.readline()
+    while l:
+        prot = cdhitline.split()[3].rstrip(".")
+        r = len(prot)
+        if prot == l[:r]:
+            seq = in_stream.readline()
+            if bad is not None:
+                l = l.rstrip("\n") + bad + seq
+            else:
+                l = l + seq
+            return l
+        l = in_stream.readline()
+
+
 class RedundancyFilter(SewageFilter):
 
     __name__ = "CDHIT_CHECK_FILTER"
@@ -35,5 +50,9 @@ class RedundancyFilter(SewageFilter):
                 while tline:
                     if tline[0] != ">":
                         if tline.split()[-1] == "*" or float(tline.split()[-1].rstrip("%")) > self.__fractional_level__:
-                            pass
+                            with open(output_file, "a") as out_stream:
+                                out_stream.write(find_corresponding_line(tline, in_stream))
+                        else:
+                            with open(diagnostics_file, "a") as d_stream:
+                                d_stream.write(find_corresponding_line(tline, in_stream, bad="Sequence caught in redundancy filter"))
                     tline = temp_stream.readline()

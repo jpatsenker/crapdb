@@ -48,6 +48,6 @@ class ComplexityFilter(SewageFilter):
                             out_stream.write(corresponding_line + sequence + "\n")
                         else:
                             with open(diagnostics_file, "a") as diag_stream:
-                                diag_stream.write(corresponding_line.rstrip("\n") + "Sequence Not Complex Enough: " + str(complexity) + " < " + str(self.__threshold_level__) + "\n" + sequence + "\n")
+                                diag_stream.write(corresponding_line.rstrip("\n") + "Sequence caught in complexity filter: " + str(complexity) + " < " + str(self.__threshold_level__) + "\n" + sequence + "\n")
                         line = complexity_data.readline()
                         corresponding_line = check_stream.readline()
