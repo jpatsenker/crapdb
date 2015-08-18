@@ -53,6 +53,7 @@ class RedundancyFilter(SewageFilter):
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
             while tline:
+                print "hi \n"
                 if tline[0] != ">":
                     if tline.split()[-1] == "*" or float(tline.split()[-1].rstrip("%")) > self.__fractional_level__:
                         with open(output_file, "a") as out_stream:
