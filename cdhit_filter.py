@@ -8,6 +8,8 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
     while l:
         prot = cdhitline.split()[3].rstrip(".")
         r = len(prot)
+        print prot + "\n"
+        print l[:r] + "\n"
         if prot == l[:r]:
             seq = in_stream.readline()
             if bad is not None:
@@ -45,7 +47,7 @@ class RedundancyFilter(SewageFilter):
 
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
-        lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)) #submit lsf job
+        #lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)) #submit lsf job
         with open(temporary + ".clstr", "r") as temp_stream:
             with open(input_file, "r") as in_stream:
                 tline = temp_stream.readline()
