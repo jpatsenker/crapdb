@@ -6,7 +6,7 @@ import lsftools as lsf
 def find_corresponding_line(cdhitline, in_stream, bad=None):
     l = in_stream.readline()
     while l:
-        prot = cdhitline.split()[3].rstrip(".")
+        prot = cdhitline.split()[2].rstrip(".")
         r = len(prot)
         print prot + "\n"
         print l[:r] + "\n"
