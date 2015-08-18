@@ -8,11 +8,9 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
     while l:
         prot = cdhitline.split()[2].rstrip(".")
         r = len(prot)
-        if l[:r] == ">gi|4557876|ref|NP_0":
-            print "Yes \n"
         if prot == l[:r]:
-            print prot + "\n"
-            print l[:r] + "\n"
+            #print prot + "\n"
+            #print l[:r] + "\n"
             seq = in_stream.readline()
             if bad is not None:
                 l = l.rstrip("\n") + bad + "\n" + seq
@@ -20,7 +18,7 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
                 l = l + seq
             return l
         l = in_stream.readline()
-    print cdhitline + "\n"
+    #print cdhitline + "\n"
     assert 1 == 0
 
 
@@ -52,14 +50,15 @@ class RedundancyFilter(SewageFilter):
         print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
         #lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)) #submit lsf job
         with open(temporary + ".clstr", "r") as temp_stream:
-            with open(input_file, "r") as in_stream:
-                tline = temp_stream.readline()
-                while tline:
-                    if tline[0] != ">":
-                        if tline.split()[-1] == "*" or float(tline.split()[-1].rstrip("%")) > self.__fractional_level__:
-                            with open(output_file, "a") as out_stream:
+            tline = temp_stream.readline()
+            while tline:
+                if tline[0] != ">":
+                    if tline.split()[-1] == "*" or float(tline.split()[-1].rstrip("%")) > self.__fractional_level__:
+                        with open(output_file, "a") as out_stream:
+                            with open(input_file, "r") as in_stream:
                                 out_stream.write(find_corresponding_line(tline, in_stream))
-                        else:
-                            with open(diagnostics_file, "a") as d_stream:
+                    else:
+                        with open(diagnostics_file, "a") as d_stream:
+                            with open(input_file, "r") as in_stream
                                 d_stream.write(find_corresponding_line(tline, in_stream, bad="Sequence caught in redundancy filter"))
-                    tline = temp_stream.readline()
+                tline = temp_stream.readline()
