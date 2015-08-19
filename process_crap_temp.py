@@ -101,8 +101,8 @@ ss.add_module(num_seq_bef_anlzr) #check before
 ss.add_module(fasta_filter)
 #ss.add_module(simple_filter)
 #ss.add_module(len_filter)
-#ss.add_module(comp_filter)
-ss.add_module(red_filter)
+ss.add_module(comp_filter)
+#ss.add_module(red_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
