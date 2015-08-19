@@ -26,6 +26,7 @@ class FastaCheckerFilter(SewageFilter):
         lsf.run_job("perl " + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors, output=temporary) #submit lsf job
         with open(temporary_errors, "r") as tempErrors:
             if len(tempErrors.read()) > 0:
+                print "test\ntest\ntest\n"
                 SewageFilter.break_filter() #incase of errors break filter, cause system to halt with improper format errors
         os.rename(temporary, output_file)
         with open(input_file, "r") as in_stream:
