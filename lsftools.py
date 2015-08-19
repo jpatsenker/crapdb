@@ -34,3 +34,4 @@ def clean_file(file_name):
     open(file_name, "w").close()
     with open(file_name, "w") as out_here:
         out_here.write(split_stream[0].rstrip("\n"))
+    exit(1)
