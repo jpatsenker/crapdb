@@ -24,7 +24,7 @@ class ComplexityFilter(SewageFilter):
         :return:
         """
         temporary = "tmp/" + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
-        lsf.run_job(self.__zero_j__ + " -scores_only " + input_file, output=temporary, wait=True) #submit lsf job
+        lsf.run_job(self.__zero_j__ + " -scores_only " + input_file + " > " + temporary, wait=True) #submit lsf job
         with open(temporary, "r") as complexity_data: #open output
             with open(input_file, "r") as check_stream: #open input_file for lengths of sequences as well as checking names
                 with open(output_file, "w") as out_stream: #open out_file

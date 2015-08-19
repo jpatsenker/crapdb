@@ -1,8 +1,9 @@
 import subprocess
-def run_job(command, output="/dev/null", queue = "short", timelim = 1, wait = False, return_process = False, dont_clean=False):
+def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "short", timelim = 1, wait = False, return_process = False, dont_clean=False):
+
     """
     :param command: Command to be submitted to LSF
-    :param output: Where output should be routed to (default: /dev/null)
+    :param bsub_output: Where output should be routed to (default: /dev/null)
     :param queue: What queue the command should be submitted to (default: short)
     :param timelim: How much time is allowed for command to run (default: 1)
     :param wait: Whether or not to wait for command to execute (default: False)
@@ -10,13 +11,12 @@ def run_job(command, output="/dev/null", queue = "short", timelim = 1, wait = Fa
     :param dont_clean: Whether or not to clean output in case its not /dev/null (default: False)
     :return: subprocess object in case return_process=True.
     """
-    print ["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + output + " " + command]
-    a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + output + " " + command])
+    print ["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " " + command]
+    a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command])
     if wait:
         a.wait()
-    if output!="/dev/null" and not dont_clean:
-        print "cleaning " + output
-        clean_file(output)
+    if bsub_output!="/dev/null" and not dont_clean:
+        clean_file(bsub_output)
     if return_process:
         return a
 
