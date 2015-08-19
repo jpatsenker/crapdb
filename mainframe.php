@@ -16,18 +16,18 @@
                                 <p><b>FASTA</b></p>
                                 <input type="file" name="fastaseq">
                                 <p><b>EMAIL</b></p>
-                                <textarea name="email"></textarea>
+                                <input type="text" name="email"></input>
                                 <p><b>PARAMETERS</b></p>
                                 CD-HIT Threshold: 
-                                <textarea name="ct">0.7</textarea><br>
+                                <input type="text" name="ct">0.7</input><br>
                                 CD-HIT Fractional Length:
-                                <textarea name="cl">0.8</textarea><br>
+                                <input type="text" name="cl">0.8</input><br>
                                 0j Minimum Complexity: 
-                                <textarea name="zj"></textarea><br>
+                                <input type="text" name="zj">0.9</input><br>
                                 Minimum Length: 
-                                <textarea name="min"></textarea><br>
+                                <input type="text" name="min">30</input><br>
                                 Maximum Length: 
-                                <textarea name="max"></textarea><p>
+                                <input type="text" name="max">30000</input><p>
                                 <input type="checkbox" name="compl" checked> Completeness? <br>
                                 <p></p>
                                 <input type="submit"/>
