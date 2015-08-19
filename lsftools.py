@@ -15,7 +15,7 @@ def run_job(command, output="/dev/null", queue = "short", timelim = 1, wait = Fa
     if wait:
         a.wait()
     if output!="/dev/null" and not dont_clean:
-        print "cleaning" + output
+        print "cleaning " + output
         clean_file(output)
     if return_process:
         return a
@@ -28,5 +28,6 @@ def clean_file(file_name):
     with open(file_name, "r") as raw_file:
         everything = raw_file.read()
     split_stream = everything.split("------------------------------------------------------------" + "\n" + "Sender: LSF System")
+    print split_stream + "\n"
     with open(file_name, "w") as out_here:
-        out_here.write(split_stream[0])
+        out_here.write(split_stream[0].rstrip("\n"))
