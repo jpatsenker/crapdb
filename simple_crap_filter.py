@@ -17,10 +17,12 @@ class SimpleFilter(SewageFilter):
                 if 'X' in sequence:
                     with open(diagnostics_file, "a") as diag_stream:
                         diag_stream.write(line.rstrip("\n") + " Invalid Characters in Sequence " + sequence + "\n")
-                    continue
+                    line = input_stream.readline()
+                    continue;
                 if sequence[0] != 'M':
                     with open(diagnostics_file, "a") as diag_stream:
                         diag_stream.write(line.rstrip("\n") + " Sequence Does Not Start With M " + sequence + "\n")
+                    line = input_stream.readline()
                     continue
                 with open(output_file, "a") as out_stream:
                     out_stream.write(line + sequence + "\n")
