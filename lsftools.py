@@ -31,5 +31,6 @@ def clean_file(file_name):
     print '\n'
     print split_stream
     print '\n'
+    open(file_name, "w").close()
     with open(file_name, "w") as out_here:
         out_here.write(split_stream[0].rstrip("\n"))
