@@ -12,7 +12,7 @@ def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "s
     :return: subprocess object in case return_process=True.
     """
     #print ["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " " + command]
-    a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " -u accelerondo10@gmail.com" + " " + command])
+    a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " -u GMAIL.COM\\accelerondo10" + " " + command])
     if wait:
         a.wait()
     if bsub_output!="/dev/null" and not dont_clean:
