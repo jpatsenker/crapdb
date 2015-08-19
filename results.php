@@ -75,8 +75,8 @@
                 mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
                 
                 echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
-                echo 'python process_crap_temp.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . '-ct' . $ct . '-cl' . $cl . '-0j' . $zj . '-min' . $min . '-max' . $max . $compl . ' > /dev/null 2>&1 &';
-                exec('python process_crap_temp.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . '-ct' . $ct . '-cl' . $cl . '-0j' . $zj . '-min' . $min . '-max' . $max . $compl . ' > /dev/null 2>&1 &');
+                echo 'python process_crap_temp.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $compl . ' > /dev/null 2>&1 &';
+                exec('python process_crap_temp.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $compl . ' > /dev/null 2>&1 &');
                 
                 echo '<p> You will receive an email when your CRAP is ready. </p>';
                 echo '<p><a href="logs/' . $next_id . '.log"> Log file for job </a></p>';
