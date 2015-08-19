@@ -61,7 +61,7 @@
                 
                 echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
                 #echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
-                exec('python process_crap.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . ' > /dev/null 2>&1 &');
+                exec('python process_crap_temp.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . ' > /dev/null 2>&1 &');
                 
                 echo '<p> You will receive an email when your CRAP is ready. </p>';
                 echo '<p><a href="logs/' . $next_id . '.log"> Log file for job </a></p>';
