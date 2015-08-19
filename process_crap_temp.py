@@ -3,6 +3,8 @@ from num_seq_analyzer import NumSeqAnalyzer
 from sewagesystem import SewageSystem
 from zeroj_filter import ComplexityFilter
 from cdhit_filter import RedundancyFilter
+from simple_crap_filter import SimpleFilter
+from fasta_filter import FastaCheckerFilter
 import mailtools
 import sys
 import os
@@ -89,6 +91,8 @@ num_seq_aft_anlzr = NumSeqAnalyzer()
 len_filter = SeqLengthFilter(min_len_param, max_len_param)
 comp_filter = ComplexityFilter(zeroj_param)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength)
+simple_filter = SimpleFilter()
+fasta_filter = FastaCheckerFilter()
 
 ss.add_module(num_seq_bef_anlzr) #check before
 
@@ -97,6 +101,7 @@ ss.add_module(num_seq_bef_anlzr) #check before
 ss.add_module(len_filter)
 #ss.add_module(comp_filter)
 #ss.add_module(red_filter)
+ss.add_module(simple_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
 

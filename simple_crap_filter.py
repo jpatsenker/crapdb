@@ -1,9 +1,9 @@
 from sewagefilter import SewageFilter
 
 
-class SeqLengthAnalyzer(SewageFilter):
+class SimpleFilter(SewageFilter):
 
-    __name__ = "SIMPLE_CRAP_ANALYZER"
+    __name__ = "SIMPLE_CRAP_FILTER"
 
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
