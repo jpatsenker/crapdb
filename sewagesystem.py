@@ -52,9 +52,12 @@ class SewageSystem:
                 continue
             if isinstance(self.modules[fnum], SewageFilter):
                 try:
-                    self.modules[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
                     if log is not None:
                         logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running filter. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
+                        logtools.add_start(log)
+                    self.modules[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
+                    if log is not None:
+                        logtools.add_end(log)
                 except BrokenFilterError:
                     print "Oh no! Broken filter: " + self.modules[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
                     exit(1)
@@ -70,11 +73,14 @@ class SewageSystem:
                         os.remove(aFile)
                     except (OSError, IOError):
                         pass
+                    if log is not None:
+                        logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running analysis. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
+                        logtools.add_start(log)
                     self.modules[fnum].analyze_crap(tfiles[fnum], aFile, graphic=False)
                     shutil.copyfile(tfiles[fnum], tfiles[fnum+1])
                     aFiles.append(aFile)
                     if log is not None:
-                        logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running analysis. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
+                        logtools.add_end(log)
                 except TypeError as e:
                     print "Yo its this type: " + str(self.modules[fnum]) + "\n"
                     print str(e) + "\n"

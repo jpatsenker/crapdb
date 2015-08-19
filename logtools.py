@@ -1,3 +1,5 @@
+import time
+
 def clear_log(log_file):
     open(log_file, "w").close()
 
@@ -19,3 +21,15 @@ def start_new_log(file_name, email, log_file):
         lfil.write("Sewage Token: " + file_name + "\n")
         lfil.write("Email:" + email + "\n")
         lfil.write("====================================\n")
+
+def add_start(log_file):
+    with open(log_file, "a") as lfil:
+        lfil.write("Start time: " + str(time.clock()) + "\n")
+
+def add_end(log_file):
+    with open(log_file, "a") as lfil:
+        lfil.write("End time: " + str(time.clock()) + "\n")
+
+def add_line_to_log(log_file, line):
+    with open(log_file, "a") as lfil:
+        lfil.write(str(line) + "\n")
