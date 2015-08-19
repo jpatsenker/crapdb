@@ -28,10 +28,10 @@ class SeqLengthFilter(SewageFilter):
                 sequence = sequence.rstrip("\n")
                 if len(sequence) > self.__upper_thresh__:
                     with open(diagnostics_file, "a") as diag_stream:
-                        diag_stream.write(line.rstrip("\n") + "Sequence Too Long: Length = " + str(len(sequence)) + "\n" + sequence + "\n")
+                        diag_stream.write(line.rstrip("\n") + " Sequence Too Long: Length = " + str(len(sequence)) + "\n" + sequence + "\n")
                 elif len(sequence) < self.__lower_thresh__:
                     with open(diagnostics_file, "a") as diag_stream:
-                        diag_stream.write(line.rstrip("\n") + "Sequence Too Short: Length = " + str(len(sequence)) + "\n" + sequence + "\n")
+                        diag_stream.write(line.rstrip("\n") + " Sequence Too Short: Length = " + str(len(sequence)) + "\n" + sequence + "\n")
                 else:
                     with open(output_file, "a") as out_stream:
                         out_stream.write(line + sequence + "\n")
