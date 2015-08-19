@@ -9,7 +9,7 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
         prot = cdhitline.split()[2].rstrip(".")
         r = len(prot)
         if prot == l[:r]:
-            print "Found " + prot + "\n"
+            #print "Found " + prot + "\n"
             #print prot + "\n"
             #print l[:r] + "\n"
             seq = in_stream.readline()
@@ -53,7 +53,7 @@ class RedundancyFilter(SewageFilter):
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
             while tline:
-                print "hi \n"
+                #print "hi \n"
                 if tline[0] != ">":
                     if tline.split()[-1] == "*" or float(tline.split()[-1].rstrip("%")) > self.__fractional_level__:
                         with open(output_file, "a") as out_stream:
