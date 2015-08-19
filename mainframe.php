@@ -21,13 +21,13 @@
                                 CD-HIT Threshold: 
                                 <input type="text" name="ct" value="0.7"></input><br>
                                 CD-HIT Fractional Length:
-                                <input type="text" name="cl">0.8</input><br>
+                                <input type="text" name="cl" value="0.8"></input><br>
                                 0j Minimum Complexity: 
-                                <input type="text" name="zj">0.9</input><br>
+                                <input type="text" name="zj" value="0.9"></input><br>
                                 Minimum Length: 
-                                <input type="text" name="min">30</input><br>
+                                <input type="text" name="min" value="30"></input><br>
                                 Maximum Length: 
-                                <input type="text" name="max">30000</input><p>
+                                <input type="text" name="max" value="30000"></input><p>
                                 <input type="checkbox" name="compl" checked> Completeness? <br>
                                 <p></p>
                                 <input type="submit"/>
