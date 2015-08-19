@@ -15,7 +15,7 @@ def run_job(command, output="/dev/null", queue = "short", timelim = 1, wait = Fa
     if wait:
         a.wait()
     if output!="/dev/null" and not dont_clean:
-        print "cleaning"
+        print "cleaning" + output
         clean_file(output)
     if return_process:
         return a
