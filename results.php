@@ -43,10 +43,9 @@
             $min = $_POST['min'];
             $max = $_POST['max'];
             $compl = $_POST['compl'];
-            print $compl;
             $zj = $_POST['zj'];
             
-            if ($compl == 0){
+            if ($compl != "on"){
                 $compl = " -nocomp ";
             }else{
                 $compl = "";
