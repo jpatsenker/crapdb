@@ -38,6 +38,20 @@
     	}else{
             #get information
             $email = $_POST['email'];
+            $ct = $_POST['ct'];
+            $cl = $_POST['cl'];
+            $min = $_POST['min'];
+            $max = $_POST['max'];
+            $compl = $_POST['compl'];
+            $zj = $_POST['zj'];
+            
+            if ($compl == 0){
+                $compl = " -nocomp ";
+            }else{
+                $compl = "";
+            }
+            
+            
             $target_dir = "uploaded_fasta/";
             $next_id = get_next_id();
             $target_file = $target_dir . $next_id;
@@ -61,7 +75,7 @@
                 
                 echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
                 #echo 'python process_crap.py ' . $target_file . ' ' . $target_file . '.clean ' . $target_file . '.messy ' . $email . ' > /dev/null 2>&1 &';
-                exec('python process_crap_temp.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . ' > /dev/null 2>&1 &');
+                exec('python process_crap_temp.py ' . $target_file . ' ' . $target_file . '.clean.txt ' . $target_file . '.messy.txt ' . $email . '-ct' . $ct . '-cl' . $cl . '-0j' . $zj . '-min' . $min . '-max' . $max . $compl . ' > /dev/null 2>&1 &');
                 
                 echo '<p> You will receive an email when your CRAP is ready. </p>';
                 echo '<p><a href="logs/' . $next_id . '.log"> Log file for job </a></p>';
