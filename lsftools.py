@@ -10,6 +10,7 @@ def run_job(command, output="/dev/null", queue = "short", timelim = 1, wait = Fa
     :param dont_clean: Whether or not to clean output in case its not /dev/null (default: False)
     :return: subprocess object in case return_process=True.
     """
+    print ["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + output + " " + command]
     a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + output + " " + command])
     if wait:
         a.wait()
