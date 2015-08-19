@@ -28,13 +28,6 @@ def clean_file(file_name):
     with open(file_name, "r") as raw_file:
         everything = raw_file.read()
     split_stream = everything.split("------------------------------------------------------------" + "\n" + "Sender: LSF System")
-    print '\n'
-    print everything
-    print '\n'
     open(file_name, "w").close()
     with open(file_name, "w") as out_here:
         out_here.write(split_stream[0].rstrip("\n"))
-    with open(file_name, "r") as raw_file:
-        everything = raw_file.read()
-    print everything
-    exit(1)
