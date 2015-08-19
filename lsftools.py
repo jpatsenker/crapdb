@@ -13,10 +13,7 @@ def run_job(command, output="/dev/null", queue = "short", timelim = 1, wait = Fa
     print ["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + output + " " + command]
     a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + output + " " + command])
     if wait:
-        print "waiting...\n"
         a.wait()
-        a.kill()
-        print "done waiting...\n"
     if output!="/dev/null" and not dont_clean:
         print "cleaning " + output
         clean_file(output)
@@ -37,3 +34,6 @@ def clean_file(file_name):
     open(file_name, "w").close()
     with open(file_name, "w") as out_here:
         out_here.write(split_stream[0].rstrip("\n"))
+
+
+clean_file("tmp/badgenome.fa.0.raw")
