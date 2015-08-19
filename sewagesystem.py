@@ -43,7 +43,7 @@ class SewageSystem:
             open(tfiles[-1], "w").close()
 
         for fnum in range(len(self.modules)):
-            print "next"
+            #print "next"
             con = False
             for exnum in exclude_modules:
                 if self.modules[exnum] == self.modules[fnum]:
