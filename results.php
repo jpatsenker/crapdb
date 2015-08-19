@@ -37,13 +37,13 @@
             echo '<p>  Please fill in all fields </p>';
     	}else{
             #get information
-            print $_POST;
             $email = $_POST['email'];
             $ct = $_POST['ct'];
             $cl = $_POST['cl'];
             $min = $_POST['min'];
             $max = $_POST['max'];
             $compl = $_POST['compl'];
+            print $compl;
             $zj = $_POST['zj'];
             
             if ($compl == 0){
