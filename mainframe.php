@@ -19,7 +19,7 @@
                                 <input type="text" name="email"></input>
                                 <p><b>PARAMETERS</b></p>
                                 CD-HIT Threshold: 
-                                <input type="text" name="ct">0.7</input><br>
+                                <input type="text" name="ct" value="0.7"></input><br>
                                 CD-HIT Fractional Length:
                                 <input type="text" name="cl">0.8</input><br>
                                 0j Minimum Complexity: 
