@@ -85,7 +85,11 @@ class FusionFissionFilter(SewageFilter):
                     for i in range(len(cluster_lines)):
                         if cluster_lines[i][:11] != ">HUMAN_CRAP":
                             if cluster_seqs[i].split()[-1] == "*":
-                                if len(cluster_seqs)>2:
+                                human_len = 0
+                                for line in cluster_lines:
+                                    if line[:11] == ">HUMAN_CRAP":
+                                        human_len = len(line.split("\n")[1])
+                                if float(len(cluster_lines[i].split("\n")[1]))/human_len > (2-self.__fractional_length__):
                                     with open(diagnostics_file, "a") as dstream:
                                         dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fusion Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
                                 else:
