@@ -24,71 +24,66 @@ def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
     #print cdhitline + "\n"
     assert 1 == 0
 
-
-def getCentralLen(temp_stream, input_file):
-    l = ""
-    n = temp_stream.readline()
-    while n and n[0] != ">":
-        l += n
-        n = temp_stream.readline()
-    #print "Cluster: " + l
-    linfo = l.split("\n")
-    for line in linfo:
-        if line.split()[-1]=="*":
-            with open(input_file, "r") as in_stream:
-                return len(find_corresponding_line(line, in_stream, rseq=True))
-
 class FusionFissionFilter(SewageFilter):
 
     __name__ = "Ff_CHECK_FILTER"
 
     __cd_hit__ = "/opt/cdhit-4.6/cd-hit"
-    __filt_human_genome__ = ""
+    __filt_human_genome__ = "filtered_human_non_redundant.cdhit"
 
 
     __threshold_level__ = .9
-    __fractional_level__ = .6
 
-    def __init__(self, thresh, frac):
+    def __init__(self):
         super(SewageFilter, self).__init__()
-        self.__threshold_level__ = thresh
-        self.__fractional_level__ = frac
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
-        Run cdhit on input file and strip of redundant sequences
+        Run cdhit on input file concatenated with human genome and strip of redundant sequences, testing for fusion/fission of other possible genes
         :param input_file: fasta input
         :param output_file: fasta output with fewer sequences than input
         :param diagnostics_file: fasta output with compressable sequences (appended to)
         :return:
         """
+
+        #concatenate files into string, every sequence id in human genome starts with ">HUMAN_CRAP" tag
+        with open(input_file, "r") as in_stream:
+            everything = in_stream.read().rstrip("\n") + "\n"
+            with open(self.__filt_human_genome__, "r") as h_stream:
+                everything += h_stream.read().replace(">", ">HUMAN_CRAP")
+
+        temp_input = "tmp/" + basename(input_file) + ".Ffinput"
+        with open(temp_input, "w") as t_stream:
+            t_stream.write(everything)
         open(output_file, "w").close() #open and close out file so that it is blank
 
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
-        lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__), wait=True) #submit lsf job
+        lsf.run_job(self.__cd_hit__ + " -i " + temp_input + " -o " + temporary + " -c " + str(self.__threshold_level__), wait=True) #submit lsf job
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
-            central_len = 0
             while tline:
-                if tline[0] != ">":
-                    with open(input_file, "r") as in_stream:
-                        line = find_corresponding_line(tline, in_stream, rseq=True)
-                    if tline.split()[-1] == "*" or len(line)/central_len > self.__fractional_level__:
-                        #print "this one is ok: " + tline
-                        with open(output_file, "a") as out_stream:
-                            with open(input_file, "r") as in_stream:
-                                out_stream.write(find_corresponding_line(tline, in_stream))
-                    else:
-                        with open(diagnostics_file, "a") as d_stream:
-                            with open(input_file, "r") as in_stream:
-                                d_stream.write(find_corresponding_line(tline, in_stream, bad=" Sequence Is Redundant Fragment"))
+                cluster = ""
+                while tline[0] != ">":
+                    cluster += tline
+                    tline = temp_input.readline()
+                important_cluster = False
+                cluster_seqs = cluster.split("\n")
+                cluster_lines = []
+                for seq in cluster_seqs:
+                    with open(temp_input, "r") as in_stream:
+                        cluster_lines.append(find_corresponding_line(seq, in_stream))
+                for line in cluster_lines:
+                    assert line[0] == ">"
+                    if line[:11] == ">HUMAN_CRAP":
+                        important_cluster = True
+                if important_cluster:
+                    for line in cluster_lines:
+                        if line[:11] != ">HUMAN_CRAP":
+                            with open(diagnostics_file, "a") as dstream:
+                                dstream.write(line.split("\n")[0] + " Sequence is Fusion/Fission Fragment\n" + line.split("\n")[1])
                 else:
-                    savpos = temp_stream.tell()
-                    #print str(savpos)
-                    central_len = getCentralLen(temp_stream, input_file)
-                    #print "central len: " + str(central_len)
-                    temp_stream.seek(savpos)
-                    #print "seeking back to " + str(savpos)
-                tline = temp_stream.readline()
-                #print tline
+                    for line in cluster_lines:
+                        if line[:11] != ">HUMAN_CRAP":
+                            with open(output_file, "a") as ostream:
+                                ostream.write(line)
