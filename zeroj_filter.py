@@ -39,7 +39,7 @@ class ComplexityFilter(SewageFilter):
                                 assert info[0] == corresponding_line[1:] #make sure same sequence being analyzed
                             except AssertionError:
                                 print "Caught assert err\n"
-                                print str(info) + "\n" + corresponding_line + "\n"
+                                print info[0] + "\n" + corresponding_line[1:] + "\n"
                                 exit(1)
                             try:
                                 complexity = float(info[1])/len(sequence) #calc. complexity (1-compressability)
