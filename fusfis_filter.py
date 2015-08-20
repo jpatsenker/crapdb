@@ -32,10 +32,13 @@ class FusionFissionFilter(SewageFilter):
     __filt_human_genome__ = "filtered_human_non_redundant.cdhit"
 
 
-    __threshold_level__ = .7
+    __threshold_level__ = None
+    __fractional_length__ = None
 
-    def __init__(self):
+    def __init__(self, thresh, frac):
         super(SewageFilter, self).__init__()
+        self.__threshold_level__ = thresh
+        self.__fractional_length__ = frac
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
@@ -79,10 +82,26 @@ class FusionFissionFilter(SewageFilter):
                     if line[:11] == ">HUMAN_CRAP":
                         important_cluster = True
                 if important_cluster:
-                    for line in cluster_lines:
-                        if line[:11] != ">HUMAN_CRAP":
-                            with open(diagnostics_file, "a") as dstream:
-                                dstream.write(line.split("\n")[0] + " Sequence is Fusion/Fission Fragment\n" + line.split("\n")[1])
+                    for i in range(len(cluster_lines)):
+                        if cluster_lines[i][:11] != ">HUMAN_CRAP":
+                            if cluster_seqs[i].split()[-1] == "*":
+                                if len(cluster_seqs)>2:
+                                    with open(diagnostics_file, "a") as dstream:
+                                        dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fusion Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
+                                else:
+                                    with open(output_file, "a") as ostream:
+                                        ostream.write(cluster_lines[i])
+                            else:
+                                human_len = 0
+                                for line in cluster_lines:
+                                    if line[:11] == ">HUMAN_CRAP":
+                                        human_len = len(line.split("\n")[1])
+                                if float(len(cluster_lines[i].split("\n")[1]))/human_len < self.__fractional_length__:
+                                    with open(diagnostics_file, "a") as dstream:
+                                        dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fission Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
+                                else:
+                                    with open(output_file, "a") as ostream:
+                                        ostream.write(cluster_lines[i])
                 else:
                     for line in cluster_lines:
                         if line[:11] != ">HUMAN_CRAP":

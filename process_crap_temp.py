@@ -65,6 +65,8 @@ cdhit_param_flength = .8
 min_len_param = 30
 max_len_param = 30000
 completeness_analysis = True
+ff_param_thresh = .7
+ff_param_flength = .8
 
 if len(sys.argv) > 5:
     if "-0j" in sys.argv[5:]:
@@ -77,6 +79,10 @@ if len(sys.argv) > 5:
         min_len_param = int(sys.argv[sys.argv.index("-min")+1])
     if "-max" in sys.argv[5:]:
         max_len_param = int(sys.argv[sys.argv.index("-max")+1])
+    if "-fft" in sys.argv[5:]:
+        ff_param_thresh = int(sys.argv[sys.argv.index("-fft")+1])
+    if "-ffl" in sys.argv[5:]:
+        ff_param_flength = int(sys.argv[sys.argv.index("-ffl")+1])
     if "-nocomp" in sys.argv[5:]:
         completeness_analysis = False
 
@@ -94,7 +100,7 @@ comp_filter = ComplexityFilter(zeroj_param)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength)
 simple_filter = SimpleFilter()
 fasta_filter = FastaCheckerFilter()
-fusfis_filter = FusionFissionFilter()
+fusfis_filter = FusionFissionFilter(ff_param_thresh, ff_param_flength)
 
 ss.add_module(num_seq_bef_anlzr) #check before
 
