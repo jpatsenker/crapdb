@@ -91,6 +91,7 @@ if len(sys.argv) > 5:
         ms_check = True
     if "-xs" in sys.argv[5:]:
         xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
+        print xs_tolerance
 
 
 logtools.start_new_log(iFile, eAddress, logfil)
