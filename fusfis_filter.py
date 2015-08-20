@@ -68,7 +68,8 @@ class FusionFissionFilter(SewageFilter):
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
             while tline:
-                cluster = temp_stream.readline()
+                cluster = ""
+                tline = temp_stream.readline()
                 while tline and tline[0] != ">":
                     cluster += tline
                     tline = temp_stream.readline()
