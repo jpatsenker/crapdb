@@ -86,9 +86,9 @@ class FusionFissionFilter(SewageFilter):
                         if cluster_lines[i][:11] != ">HUMAN_CRAP":
                             if cluster_seqs[i].split()[-1] == "*":
                                 human_len = 0
-                                for line in cluster_lines:
-                                    if line[:11] == ">HUMAN_CRAP":
-                                        human_len = len(line.split("\n")[1])
+                                for line in cluster_seqs:
+                                    if line.split()[2][:11] == ">HUMAN_CRAP":
+                                        human_len = int(line.split()[1].rstrip("a"))
                                         print line
                                 print cluster_seqs[i] + " " + str(float(len(cluster_lines[i].split("\n")[1]))/human_len)
                                 print float(len(cluster_lines[i].split("\n")[1]))
@@ -101,9 +101,9 @@ class FusionFissionFilter(SewageFilter):
                                         ostream.write(cluster_lines[i])
                             else:
                                 human_len = 0
-                                for line in cluster_lines:
-                                    if line[:11] == ">HUMAN_CRAP":
-                                        human_len = len(line.split("\n")[1])
+                                for line in cluster_seqs:
+                                    if line.split()[2][:11] == ">HUMAN_CRAP":
+                                        human_len = int(line.split()[1].rstrip("a"))
                                 if float(len(cluster_lines[i].split("\n")[1]))/human_len < self.__fractional_length__:
                                     with open(diagnostics_file, "a") as dstream:
                                         dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fission Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
