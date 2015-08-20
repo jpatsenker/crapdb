@@ -57,7 +57,9 @@ class RedundancyFilter(SewageFilter):
             while tline:
                 #print "hi \n"
                 if tline[0] != ">":
-                    if tline.split()[-1] == "*" or float(tline.split()[-1].rstrip("%")) > self.__fractional_level__:
+                    with open(input_file, "r") as in_stream:
+                        line = find_corresponding_line(tline, in_stream, rseq=True)
+                    if tline.split()[-1] == "*" or len(line.rstrip("\n")) > self.__fractional_level__:
                         with open(output_file, "a") as out_stream:
                             with open(input_file, "r") as in_stream:
                                 out_stream.write(find_corresponding_line(tline, in_stream))
