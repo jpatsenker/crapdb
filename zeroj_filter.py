@@ -36,7 +36,7 @@ class ComplexityFilter(SewageFilter):
                             sequence = sequence.rstrip("\n") #get rid of extra \n
                             info = line.split() #isolate all parts of 0j raw
                             try:
-                                assert info[0] == corresponding_line #make sure same sequence being analyzed
+                                assert info[0] == corresponding_line[1:] #make sure same sequence being analyzed
                             except AssertionError:
                                 print "Caught assert err\n"
                                 print str(info) + "\n" + corresponding_line + "\n"
