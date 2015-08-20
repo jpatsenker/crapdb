@@ -34,6 +34,7 @@ class SimpleFilter(SewageFilter):
                     continue
                 if 'X'*(self.__xs__ + 1) in sequence:
                     print sequence
+                    print 'X'*(self.__xs__ + 1)
                     with open(diagnostics_file, "a") as diag_stream:
                         diag_stream.write(line.rstrip("\n") + " Sequence Has Too Many Xs \n" + sequence + "\n")
                     line = input_stream.readline()
