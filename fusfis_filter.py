@@ -73,7 +73,7 @@ class FusionFissionFilter(SewageFilter):
                     cluster += tline
                     tline = temp_stream.readline()
                 important_cluster = False
-                cluster_seqs = cluster.split("\n")
+                cluster_seqs = cluster.rstrip("\n").split("\n")
                 cluster_lines = []
                 for seq in cluster_seqs:
                     with open(temp_input, "r") as in_stream:
