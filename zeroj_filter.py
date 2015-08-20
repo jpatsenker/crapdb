@@ -24,31 +24,33 @@ class ComplexityFilter(SewageFilter):
         :return:
         """
         temporary = "tmp/" + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
-        lsf.run_job(self.__zero_j__ + " -scores_only " + input_file + " > " + temporary, wait=True) #submit lsf job
+        lsf.run_job(self.__zero_j__ + " -scores_only " + input_file, bsub_output=temporary, wait=True) #submit lsf job
+        lsf.clean_file(temporary)
         with open(temporary, "r") as complexity_data: #open output
             with open(input_file, "r") as check_stream: #open input_file for lengths of sequences as well as checking names
                 with open(output_file, "w") as out_stream: #open out_file
                     line = complexity_data.readline()
                     corresponding_line = check_stream.readline()
                     while line and corresponding_line: #read over ever sequence (and its entry in 0j raw file)
-                        sequence = check_stream.readline() #get sequence from fasta
-                        sequence = sequence.rstrip("\n") #get rid of extra \n
-                        info = line.split() #isolate all parts of 0j raw
-                        try:
-                            assert info[0] == corresponding_line #make sure same sequence being analyzed
-                        except AssertionError:
-                            print "Caught assert err\n"
-                            print str(info) + "\n" + corresponding_line + "\n"
-                            exit(1)
-                        try:
-                            complexity = float(info[1])/len(sequence) #calc. complexity (1-compressability)
-                        except ValueError:
-                            print "Error Parsing raw 0j output"
-                            exit(1)
-                        if complexity > self.__threshold_level__:
-                            out_stream.write(corresponding_line + sequence + "\n")
-                        else:
-                            with open(diagnostics_file, "a") as diag_stream:
-                                diag_stream.write(corresponding_line.rstrip("\n") + "Sequence caught in complexity filter: " + str(complexity) + " < " + str(self.__threshold_level__) + "\n" + sequence + "\n")
-                        line = complexity_data.readline()
-                        corresponding_line = check_stream.readline()
+                        if line == line:
+                            sequence = check_stream.readline() #get sequence from fasta
+                            sequence = sequence.rstrip("\n") #get rid of extra \n
+                            info = line.split() #isolate all parts of 0j raw
+                            try:
+                                assert info[0] == corresponding_line #make sure same sequence being analyzed
+                            except AssertionError:
+                                print "Caught assert err\n"
+                                print str(info) + "\n" + corresponding_line + "\n"
+                                exit(1)
+                            try:
+                                complexity = float(info[1])/len(sequence) #calc. complexity (1-compressability)
+                            except ValueError:
+                                print "Error Parsing raw 0j output"
+                                exit(1)
+                            if complexity > self.__threshold_level__:
+                                out_stream.write(corresponding_line + sequence + "\n")
+                            else:
+                                with open(diagnostics_file, "a") as diag_stream:
+                                    diag_stream.write(corresponding_line.rstrip("\n") + "Sequence caught in complexity filter: " + str(complexity) + " < " + str(self.__threshold_level__) + "\n" + sequence + "\n")
+                            line = complexity_data.readline()
+                            corresponding_line = check_stream.readline()
