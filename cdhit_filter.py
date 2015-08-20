@@ -31,7 +31,7 @@ def getCentralLen(temp_stream, input_file):
     while n and n[0] != ">":
         l += n
         n = temp_stream.readline()
-    print "Cluster: " + l
+    #print "Cluster: " + l
     linfo = l.split("\n")
     for line in linfo:
         if line.split()[-1]=="*":
@@ -80,13 +80,13 @@ class RedundancyFilter(SewageFilter):
                     else:
                         with open(diagnostics_file, "a") as d_stream:
                             with open(input_file, "r") as in_stream:
-                                d_stream.write(find_corresponding_line(tline, in_stream, bad="Sequence caught in redundancy filter"))
+                                d_stream.write(find_corresponding_line(tline, in_stream, bad=" Sequence Is Redundant Fragment"))
                 else:
                     savpos = temp_stream.tell()
-                    print str(savpos)
+                    #print str(savpos)
                     central_len = getCentralLen(temp_stream, input_file)
-                    print "central len: " + str(central_len)
+                    #print "central len: " + str(central_len)
                     temp_stream.seek(savpos)
-                    print "seeking back to " + str(savpos)
+                    #print "seeking back to " + str(savpos)
                 tline = temp_stream.readline()
-                print tline
+                #print tline
