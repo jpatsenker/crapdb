@@ -89,6 +89,7 @@ class FusionFissionFilter(SewageFilter):
                                 for line in cluster_lines:
                                     if line[:11] == ">HUMAN_CRAP":
                                         human_len = len(line.split("\n")[1])
+                                        print line
                                 print cluster_seqs[i] + " " + str(float(len(cluster_lines[i].split("\n")[1]))/human_len)
                                 print float(len(cluster_lines[i].split("\n")[1]))
                                 print human_len
