@@ -1,5 +1,5 @@
 import subprocess
-def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "short", timelim = 1, wait = False, return_process = False, dont_clean=False):
+def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "long", timelim = 1, wait = False, return_process = False, dont_clean=False):
 
     """
     :param command: Command to be submitted to LSF
