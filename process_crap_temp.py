@@ -5,6 +5,7 @@ from zeroj_filter import ComplexityFilter
 from cdhit_filter import RedundancyFilter
 from simple_crap_filter import SimpleFilter
 from fasta_filter import FastaCheckerFilter
+from fusfis_filter import FusionFissionFilter
 import mailtools
 import sys
 import os
@@ -93,6 +94,7 @@ comp_filter = ComplexityFilter(zeroj_param)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength)
 simple_filter = SimpleFilter()
 fasta_filter = FastaCheckerFilter()
+fusfis_filter = FusionFissionFilter()
 
 ss.add_module(num_seq_bef_anlzr) #check before
 
@@ -100,9 +102,10 @@ ss.add_module(num_seq_bef_anlzr) #check before
 #FILTERS
 ss.add_module(fasta_filter)
 ss.add_module(simple_filter)
-ss.add_module(len_filter)
-ss.add_module(comp_filter)
-ss.add_module(red_filter)
+#ss.add_module(len_filter)
+#ss.add_module(comp_filter)
+#ss.add_module(red_filter)
+ss.add_module(fusfis_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
