@@ -9,7 +9,7 @@ def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
         prot = cdhitline.split()[2].rstrip(".")
         r = len(prot)
         if prot == l[:r]:
-            print "Found " + prot + "\n"
+            print "Found " + prot
             #print prot + "\n"
             #print l[:r] + "\n"
             seq = in_stream.readline()
