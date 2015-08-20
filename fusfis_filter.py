@@ -9,7 +9,7 @@ def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
         try:
             prot = cdhitline.split()[2].rstrip(".")
         except IndexError as e:
-            print e
+            print e.message
             print cdhitline
             exit(1)
         r = len(prot)
@@ -71,7 +71,7 @@ class FusionFissionFilter(SewageFilter):
                 cluster = ""
                 while tline[0] != ">":
                     cluster += tline
-                    tline = temp_input.readline()
+                    tline = temp_stream.readline()
                 important_cluster = False
                 cluster_seqs = cluster.split("\n")
                 cluster_lines = []
