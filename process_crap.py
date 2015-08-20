@@ -70,6 +70,9 @@ ff_param_flength = .8
 ms_check = False
 xs_tolerance = 0
 
+print sys.argv[5:]
+exit(1)
+
 if len(sys.argv) > 5:
     if "-0j" in sys.argv[5:]:
         zeroj_param = float(sys.argv[sys.argv.index("-0j")+1])
@@ -104,7 +107,6 @@ num_seq_aft_anlzr = NumSeqAnalyzer()
 len_filter = SeqLengthFilter(min_len_param, max_len_param)
 comp_filter = ComplexityFilter(zeroj_param)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength)
-print xs_tolerance
 simple_filter = SimpleFilter(ms_check, xs_tolerance)
 fasta_filter = FastaCheckerFilter()
 fusfis_filter = FusionFissionFilter(ff_param_thresh, ff_param_flength)
