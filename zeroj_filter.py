@@ -35,6 +35,7 @@ class ComplexityFilter(SewageFilter):
                             sequence = check_stream.readline() #get sequence from fasta
                             sequence = sequence.rstrip("\n") #get rid of extra \n
                             info = line.split() #isolate all parts of 0j raw
+                            corresponding_line = corresponding_line.split()[0] #get only id in fasta seq
                             try:
                                 assert info[0] == corresponding_line[1:].rstrip("\n") #make sure same sequence being analyzed
                             except AssertionError:
