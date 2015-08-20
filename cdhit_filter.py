@@ -66,11 +66,8 @@ class RedundancyFilter(SewageFilter):
         lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__), wait=True) #submit lsf job
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
-            savpos = 0
+            central_len = 0
             while tline:
-                savpos = temp_stream.tell()
-                central_len = getCentralLen(temp_stream, input_file)
-                temp_stream.seek(savpos)
                 if tline[0] != ">":
                     with open(input_file, "r") as in_stream:
                         line = find_corresponding_line(tline, in_stream, rseq=True)
@@ -83,5 +80,7 @@ class RedundancyFilter(SewageFilter):
                             with open(input_file, "r") as in_stream:
                                 d_stream.write(find_corresponding_line(tline, in_stream, bad="Sequence caught in redundancy filter"))
                 else:
-
-                tline = temp_stream.readline()
+                    savpos = temp_stream.tell()
+                    central_len = getCentralLen(temp_stream, input_file)
+                    temp_stream.seek(savpos)
+                    tline = temp_stream.readline()
