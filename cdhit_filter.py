@@ -84,3 +84,4 @@ class RedundancyFilter(SewageFilter):
                     central_len = getCentralLen(temp_stream, input_file)
                     temp_stream.seek(savpos)
                     tline = temp_stream.readline()
+                    print tline
