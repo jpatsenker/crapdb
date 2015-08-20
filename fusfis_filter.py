@@ -8,7 +8,7 @@ def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
     while l:
         try:
             prot = cdhitline.split()[2].rstrip(".")
-        except IOError as e:
+        except IndexError as e:
             print e
             print cdhitline
             exit(1)
