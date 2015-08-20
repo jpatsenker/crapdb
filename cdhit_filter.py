@@ -3,7 +3,7 @@ from sewagefilter import SewageFilter
 import lsftools as lsf
 
 
-def find_corresponding_line(cdhitline, in_stream, bad=None):
+def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
     l = in_stream.readline()
     while l:
         prot = cdhitline.split()[2].rstrip(".")
@@ -13,6 +13,8 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
             #print prot + "\n"
             #print l[:r] + "\n"
             seq = in_stream.readline()
+            if rseq:
+                return seq
             if bad is not None:
                 l = l.rstrip("\n") + bad + "\n" + seq
             else:
