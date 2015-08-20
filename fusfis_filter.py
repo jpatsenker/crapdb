@@ -6,12 +6,7 @@ import lsftools as lsf
 def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
     l = in_stream.readline()
     while l:
-        try:
-            prot = cdhitline.split()[2].rstrip(".")
-        except IndexError as e:
-            print e
-            print "CDHITLINE: " + cdhitline
-            exit(1)
+        prot = cdhitline.split()[2].rstrip(".")
         r = len(prot)
         if prot == l[:r]:
             #print "Found " + prot
@@ -73,7 +68,6 @@ class FusionFissionFilter(SewageFilter):
                 while tline and tline[0] != ">":
                     cluster += tline
                     tline = temp_stream.readline()
-                print cluster
                 important_cluster = False
                 cluster_seqs = cluster.rstrip("\n").split("\n")
                 cluster_lines = []
