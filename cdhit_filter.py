@@ -73,6 +73,7 @@ class RedundancyFilter(SewageFilter):
                     with open(input_file, "r") as in_stream:
                         line = find_corresponding_line(tline, in_stream, rseq=True)
                     if tline.split()[-1] == "*" or len(line)/central_len > self.__fractional_level__:
+                        #print "this one is ok: " + tline
                         with open(output_file, "a") as out_stream:
                             with open(input_file, "r") as in_stream:
                                 out_stream.write(find_corresponding_line(tline, in_stream))
@@ -87,5 +88,5 @@ class RedundancyFilter(SewageFilter):
                     print "central len: " + str(central_len)
                     temp_stream.seek(savpos)
                     print "seeking back to " + str(savpos)
-                    tline = temp_stream.readline()
-                    print tline
+                tline = temp_stream.readline()
+                print tline
