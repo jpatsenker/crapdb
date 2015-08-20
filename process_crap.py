@@ -70,8 +70,7 @@ ff_param_flength = .8
 ms_check = False
 xs_tolerance = 0
 
-print sys.argv[5:]
-exit(1)
+
 
 if len(sys.argv) > 5:
     if "-0j" in sys.argv[5:]:
