@@ -91,7 +91,6 @@ if len(sys.argv) > 5:
         ms_check = True
     if "-xs" in sys.argv[5:]:
         xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
-        print xs_tolerance
 
 
 logtools.start_new_log(iFile, eAddress, logfil)
@@ -105,6 +104,7 @@ num_seq_aft_anlzr = NumSeqAnalyzer()
 len_filter = SeqLengthFilter(min_len_param, max_len_param)
 comp_filter = ComplexityFilter(zeroj_param)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength)
+print xs_tolerance
 simple_filter = SimpleFilter(ms_check, xs_tolerance)
 fasta_filter = FastaCheckerFilter()
 fusfis_filter = FusionFissionFilter(ff_param_thresh, ff_param_flength)
