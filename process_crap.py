@@ -3,6 +3,9 @@ from num_seq_analyzer import NumSeqAnalyzer
 from sewagesystem import SewageSystem
 from zeroj_filter import ComplexityFilter
 from cdhit_filter import RedundancyFilter
+from simple_crap_filter import SimpleFilter
+from fasta_filter import FastaCheckerFilter
+from fusfis_filter import FusionFissionFilter
 import mailtools
 import sys
 import os
@@ -62,6 +65,10 @@ cdhit_param_flength = .8
 min_len_param = 30
 max_len_param = 30000
 completeness_analysis = True
+ff_param_thresh = .7
+ff_param_flength = .8
+ms_check = False
+xs_tolerance = 0
 
 if len(sys.argv) > 5:
     if "-0j" in sys.argv[5:]:
@@ -74,13 +81,21 @@ if len(sys.argv) > 5:
         min_len_param = int(sys.argv[sys.argv.index("-min")+1])
     if "-max" in sys.argv[5:]:
         max_len_param = int(sys.argv[sys.argv.index("-max")+1])
+    if "-fft" in sys.argv[5:]:
+        ff_param_thresh = int(sys.argv[sys.argv.index("-fft")+1])
+    if "-ffl" in sys.argv[5:]:
+        ff_param_flength = int(sys.argv[sys.argv.index("-ffl")+1])
     if "-nocomp" in sys.argv[5:]:
         completeness_analysis = False
+    if "-ms" in sys.argv[5:]:
+        ms_check = True
+    if "-xs" in sys.argv[5:]:
+        xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
 
 
 logtools.start_new_log(iFile, eAddress, logfil)
 
-fasta_fixer.fix_file(iFile)
+#fasta_fixer.fix_file(iFile)
 
 ss = SewageSystem()
 
@@ -89,14 +104,20 @@ num_seq_aft_anlzr = NumSeqAnalyzer()
 len_filter = SeqLengthFilter(min_len_param, max_len_param)
 comp_filter = ComplexityFilter(zeroj_param)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength)
+simple_filter = SimpleFilter(ms_check, xs_tolerance)
+fasta_filter = FastaCheckerFilter()
+fusfis_filter = FusionFissionFilter(ff_param_thresh, ff_param_flength)
 
 ss.add_module(num_seq_bef_anlzr) #check before
 
 
 #FILTERS
-ss.add_module(len_filter)
+ss.add_module(fasta_filter)
+ss.add_module(simple_filter)
+#ss.add_module(len_filter)
 #ss.add_module(comp_filter)
-ss.add_module(red_filter)
+#ss.add_module(red_filter)
+ss.add_module(fusfis_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
 

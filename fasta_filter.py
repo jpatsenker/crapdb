@@ -8,7 +8,7 @@ class FastaCheckerFilter(SewageFilter):
 
     __name__ = "FASTA_CHECK_FILTER"
 
-    __fasta_checker__ = "/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker.pl"
+    __fasta_checker__ = "/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker_for_crap.pl"
 
     def __init__(self):
         super(SewageFilter, self).__init__()
