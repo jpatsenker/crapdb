@@ -32,7 +32,7 @@ class FusionFissionFilter(SewageFilter):
     __filt_human_genome__ = "filtered_human_non_redundant.cdhit"
 
 
-    __threshold_level__ = .9
+    __threshold_level__ = .7
 
     def __init__(self):
         super(SewageFilter, self).__init__()
