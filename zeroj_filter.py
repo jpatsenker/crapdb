@@ -35,12 +35,12 @@ class ComplexityFilter(SewageFilter):
                             sequence = check_stream.readline() #get sequence from fasta
                             sequence = sequence.rstrip("\n") #get rid of extra \n
                             info = line.split() #isolate all parts of 0j raw
-                            corresponding_line = corresponding_line.split()[0] #get only id in fasta seq
+                            corresponding_line_id = corresponding_line.split()[0] #get only id in fasta seq
                             try:
-                                assert info[0] == corresponding_line[1:].rstrip("\n") #make sure same sequence being analyzed
+                                assert info[0] == corresponding_line_id[1:].rstrip("\n") #make sure same sequence being analyzed
                             except AssertionError:
                                 print "Caught assert err\n"
-                                print "-" + info[0] + "-\n-" + corresponding_line[1:] + "-\n"
+                                print "-" + info[0] + "-\n-" + corresponding_line_id[1:].rstrip("\n") + "-\n"
                                 exit(1)
                             try:
                                 complexity = float(1) - float(info[2])/len(sequence) #calc. complexity (1-compressability)
