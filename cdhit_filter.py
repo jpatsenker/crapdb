@@ -3,7 +3,7 @@ from sewagefilter import SewageFilter
 import lsftools as lsf
 
 
-def find_corresponding_line(cdhitline, in_stream, bad=None):
+def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
     l = in_stream.readline()
     while l:
         prot = cdhitline.split()[2].rstrip(".")
@@ -13,6 +13,8 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
             #print prot + "\n"
             #print l[:r] + "\n"
             seq = in_stream.readline()
+            if rseq:
+                return seq.rstrip("\n")
             if bad is not None:
                 l = l.rstrip("\n") + bad + "\n" + seq
             else:
@@ -22,6 +24,18 @@ def find_corresponding_line(cdhitline, in_stream, bad=None):
     #print cdhitline + "\n"
     assert 1 == 0
 
+
+def getCentralLen(temp_stream, input_file):
+    l = ""
+    n = temp_stream.readline()
+    while n and n[0] != ">":
+        l += n
+        n = temp_stream.readline()
+    linfo = l.split("\n")
+    for line in linfo:
+        if line.split()[-1]=="*":
+            with open(input_file, "r") as in_stream:
+                return len(find_corresponding_line(line, in_stream, rseq=True))
 
 class RedundancyFilter(SewageFilter):
 
@@ -52,10 +66,15 @@ class RedundancyFilter(SewageFilter):
         lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__), wait=True) #submit lsf job
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
+            savpos = 0
             while tline:
-                #print "hi \n"
+                savpos = temp_stream.tell()
+                central_len = getCentralLen(temp_stream, input_file)
+                temp_stream.seek(savpos)
                 if tline[0] != ">":
-                    if tline.split()[-1] == "*" or float(tline.split()[-1].rstrip("%")) > self.__fractional_level__:
+                    with open(input_file, "r") as in_stream:
+                        line = find_corresponding_line(tline, in_stream, rseq=True)
+                    if tline.split()[-1] == "*" or len(line)/central_len > self.__fractional_level__:
                         with open(output_file, "a") as out_stream:
                             with open(input_file, "r") as in_stream:
                                 out_stream.write(find_corresponding_line(tline, in_stream))
@@ -63,4 +82,6 @@ class RedundancyFilter(SewageFilter):
                         with open(diagnostics_file, "a") as d_stream:
                             with open(input_file, "r") as in_stream:
                                 d_stream.write(find_corresponding_line(tline, in_stream, bad="Sequence caught in redundancy filter"))
+                else:
+
                 tline = temp_stream.readline()
