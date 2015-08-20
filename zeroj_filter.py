@@ -42,7 +42,7 @@ class ComplexityFilter(SewageFilter):
                                 print "-" + info[0] + "-\n-" + corresponding_line[1:] + "-\n"
                                 exit(1)
                             try:
-                                complexity = float(info[1])/len(sequence) #calc. complexity (1-compressability)
+                                complexity = 1 - float(info[1])/len(sequence) #calc. complexity (1-compressability)
                             except ValueError:
                                 print "Error Parsing raw 0j output"
                                 exit(1)
