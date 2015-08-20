@@ -69,7 +69,7 @@ class FusionFissionFilter(SewageFilter):
             tline = temp_stream.readline()
             while tline:
                 cluster = ""
-                while tline[0] != ">":
+                while tline and tline[0] != ">":
                     cluster += tline
                     tline = temp_stream.readline()
                 important_cluster = False
