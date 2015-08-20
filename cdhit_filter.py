@@ -9,7 +9,7 @@ def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
         prot = cdhitline.split()[2].rstrip(".")
         r = len(prot)
         if prot == l[:r]:
-            print "Found " + prot
+            #print "Found " + prot
             #print prot + "\n"
             #print l[:r] + "\n"
             seq = in_stream.readline()
@@ -31,6 +31,7 @@ def getCentralLen(temp_stream, input_file):
     while n and n[0] != ">":
         l += n
         n = temp_stream.readline()
+    print "Cluster: " + l
     linfo = l.split("\n")
     for line in linfo:
         if line.split()[-1]=="*":
@@ -81,7 +82,9 @@ class RedundancyFilter(SewageFilter):
                                 d_stream.write(find_corresponding_line(tline, in_stream, bad="Sequence caught in redundancy filter"))
                 else:
                     savpos = temp_stream.tell()
+                    print str(savpos)
                     central_len = getCentralLen(temp_stream, input_file)
                     temp_stream.seek(savpos)
+                    print "seeking back to " + str(savpos)
                     tline = temp_stream.readline()
                     print tline
