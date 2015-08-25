@@ -61,10 +61,10 @@ class SewageSystem:
                 except BrokenFilterError:
                     print "Oh no! Broken filter: " + self.modules[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
                     exit(1)
-                except TypeError as e:
-                    print "Yo its this type: " + str(self.modules[fnum]) + "\n"
-                    print str(e) + "\n"
-                    exit(1)
+                # except TypeError as e:
+                #     print "Yo its this type: " + str(self.modules[fnum]) + "\n"
+                #     print str(e) + "\n"
+                #     exit(1)
             else:
                 assert isinstance(self.modules[fnum], SewageAnalyzer)
                 try:
