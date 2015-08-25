@@ -62,33 +62,32 @@ class RedundancyFilter(SewageFilter):
         :param diagnostics_file: fasta output with compressable sequences (appended to)
         :return:
         """
-        open(output_file, "w").close() #open and close out file so that it is blank
 
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
         lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__), wait=True, lfil=self.__log_file__) #submit lsf job
         with open(temporary + ".clstr", "r") as temp_stream:
-            tline = temp_stream.readline()
-            central_len = 0
-            while tline:
-                if tline[0] != ">":
-                    with open(input_file, "r") as in_stream:
-                        line = find_corresponding_line(tline, in_stream, rseq=True)
-                    if tline.split()[-1] == "*" or len(line)/central_len > self.__fractional_level__:
-                        #print "this one is ok: " + tline
-                        with open(output_file, "a") as out_stream:
+            with open(output_file, "w") as out_stream:
+                with open(diagnostics_file, "a") as d_stream:
+                    tline = temp_stream.readline()
+                    central_len = 0
+                    while tline:
+                        if tline[0] != ">":
                             with open(input_file, "r") as in_stream:
-                                out_stream.write(find_corresponding_line(tline, in_stream))
-                    else:
-                        with open(diagnostics_file, "a") as d_stream:
-                            with open(input_file, "r") as in_stream:
-                                d_stream.write(find_corresponding_line(tline, in_stream, bad=" Sequence Is Redundant Fragment"))
-                else:
-                    savpos = temp_stream.tell()
-                    #print str(savpos)
-                    central_len = getCentralLen(temp_stream, input_file)
-                    #print "central len: " + str(central_len)
-                    temp_stream.seek(savpos)
-                    #print "seeking back to " + str(savpos)
-                tline = temp_stream.readline()
-                #print tline
+                                line = find_corresponding_line(tline, in_stream, rseq=True)
+                            if tline.split()[-1] == "*" or len(line)/central_len > self.__fractional_level__:
+                                #print "this one is ok: " + tline
+                                with open(input_file, "r") as in_stream:
+                                    out_stream.write(find_corresponding_line(tline, in_stream))
+                            else:
+                                with open(input_file, "r") as in_stream:
+                                    d_stream.write(find_corresponding_line(tline, in_stream, bad=" Sequence Is Redundant Fragment"))
+                        else:
+                            savpos = temp_stream.tell()
+                            #print str(savpos)
+                            central_len = getCentralLen(temp_stream, input_file)
+                            #print "central len: " + str(central_len)
+                            temp_stream.seek(savpos)
+                            #print "seeking back to " + str(savpos)
+                        tline = temp_stream.readline()
+                        #print tline
