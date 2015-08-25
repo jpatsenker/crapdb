@@ -101,8 +101,8 @@ logtools.start_new_log(iFile, eAddress, logfil)
 
 ss = SewageSystem()
 
-num_seq_bef_anlzr = NumSeqAnalyzer()
-num_seq_aft_anlzr = NumSeqAnalyzer()
+num_seq_bef_anlzr = NumSeqAnalyzer(logfil, dFile)
+num_seq_aft_anlzr = NumSeqAnalyzer(logfil, dFile)
 len_filter = SeqLengthFilter(min_len_param, max_len_param)
 comp_filter = ComplexityFilter(zeroj_param)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength)
@@ -112,13 +112,23 @@ fusfis_filter = FusionFissionFilter(ff_param_thresh, ff_param_flength)
 
 ss.add_module(num_seq_bef_anlzr) #check before
 
+#for debugging
+a = []
+for i in range(5):
+    a.append(NumSeqAnalyzer(logfil, dFile))
+
 
 #FILTERS
 ss.add_module(fasta_filter)
+ss.add_module(a[0])
 ss.add_module(simple_filter)
+ss.add_module(a[1])
 ss.add_module(len_filter)
+ss.add_module(a[2])
 ss.add_module(comp_filter)
+ss.add_module(a[3])
 ss.add_module(red_filter)
+ss.add_module(a[4])
 ss.add_module(fusfis_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
