@@ -1,6 +1,6 @@
 import subprocess
 import logtools
-def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "long", timelim = 1, wait = False, return_process = False, dont_clean=False, lfil = None):
+def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "long", timelim = 60, wait = False, return_process = False, dont_clean=False, lfil = None):
 
     """
     :param command: Command to be submitted to LSF
