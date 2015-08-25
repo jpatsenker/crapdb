@@ -133,6 +133,8 @@ ss.add_module(fusfis_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
+open(dFile, "w").close()
+
 aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
 
 assert len(aFiles) == 2
