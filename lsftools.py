@@ -1,5 +1,6 @@
 import subprocess
-def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "long", timelim = 1, wait = False, return_process = False, dont_clean=False):
+import logtools
+def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "long", timelim = 1, wait = False, return_process = False, dont_clean=False, lfil = None):
 
     """
     :param command: Command to be submitted to LSF
@@ -11,7 +12,9 @@ def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "l
     :param dont_clean: Whether or not to clean output in case its not /dev/null (default: False)
     :return: subprocess object in case return_process=True.
     """
-    #print ["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " " + command]
+
+    logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command)
+
     a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command])
     if wait:
         a.wait()
