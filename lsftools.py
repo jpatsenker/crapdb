@@ -13,7 +13,8 @@ def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "l
     :return: subprocess object in case return_process=True.
     """
 
-    logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command)
+    if lfil is not None:
+        logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command)
 
     a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command])
     if wait:
