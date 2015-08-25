@@ -137,7 +137,6 @@ open(dFile, "w").close()
 
 aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
 
-assert len(aFiles) == 2
 with open(aFiles[0], "r") as analysisFile:
     before_seq = analysisFile.read()
 with open(aFiles[1], "r") as analysisFile:
