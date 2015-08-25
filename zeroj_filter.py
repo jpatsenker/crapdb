@@ -11,9 +11,12 @@ class ComplexityFilter(SewageFilter):
 
     __threshold_level__ = None
 
-    def __init__(self, thresh):
+    __log_fil__ = None
+
+    def __init__(self, thresh, lfil = None):
         super(SewageFilter, self).__init__()
         self.__threshold_level__ = thresh
+        self.__log_fil__ = lfil
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
@@ -24,7 +27,7 @@ class ComplexityFilter(SewageFilter):
         :return:
         """
         temporary = "tmp/" + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
-        lsf.run_job('"' + self.__zero_j__ + " -scores_only " + input_file + " > " + temporary + '"', wait=True) #submit lsf job
+        lsf.run_job('"' + self.__zero_j__ + " -scores_only " + input_file + " > " + temporary + '"', wait=True, lfil=self.__log_fil__) #submit lsf job
         with open(temporary, "r") as complexity_data: #open output
             with open(input_file, "r") as check_stream: #open input_file for lengths of sequences as well as checking names
                 with open(output_file, "w") as out_stream: #open out_file
