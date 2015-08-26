@@ -27,8 +27,14 @@
                                 Minimum Length: 
                                 <input type="text" name="min" value="30"></input><br>
                                 Maximum Length: 
-                                <input type="text" name="max" value="30000"></input><p>
-                                <input type="checkbox" name="compl" checked> Completeness? <br>
+                                <input type="text" name="max" value="30000"></input><br>
+                                Maximum Number of "X"s to be ignored:
+                                <input type="text" name="xs" value="0"></input><br>
+                                Fusion/Fission Threshold:
+                                <input type="text" name="fft" value="0.7"></input><br>
+                                Fusion/Fission Fractional Length:
+                                <input type="text" name="ffl" value="0.8"></input><p>
+                                <input type="checkbox" name="ms"> Check for M at beginning of sequence? <br>
                                 <p></p>
                                 <input type="submit"/>
                             </div>
