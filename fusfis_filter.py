@@ -113,7 +113,7 @@ class FusionFissionFilter(SewageFilter):
 
     def prepare_temp_hash(self, input_file, cdhit_file):
         r = self.getCdhitfileIDLength(cdhit_file)
-        print "Length: " + r
+        print "Length: " + str(r)
         self.__temp_hash__ = {}
         with open(input_file, "r") as in_stream:
             l = in_stream.readline()
