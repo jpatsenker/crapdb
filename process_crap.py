@@ -151,8 +151,8 @@ fullpath = fullpath.replace("/docroot/", '/')
 para_str = ""
 for a in sys.argv[1:]:
     if a[0] == "-":
-        para_str += "\n" + a
+        para_str += "<br>" + a
     else:
         para_str += a
 
-mailtools.send_email("We ran CRAP version 2.0 on file " + iFile + "\nHere is a list of parameters used: \n" + para_str + "\n\nOriginal Num Sequences: " + str(before_seq) + "\nFiltered Num Sequences: " + str(after_seq) + "\nFinal Crap Score: " + str(crap_score) + '\n See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile])
+mailtools.send_email("We ran CRAP version 2.0 on file " + iFile + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Original Num Sequences: " + str(before_seq) + "<br>Filtered Num Sequences: " + str(after_seq) + "<br>Final Crap Score: " + str(crap_score) + '<br> See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile])
