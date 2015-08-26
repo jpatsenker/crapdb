@@ -49,8 +49,8 @@ class FusionFissionFilter(SewageFilter):
         self.prepare_temp_hash(input_file, temporary + ".clstr")
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
-            with open(diagnostics_file, "a") as d_stream:
-                with open(output_file, "w") as o_stream:
+            with open(diagnostics_file, "a") as dstream:
+                with open(output_file, "w") as ostream:
                     while tline:
                         cluster = ""
                         tline = temp_stream.readline()
@@ -89,11 +89,9 @@ class FusionFissionFilter(SewageFilter):
                                             if line.split()[2][:11] == ">HUMAN_CRAP":
                                                 human_len = int(line.split()[1].rstrip(",").rstrip("a"))
                                         if float(len(cluster_lines[i].split("\n")[1]))/human_len < self.__fractional_length__:
-                                            with open(diagnostics_file, "a") as dstream:
-                                                dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fission Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
+                                            dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fission Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
                                         else:
-                                            with open(output_file, "a") as ostream:
-                                                ostream.write(cluster_lines[i])
+                                            ostream.write(cluster_lines[i])
                         else:
                             for line in cluster_lines:
                                 if line[:11] != ">HUMAN_CRAP":
