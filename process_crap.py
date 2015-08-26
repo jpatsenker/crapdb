@@ -127,9 +127,9 @@ ss.add_module(a[1])
 #ss.add_module(a[2])
 #ss.add_module(comp_filter)
 #ss.add_module(a[3])
-ss.add_module(red_filter)
+#ss.add_module(red_filter)
 #ss.add_module(a[4])
-#ss.add_module(fusfis_filter)
+ss.add_module(fusfis_filter)
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
