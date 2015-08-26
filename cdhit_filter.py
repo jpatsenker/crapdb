@@ -3,40 +3,7 @@ from sewagefilter import SewageFilter
 import lsftools as lsf
 
 
-def find_corresponding_line(cdhitline, in_stream, bad=None, rseq = False):
-    l = in_stream.readline()
-    while l:
-        prot = cdhitline.split()[2].rstrip(".")
-        r = len(prot)
-        if prot == l[:r]:
-            #print "Found " + prot
-            #print prot + "\n"
-            #print l[:r] + "\n"
-            seq = in_stream.readline()
-            if rseq:
-                return seq.rstrip("\n")
-            if bad is not None:
-                l = l.rstrip("\n") + bad + "\n" + seq
-            else:
-                l = l + seq
-            return l
-        l = in_stream.readline()
-    #print cdhitline + "\n"
-    assert 1 == 0
 
-
-def getCentralLen(temp_stream, input_file):
-    l = ""
-    n = temp_stream.readline()
-    while n and n[0] != ">":
-        l += n
-        n = temp_stream.readline()
-    #print "Cluster: " + l
-    linfo = l.split("\n")
-    for line in linfo:
-        if line.split()[-1]=="*":
-            with open(input_file, "r") as in_stream:
-                return len(find_corresponding_line(line, in_stream, rseq=True))
 
 class RedundancyFilter(SewageFilter):
 
@@ -47,6 +14,9 @@ class RedundancyFilter(SewageFilter):
     __threshold_level__ = None
     __fractional_level__ = None
     __log_file__ = None
+
+
+    __temp_hash__ = None
 
     def __init__(self, thresh, frac, lfil = None):
         super(SewageFilter, self).__init__()
@@ -74,20 +44,75 @@ class RedundancyFilter(SewageFilter):
                     while tline:
                         if tline[0] != ">":
                             with open(input_file, "r") as in_stream:
-                                line = find_corresponding_line(tline, in_stream, rseq=True)
+                                line = self.find_corresponding_line(tline, in_stream, rseq=True)
                             if tline.split()[-1] == "*" or len(line)/central_len > self.__fractional_level__:
                                 #print "this one is ok: " + tline
                                 with open(input_file, "r") as in_stream:
-                                    out_stream.write(find_corresponding_line(tline, in_stream))
+                                    out_stream.write(self.find_corresponding_line(tline, in_stream))
                             else:
                                 with open(input_file, "r") as in_stream:
-                                    d_stream.write(find_corresponding_line(tline, in_stream, bad=" Sequence Is Redundant Fragment"))
+                                    d_stream.write(self.find_corresponding_line(tline, in_stream, bad=" Sequence Is Redundant Fragment"))
                         else:
                             savpos = temp_stream.tell()
                             #print str(savpos)
-                            central_len = getCentralLen(temp_stream, input_file)
+                            central_len = self.getCentralLen(temp_stream, input_file)
                             #print "central len: " + str(central_len)
                             temp_stream.seek(savpos)
                             #print "seeking back to " + str(savpos)
                         tline = temp_stream.readline()
                         #print tline
+
+    def getCdhitfileIDLength(self, cdhit_file):
+        with open(cdhit_file, "r") as cd_stream:
+            l = cd_stream.readline()
+            while l:
+                if l[0] != ">":
+                    return len(l.split()[2].rstrip("."))
+                l = cd_stream.readline()
+        print "No proper cdhit file present: " + cdhit_file
+        exit(1)
+
+
+    def prepare_temp_hash(self, input_file, cdhit_file):
+        r = self.getCdhitfileIDLength(cdhit_file)
+        self.__temp_hash__ = {}
+        with open(input_file, "r") as in_stream:
+            l = in_stream.readline()
+            while l:
+                self.__temp_hash__[l[:r]]=in_stream.tell()-len(l)
+                l = in_stream.readline()
+
+
+    def find_corresponding_line(self, cdhitline, in_stream, bad=None, rseq = False):
+        prot = cdhitline.split()[2].rstrip(".")
+        try:
+            position = self.__temp_hash__[prot]
+        except KeyError:
+            print "Improperly put together hash in CDHIT filter!!! Couldn't find " + prot
+            print "\nFrom line: " + cdhitline
+            exit(1)
+
+        in_stream.seek(position)
+        l = in_stream.readline()
+        seq = in_stream.readline()
+        if rseq:
+            return seq.rstrip("\n")
+        if bad is not None:
+            l = l.rstrip("\n") + bad + "\n" + seq
+        else:
+            l = l + seq
+        return l
+
+
+    def getCentralLen(self, temp_stream, input_file):
+        l = ""
+        n = temp_stream.readline()
+        while n and n[0] != ">":
+            l += n
+            n = temp_stream.readline()
+        #print "Cluster: " + l
+        linfo = l.split("\n")
+        for line in linfo:
+            if line.split()[-1]=="*":
+                with open(input_file, "r") as in_stream:
+                    return len(self.find_corresponding_line(line, in_stream, rseq=True))
