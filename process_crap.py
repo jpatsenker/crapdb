@@ -148,4 +148,11 @@ fullpath = os.getcwd()[os.getcwd().find("/www/") + 5:] +  "/" +  logfil
 
 fullpath = fullpath.replace("/docroot/", '/')
 
-mailtools.send_email("Final Crap Score: " + str(crap_score) + '\n See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile])
+para_str = ""
+for a in sys.argv[1:]:
+    if a[0] == "-":
+        para_str += "\n" + a
+    else:
+        para_str += a
+
+mailtools.send_email("We ran CRAP version 2.0 on file " + iFile + "\nHere is a list of parameters used: \n" + para_str + "\n\nOriginal Num Sequences: " + str(before_seq) + "\nFiltered Num Sequences: " + str(after_seq) + "\nFinal Crap Score: " + str(crap_score) + '\n See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile])
