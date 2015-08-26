@@ -7,6 +7,6 @@ for a in sys.argv[1:]:
     command_string += " " + a
 
 print command_string + "\n"
-lsftools.run_job(command_string, wait=True)
+lsftools.run_job(command_string, wait=True, dont_clean=True, bsub_output="stdout", bsub_error="stderr")
 
 print "done"
