@@ -84,9 +84,9 @@ if len(sys.argv) > 5:
     if "-max" in sys.argv[5:]:
         max_len_param = int(sys.argv[sys.argv.index("-max")+1])
     if "-fft" in sys.argv[5:]:
-        ff_param_thresh = int(sys.argv[sys.argv.index("-fft")+1])
+        ff_param_thresh = float(sys.argv[sys.argv.index("-fft")+1])
     if "-ffl" in sys.argv[5:]:
-        ff_param_flength = int(sys.argv[sys.argv.index("-ffl")+1])
+        ff_param_flength = float(sys.argv[sys.argv.index("-ffl")+1])
     if "-nocomp" in sys.argv[5:]:
         completeness_analysis = False
     if "-ms" in sys.argv[5:]:
