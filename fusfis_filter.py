@@ -113,6 +113,7 @@ class FusionFissionFilter(SewageFilter):
 
     def prepare_temp_hash(self, input_file, cdhit_file):
         r = self.getCdhitfileIDLength(cdhit_file)
+        print "Length: " + r
         self.__temp_hash__ = {}
         with open(input_file, "r") as in_stream:
             l = in_stream.readline()
@@ -128,8 +129,6 @@ class FusionFissionFilter(SewageFilter):
         except KeyError:
             print "Improperly put together hash in CDHIT filter!!! Couldn't find " + prot
             print "\nFrom line: " + cdhitline
-            print "\n"
-            print self.__temp_hash__
             exit(1)
 
         in_stream.seek(position)
