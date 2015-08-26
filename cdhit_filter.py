@@ -36,6 +36,7 @@ class RedundancyFilter(SewageFilter):
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
         lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__), wait=True, lfil=self.__log_file__) #submit lsf job
+        self.prepare_temp_hash(input_file, temporary + ".clstr")
         with open(temporary + ".clstr", "r") as temp_stream:
             with open(output_file, "w") as out_stream:
                 with open(diagnostics_file, "a") as d_stream:
