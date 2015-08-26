@@ -97,8 +97,7 @@ class FusionFissionFilter(SewageFilter):
                         else:
                             for line in cluster_lines:
                                 if line[:11] != ">HUMAN_CRAP":
-                                    with open(output_file, "a") as ostream:
-                                        ostream.write(line)
+                                    ostream.write(line)
 
     def getCdhitfileIDLength(self, cdhit_file):
         with open(cdhit_file, "r") as cd_stream:
