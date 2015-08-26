@@ -139,7 +139,7 @@ aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
 
 with open(aFiles[0], "r") as analysisFile:
     before_seq = analysisFile.read()
-with open(aFiles[1], "r") as analysisFile:
+with open(aFiles[-1], "r") as analysisFile:
     after_seq = analysisFile.read()
 
 crap_score = 1 - float(after_seq)/float(before_seq)
