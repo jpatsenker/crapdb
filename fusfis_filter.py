@@ -128,6 +128,8 @@ class FusionFissionFilter(SewageFilter):
         except KeyError:
             print "Improperly put together hash in CDHIT filter!!! Couldn't find " + prot
             print "\nFrom line: " + cdhitline
+            print "\n"
+            print self.__temp_hash__
             exit(1)
 
         in_stream.seek(position)
