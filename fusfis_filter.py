@@ -103,6 +103,8 @@ class FusionFissionFilter(SewageFilter):
     def getCdhitfileIDLength(self, cdhit_file):
         with open(cdhit_file, "r") as cd_stream:
             l = cd_stream.readline()
+            while l[0] == ">" or l.split()[2][:11] == ">HUMAN_CRAP":
+                l = cd_stream.readline()
             while l:
                 if l[0] != ">":
                     return len(l.split()[2].rstrip("."))
@@ -113,7 +115,6 @@ class FusionFissionFilter(SewageFilter):
 
     def prepare_temp_hash(self, input_file, cdhit_file):
         r = self.getCdhitfileIDLength(cdhit_file)
-        print "Length: " + str(r)
         self.__temp_hash__ = {}
         with open(input_file, "r") as in_stream:
             l = in_stream.readline()
