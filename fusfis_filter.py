@@ -41,7 +41,6 @@ class FusionFissionFilter(SewageFilter):
         temp_input = "tmp/" + basename(input_file) + ".Ffinput"
         with open(temp_input, "w") as t_stream:
             t_stream.write(everything)
-        open(output_file, "w").close() #open and close out file so that it is blank
 
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
@@ -61,8 +60,11 @@ class FusionFissionFilter(SewageFilter):
                         cluster_seqs = cluster.rstrip("\n").split("\n")
                         cluster_lines = []
                         for seq in cluster_seqs:
-                            with open(temp_input, "r") as in_stream:
-                                cluster_lines.append(self.find_corresponding_line(seq, in_stream))
+                            if seq.split()[2][:11] != ">HUMAN_CRAP":
+                                with open(temp_input, "r") as in_stream:
+                                    cluster_lines.append(self.find_corresponding_line(seq, in_stream))
+                            else:
+                                cluster_lines.append(">HUMAN_CRAP " + seq.split()[1].rstrip(",").rstrip("a"))
                         for line in cluster_lines:
                             assert line[0] == ">"
                             if line[:11] == ">HUMAN_CRAP":
