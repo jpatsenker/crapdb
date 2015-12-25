@@ -1,3 +1,4 @@
 .idea/workspace.xml
 tmp/*
 uploaded_fasta/*
+logs/*
