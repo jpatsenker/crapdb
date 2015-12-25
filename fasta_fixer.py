@@ -1,8 +1,8 @@
 import shutil
-def fix_file(input_file):
+def fix_file(input_file, output_file):
     with open(input_file, "r") as ifile:
         everything = ifile.read()
-    with open(input_file + ".tmp", "w") as ofile:
+    with open(output_file, "w") as ofile:
         yes = True
         for line in everything.split("\n"):
             try:
@@ -16,4 +16,3 @@ def fix_file(input_file):
                     ofile.write(line)
             except IndexError:
                 pass
-    shutil.move(input_file + ".tmp", input_file)

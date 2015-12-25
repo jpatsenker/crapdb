@@ -21,6 +21,7 @@ eAddress = None
 
 try:
     iFile = sys.argv[1]
+    iFile_new = iFile + "fix"
     oFile = sys.argv[2]
     dFile = sys.argv[3]
     eAddress = sys.argv[4]
@@ -97,7 +98,8 @@ if len(sys.argv) > 5:
 
 logtools.start_new_log(iFile, eAddress, logfil)
 
-fasta_fixer.fix_file(iFile)
+fasta_fixer.fix_file(iFile, iFile_new)
+iFile_new = iFile
 
 ss = SewageSystem()
 
