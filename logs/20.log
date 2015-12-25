@@ -1,0 +1,35 @@
+====================================
+Sewage Token: uploaded_fasta/20
+Email:jonathan@patsenker.com
+====================================
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/20 -> tmp/20.0
+
+Start time: 0.06
+Number of non-CRAP sequences left: 500
+Number of CRAP sequences currently: 0
+End time: 0.07
+------------------------------------
+Step: FASTA_CHECK_FILTER START
+------------------------------------
+Running filter. File transition: tmp/20.0 -> tmp/20.1
+
+Start time: 0.07
+End time: 0.08
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/20.1 -> tmp/20.2
+
+Start time: 0.08
+Number of non-CRAP sequences left: 500
+Number of CRAP sequences currently: 0
+End time: 0.08
+------------------------------------
+Step: SIMPLE_CRAP_FILTER START
+------------------------------------
+Running filter. File transition: tmp/20.2 -> tmp/20.3
+
+Start time: 0.08

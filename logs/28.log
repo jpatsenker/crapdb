@@ -1,0 +1,111 @@
+====================================
+Sewage Token: uploaded_fasta/28
+Email:peshkin@gmail.com
+====================================
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/28 -> tmp/28.0
+
+Start time: 0.07
+Number of non-CRAP sequences left: 151
+Number of CRAP sequences currently: 0
+End time: 0.07
+------------------------------------
+Step: FASTA_CHECK_FILTER START
+------------------------------------
+Running filter. File transition: tmp/28.0 -> tmp/28.1
+
+Start time: 0.07
+End time: 0.07
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/28.1 -> tmp/28.2
+
+Start time: 0.07
+Number of non-CRAP sequences left: 151
+Number of CRAP sequences currently: 0
+End time: 0.07
+------------------------------------
+Step: SIMPLE_CRAP_FILTER START
+------------------------------------
+Running filter. File transition: tmp/28.2 -> tmp/28.3
+
+Start time: 0.07
+End time: 0.11
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/28.3 -> tmp/28.4
+
+Start time: 0.11
+Number of non-CRAP sequences left: 115
+Number of CRAP sequences currently: 36
+End time: 0.11
+------------------------------------
+Step: LENGTH_DISTRIBUTION_FILTER START
+------------------------------------
+Running filter. File transition: tmp/28.4 -> tmp/28.5
+
+Start time: 0.11
+End time: 0.13
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/28.5 -> tmp/28.6
+
+Start time: 0.13
+Number of non-CRAP sequences left: 115
+Number of CRAP sequences currently: 36
+End time: 0.13
+------------------------------------
+Step: 0J_CHECK_FILTER START
+------------------------------------
+Running filter. File transition: tmp/28.6 -> tmp/28.7
+
+Start time: 0.14
+bsub -q short -K -W 60 -o /dev/null -e /dev/null "/www/kirschner.med.harvard.edu/docroot/genomes/code/0j/0j.py -scores_only tmp/28.6 > tmp/28.6.0j.raw"
+End time: 0.14
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/28.7 -> tmp/28.8
+
+Start time: 0.14
+Number of non-CRAP sequences left: 105
+Number of CRAP sequences currently: 46
+End time: 0.14
+------------------------------------
+Step: CDHIT_CHECK_FILTER START
+------------------------------------
+Running filter. File transition: tmp/28.8 -> tmp/28.9
+
+Start time: 0.14
+bsub -q short -K -W 60 -o /dev/null -e /dev/null /opt/cdhit-4.6/cd-hit -i tmp/28.8 -o tmp/28.8.cdhit.raw -c 0.7
+End time: 0.18
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/28.9 -> tmp/28.10
+
+Start time: 0.18
+Number of non-CRAP sequences left: 98
+Number of CRAP sequences currently: 53
+End time: 0.19
+------------------------------------
+Step: Ff_CHECK_FILTER START
+------------------------------------
+Running filter. File transition: tmp/28.10 -> tmp/28.11
+
+Start time: 0.19
+End time: 0.39
+------------------------------------
+Step: NUMBER_SEQUENCES_ANALYZER START
+------------------------------------
+Running analysis. File transition: tmp/28.11 -> tmp/28.12
+
+Start time: 0.39
+Number of non-CRAP sequences left: 98
+Number of CRAP sequences currently: 53
+End time: 0.39

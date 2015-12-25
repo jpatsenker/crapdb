@@ -3,10 +3,9 @@
     src: url("vonique_64/Vonique\ 64\ Bold.ttf") format("truetype");
 }
 
-
 .headline {
     font-family: "Vonique";
-    font-size:500%;
+    font-size:250%;
     color:#333333;
     background-color:#996666;
     padding-left:.4em;

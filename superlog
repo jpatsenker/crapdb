@@ -1,0 +1,6 @@
+Job <3011587> is submitted to queue <short>.
+<<Waiting for dispatch ...>>
+<<Job is finished>>
+python process_crap.py uploaded_fasta/35 uploaded_fasta/35.clean.txt uploaded_fasta/35.messy.txt peshkin@gmail.com -ct 0.7 -cl 0.8 -0j 0.9 -min 30 -max 30000 -fft 0.7 -ffl 0.8 -xs 0
+
+done

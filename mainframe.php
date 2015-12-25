@@ -4,19 +4,13 @@
         <tr>
             <td>
                 <div class="bigblock">
-                    <a href="index.php">
-                        <div class="headline">C.R.A.P. web server</div> <p>
-                    </a>
                     <div class="subtitle"> <b>C</b>omprehensive <b>R</b>edundancy <b>A</b>nalysis for Complete <b>P</b>roteomes </div>
 
                     <div class="general">
                         <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
-
                             <div id="download_area">
-                                <p><b>FASTA</b></p>
-                                <input type="file" name="fastaseq">
-                                <p><b>EMAIL</b></p>
-                                <input type="text" name="email"></input>
+                                <br><b>FASTA: </b> <input type="file" name="fastaseq"><p>
+                                <b>EMAIL: </b> <input type="text" name="email"></input>
                                 <p><b>PARAMETERS</b></p>
                                 CD-HIT Threshold: 
                                 <input type="text" name="ct" value="0.7"></input><br>
@@ -38,6 +32,8 @@
                                 <p></p>
                                 <input type="submit"/>
                             </div>
+<p>
+                    <a href="index.php"><div class="headline">C.R.A. web server</div> <p> </a>
                         </form>
                     </div>
                 </div>
