@@ -81,6 +81,7 @@ class RedundancyFilter(SewageFilter):
             l = in_stream.readline()
             while l:
                 self.__temp_hash__[l[:r]]=in_stream.tell()-len(l)
+                in_stream.readline()
                 l = in_stream.readline()
 
 
