@@ -98,7 +98,7 @@ class RedundancyFilter(SewageFilter):
                 in_stream.readline()
                 l = in_stream.readline()
         print self.__temp_hash__['>AF535142']
-        print self.__temp_hash__
+        #print self.__temp_hash__
 
 
     def find_corresponding_line(self, cdhitline, in_stream, bad=None, rseq = False):
@@ -106,7 +106,6 @@ class RedundancyFilter(SewageFilter):
         try:
             position = self.__temp_hash__[prot]
         except KeyError:
-            print "Test"
             print "Improperly put together hash in CDHIT filter!!! Couldn't find start" + prot + "end"
             print "From line: " + cdhitline
             exit(1)
