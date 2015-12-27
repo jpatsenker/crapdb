@@ -88,7 +88,7 @@ class RedundancyFilter(SewageFilter):
             while l:
                 if l.find(">AF535142") != -1:
                     print l
-                    print l[:r]
+                    print l[:r].split("\n")[0]
                     print r
                     print len(l)
                     print "partial"
