@@ -80,6 +80,8 @@ class RedundancyFilter(SewageFilter):
         with open(input_file, "r") as in_stream:
             l = in_stream.readline()
             while l:
+                if l[:r] == ">AF535142":
+                    print "ping"
                 self.__temp_hash__[l[:r]]=in_stream.tell()-len(l)
                 in_stream.readline()
                 l = in_stream.readline()
@@ -92,7 +94,6 @@ class RedundancyFilter(SewageFilter):
         except KeyError:
             print "Improperly put together hash in CDHIT filter!!! Couldn't find " + prot
             print "From line: " + cdhitline
-            print self.__temp_hash__
             exit(1)
 
         in_stream.seek(position)
