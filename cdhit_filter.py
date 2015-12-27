@@ -92,7 +92,7 @@ class RedundancyFilter(SewageFilter):
                     print r
                     print len(l)
                     print "partial"
-                if l[:r] == ">AF535142":
+                if l[:r].split("\n")[0] == ">AF535142":
                     print l
                 self.__temp_hash__[l[:r].split("\n")[0]]=in_stream.tell()-len(l)
                 in_stream.readline()
