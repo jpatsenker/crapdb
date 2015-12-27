@@ -65,16 +65,18 @@ class RedundancyFilter(SewageFilter):
 
     def getCdhitfileIDLength(self, cdhit_file):
         print cdhit_file
+        length = 0
         with open(cdhit_file, "r") as cd_stream:
             l = cd_stream.readline()
             while l:
-                print l
                 if l[0] != ">":
-                    print l.split()[2].rstrip(".")
-                    return len(l.split()[2].rstrip("."))
+                    if len(l.split()[2].rstrip(".")) > length:
+                        length = len(l.split()[2].rstrip("."))
                 l = cd_stream.readline()
-        print "No proper cdhit file present: " + cdhit_file
-        exit(1)
+        if length == 0:
+            print "No proper cdhit file present: " + cdhit_file
+            exit(1)
+        return length
 
 
     def prepare_temp_hash(self, input_file, cdhit_file):
@@ -92,7 +94,7 @@ class RedundancyFilter(SewageFilter):
                     print "partial"
                 if l[:r] == ">AF535142":
                     print l
-                self.__temp_hash__[l[:r]]=in_stream.tell()-len(l)
+                self.__temp_hash__[l[:r].split("\n")[0]]=in_stream.tell()-len(l)
                 in_stream.readline()
                 l = in_stream.readline()
 
