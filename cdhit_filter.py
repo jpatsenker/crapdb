@@ -64,7 +64,7 @@ class RedundancyFilter(SewageFilter):
                         #print tline
 
     def getCdhitfileIDLength(self, cdhit_file):
-        print cdhit_file
+        #print cdhit_file
         length = 0
         with open(cdhit_file, "r") as cd_stream:
             l = cd_stream.readline()
@@ -82,7 +82,7 @@ class RedundancyFilter(SewageFilter):
     def prepare_temp_hash(self, input_file, cdhit_file):
         r = self.getCdhitfileIDLength(cdhit_file)
         self.__temp_hash__ = {}
-        print input_file
+        #print input_file
         with open(input_file, "r") as in_stream:
             l = in_stream.readline()
             while l:
@@ -103,6 +103,7 @@ class RedundancyFilter(SewageFilter):
 
     def find_corresponding_line(self, cdhitline, in_stream, bad=None, rseq = False):
         prot = cdhitline.split()[2].rstrip(".")
+        print "TESTING"
         try:
             position = self.__temp_hash__[prot]
         except KeyError:
