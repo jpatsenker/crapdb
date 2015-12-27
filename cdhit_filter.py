@@ -64,10 +64,13 @@ class RedundancyFilter(SewageFilter):
                         #print tline
 
     def getCdhitfileIDLength(self, cdhit_file):
+        print cdhit_file
         with open(cdhit_file, "r") as cd_stream:
             l = cd_stream.readline()
             while l:
+                print l
                 if l[0] != ">":
+                    print l.split()[2].rstrip(".")
                     return len(l.split()[2].rstrip("."))
                 l = cd_stream.readline()
         print "No proper cdhit file present: " + cdhit_file
