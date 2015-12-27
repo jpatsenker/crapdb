@@ -90,8 +90,8 @@ class RedundancyFilter(SewageFilter):
             position = self.__temp_hash__[prot]
         except KeyError:
             print "Improperly put together hash in CDHIT filter!!! Couldn't find " + prot
-            print "\nFrom line: " + cdhitline
-            print "\nAttempted: " + prot
+            print "From line: " + cdhitline
+            print self.__temp_hash__
             exit(1)
 
         in_stream.seek(position)
