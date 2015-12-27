@@ -86,14 +86,14 @@ class RedundancyFilter(SewageFilter):
         with open(input_file, "r") as in_stream:
             l = in_stream.readline()
             while l:
-                if l.find(">AF535142") != -1:
+                #if l.find(">AF535142") != -1:
                 #     print l
-                    print l[:r].split("\n")[0]
+                #     print l[:r].split("\n")[0]
                 #     print r
                 #     print len(l)
                 #     print "partial"
-                if l[:r].split("\n")[0] == ">AF535142":
-                    print "yes"
+                # if l[:r].split("\n")[0] == ">AF535142":
+                #     print "yes"
                 self.__temp_hash__[l[:r].split("\n")[0]]=in_stream.tell()-len(l)
                 in_stream.readline()
                 l = in_stream.readline()
@@ -106,8 +106,8 @@ class RedundancyFilter(SewageFilter):
         try:
             position = self.__temp_hash__[prot]
         except KeyError:
-            # print "Improperly put together hash in CDHIT filter!!! Couldn't find start" + prot + "end"
-            # print "From line: " + cdhitline
+            print "Improperly put together hash in CDHIT filter!!! Couldn't find start" + prot + "end"
+            print "From line: " + cdhitline
             exit(1)
 
         in_stream.seek(position)
