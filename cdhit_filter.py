@@ -110,7 +110,7 @@ class RedundancyFilter(SewageFilter):
             print "Improperly put together hash in CDHIT filter!!! Couldn't find start" + prot + "end"
             print "From line: " + cdhitline
             exit(1)
-
+        print "Maybe"
         in_stream.seek(position)
         l = in_stream.readline()
         seq = in_stream.readline()
