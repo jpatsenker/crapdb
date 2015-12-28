@@ -110,7 +110,7 @@ comp_filter = ComplexityFilter(zeroj_param, lfil=logfil)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength, lfil=logfil)
 simple_filter = SimpleFilter(ms_check, xs_tolerance)
 fasta_filter = FastaCheckerFilter()
-fusfis_filter = FusionFissionFilter(ff_param_thresh, ff_param_flength)
+fusfis_filter = FusionFissionFilter(ff_param_thresh, ff_param_flength, lfil=logfil)
 
 ss.add_module(num_seq_bef_anlzr) #check before
 

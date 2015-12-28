@@ -15,13 +15,15 @@ class FusionFissionFilter(SewageFilter):
 
     __threshold_level__ = None
     __fractional_length__ = None
+    __log_file__ = None
 
     __temp_hash__ = None
 
-    def __init__(self, thresh, frac):
+    def __init__(self, thresh, frac, lfil=None):
         super(SewageFilter, self).__init__()
         self.__threshold_level__ = thresh
         self.__fractional_length__ = frac
+        self.__log_file__ = lfil
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
@@ -44,7 +46,7 @@ class FusionFissionFilter(SewageFilter):
 
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
-        lsf.run_job(self.__cd_hit__ + " -i " + temp_input + " -o " + temporary + " -c " + str(self.__threshold_level__) + '-d 0', wait=True) #submit lsf job
+        lsf.run_job(self.__cd_hit__ + " -i " + temp_input + " -o " + temporary + " -c " + str(self.__threshold_level__) + '-d 0', wait=True, lfil=self.__log_file__) #submit lsf job
         self.prepare_temp_hash(input_file, temporary + ".clstr")
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
