@@ -103,14 +103,12 @@ class RedundancyFilter(SewageFilter):
 
     def find_corresponding_line(self, cdhitline, in_stream, bad=None, rseq = False):
         prot = cdhitline.split()[2].rstrip(".")
-        print "TESTING"
         try:
             position = self.__temp_hash__[prot]
         except KeyError:
             print "Improperly put together hash in CDHIT filter!!! Couldn't find start" + prot + "end"
             print "From line: " + cdhitline
             exit(1)
-        print "Maybe"
         in_stream.seek(position)
         l = in_stream.readline()
         seq = in_stream.readline()

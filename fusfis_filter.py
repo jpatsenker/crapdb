@@ -44,7 +44,7 @@ class FusionFissionFilter(SewageFilter):
 
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
-        lsf.run_job(self.__cd_hit__ + " -i " + temp_input + " -o " + temporary + " -c " + str(self.__threshold_level__), wait=True) #submit lsf job
+        lsf.run_job(self.__cd_hit__ + " -i " + temp_input + " -o " + temporary + " -c " + str(self.__threshold_level__) + '-d 0', wait=True) #submit lsf job
         self.prepare_temp_hash(input_file, temporary + ".clstr")
         with open(temporary + ".clstr", "r") as temp_stream:
             tline = temp_stream.readline()
@@ -100,16 +100,21 @@ class FusionFissionFilter(SewageFilter):
                                     ostream.write(line)
 
     def getCdhitfileIDLength(self, cdhit_file):
+        #print cdhit_file
+        length = 0
         with open(cdhit_file, "r") as cd_stream:
             l = cd_stream.readline()
             while l[0] == ">" or l.split()[2][:11] == ">HUMAN_CRAP":
                 l = cd_stream.readline()
             while l:
                 if l[0] != ">":
-                    return len(l.split()[2].rstrip("."))
+                    if len(l.split()[2].rstrip(".")) > length:
+                        length = len(l.split()[2].rstrip("."))
                 l = cd_stream.readline()
-        print "No proper cdhit file present: " + cdhit_file
-        exit(1)
+        if length == 0:
+            print "No proper cdhit file present: " + cdhit_file
+            exit(1)
+        return length
 
 
     def prepare_temp_hash(self, input_file, cdhit_file):
