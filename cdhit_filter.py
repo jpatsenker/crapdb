@@ -82,23 +82,12 @@ class RedundancyFilter(SewageFilter):
     def prepare_temp_hash(self, input_file, cdhit_file):
         r = self.getCdhitfileIDLength(cdhit_file)
         self.__temp_hash__ = {}
-        #print input_file
         with open(input_file, "r") as in_stream:
             l = in_stream.readline()
             while l:
-                #if l.find(">AF535142") != -1:
-                #     print l
-                #     print l[:r].split("\n")[0]
-                #     print r
-                #     print len(l)
-                #     print "partial"
-                # if l[:r].split("\n")[0] == ">AF535142":
-                #     print "yes"
                 self.__temp_hash__[l[:r].split("\n")[0]]=in_stream.tell()-len(l)
                 in_stream.readline()
                 l = in_stream.readline()
-        #print self.__temp_hash__['>AF535142']
-        #print self.__temp_hash__
 
 
     def find_corresponding_line(self, cdhitline, in_stream, bad=None, rseq = False):
