@@ -4,6 +4,8 @@ def fix_file(input_file, output_file):
         everything = ifile.read()
     with open(output_file, "w") as ofile:
         for datum in everything.split(">"):
+            if datum.isspace():
+                continue
             ofile.write(">")
             print datum
             seq_start = datum.find("\n")
