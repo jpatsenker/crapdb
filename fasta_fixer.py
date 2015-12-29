@@ -5,6 +5,7 @@ def fix_file(input_file, output_file):
     with open(output_file, "w") as ofile:
         for datum in everything.split(">"):
             ofile.write(">")
+            print datum
             seq_start = datum.find("\n")
             print seq_start
             while seq_start<len(datum) and datum[seq_start].isspace():
