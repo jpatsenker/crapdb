@@ -7,11 +7,10 @@ def fix_file(input_file, output_file):
             if datum.isspace() or len(datum) == 0:
                 continue
             ofile.write(">")
-            print datum
-            seq_start = datum.find("\n")
-            print seq_start
+            desc_end = datum.find("\n")
+            seq_start = desc_end
             while seq_start<len(datum) and datum[seq_start].isspace():
                 seq_start+=1
             seqTmp = datum[seq_start+1:]
             seq = "".join(seqTmp.split())
-            ofile.write(datum[:seq_start] + "\n" + seq + "\n")
+            ofile.write(datum[:desc_end] + "\n" + seq + "\n")
