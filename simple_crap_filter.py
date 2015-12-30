@@ -19,8 +19,6 @@ class SimpleFilter(SewageFilter):
         with open(input_file, "r") as input_stream:
             line = input_stream.readline()
             while line:
-                print line
-                assert line[0] == ">"
                 sequence = input_stream.readline()
                 sequence = sequence.rstrip("\n")
                 if 'x' in sequence:
