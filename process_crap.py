@@ -99,7 +99,7 @@ if len(sys.argv) > 5:
 logtools.start_new_log(iFile, eAddress, logfil)
 
 fasta_fixer.fix_file(iFile, iFile_new)
-iFile_new = iFile
+iFile = iFile_new
 
 ss = SewageSystem()
 
