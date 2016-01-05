@@ -71,6 +71,13 @@ ff_param_flength = .8
 ms_check = False
 xs_tolerance = 0
 
+no_fasta = False
+no_simple = False
+no_len = False
+no_comp = False
+no_red = False
+no_fusfis = False
+
 
 
 if len(sys.argv) > 5:
@@ -94,7 +101,18 @@ if len(sys.argv) > 5:
         ms_check = True
     if "-xs" in sys.argv[5:]:
         xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
-
+    # if "-nofasta" in sys.argv[5:]: #not recommended
+    #     no_fasta = True
+    # if "-nosimple" in sys.argv[5:]: #not recommended
+    #     no_simple = True
+    if "-nolen" in sys.argv[5:]:
+        no_len = True
+    if "-nocomp" in sys.argv[5:]:
+        no_comp = True
+    if "-nored" in sys.argv[5:]:
+        no_red = True
+    if "-noff" in sys.argv[5:]:
+        no_fusfis = True
 
 logtools.start_new_log(iFile, eAddress, logfil)
 
@@ -124,14 +142,22 @@ for i in range(5):
 ss.add_module(fasta_filter)
 ss.add_module(a[0])
 ss.add_module(simple_filter)
-ss.add_module(a[1])
-ss.add_module(len_filter)
-ss.add_module(a[2])
-ss.add_module(comp_filter)
-ss.add_module(a[3])
-ss.add_module(red_filter)
-ss.add_module(a[4])
-ss.add_module(fusfis_filter)
+if not no_len:
+    ss.add_module(a[1])
+    ss.add_module(len_filter)
+    print "Staging Length Filter"
+if not no_comp:
+    ss.add_module(a[2])
+    ss.add_module(comp_filter)
+    print "Staging Complexity Filter"
+if not no_red:
+    ss.add_module(a[3])
+    ss.add_module(red_filter)
+    print "Staging Redundancy Filter"
+if not no_fusfis:
+    ss.add_module(a[4])
+    ss.add_module(fusfis_filter)
+    print "Staging Fusion/Fission Filter"
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
