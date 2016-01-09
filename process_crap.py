@@ -65,7 +65,6 @@ cdhit_param_thresh = .7
 cdhit_param_flength = .8
 min_len_param = 30
 max_len_param = 30000
-completeness_analysis = True
 ff_param_thresh = .7
 ff_param_flength = .8
 ms_check = False
@@ -95,8 +94,6 @@ if len(sys.argv) > 5:
         ff_param_thresh = float(sys.argv[sys.argv.index("-fft")+1])
     if "-ffl" in sys.argv[5:]:
         ff_param_flength = float(sys.argv[sys.argv.index("-ffl")+1])
-    if "-nocomp" in sys.argv[5:]:
-        completeness_analysis = False
     if "-ms" in sys.argv[5:]:
         ms_check = True
     if "-xs" in sys.argv[5:]:
