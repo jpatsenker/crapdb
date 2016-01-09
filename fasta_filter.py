@@ -29,6 +29,7 @@ class FastaCheckerFilter(SewageFilter):
         #     if len(tempErrors.read()) > 0:
         #         SewageFilter.break_filter() #incase of errors break filter, cause system to halt with improper format errors
         os.rename(temporary, output_file)
+        SewageFilter.break_filter()
         with open(input_file, "r") as in_stream:
             with open(output_file, "r") as mark_stream:
                 line = in_stream.readline()
@@ -36,9 +37,6 @@ class FastaCheckerFilter(SewageFilter):
                 while line:
                     if line[0] == ">":
                         if line != cline:
-                            print cline
-                            print "different from"
-                            print line
                             sequence = in_stream.readline()
                             with open(diagnostics_file, "a") as diag_stream:
                                 diag_stream.write(line.rstrip("\n") + " Sequence Discarded by Fasta Checker\n" + sequence)
