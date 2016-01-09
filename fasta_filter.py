@@ -29,7 +29,6 @@ class FastaCheckerFilter(SewageFilter):
         #     if len(tempErrors.read()) > 0:
         #         SewageFilter.break_filter() #incase of errors break filter, cause system to halt with improper format errors
         os.rename(temporary, output_file)
-        SewageFilter.break_filter()
         with open(input_file, "r") as in_stream:
             with open(output_file, "r") as mark_stream:
                 line = in_stream.readline()
