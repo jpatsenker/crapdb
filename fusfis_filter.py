@@ -125,7 +125,7 @@ class FusionFissionFilter(SewageFilter):
         with open(input_file, "r") as in_stream:
             l = in_stream.readline()
             while l:
-                self.__temp_hash__[l[:r].split("\n")[0]]=in_stream.tell()-len(l)
+                self.__temp_hash__[l[:r].split()[0]]=in_stream.tell()-len(l)
                 in_stream.readline()
                 l = in_stream.readline()
 
