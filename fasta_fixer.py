@@ -12,5 +12,4 @@ def fix_file(input_file, output_file):
                 seq_start+=1
             seqTmp = datum[seq_start:]
             seq = "".join(seqTmp.split())
-            print seq
             ofile.write(datum[:desc_end] + "\n" + seq + "\n")
