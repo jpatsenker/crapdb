@@ -30,8 +30,6 @@ def fix_file(input_file, output_file):
                 if datum == "":
                     break;
 
-                print datum
-
                 if datum.isspace() or len(datum) == 0:
                     continue
                 ofile.write(">")
