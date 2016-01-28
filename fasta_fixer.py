@@ -23,7 +23,7 @@ def fix_file(input_file, output_file):
                 nl = False
                 while final != ">" and not nl or final != "":
                     datum += final
-                    if datum == "\n":
+                    if final == "\n":
                         nl = True
                     final += ifile.read(1)
                 ifile.read()
