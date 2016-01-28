@@ -21,7 +21,6 @@ def fix_file(input_file, output_file):
             while True:
                 datum = ""
                 final = ifile.read(1)
-                print "firstChar = " + final
                 nl = False
                 while (final != ">" or not nl) and final != "":
                     datum += final
