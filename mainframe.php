@@ -19,11 +19,11 @@
                                     </tr>
                                     <tr>
                                         <td>CD-HIT Fractional Length:</td>
-                                        <input type="text" name="cl" value="0.8"></input></td>
+                                        <td><input type="text" name="cl" value="0.8"></input></td>
                                     </tr>
                                     <tr>
                                         <td>0j Minimum Complexity: </td>
-                                        <input type="text" name="zj" value="0.9"></input></td>
+                                        <td><input type="text" name="zj" value="0.9"></input></td>
                                     </tr>
                                     <tr>
                                         <td>Minimum Length: </td>
