@@ -27,7 +27,6 @@ def fix_file(input_file, output_file):
                     if final == "\n":
                         nl = True
                     final = ifile.read(1)
-                ifile.read(1)
                 if datum == "":
                     break;
 
