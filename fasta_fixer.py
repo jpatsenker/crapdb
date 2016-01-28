@@ -3,6 +3,7 @@ def fix_file(input_file, output_file):
         everything = ifile.read()
     with open(output_file, "w") as ofile:
         for datum in everything.split(">"):
+            print datum
             if datum.isspace() or len(datum) == 0:
                 continue
             ofile.write(">")
