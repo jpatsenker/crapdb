@@ -52,22 +52,22 @@
             $fft = $_POST['fft'];
             $ffl = $_POST['ffl'];
             
-            if ($dLen != "on"){
+            if ($dLen == "on"){
                 $dLen = " -nolen ";
             }else{
                 $dLen = "";
             }
-            if ($dRed != "on"){
+            if ($dRed == "on"){
                 $dRed = " -nored ";
             }else{
                 $dRed = "";
             }
-            if ($dComp != "on"){
+            if ($dComp -= "on"){
                 $dComp = " -nocomp ";
             }else{
                 $dComp = "";
             }
-            if ($dFf != "on"){
+            if ($dFf == "on"){
                 $dFf = " -noff ";
             }else{
                 $dFf = "";
