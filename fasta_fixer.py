@@ -20,13 +20,14 @@ def fix_file(input_file, output_file):
             while True:
                 datum = ""
                 final = ifile.read(1)
-                nl = False
+                final = ifile.read(1)
+                nl = True
                 while final != ">" and not nl and final:
                     print final
                     datum += final
                     if final == "\n":
                         nl = True
-                    final += ifile.read(1)
+                    final = ifile.read(1)
                 ifile.read()
                 if datum == "":
                     break;
