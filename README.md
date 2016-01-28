@@ -16,3 +16,8 @@ Parameters:
 "-nocomp" - Destage complexity (0j) filter (default completes stage)
 "-nored" - Destage redundancy (CD-HIT) filter (default completes stage)
 "-noff" - Destage fusion/fission (Ff) filter (default completes stage)
+
+
+Command Example:
+
+bash$> python process_crap.py [input] [clean_output] [messy_output] [email] [parameters]
