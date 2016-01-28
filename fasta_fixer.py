@@ -24,7 +24,6 @@ def fix_file(input_file, output_file):
                 print final
                 nl = False
                 while final != ">" or not nl and final:
-                    print final
                     datum += final
                     if final == "\n":
                         nl = True
