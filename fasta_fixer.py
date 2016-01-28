@@ -16,11 +16,12 @@
 
 def fix_file(input_file, output_file):
     with open(input_file, "r") as ifile:
+        ifile.read(1)
         with open(output_file, "w") as ofile:
             while True:
                 datum = ""
                 final = ifile.read(1)
-                final = ifile.read(1)
+                print "firstChar = " + final
                 nl = False
                 while (final != ">" or not nl) and final != "":
                     datum += final
