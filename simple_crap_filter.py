@@ -21,6 +21,7 @@ class SimpleFilter(SewageFilter):
             while line:
                 sequence = input_stream.readline()
                 sequence = sequence.rstrip("\n")
+                print sequence
                 if 'x' in sequence:
                     with open(diagnostics_file, "a") as diag_stream:
                         diag_stream.write(line.rstrip("\n") + " Invalid Characters in Sequence \n" + sequence + "\n")
