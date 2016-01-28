@@ -51,7 +51,7 @@
                                 <input type="checkbox" name="dlen"> Destage Length Filter? <br>
                                 <input type="checkbox" name="dcomp"> Destage Complexity (0j) Filter? <br>
                                 <input type="checkbox" name="dred"> Destage Redundancy (CD-HIT) Filter? <br>
-                                <input type="checkbox" name="dff"> Destage Fusion/Fission (Ff) Filter? <br>
+                                <input type="checkbox" name="dff"> Destage Fusion/Fission (CD-HIT w/ Human Genome) Filter? <br>
                                 <p></p>
                                 <input type="submit"/>
                             </div>
