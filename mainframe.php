@@ -29,11 +29,15 @@
                                 Fusion/Fission Fractional Length:
                                 <input type="text" name="ffl" value="0.8"></input><p>
                                 <input type="checkbox" name="ms"> Check for M at beginning of sequence? <br>
+                                <input type="checkbox" name="dlen"> Destage Length Filter? <br>
+                                <input type="checkbox" name="dcomp"> Destage Complexity (0j) Filter? <br>
+                                <input type="checkbox" name="dred"> Destage Redundancy (CD-HIT) Filter? <br>
+                                <input type="checkbox" name="dff"> Destage Fusion/Fission (Ff) Filter? <br>
                                 <p></p>
                                 <input type="submit"/>
                             </div>
 <p>
-                    <a href="index.php"><div class="headline">C.R.A. web server</div> <p> </a>
+                    <a href="index.php"><div class="headline">C.R.A.P. web server</div> <p> </a>
                         </form>
                     </div>
                 </div>
