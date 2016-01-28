@@ -46,6 +46,7 @@
                                         <td><input type="text" name="ffl" value="0.8"></input></td>
                                     </tr>
                                 </table>
+                                <div style="height:20px;"></div>
                                 <input type="checkbox" name="ms"> Check for M at beginning of sequence? <br>
                                 <input type="checkbox" name="dlen"> Destage Length Filter? <br>
                                 <input type="checkbox" name="dcomp"> Destage Complexity (0j) Filter? <br>
