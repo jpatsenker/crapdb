@@ -23,7 +23,8 @@ def fix_file(input_file, output_file):
                 final = ifile.read(1)
                 nl = False
                 while final != ">" or not nl and final != "":
-                    print datum
+                    print final
+                    print final.isspace()
                     datum += final
                     if final == "\n":
                         nl = True
