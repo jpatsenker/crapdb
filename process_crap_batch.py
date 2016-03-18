@@ -152,7 +152,7 @@ for iFile in iFiles:
     print params
     for a in sys.argv[4:]:
         params += " " + a
-    commands[] = "python process_crap_less_verbose.py " + params
+    commands.append("python process_crap_less_verbose.py " + params)
     
 lsftools.run_job_set(commands, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
 
