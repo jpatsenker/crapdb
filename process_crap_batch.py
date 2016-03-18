@@ -128,21 +128,33 @@ for x in range(len(iFiles)):
 
 print iFiles
 
-params = iFiles[0] + " /dev/null /dev/null " + oFile + " " + eAddress + " 1"
-print params
-for a in sys.argv[4:]:
-    params += " " + a
-lsftools.run_job("python process_crap_less_verbose.py " + params, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
+
+finCSVWriter = open(oFile, "w")
+
+finCSVWriter.write("FileName,Original")
+finCSVWriter.write(",Fasta")
+if not no_len:
+    finCSVWriter.write(",Length")
+if not no_comp:
+    finCSVWriter.write(",Complexity")
+if not no_red:
+    finCSVWriter.write(",Redundancy")
+if not no_fusfis:
+    finCSVWriter.write(",Ff")
+finCSVWriter.write(",CrapScore\n")
 
 
-for iFile in iFiles[1:]:
+
+
+commands = []
+for iFile in iFiles:
     params = iFile + " /dev/null /dev/null " + oFile + " " + eAddress + " 0"
     print params
     for a in sys.argv[4:]:
         params += " " + a
-    lsftools.run_job("python process_crap_less_verbose.py " + params, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
-
-
+    commands[] = "python process_crap_less_verbose.py " + params
+    
+lsftools.run_job_set(commands, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
 
 para_str = ""
 if "-h" in sys.argv[4:]:
