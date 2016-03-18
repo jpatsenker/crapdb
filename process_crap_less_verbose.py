@@ -27,12 +27,13 @@ try:
     dFile = sys.argv[3]
     finFile = sys.argv[4]
     eAddress = sys.argv[5]
+    isFirst = sys.argv[6]
 except IndexError:
-    print "Too Few Arguments for process_crap.py \n"
+    print "Too Few Arguments for process_crap_less_verbose.py \n"
     exit(1)
 
 if "@" not in eAddress:
-    print "Invalid email given to process_crap.py \n"
+    print "Invalid email given to process_crap_less_verbose.py \n"
     exit(1)
 
 if not os.path.isdir(tDir):
@@ -81,36 +82,36 @@ no_fusfis = False
 
 
 
-if len(sys.argv) > 5:
-    if "-0j" in sys.argv[5:]:
+if len(sys.argv) > 7:
+    if "-0j" in sys.argv[7:]:
         zeroj_param = float(sys.argv[sys.argv.index("-0j")+1])
-    if "-ct" in sys.argv[5:]:
+    if "-ct" in sys.argv[7:]:
         cdhit_param_thresh = float(sys.argv[sys.argv.index("-ct")+1])
-    if "-cl" in sys.argv[5:]:
+    if "-cl" in sys.argv[7:]:
         cdhit_param_flength = float(sys.argv[sys.argv.index("-cl")+1])
-    if "-min" in sys.argv[5:]:
+    if "-min" in sys.argv[7:]:
         min_len_param = int(sys.argv[sys.argv.index("-min")+1])
-    if "-max" in sys.argv[5:]:
+    if "-max" in sys.argv[7:]:
         max_len_param = int(sys.argv[sys.argv.index("-max")+1])
-    if "-fft" in sys.argv[5:]:
+    if "-fft" in sys.argv[7:]:
         ff_param_thresh = float(sys.argv[sys.argv.index("-fft")+1])
-    if "-ffl" in sys.argv[5:]:
+    if "-ffl" in sys.argv[7:]:
         ff_param_flength = float(sys.argv[sys.argv.index("-ffl")+1])
-    if "-ms" in sys.argv[5:]:
+    if "-ms" in sys.argv[7:]:
         ms_check = True
-    if "-xs" in sys.argv[5:]:
+    if "-xs" in sys.argv[7:]:
         xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
     # if "-nofasta" in sys.argv[5:]: #not recommended
     #     no_fasta = True
     # if "-nosimple" in sys.argv[5:]: #not recommended
     #     no_simple = True
-    if "-nolen" in sys.argv[5:]:
+    if "-nolen" in sys.argv[7:]:
         no_len = True
-    if "-nocomp" in sys.argv[5:]:
+    if "-nocomp" in sys.argv[7:]:
         no_comp = True
-    if "-nored" in sys.argv[5:]:
+    if "-nored" in sys.argv[7:]:
         no_red = True
-    if "-noff" in sys.argv[5:]:
+    if "-noff" in sys.argv[7:]:
         no_fusfis = True
 
 logtools.start_new_log(iFile, eAddress, logfil)
