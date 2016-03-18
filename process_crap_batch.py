@@ -116,7 +116,8 @@ for x in range(len(iFiles)):
     iFile = iFiles[x]
     iFiles[x] = iFilesDir + "/" + iFile
 
-
+print iFiles
+exit(0)
 params = iFiles[0] + " /dev/null /dev/null " + oFile + " " + eAddress + " 1"
 for a in sys.argv[4:]:
     params += " " + a
