@@ -131,7 +131,7 @@ simple_filter = SimpleFilter(ms_check, xs_tolerance)
 fasta_filter = FastaCheckerFilter()
 fusfis_filter = FusionFissionFilter(ff_param_thresh, ff_param_flength, lfil=logfil)
 
-ss.add_module(num_seq_bef_anlzr) #check before
+#ss.add_module(num_seq_bef_anlzr) #check before
 
 #for debugging
 a = []
