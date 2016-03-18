@@ -109,7 +109,7 @@ if len(sys.argv) > 4:
 
 zip_ref = zipfile.ZipFile(iZip, 'r')
 iFilesDir = iZip.split(".zip")[0]
-zip_ref.extractall(iFilesDir)
+zip_ref.extractall()
 iFiles = os.listdir(iFilesDir)
 for x in range(len(iFiles)):
     iFile = iFiles[x]
