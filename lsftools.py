@@ -50,7 +50,7 @@ def run_job_set(commands, bsub_output="/dev/null", bsub_error="/dev/null", queue
         a[i].wait()
     if bsub_output!="/dev/null" and not dont_clean:
         clean_file(bsub_output)
-    if return_processes:
+    if return_process:
         return a
 
 def clean_file(file_name):
