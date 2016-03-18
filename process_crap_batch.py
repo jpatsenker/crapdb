@@ -109,7 +109,7 @@ if len(sys.argv) > 4:
 
 zip_ref = zipfile.ZipFile(iZip, 'r')
 iFilesDir = iZip.split(".zip")[0]
-zip_ref.extractall()
+zip_ref.extractall(os.path.basename(iZip))
 iFiles = os.listdir(iFilesDir)
 for x in range(len(iFiles)):
     iFile = iFiles[x]
@@ -139,3 +139,6 @@ for a in sys.argv[1:]:
         para_str += " " + a
 
 mailtools.send_email("We ran CRAP version 2.0 [BATCH] on files in " + iZip + "<br>Here is a list of parameters used: <br>" + para_str + '<br>', eAddress, [oFile])
+
+
+#os.rmtree(iFilesDir)
