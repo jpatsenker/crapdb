@@ -29,6 +29,10 @@ try:
     finFile = sys.argv[4]
     eAddress = sys.argv[5]
     isFirst = sys.argv[6]
+    if isFirst == 1:
+        isFirst = True;
+    else:
+        isFirst = False;
 except IndexError:
     print "Too Few Arguments for process_crap_less_verbose.py \n"
     exit(1)
@@ -144,8 +148,9 @@ if isFirst:
 finCSVWriter = open(finFile, "a")
 
 
+
 #FILTERS
-if isFirst == 1:
+if isFirst:
     finCSVWriter.write("FileName,Original")
 ss.add_module(fasta_filter)
 ss.add_module(a[0])
