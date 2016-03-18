@@ -147,7 +147,7 @@ finCSVWriter.close()
 
 
 commands = []
-for iFile in iFiles[:1]:
+for iFile in iFiles:
     params = iFile + " /dev/null /dev/null " + oFile + " " + eAddress + " 0"
     print params
     for a in sys.argv[4:]:
