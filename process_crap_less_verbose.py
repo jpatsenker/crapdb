@@ -19,6 +19,7 @@ dFile = None
 finFile = None
 tDir = "tmp/"
 eAddress = None
+isFirst=None
 
 try:
     iFile = sys.argv[1]
@@ -188,7 +189,7 @@ with open(aFiles[-1], "r") as analysisFile:
 
 crap_score = 1 - float(after_seq)/float(before_seq)
 
-crap_score_str = "%1.5" % crap_score
+crap_score_str = "%1.5f" % crap_score
 
 for ind in range(len(aFiles)):
     with open(aFiles[ind], "r") as analysisFile:
