@@ -138,6 +138,9 @@ a = []
 for i in range(5):
     a.append(NumSeqAnalyzer(logfil, dFile))
 
+if isFirst:
+    open(fineFile, "w").close()
+
 finCSVWriter = open(finFile, "a")
 
 
@@ -194,7 +197,7 @@ crap_score_str = "%1.5f" % crap_score
 for ind in range(len(aFiles)):
     with open(aFiles[ind], "r") as analysisFile:
         finCSVWriter.write(analysisFile.read())
-        if ind == len(aFiles)-1:
+        if ind < len(aFiles)-1:
             finCSVWriter.write(",")
         else:
             finCSVWriter.write("," + crap_score_str + "\n")
