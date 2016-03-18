@@ -82,7 +82,7 @@ class SewageSystem:
                     if log is not None:
                         logtools.add_end(log)
                 except TypeError as e:
-                    print "Yo its this type: " + str(self.modules[fnum]) + "\n"
+                    print "Its this type: " + str(self.modules[fnum]) + "\n"
                     print str(e) + "\n"
                     exit(1)
 
