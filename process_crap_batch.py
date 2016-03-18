@@ -15,6 +15,11 @@ import fasta_fixer
 import logtools
 
 
+def stop(iFilesDir):
+    os.rmtree(iFilesDir)
+    exit(0)
+
+
 iZip = None
 oFile = None
 tDir = "tmp/"
@@ -116,7 +121,7 @@ for x in range(len(iFiles)):
     iFiles[x] = iFilesDir + "/" + iFile
 
 print iFiles
-stop(0)
+stop(iFilesDir)
 params = iFiles[0] + " /dev/null /dev/null " + oFile + " " + eAddress + " 1"
 for a in sys.argv[4:]:
     params += " " + a
@@ -139,7 +144,3 @@ for a in sys.argv[1:]:
         para_str += " " + a
 
 mailtools.send_email("We ran CRAP version 2.0 [BATCH] on files in " + iZip + "<br>Here is a list of parameters used: <br>" + para_str + '<br>', eAddress, [oFile])
-
-def stop():
-    os.rmtree(iFilesDir)
-    exit(0)
