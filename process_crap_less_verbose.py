@@ -139,7 +139,7 @@ for i in range(5):
     a.append(NumSeqAnalyzer(logfil, dFile))
 
 if isFirst:
-    open(fineFile, "w").close()
+    open(finFile, "w").close()
 
 finCSVWriter = open(finFile, "a")
 
