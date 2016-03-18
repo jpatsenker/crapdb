@@ -45,6 +45,7 @@ def run_job_set(commands, bsub_output="/dev/null", bsub_error="/dev/null", queue
 
     a = []
     for i in range(len(commands)):
+        print commands[i]
         a.append(subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + commands[i]]))
     for i in range(len(a)):
         a[i].wait()
