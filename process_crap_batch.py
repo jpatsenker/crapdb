@@ -143,7 +143,6 @@ if not no_fusfis:
     finCSVWriter.write(",Ff")
 finCSVWriter.write(",CrapScore\n")
 
-exit(0)
 
 
 commands = []
