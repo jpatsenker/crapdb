@@ -33,6 +33,9 @@ try:
         isFirst = True;
     else:
         isFirst = False;
+
+    print isFirst
+    exit(0)
 except IndexError:
     print "Too Few Arguments for process_crap_less_verbose.py \n"
     exit(1)
