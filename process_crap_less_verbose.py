@@ -145,7 +145,7 @@ finCSVWriter = open(finFile, "a")
 
 
 #FILTERS
-if isFirst:
+if isFirst == 1:
     finCSVWriter.write("Original")
 ss.add_module(fasta_filter)
 ss.add_module(a[0])
