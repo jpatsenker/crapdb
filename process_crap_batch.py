@@ -53,11 +53,6 @@ except OSError:
     pass
 
 
-try:
-    os.remove(dFile)
-except OSError:
-    pass
-
 
 zeroj_param = .9
 cdhit_param_thresh = .7
