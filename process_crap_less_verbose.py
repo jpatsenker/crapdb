@@ -178,7 +178,8 @@ if not no_fusfis:
         finCSVWriter.write(",Ff")
     ss.add_module(fusfis_filter)
 
-finCSVWriter.write(",CrapScore\n")
+if isFirst:
+    finCSVWriter.write(",CrapScore\n")
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
