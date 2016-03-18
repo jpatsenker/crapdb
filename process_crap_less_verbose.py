@@ -197,5 +197,6 @@ for ind in range(len(aFiles)):
         else:
             finCSVWriter.write("," + crap_score_str + "\n")
 
+finCSVWriter.close()
 
 

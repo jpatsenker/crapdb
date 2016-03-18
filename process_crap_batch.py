@@ -175,6 +175,8 @@ else:
         else:
             para_str += " " + a
 
+
+finCSVWriter.close()
 print oFile
 mailtools.send_email("We ran CRAP version 2.0 [BATCH] on files in " + iZip + "<br>Here is a list of parameters used: <br>" + para_str + '<br>', eAddress, [oFile])
 # if ".zip" in iZip:
