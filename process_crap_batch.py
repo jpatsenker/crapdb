@@ -40,7 +40,7 @@ if not os.path.exists(iZip):
     print "Invalid input fasta\n"
     exit(1)
 
-logfil = "logs/" + os.path.basename(iFile) + ".log"
+logfil = "logs/" + os.path.basename(iZip) + ".log"
 
 try:
     os.remove(logfil)
