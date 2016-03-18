@@ -146,7 +146,7 @@ finCSVWriter = open(finFile, "a")
 
 #FILTERS
 if isFirst == 1:
-    finCSVWriter.write("Original")
+    finCSVWriter.write("FileName,Original")
 ss.add_module(fasta_filter)
 ss.add_module(a[0])
 if isFirst:
@@ -195,6 +195,9 @@ crap_score = 1 - float(after_seq)/float(before_seq)
 crap_score_str = "%1.5f" % crap_score
 
 print aFiles
+
+finCSVWriter.write(iFile + ",")
+
 
 for ind in range(len(aFiles)):
     with open(aFiles[ind], "r") as analysisFile:
