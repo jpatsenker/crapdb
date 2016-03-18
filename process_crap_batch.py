@@ -10,13 +10,14 @@ import lsftools
 import mailtools
 import sys
 import os
+import shutil
 import zipfile
 import fasta_fixer
 import logtools
 
 
 def stop(iFilesDir):
-    os.rmtree(iFilesDir)
+    shutil.rmtree(iFilesDir)
     exit(0)
 
 
