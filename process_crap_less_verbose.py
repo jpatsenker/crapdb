@@ -194,6 +194,8 @@ crap_score = 1 - float(after_seq)/float(before_seq)
 
 crap_score_str = "%1.5f" % crap_score
 
+print aFiles
+
 for ind in range(len(aFiles)):
     with open(aFiles[ind], "r") as analysisFile:
         finCSVWriter.write(analysisFile.read())
