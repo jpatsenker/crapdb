@@ -196,7 +196,7 @@ crap_score_str = "%1.5f" % crap_score
 
 print aFiles
 
-finCSVWriter.write(iFile + ",")
+finCSVWriter.write(os.path.basename(iFile) + ",")
 
 
 for ind in range(len(aFiles)):
