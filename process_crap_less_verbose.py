@@ -142,44 +142,28 @@ a = []
 for i in range(5):
     a.append(NumSeqAnalyzer(logfil, dFile))
 
-if isFirst:
-    open(finFile, "w").close()
 
 finCSVWriter = open(finFile, "a")
 
 
 
 #FILTERS
-if isFirst:
-    finCSVWriter.write("FileName,Original")
 ss.add_module(fasta_filter)
 ss.add_module(a[0])
-if isFirst:
-    finCSVWriter.write(",Fasta")
 ss.add_module(simple_filter)
 if not no_len:
     ss.add_module(a[1])
-    if isFirst:
-        finCSVWriter.write(",Length")
     ss.add_module(len_filter)
 if not no_comp:
     ss.add_module(a[2])
-    if isFirst:
-        finCSVWriter.write(",Complexity")
     ss.add_module(comp_filter)
 if not no_red:
     ss.add_module(a[3])
-    if isFirst:
-        finCSVWriter.write(",Redundancy")
     ss.add_module(red_filter)
 if not no_fusfis:
     ss.add_module(a[4])
-    if isFirst:
-        finCSVWriter.write(",Ff")
     ss.add_module(fusfis_filter)
 
-if isFirst:
-    finCSVWriter.write(",CrapScore\n")
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
