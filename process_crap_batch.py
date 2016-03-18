@@ -158,7 +158,7 @@ lsftools.run_job_set(commands, wait=True, dont_clean=True, bsub_output="/dev/nul
 
 para_str = ""
 if "-h" in sys.argv[4:]:
-    para_str = "-0j " + str(zeroj_param) + " -ct " + str(cdhit_param_thresh) + " -cl " + str(cdhit_param_flength) + " -min " + str(min_len_param) + " -max " + max_len_param + " -fft " + ff_param_thresh + " -ffl " + ff_param_flength + " -xs " + xs_tolerance
+    para_str = "-0j " + str(zeroj_param) + " -ct " + str(cdhit_param_thresh) + " -cl " + str(cdhit_param_flength) + " -min " + str(min_len_param) + " -max " + str(max_len_param) + " -fft " + str(ff_param_thresh) + " -ffl " + str(ff_param_flength) + " -xs " + str(xs_tolerance)
     if ms_check:
         parastr += " -ms"
     if no_len:
