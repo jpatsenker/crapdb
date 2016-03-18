@@ -36,7 +36,7 @@ if not os.path.isdir(tDir):
     print "Invalid temporary directory\n"
     exit(1)
 
-if not os.path.exists(iFile):
+if not os.path.exists(iZip):
     print "Invalid input fasta\n"
     exit(1)
 
