@@ -112,10 +112,15 @@ if len(sys.argv) > 4:
         no_fusfis = True
 
 
+iFilesDir = None
 
-zip_ref = zipfile.ZipFile(iZip, 'r')
-iFilesDir = iZip.split(".zip")[0]
-zip_ref.extractall(os.path.dirname(os.path.realpath(iZip)))
+if ".zip" in iZip:
+    zip_ref = zipfile.ZipFile(iZip, 'r')
+    iFilesDir = iZip.split(".zip")[0]
+    zip_ref.extractall(os.path.dirname(os.path.realpath(iZip)))
+else:
+    iFilesDir = iZip
+
 iFiles = os.listdir(iFilesDir)
 for x in range(len(iFiles)):
     iFile = iFiles[x]
@@ -147,4 +152,5 @@ for a in sys.argv[1:]:
         para_str += " " + a
 
 mailtools.send_email("We ran CRAP version 2.0 [BATCH] on files in " + iZip + "<br>Here is a list of parameters used: <br>" + para_str + '<br>', eAddress, [oFile])
-stop(iFilesDir)
+if ".zip" in iZip:
+    stop(iFilesDir)
