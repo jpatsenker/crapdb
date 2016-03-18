@@ -126,14 +126,14 @@ print iFiles
 params = iFiles[0] + " /dev/null /dev/null " + oFile + " " + eAddress + " 1"
 for a in sys.argv[4:]:
     params += " " + a
-lsftools.run_job("python process_crap.py " + params, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
+lsftools.run_job("python process_crap_less_verbose.py " + params, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
 
 
 for iFile in iFiles[1:]:
     params = iFile + " /dev/null /dev/null " + oFile + " " + eAddress + " 0"
     for a in sys.argv[4:]:
         params += " " + a
-    lsftools.run_job("python process_crap.py " + params, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
+    lsftools.run_job("python process_crap_less_verbose.py " + params, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
 
 
 
