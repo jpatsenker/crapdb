@@ -147,7 +147,7 @@ exit(0)
 
 
 commands = []
-for iFile in iFiles:
+for iFile in iFiles[:1]:
     params = iFile + " /dev/null /dev/null " + oFile + " " + eAddress + " 0"
     print params
     for a in sys.argv[4:]:
