@@ -128,7 +128,6 @@ for x in range(len(iFiles)):
 
 print iFiles
 
-
 finCSVWriter = open(oFile, "w")
 
 finCSVWriter.write("FileName,Original")

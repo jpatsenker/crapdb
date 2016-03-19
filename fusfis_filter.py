@@ -76,25 +76,29 @@ class FusionFissionFilter(SewageFilter):
                                 if cluster_lines[i][:11] != ">HUMAN_CRAP":
                                     if cluster_seqs[i].split()[-1] == "*":
                                         human_len = 0
+                                        keep = True
                                         for line in cluster_seqs:
                                             if line.split()[2][:11] == ">HUMAN_CRAP":
                                                 human_len = int(line.split()[1].rstrip(",").rstrip("a"))
                                                 #print line
-                                        #print cluster_seqs[i] + " " + str(float(len(cluster_lines[i].split("\n")[1]))/human_len)
-                                        #print float(len(cluster_lines[i].split("\n")[1]))
-                                        #print human_len
-                                        if float(len(cluster_lines[i].split("\n")[1]))/float(human_len) > (2-self.__fractional_length__):
-                                            dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fusion Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
-                                        else:
+                                                #print cluster_seqs[i] + " " + str(float(len(cluster_lines[i].split("\n")[1]))/human_len)
+                                                #print float(len(cluster_lines[i].split("\n")[1]))
+                                                #print human_len
+                                                if float(len(cluster_lines[i].split("\n")[1]))/float(human_len) > (2-self.__fractional_length__):
+                                                    dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fusion Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
+                                                    keep = False
+                                        if keep:        
                                             ostream.write(cluster_lines[i])
                                     else:
                                         human_len = 0
+                                        keep = True
                                         for line in cluster_seqs:
                                             if line.split()[2][:11] == ">HUMAN_CRAP":
                                                 human_len = int(line.split()[1].rstrip(",").rstrip("a"))
-                                        if float(len(cluster_lines[i].split("\n")[1]))/float(human_len) < self.__fractional_length__:
-                                            dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fission Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
-                                        else:
+                                                if float(len(cluster_lines[i].split("\n")[1]))/float(human_len) < self.__fractional_length__:
+                                                    dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fission Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
+                                                    keep = False
+                                        if keep:
                                             ostream.write(cluster_lines[i])
                         else:
                             for line in cluster_lines:
