@@ -87,7 +87,7 @@ class FusionFissionFilter(SewageFilter):
                                                 if float(len(cluster_lines[i].split("\n")[1]))/float(human_len) > (2-self.__fractional_length__):
                                                     dstream.write(cluster_lines[i].split("\n")[0] + " Sequence is Fusion Fragment\n" + cluster_lines[i].split("\n")[1] + "\n")
                                                     keep = False
-                                        if keep:        
+                                        if keep:
                                             ostream.write(cluster_lines[i])
                                     else:
                                         human_len = 0
