@@ -11,5 +11,5 @@ def runBlast(sequences, reference, output):
 	run.wait()
 
 def loadBlast():
-	p = subprocess.Popen("module load /usr/bin/seq")
+	p = subprocess.Popen("module load seq")
 	p.wait()
