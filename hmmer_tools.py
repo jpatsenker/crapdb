@@ -13,7 +13,7 @@ class DomTableRow:
 	"""
 	Class to hold information about a single domtblout row for phmmer. TRY TO KEEP IMMUTABLE
 	"""
-	def __init__(target, targetAccession, tlen, query, queryAccession, qlen, eValue, score, bias, queryFrom, queryTo, targetFrom, targetTo, acc, description):
+	def __init__(self, target, targetAccession, tlen, query, queryAccession, qlen, eValue, score, bias, queryFrom, queryTo, targetFrom, targetTo, acc, description):
 		self.__target__ = target
 		self.__targetAccession__ = targetAccession
 		self.__tlen__ = tlen
