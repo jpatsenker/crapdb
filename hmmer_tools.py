@@ -85,8 +85,6 @@ class DomTableReader:
 	"""
 	BADFORMAT = -666
 	EOF = False
-	__input_file__ = None
-	__file_stream__ = None
 
 	def __init__ (self, input_file):
 		"""
