@@ -84,7 +84,7 @@ class DomTableReader:
 	Class for reading --domtblout files from phmmer
 	"""
 	BADFORMAT = -666
-	EOF = Falseq
+	EOF = False
 
 	def __init__ (self, input_file):
 		"""
