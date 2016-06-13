@@ -107,6 +107,11 @@ class DomTableReader:
 		Method for reading a tbl row from file
 		"""
 		row = self.__file_stream__.readline().rstrip()
+		while row[0] == '#':
+			if not row:
+				return EOF
+			row = self.__file_stream__.readline().rstrip()
+		
 		rowArr = row.split()
 
 		tblRow = DomTableRow(rowArr[0],
