@@ -101,6 +101,7 @@ class DomTableReader:
 		assert check == "# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target"
 		check = self.__file_stream__.readline().rstrip()
 		assert check == "#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------"
+		return self
 
 	def readRow(self):
 		"""
