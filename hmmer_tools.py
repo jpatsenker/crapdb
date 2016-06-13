@@ -111,9 +111,10 @@ class DomTableReader:
 			if not row:
 				return EOF
 			row = self.__file_stream__.readline().rstrip()
-		
-		rowArr = row.split()
 
+		rowArr = row.split()
+		print row
+		print rowArr
 		tblRow = DomTableRow(rowArr[0],
 							rowArr[1],
 							rowArr[2],
