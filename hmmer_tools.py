@@ -102,7 +102,7 @@ class DomTableReader:
 		check = self.__file_stream__.readline().rstrip()
 		assert check == "#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------"
 
-	def readSequence(self):
+	def readRow(self):
 		"""
 		Method for reading a tbl row from file
 		"""
