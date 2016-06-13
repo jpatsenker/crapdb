@@ -3,6 +3,9 @@ from sewagefilter import SewageFilter
 from fasta_tools import FastaReader
 from fasta_tools import FastaWriter
 from fasta_tools import Sequence
+import hmmer_tools
+from hmmer_tools import DomTableRow
+from hmmer_tools import DomTableReader
 
 
 class ConcatEvent:
@@ -49,7 +52,7 @@ class ConcatEvent:
 class ConcatFilter(SewageFilter):
     __metaclass__ = ABCMeta
 
-    __reference_genome__ = None
+     __reference_genome__ = None
 
 
     def __init__(self, reference_genome):
@@ -68,16 +71,30 @@ class ConcatFilter(SewageFilter):
         :param input_file: name of input fasta file
         :param output_file: name of output fasta file that is cleaned of extra sequences
         :param diagnostics_file: name of diagnostics file with all problematic sequences (appended to)
-        :return:
+        :return: 
         """
 
-        #List of ConcatEvents
-        events = []
-        with FastaReader(input_file) as reader:
-            with FastaReader(reference_genome) as refReader:
-                seq = reader.readSequence()
-                while seq is not FastaReader.EOF:
-                    if seq is FastaReader.BADFORMAT:
-                        raise Exception("Poor Format!!!\n")
-                        return
- 
+        #parse all concat events into concat event objects
+        events = [] #list of concat events
+
+        hmmerOut = "" #make hmmerout
+
+        hmmer_tools.runHmmer(input_file, self.__reference_genome__, hmmerOut)
+
+        events = parseHmmerIntoConcatEvents(hmmerOut)
+
+        with FastaReader(input_file) as
+
+
+
+
+
+
+
+
+
+
+
+
+
+
