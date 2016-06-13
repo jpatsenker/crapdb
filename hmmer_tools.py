@@ -30,49 +30,49 @@ class DomTableRow:
 		self.__acc__ = acc
 		self.__description__ = description
 
-	def getTarget():
+	def getTarget(self):
 		return self.__target__
 
-	def getTargetAccession():
+	def getTargetAccession(self):
 		return self.__targetAccession__
 
-	def getTLen():
+	def getTLen(self):
 		return self.__tlen__
 
-	def getQuery():
+	def getQuery(self):
 		return self.__query__
 
-	def getQueryAccession():
+	def getQueryAccession(self):
 		return self.__queryAccession__
 
-	def getQLen():
+	def getQLen(self):
 		return self.__qlen__
 
-	def getEValue():
+	def getEValue(self):
 		return self.__eValue__
 
-	def getScore():
+	def getScore(self):
 		return self.__score__
 
-	def getBias():
+	def getBias(self):
 		return self.__bias__
 
-	def getQueryFrom():
+	def getQueryFrom(self):
 		return self.__queryFrom__
 
-	def getQueryTo():
+	def getQueryTo(self):
 		return self.__queryTo__
 
-	def getTargetFrom():
+	def getTargetFrom(self):
 		return self.__targetFrom__
 
-	def getTargetTo():
+	def getTargetTo(self):
 		return self.__targetTo__
 
-	def getAcc():
+	def getAcc(self):
 		return self.__acc__
 
-	def getDescription():
+	def getDescription(self):
 		return self.__description__
 
 
