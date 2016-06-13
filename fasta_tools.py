@@ -24,7 +24,7 @@ class FastaReader:
 		self.__file_stream__ = open(self.__input_file__, "r")
 
 	def __enter__(self):
-		assert not __file_stream__.closed
+		assert not self.__file_stream__.closed
 
 	def readSequence(self):
 		"""
@@ -68,7 +68,7 @@ class FastaWriter:
 
 	
 	def __enter__(self):
-		assert not __file_stream__.closed
+		assert not self.__file_stream__.closed
 
 	def writeSequence(self, sequence):
 		"""

@@ -84,7 +84,7 @@ class DomTableReader:
 	Class for reading --domtblout files from phmmer
 	"""
 	BADFORMAT = -666
-	EOF = False
+	EOF = Falseq
 
 	def __init__ (self, input_file):
 		"""
@@ -94,7 +94,7 @@ class DomTableReader:
 		self.__file_stream__ = open(self.__input_file__, "r")
 
 	def __enter__(self):
-		assert not __file_stream__.closed
+		assert not self.__file_stream__.closed
 		check = self.__file_stream__.readline().rstrip()
 		assert check == "#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord"
 		check = self.__file_stream__.readline().rstrip()
