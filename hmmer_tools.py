@@ -13,6 +13,9 @@ def loadHmmer():
 	execfile(MODULE_PYTHON_INIT)
 	module("load", HMMER_PATH)
 
+def testModule():
+	return module
+
 class DomTableRow:
 	"""
 	Class to hold information about a single domtblout row for phmmer. TRY TO KEEP IMMUTABLE
