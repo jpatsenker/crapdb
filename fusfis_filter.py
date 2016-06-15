@@ -3,8 +3,6 @@ from sewagefilter import SewageFilter
 import lsftools as lsf
 
 
-
-
 class FusionFissionFilter(SewageFilter):
 
     __name__ = "Ff_CHECK_FILTER"

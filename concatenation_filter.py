@@ -8,6 +8,8 @@ from hmmer_tools import DomTableRow
 from hmmer_tools import DomTableReader
 
 
+
+
 class ConcatEvent:
     """
     Class for holding onto Fission/Fusion (fF) Events
@@ -17,13 +19,9 @@ class ConcatEvent:
 
     __metaclass__ = ABCMeta
 
-    __mainseq__ = None
-
-    __subseqs__ = {}
-
     def __init__(self, mainseq):
         self.__mainseq__ = mainseq
-        self.__subseqs__ = {}
+        self.__subseqs__ = {} #dictionary of Sequence -> (Int, Int)
 
     @abstractmethod
     def getScore(self):
@@ -45,7 +43,33 @@ class ConcatEvent:
         """
         if self.__subseqs__.has_key(subseq):
             self.__subseqs__[subseq] = coordinate
+        else:
+            raise Exception("Cannot set coordinates for non-existant subsequence" + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
 
+    def getCoords(self, subseq):
+        """
+        Method for getting coordinates of subsequence
+        """
+        try:
+            return self.__subseqs__[subseq]
+        except KeyError:
+            raise Exception("Cannot get coordinates for non-existant subsequence" + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
+
+    def getSubseqs(self):
+        return list(self.__subseqs__)
+
+    def getMainSeq(self):
+        return self.__mainseq__
+
+    def removeSubseq(self, subseq):
+        self.__subseqs__.pop(subseq)
+
+    def __string__(self):
+        return "Main Sequence: " + str(self.__mainseq__) + "\n" + "Subsequences: " + str(self.__subseqs__)
+
+    def getOverlap(self, subseq1, subseq2):
+        coords1 = self.getCoords(subseq1)
+        coords2 = self.getCoords(subseq2)
 
 
 
@@ -59,9 +83,16 @@ class ConcatFilter(SewageFilter):
         super(SewageFilter, self).__init__()
         self.__reference_genome__ = reference_genome
 
+    @abstractmethod
+    def parseHmmerIntoConcatEvents(self, hmmerOutFile):
+        pass
 
     @abstractmethod
     def output_concat_event(self, event):
+        pass
+
+    @abstractmethod
+    def fixEvents(self, events):
         pass
 
 
@@ -79,11 +110,14 @@ class ConcatFilter(SewageFilter):
 
         hmmerOut = "" #make hmmerout
 
+        hmmer_tools.loadHmmer()
+        
         hmmer_tools.runHmmer(input_file, self.__reference_genome__, hmmerOut)
 
-        events = parseHmmerIntoConcatEvents(hmmerOut)
+        events = self.parseHmmerIntoConcatEvents(hmmerOut)
 
-        with FastaReader(input_file) as
+        events = self.filterEvents(events)
+            
 
 
 

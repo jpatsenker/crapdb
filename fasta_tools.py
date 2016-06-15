@@ -2,9 +2,12 @@ class Sequence:
 	"""
 	Class to hold information about a single fasta sequence. TRY TO KEEP IMMUTABLE
 	"""
-	def __init__(iden, seq):
+	def __init__(self, iden, seq):
 		self.identity = iden
 		self.sequence = seq
+
+	def sequenceLength(self):
+		return len(self.sequence)
 
 
 class FastaReader:

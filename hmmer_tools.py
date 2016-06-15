@@ -1,13 +1,17 @@
 import subprocess
 
+MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init/python.py"
+
+HMMER_PATH = "seq/hmmer/3.1"
+
+
 def runHmmer(sequences, reference, output):
-	loadBlast()
 	run = subprocess.Popen("phmmer --domtblout " + output + " " + sequences + " " + reference)
 	run.wait()
 
 def loadHmmer():
-	p = subprocess.Popen(". LOADHMMER.sh")
-	p.wait()
+	execfile(MODULE_PYTHON_INIT)
+	module("load", HMMER_PATH)
 
 class DomTableRow:
 	"""
@@ -114,23 +118,28 @@ class DomTableReader:
 			row = self.__file_stream__.readline().rstrip()
 
 		rowArr = row.split()
-		print row
-		print rowArr
-		tblRow = DomTableRow(rowArr[0],
-							rowArr[1],
-							rowArr[2],
-							rowArr[3],
-							rowArr[4],
-							rowArr[5],
-							rowArr[6],
-							rowArr[7],
-							rowArr[8], 
-							rowArr[15],
-							rowArr[16],
-							rowArr[17],
-							rowArr[18],
-							rowArr[21],
-							rowArr[22])
+		#print row
+		#print rowArr
+		try:
+			tblRow = DomTableRow(rowArr[0],
+								rowArr[1],
+								rowArr[2],
+								rowArr[3],
+								rowArr[4],
+								rowArr[5],
+								rowArr[6],
+								rowArr[7],
+								rowArr[8], 
+								rowArr[15],
+								rowArr[16],
+								rowArr[17],
+								rowArr[18],
+								rowArr[21],
+								rowArr[22])
+		except IndexError as e:
+			print "Check Format of HMMER domtblout file: " + e
+			return BADFORMAT
+
 		return tblRow
 
 	def __exit__(self ,type, value, traceback):
