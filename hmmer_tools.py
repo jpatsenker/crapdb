@@ -1,6 +1,8 @@
 import subprocess
 
-MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init/python.py"
+#MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init/python.py"
+MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init"
+
 
 HMMER_PATH = "seq/hmmer/3.1"
 
@@ -10,11 +12,11 @@ def runHmmer(sequences, reference, output):
 	run.wait()
 
 def loadHmmer():
-	execfile(MODULE_PYTHON_INIT)
-	module("load", HMMER_PATH)
+	sys.path.append(MODULE_PYTHON_INIT)
+	import python
+	#execfile(MODULE_PYTHON_INIT)
+	python.module("load", HMMER_PATH)
 
-def testModule():
-	return module
 
 class DomTableRow:
 	"""
