@@ -1,5 +1,5 @@
 import subprocess
-
+import sys
 #MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init/python.py"
 MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init"
 
