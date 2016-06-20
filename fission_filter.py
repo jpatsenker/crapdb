@@ -71,7 +71,7 @@ class FissionFilter(ConcatFilter):
 						#if it is a match of the same length
 						if event.getMatchingLength(subseq) > event.getMainSeq().getSequenceLength() - EXON_LENGTH:
 							for e in new_events:
-								if subseqs[subseq] in e.getSubseqs()
+								if subseqs[subseq] in e.getSubseqs():
 									e.removeSubseq(subseqs[subseq])
 							needClean = True
 			events = list(new_events)
