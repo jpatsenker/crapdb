@@ -15,20 +15,20 @@ class FissionFilter(ConcatFilter):
 
 	def parseHmmerIntoConcatEvents(self, hmmerOutFile):
 		events = {}
-	    with DomTableReader(hmmerOutFile) as reader:
-	        row = reader.readRow()
-	        while not row == DomTableReader.EOF:
-	            if row == DomTableReader.BADFORMAT:
-	                break
-	            try:
+		with DomTableReader(hmmerOutFile) as reader:
+	    	row = reader.readRow()
+	    	while not row == DomTableReader.EOF:
+	    		if row == DomTableReader.BADFORMAT:
+					break
+				try:
 	            	events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
 	            	events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
 	            except KeyError as e:
 	            	events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))] = FissionEvent(Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen())))
 	            	events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
 					events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
-	            row = reader.readRow()
-	    return events.values()
+				row = reader.readRow()
+		return events.values()
 
 	def checkSuitability(self, sequenceCoords, candidateCoords):
 		"""
