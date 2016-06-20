@@ -6,6 +6,7 @@ from fasta_tools import Sequence
 import hmmer_tools
 from hmmer_tools import DomTableRow
 from hmmer_tools import DomTableReader
+import random
 
 
 
@@ -103,7 +104,7 @@ class ConcatFilter(SewageFilter):
         #parse all concat events into concat event objects
         events = [] #list of concat events
 
-        hmmerOut = "" #make hmmerout
+        hmmerOut = "tmp/" + str(random.random()) + ".hmmerOut" #make hmmerout
 
         hmmer_tools.loadHmmer()
 
