@@ -26,6 +26,9 @@ class Sequence:
 	def sequenceLength(self):
 		return len(self.__sequence__)
 
+	def getNotes(self):
+		return self.__notes__
+
 	def __hash__(self):
 		return hash(self.__identity__)
 
@@ -98,8 +101,8 @@ class FastaWriter:
 		"""
 		Method for writing sequence into fasta file
 		"""
-		if sequence.getSequence is not None and sequence.getIdentity is not None:
-			self.__file_stream__.write(sequence.getSequence() + " " + sequence.getNotes() + "\n" + sequence.getSequence + "\n");
+		if sequence.getSequence() is not None and sequence.getIdentity() is not None:
+			self.__file_stream__.write(sequence.getIdentity() + " " + sequence.getNotes() + "\n" + sequence.getSequence() + "\n");
 			return WRITTENFS
 		return BADFORMAT
 

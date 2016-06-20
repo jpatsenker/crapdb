@@ -87,4 +87,4 @@ class FissionFilter(ConcatFilter):
 						mark(subseq, candidate, event.getMainSeq())
 						dirtySequences.append(subseq)
 
-		return dirtySequences
+		return set(dirtySequences)
