@@ -32,9 +32,10 @@ class FissionFilter(ConcatFilter):
 					events[seq].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
 					events[seq].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
 				except KeyError as e:
+					ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 					events[seq] = FissionEvent(Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen())))
-					events[seq].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
-					events[seq].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
+					events[seq].addSubseq(ss)
+					events[seq].setCoords(ss, (row.getTargetFrom(), row.getTargetTo()))
 				row = reader.readRow()
 		return events.values()
 

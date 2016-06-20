@@ -45,7 +45,7 @@ class ConcatEvent:
         if self.__subseqs__.has_key(subseq):
             self.__subseqs__[subseq] = coordinate
         else:
-            raise Exception("Cannot set coordinates for non-existant subsequence" + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
+            raise Exception("Cannot set coordinates for non-existant subsequence " + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
 
     def getCoords(self, subseq):
         """
@@ -54,7 +54,7 @@ class ConcatEvent:
         try:
             return self.__subseqs__[subseq]
         except KeyError:
-            raise Exception("Cannot get coordinates for non-existant subsequence" + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
+            raise Exception("Cannot get coordinates for non-existant subsequence " + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
 
     def getSubseqs(self):
         return list(self.__subseqs__)
