@@ -2,7 +2,7 @@ class Sequence:
 	"""
 	Class to hold information about a single fasta sequence.
 	"""
-
+	@staticmethod
 	def PLACEHOLDER(length):
 		"""
 		Variable like structure to act as placeholder of sequences
