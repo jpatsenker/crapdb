@@ -32,6 +32,10 @@ class Sequence:
 	def __hash__(self):
 		return hash(self.__identity__)
 
+	def __str__(self):
+		return str(self.__identity__)
+
+
 class FastaReader:
 	"""
 	Class for reading fasta files
