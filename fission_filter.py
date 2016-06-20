@@ -65,12 +65,12 @@ class FissionFilter(ConcatFilter):
 			for event in events:
 				subseqs = event.getSubseqs()
 				if len(subseqs) == 0 or len(subseqs) == 1:
-					new_events.pop(event.getMainSeq())
+					new_events.remove(event.getMainSeq())
 				else:
 					for subseq in subseqs.keys():
 						#if it isn't a realistic match, <Exon length
 						if event.getMatchingLength(subseq) < EXON_LENGTH:
-							new_events.pop(event.getMainSeq())
+							new_events.remove(event.getMainSeq())
 							needClean = True
 						#if it is a match of the same length
 						if event.getMatchingLength(subseq) > event.getMainSeq().getSequenceLength() - EXON_LENGTH:
