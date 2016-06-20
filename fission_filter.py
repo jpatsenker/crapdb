@@ -27,13 +27,14 @@ class FissionFilter(ConcatFilter):
 			while not row == DomTableReader.EOF:
 				if row == DomTableReader.BADFORMAT:
 					break
+				seq = Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))
 				try:
-					events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
-					events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
+					events[seq].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
+					events[seq].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
 				except KeyError as e:
-					events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))] = FissionEvent(Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen())))
-					events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
-					events[Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
+					events[seq] = FissionEvent(Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen())))
+					events[seq].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
+					events[seq].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
 				row = reader.readRow()
 		return events.values()
 
