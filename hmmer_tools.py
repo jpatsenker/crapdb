@@ -28,11 +28,11 @@ class DomTableRow:
 	def __init__(self, target, targetAccession, tlen, query, queryAccession, qlen, eValue, score, bias, queryFrom, queryTo, targetFrom, targetTo, acc, description):
 		self.__target__ = target
 		self.__targetAccession__ = targetAccession
-		self.__tlen__ = tlen
+		self.__tlen__ = int(tlen)
 		self.__query__ = query
 		self.__queryAccession__ = queryAccession
-		self.__qlen__ = qlen
-		self.__eValue__ = eValue
+		self.__qlen__ = int(qlen)
+		self.__eValue__ = float(eValue)
 		self.__score__ = score
 		self.__bias__ = bias
 		self.__queryFrom__ = queryFrom
