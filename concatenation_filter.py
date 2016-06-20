@@ -104,7 +104,7 @@ class ConcatFilter(SewageFilter):
         #parse all concat events into concat event objects
         events = [] #list of concat events
 
-        hmmerOut = "tmp/" + str(random.random()) + ".hmmerOut" #make hmmerout
+        hmmerOut = "tmp/" + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
 
         hmmer_tools.loadHmmer()
 
