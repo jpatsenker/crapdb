@@ -9,7 +9,7 @@ HMMER_PATH = "seq/hmmer/3.1"
 
 
 def runHmmer(sequences, reference, output):
-	run = lsftools.runJob("phmmer --domtblout " + output + " " + sequences + " " + reference)
+	run = lsftools.run_job("phmmer --domtblout " + output + " " + sequences + " " + reference)
 	run.wait()
 
 def loadHmmer():
