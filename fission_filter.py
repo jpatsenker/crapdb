@@ -13,6 +13,9 @@ class FissionEvent(ConcatEvent):
 
 class FissionFilter(ConcatFilter):
 
+	def __init__(self, reference_genome):
+        super(ConcatFilter, self).__init__()
+
 	def parseHmmerIntoConcatEvents(self, hmmerOutFile):
 		events = {}
 		with DomTableReader(hmmerOutFile) as reader:
