@@ -73,8 +73,6 @@ class ConcatEvent:
 class ConcatFilter(SewageFilter):
     __metaclass__ = ABCMeta
 
-     __reference_genome__ = None
-
 
     def __init__(self, reference_genome):
         super(SewageFilter, self).__init__()
@@ -119,7 +117,7 @@ class ConcatFilter(SewageFilter):
         with FastaReader(input_file) as reader:
             with FastaWriter(output_file) as clearWriter:
                 with FastaWriter(diagnostics_file) as dirtyWriter:
-                    
+
 
 
 
