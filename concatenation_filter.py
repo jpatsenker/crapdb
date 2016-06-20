@@ -73,9 +73,8 @@ class ConcatEvent:
 class ConcatFilter(SewageFilter):
     __metaclass__ = ABCMeta
 
-
     def __init__(self, reference_genome):
-        super(SewageFilter, self).__init__()
+        super(ConcatFilter, self).__init__()
         self.__reference_genome__ = reference_genome
         self.__clean_file__ = None
         self.__messy_file__ = None

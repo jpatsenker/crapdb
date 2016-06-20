@@ -8,7 +8,7 @@ EXON_LENGTH = 30
 class FissionEvent(ConcatEvent):
 
 	def __init__(self, mainseq):
-		super(ConcatEvent, self).__init__(mainseq)
+		super(FissionEvent, self).__init__(mainseq)
 
 	def getScore():
 		return 0
@@ -16,7 +16,7 @@ class FissionEvent(ConcatEvent):
 class FissionFilter(ConcatFilter):
 
 	def __init__(self, reference_genome):
-		super(ConcatFilter, self).__init__(reference_genome)
+		super(FissionFilter, self).__init__(reference_genome)
 
 	def parseHmmerIntoConcatEvents(self, hmmerOutFile):
 		events = {}
