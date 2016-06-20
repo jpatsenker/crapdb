@@ -121,11 +121,11 @@ class DomTableReader:
 		"""
 		row = self.__file_stream__.readline().rstrip()
 		if not row:
-			return EOF
+			return DomTableReader.EOF
 		while row[0] == '#':
 			row = self.__file_stream__.readline().rstrip()
 			if not row:
-				return EOF
+				return DomTableReader.EOF
 
 		rowArr = row.split()
 		#print row
@@ -148,7 +148,7 @@ class DomTableReader:
 								rowArr[22])
 		except IndexError as e:
 			print "Check Format of HMMER domtblout file: " + e
-			return BADFORMAT
+			return DomTableReader.BADFORMAT
 
 		return tblRow
 
