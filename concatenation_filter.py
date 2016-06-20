@@ -65,13 +65,10 @@ class ConcatEvent:
         self.__subseqs__.pop(subseq)
 
     def __string__(self):
-        return "Main Sequence: " + str(self.__mainseq__) + "\n" + "Subsequences: " + str(self.__subseqs__)
+        return "Main Sequence: " + str(self.__mainseq__) + "\n" + "---Subsequences: " + str(self.__subseqs__)
 
-    def getOverlap(self, subseq1, subseq2):
-        coords1 = self.getCoords(subseq1)
-        coords2 = self.getCoords(subseq2)
-
-
+    def getMatchingLength(self, subseq):
+        return self.__subseqs__[subseq][1]-self.__subseqs__[subseq][0]
 
 class ConcatFilter(SewageFilter):
     __metaclass__ = ABCMeta
@@ -82,17 +79,15 @@ class ConcatFilter(SewageFilter):
     def __init__(self, reference_genome):
         super(SewageFilter, self).__init__()
         self.__reference_genome__ = reference_genome
+        self.__clean_file__ = None
+        self.__messy_file__ = None
 
     @abstractmethod
     def parseHmmerIntoConcatEvents(self, hmmerOutFile):
         pass
 
     @abstractmethod
-    def output_concat_event(self, event):
-        pass
-
-    @abstractmethod
-    def fixEvents(self, events):
+    def scanEvents(self, events):
         pass
 
 
@@ -105,30 +100,26 @@ class ConcatFilter(SewageFilter):
         :return: 
         """
 
+        self.__clean_file__ = output_file
+        self.__messy_file__ = diagnostics_file
+
         #parse all concat events into concat event objects
         events = [] #list of concat events
 
         hmmerOut = "" #make hmmerout
 
         hmmer_tools.loadHmmer()
-        
+
         hmmer_tools.runHmmer(input_file, self.__reference_genome__, hmmerOut)
 
         events = self.parseHmmerIntoConcatEvents(hmmerOut)
 
-        events = self.filterEvents(events)
-            
+        dirtySequences = self.scanEvents(events)
 
-
-
-
-
-
-
-
-
-
-
+        with FastaReader(input_file) as reader:
+            with FastaWriter(output_file) as clearWriter:
+                with FastaWriter(diagnostics_file) as dirtyWriter:
+                    
 
 
 

@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import lsftools
 #MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init/python.py"
 MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init"
 
@@ -8,7 +9,7 @@ HMMER_PATH = "seq/hmmer/3.1"
 
 
 def runHmmer(sequences, reference, output):
-	run = subprocess.Popen("phmmer --domtblout " + output + " " + sequences + " " + reference)
+	run = lsftools.runJob("phmmer --domtblout " + output + " " + sequences + " " + reference)
 	run.wait()
 
 def loadHmmer():

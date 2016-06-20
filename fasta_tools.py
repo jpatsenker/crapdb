@@ -1,14 +1,33 @@
 class Sequence:
 	"""
-	Class to hold information about a single fasta sequence. TRY TO KEEP IMMUTABLE
+	Class to hold information about a single fasta sequence.
 	"""
+
+	def PLACEHOLDER(length):
+		"""
+		Variable like structure to act as placeholder of sequences
+		"""
+		return "X" * length
+
 	def __init__(self, iden, seq):
-		self.identity = iden
-		self.sequence = seq
+		self.__identity__ = iden
+		self.__sequence__ = seq
+		self.__notes__ = None
+
+	def hasSequence(self):
+		return len(self.__sequence__)>0 and self.__sequence__[0]!='X'
+
+	def getIdentity(self):
+		return self.__identity__
+
+	def getSequence(self):
+		return self.__sequence__
 
 	def sequenceLength(self):
-		return len(self.sequence)
+		return len(self.__sequence__)
 
+	def __hash__(self):
+		return hash(self.__identity__)
 
 class FastaReader:
 	"""
@@ -79,8 +98,8 @@ class FastaWriter:
 		"""
 		Method for writing sequence into fasta file
 		"""
-		if sequence.sequence is not None and sequence.identity is not None:
-			self.__file_stream__.write(sequence.sequence + "\n" + sequence.identity + "\n");
+		if sequence.getSequence is not None and sequence.getIdentity is not None:
+			self.__file_stream__.write(sequence.getSequence() + " " + sequence.getNotes() + "\n" + sequence.getSequence + "\n");
 			return WRITTENFS
 		return BADFORMAT
 
