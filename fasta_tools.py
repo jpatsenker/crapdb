@@ -94,7 +94,7 @@ class FastaWriter:
 		Method for initializing fasta writer with options
 		"""
 		self.__output_file__ = output_file
-		self.__file_stream__ = open(self, options)
+		self.__file_stream__ = open(self.__output_file__, options)
 
 	
 	def __enter__(self):
