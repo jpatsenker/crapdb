@@ -38,7 +38,7 @@ class Sequence:
 	def __repr__(self):
 		return str(self.__identity__)
 
-	def __eq__(self):
+	def __eq__(self, other):
 		return self.__hash__() == other.__hash__()
 
 
