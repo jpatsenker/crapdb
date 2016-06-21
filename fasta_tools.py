@@ -45,6 +45,9 @@ class Sequence:
 	def __eq__(self, other):
 		return self.__hash__() == other.__hash__()
 
+	def __ne__(self, other):
+		return not self.__eq__(other)
+
 
 class FastaReader:
 	"""
