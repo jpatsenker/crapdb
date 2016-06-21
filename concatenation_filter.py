@@ -65,7 +65,7 @@ class ConcatEvent:
     def removeSubseq(self, subseq):
         self.__subseqs__.pop(subseq)
 
-    def __string__(self):
+    def __str__(self):
         return "Main Sequence: " + str(self.__mainseq__) + "\n" + "---Subsequences: " + str(self.__subseqs__)
 
     def getMatchingLength(self, subseq):
