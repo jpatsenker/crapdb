@@ -35,6 +35,9 @@ class Sequence:
 	def __str__(self):
 		return str(self.__identity__)
 
+	def __repr__(self):
+		return str(self.__identity__)
+
 
 class FastaReader:
 	"""
