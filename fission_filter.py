@@ -57,6 +57,10 @@ class FissionFilter(ConcatFilter):
 		#create temporary dictionary
 		new_events = dict( zip( map(ConcatEvent.getMainSeq, list(events)), list(events) ) )
 
+		print events
+		
+		print new_events
+
 		needClean = True
 		while needClean:
 			needClean = False
