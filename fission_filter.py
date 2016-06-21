@@ -55,7 +55,7 @@ class FissionFilter(ConcatFilter):
 
 	def scanEvents(self, events):
 		#create temporary dictionary
-		new_events = zip( map(ConcatEvent.getMainSeq, list(events)), list(events) )
+		new_events = dict( zip( map(ConcatEvent.getMainSeq, list(events)), list(events) ) )
 
 		needClean = True
 		while needClean:
@@ -80,7 +80,7 @@ class FissionFilter(ConcatFilter):
 								if subseqs[subseq] in e.getSubseqs():
 									e.removeSubseq(subseqs[subseq])
 							needClean = True
-			events = list(new_events.values())
+			events = list(new_events)
 
 
 		dirtySequences = []
