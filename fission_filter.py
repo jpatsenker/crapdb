@@ -28,14 +28,14 @@ class FissionFilter(ConcatFilter):
 				if row == DomTableReader.BADFORMAT:
 					break
 				seq = Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))
+				ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 				try:
-					events[seq].addSubseq(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())))
-					events[seq].setCoords(Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen())), (row.getTargetFrom(), row.getTargetTo()))
+					events[seq].addSubseq(ss)
+					events[seq].setCoords(ss, (row.getTargetFrom(), row.getTargetTo()))
 				except KeyError as e:
-					ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 					print "Making new event for sequence, " + str(seq) + " (Hash: " + str(hash(seq)) + ")"
 					print events
-					events[seq] = FissionEvent(Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen())))
+					events[seq] = FissionEvent(seq)
 					events[seq].addSubseq(ss)
 					events[seq].setCoords(ss, (row.getTargetFrom(), row.getTargetTo()))
 				row = reader.readRow()
