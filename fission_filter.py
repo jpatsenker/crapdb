@@ -66,7 +66,6 @@ class FissionFilter(ConcatFilter):
 
 		needClean = True
 		while needClean:
-			print "loop"
 			needClean = False
 
 			#filter set of events that aren't real events
@@ -81,6 +80,7 @@ class FissionFilter(ConcatFilter):
 						#OR
 						#if it is a match of the same length
 						if event.getMatchingLength(subseq) > event.getMainSeq().getSequenceLength() - EXON_LENGTH or event.getMatchingLength(subseq) < EXON_LENGTH:
+							print event
 							for e in new_events.values():
 								if subseqs[subseq] in e.getSubseqs():
 									e.removeSubseq(subseqs[subseq])
