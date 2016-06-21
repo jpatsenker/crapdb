@@ -115,7 +115,7 @@ class ConcatFilter(SewageFilter):
         dirtySequences = self.scanEvents(events)
 
         with FastaReader(input_file) as reader:
-            with FastaWriter(output_file) as clearWriter:
+            with FastaWriter(output_file) as cleanWriter:
                 with FastaWriter(diagnostics_file) as dirtyWriter:
                     nextSeq = reader.readSequence()
                     if nextSeq in dirtySequences:
