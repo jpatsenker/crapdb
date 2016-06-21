@@ -106,7 +106,10 @@ class FastaWriter:
 		Method for writing sequence into fasta file
 		"""
 		if sequence.getSequence() is not None and sequence.getIdentity() is not None:
-			self.__file_stream__.write(sequence.getIdentity() + " " + sequence.getNotes() + "\n" + sequence.getSequence() + "\n");
+			if sequence.getNotes() is None:
+				self.__file_stream__.write(sequence.getIdentity() + "\n" + sequence.getSequence() + "\n");
+			else:
+				self.__file_stream__.write(sequence.getIdentity() + " " + sequence.getNotes() + "\n" + sequence.getSequence() + "\n");
 			return WRITTENFS
 		return BADFORMAT
 
