@@ -127,5 +127,5 @@ class ConcatFilter(SewageFilter):
                         dirtyWriter.writeSequence(nextSeq)
                     else:
                         if nextSeq.getNotes() is not None:
-                            Exception("Clean Sequence shouldn't have notes!!!")
+                            raise Exception("Clean Sequence shouldn't have notes!!!")
                         cleanWriter.writeSequence(nextSeq)
