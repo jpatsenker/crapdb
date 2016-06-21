@@ -34,6 +34,7 @@ class FissionFilter(ConcatFilter):
 				except KeyError as e:
 					ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 					print "Making new event for sequence, " + str(seq) + " (Hash: " + str(hash(seq)) + ")"
+					print events
 					events[seq] = FissionEvent(Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen())))
 					events[seq].addSubseq(ss)
 					events[seq].setCoords(ss, (row.getTargetFrom(), row.getTargetTo()))
