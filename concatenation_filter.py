@@ -132,3 +132,4 @@ class ConcatFilter(SewageFilter):
                             if nextSeq.getNotes() is not "":
                                 raise Exception("Clean Sequence shouldn't have notes!!!")
                             cleanWriter.writeSequence(nextSeq)
+                        nextSeq = reader.readSequence()
