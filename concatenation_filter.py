@@ -133,7 +133,7 @@ class ConcatFilter(SewageFilter):
                                 print dirtySequences
                                 tmpDirtySeq.add(placeholderSeq)
                                 placeholderSeq = dirtySequences.pop()
-                            dirtySequences = union(tmpDirtySeq, dirtySequences)
+                            dirtySequences = dirtySequences.union(tmpDirtySeq)
                             print dirtySequences
                             nextSeq.addNote(placeholderSeq.getNotes().rstrip())
                             if placeholderSeq.getNotes() is "":
