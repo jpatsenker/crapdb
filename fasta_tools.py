@@ -15,6 +15,7 @@ class Sequence:
 		self.__notes__ = ""
 
 	def addNote(self, note):
+		print note
 		self.__notes__ += " " + note
 
 	def hasSequence(self):
