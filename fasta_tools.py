@@ -14,6 +14,9 @@ class Sequence:
 		self.__sequence__ = seq
 		self.__notes__ = None
 
+	def addNote(self, note):
+		self.__notes__ += note
+
 	def hasSequence(self):
 		return len(self.__sequence__)>0 and self.__sequence__[0]!='X'
 
