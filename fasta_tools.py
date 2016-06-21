@@ -110,8 +110,8 @@ class FastaWriter:
 				self.__file_stream__.write(sequence.getIdentity() + "\n" + sequence.getSequence() + "\n");
 			else:
 				self.__file_stream__.write(sequence.getIdentity() + " " + sequence.getNotes() + "\n" + sequence.getSequence() + "\n");
-			return WRITTENFS
-		return BADFORMAT
+			return FastaWriter.WRITTENFS
+		return FastaWriter.BADFORMAT
 
 	def __exit__(self, type, value, traceback):
 		"""
