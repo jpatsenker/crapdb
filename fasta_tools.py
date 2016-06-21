@@ -71,12 +71,12 @@ class FastaReader:
 		"""
 		identity = self.__file_stream__.readline().rstrip()
 		if not identity:
-			return EOF
+			return FastaReader.EOF
 		if identity[0] != '>':
-			return self.BADFORMAT
+			return FastaReader.BADFORMAT
 		sequence = self.__file_stream__.readline().rstrip()
 		if not sequence:
-			return self.BADFORMAT
+			return FastaReader.BADFORMAT
 		return Sequence(identity, sequence)
 
 	def __exit__(self ,type, value, traceback):
