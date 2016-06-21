@@ -54,18 +54,11 @@ class FissionFilter(ConcatFilter):
 
 
 	def mark(self, seq, pair, ref):
-		print "seq: " + str(seq)
-		print "pair " + str(pair)
-		print "ref " + str(ref)
 		seq.addNote("Sequence is Fission of " + ref.getIdentity() + " with sequence " + seq.getIdentity())
 
 	def scanEvents(self, events):
 		#create temporary dictionary
 		new_events = dict( zip( map(ConcatEvent.getMainSeq, list(events)), list(events) ) )
-
-		print events
-
-		print new_events
 
 		needClean = True
 		while needClean:
@@ -83,8 +76,6 @@ class FissionFilter(ConcatFilter):
 						#OR
 						#if it is a match of the same length
 						if event.getMatchingLength(subseq) > event.getMainSeq().getSequenceLength() - EXON_LENGTH or event.getMatchingLength(subseq) < EXON_LENGTH:
-							print event
-							print subseq
 							for e in new_events.values():
 								e.removeSubseq(subseq)
 							needClean = True
