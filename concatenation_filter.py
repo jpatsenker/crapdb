@@ -57,7 +57,7 @@ class ConcatEvent:
             raise Exception("Cannot get coordinates for non-existant subsequence " + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
 
     def getSubseqs(self):
-        return list(self.__subseqs__)
+        return dict(self.__subseqs__)
 
     def getMainSeq(self):
         return self.__mainseq__
