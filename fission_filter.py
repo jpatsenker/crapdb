@@ -53,7 +53,7 @@ class FissionFilter(ConcatFilter):
 		return len(i) < EXON_LENGTH
 
 
-	def mark(seq, pair, ref):
+	def mark(self, seq, pair, ref):
 		seq.addNote("Sequence is Fission of " + ref.getIdentity() + " with sequence " + seq.getIdentity())
 
 	def scanEvents(self, events):
