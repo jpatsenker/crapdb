@@ -83,8 +83,7 @@ class FissionFilter(ConcatFilter):
 							print event
 							print subseq
 							for e in new_events.values():
-								if subseqs[subseq] in e.getSubseqs():
-									e.removeSubseq(subseqs[subseq])
+								e.removeSubseq(subseq)
 							needClean = True
 			events = list(new_events.values())
 
