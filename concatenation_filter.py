@@ -125,9 +125,11 @@ class ConcatFilter(SewageFilter):
                     nextSeq = reader.readSequence()
                     while nextSeq is not FastaReader.EOF:
                         if nextSeq in dirtySequences:
+                            print nextSeq
                             tmpDirtySeq = set()
                             placeholderSeq = dirtySequences.pop()
                             while placeholderSeq != nextSeq:
+                                print dirtySequences
                                 tmpDirtySeq.add(placeholderSeq)
                                 placeholderSeq = dirtySequences.pop()
                             dirtySequences = tmpDirtySeq
