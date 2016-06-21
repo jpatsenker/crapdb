@@ -95,7 +95,7 @@ class FissionFilter(ConcatFilter):
 			for subseq in subseqs.keys():
 				for candidate in subseqs.keys():
 					if self.checkSuitability(subseqs[subseq], subseqs[candidate]):
-						mark(subseq, candidate, event.getMainSeq())
+						self.mark(subseq, candidate, event.getMainSeq())
 						dirtySequences.append(subseq)
 
 		return set(dirtySequences)
