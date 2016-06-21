@@ -124,10 +124,10 @@ class ConcatFilter(SewageFilter):
                 with FastaWriter(diagnostics_file) as dirtyWriter:
                     nextSeq = reader.readSequence()
                     if nextSeq in dirtySequences:
-                        if nextSeq.getNotes() is None:
+                        if nextSeq.getNotes() is "":
                             raise Exception("Dirty Sequence should have notes!!!")
                         dirtyWriter.writeSequence(nextSeq)
                     else:
-                        if nextSeq.getNotes() is not None:
+                        if nextSeq.getNotes() is not "":
                             raise Exception("Clean Sequence shouldn't have notes!!!")
                         cleanWriter.writeSequence(nextSeq)

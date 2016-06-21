@@ -15,7 +15,7 @@ class Sequence:
 		self.__notes__ = ""
 
 	def addNote(self, note):
-		self.__notes__ += note
+		self.__notes__ += " " + note
 
 	def hasSequence(self):
 		return len(self.__sequence__)>0 and self.__sequence__[0]!='X'
@@ -115,10 +115,8 @@ class FastaWriter:
 		Method for writing sequence into fasta file
 		"""
 		if sequence.getSequence() is not None and sequence.getIdentity() is not None:
-			if sequence.getNotes() is None:
-				self.__file_stream__.write(sequence.getIdentity() + "\n" + sequence.getSequence() + "\n");
-			else:
-				self.__file_stream__.write(sequence.getIdentity() + " " + sequence.getNotes() + "\n" + sequence.getSequence() + "\n");
+																#contains space
+			self.__file_stream__.write(sequence.getIdentity() + sequence.getNotes() + "\n" + sequence.getSequence() + "\n");
 			return FastaWriter.WRITTENFS
 		return FastaWriter.BADFORMAT
 
