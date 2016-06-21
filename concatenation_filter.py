@@ -129,6 +129,7 @@ class ConcatFilter(SewageFilter):
                             tmpDirtySeq = set()
                             placeholderSeq = dirtySequences.pop()
                             while placeholderSeq != nextSeq:
+                                print placeholderSeq
                                 print dirtySequences
                                 tmpDirtySeq.add(placeholderSeq)
                                 placeholderSeq = dirtySequences.pop()
