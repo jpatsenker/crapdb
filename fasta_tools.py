@@ -74,7 +74,8 @@ class FastaReader:
 			return FastaReader.EOF
 		if identity[0] != '>':
 			return FastaReader.BADFORMAT
-		sequence = self.__file_stream__.readline().rstrip().lstrip('>')
+		identity = identity.lstrip('>')
+		sequence = self.__file_stream__.readline().rstrip()
 		if not sequence:
 			return FastaReader.BADFORMAT
 		return Sequence(identity, sequence)
