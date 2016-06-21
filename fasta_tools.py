@@ -23,7 +23,7 @@ class Sequence:
 	def getSequence(self):
 		return self.__sequence__
 
-	def sequenceLength(self):
+	def getSequenceLength(self):
 		return len(self.__sequence__)
 
 	def getNotes(self):
