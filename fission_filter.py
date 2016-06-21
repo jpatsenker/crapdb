@@ -75,6 +75,7 @@ class FissionFilter(ConcatFilter):
 					if event.getMainSeq() in new_events:
 						new_events.pop(event.getMainSeq())
 				else:
+					print subseqs
 					for subseq in subseqs.keys():
 						#if it isn't a realistic match, <Exon length
 						if event.getMatchingLength(subseq) < EXON_LENGTH:
