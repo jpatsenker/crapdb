@@ -74,7 +74,7 @@ class FastaReader:
 			return FastaReader.EOF
 		if identity[0] != '>':
 			return FastaReader.BADFORMAT
-		sequence = self.__file_stream__.readline().rstrip()
+		sequence = self.__file_stream__.readline().rstrip().lstrip('>')
 		if not sequence:
 			return FastaReader.BADFORMAT
 		return Sequence(identity, sequence)
@@ -116,7 +116,7 @@ class FastaWriter:
 		"""
 		if sequence.getSequence() is not None and sequence.getIdentity() is not None:
 																#contains space
-			self.__file_stream__.write(sequence.getIdentity() + sequence.getNotes() + "\n" + sequence.getSequence() + "\n");
+			self.__file_stream__.write('>' + sequence.getIdentity() + sequence.getNotes() + "\n" + sequence.getSequence() + "\n");
 			return FastaWriter.WRITTENFS
 		return FastaWriter.BADFORMAT
 
