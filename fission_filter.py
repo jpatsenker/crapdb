@@ -31,14 +31,14 @@ class FissionFilter(ConcatFilter):
 				ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 				try:
 					events[seq].addSubseq(ss)
-					events[seq].setCoords(ss, (row.getTargetFrom(), row.getTargetTo()))
+					events[seq].setCoords(ss, (int(row.getTargetFrom()), int(row.getTargetTo())))
 				except KeyError as e:
 					#print e
 					#print "Making new event for sequence, " + str(seq) + " (Hash: " + str(hash(seq)) + ")"
 					#print events
 					events[seq] = FissionEvent(seq)
 					events[seq].addSubseq(ss)
-					events[seq].setCoords(ss, (row.getTargetFrom(), row.getTargetTo()))
+					events[seq].setCoords(ss, (int(row.getTargetFrom()), int(row.getTargetTo())))
 				row = reader.readRow()
 		return events.values()
 
