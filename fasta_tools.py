@@ -12,7 +12,7 @@ class Sequence:
 	def __init__(self, iden, seq):
 		self.__identity__ = iden
 		self.__sequence__ = seq
-		self.__notes__ = None
+		self.__notes__ = ""
 
 	def addNote(self, note):
 		self.__notes__ += note
