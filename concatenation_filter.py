@@ -134,6 +134,7 @@ class ConcatFilter(SewageFilter):
                                 tmpDirtySeq.add(placeholderSeq)
                                 placeholderSeq = dirtySequences.pop()
                             dirtySequences = tmpDirtySeq
+                            print dirtySequences
                             nextSeq.addNote(placeholderSeq.getNotes().rstrip())
                             if placeholderSeq.getNotes() is "":
                                 raise Exception("Dirty Sequence should have notes!!!")
