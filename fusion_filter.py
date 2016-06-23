@@ -7,6 +7,9 @@ EXON_LENGTH = 30
 
 
 class FusionEvent(ConcatEvent):
+	def __init__(self, mainseq):
+		super(FusionEvent, self).__init__(mainseq)
+	
 	def getScore():
 		return 0
 
@@ -29,7 +32,7 @@ class FusionFilter(ConcatFilter):
 					#print e
 					#print "Making new event for sequence, " + str(seq) + " (Hash: " + str(hash(seq)) + ")"
 					#print events
-					events[seq] = FissionEvent(seq)
+					events[seq] = FusionEvent(seq)
 					events[seq].addSubseq(ss)
 					events[seq].setCoords(ss, (int(row.getQueryFrom()), int(row.getQueryTo())))
 				row = reader.readRow()
