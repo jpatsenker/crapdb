@@ -1,5 +1,6 @@
 from concatenation_filter import ConcatFilter
 from concatenation_filter import ConcatEvent
+from hmmer_tools import DomTableReader
 from fasta_tools import Sequence
 
 EXON_LENGTH = 30
