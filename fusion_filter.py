@@ -9,7 +9,7 @@ EXON_LENGTH = 30
 class FusionEvent(ConcatEvent):
 	def __init__(self, mainseq):
 		super(FusionEvent, self).__init__(mainseq)
-	
+
 	def getScore():
 		return 0
 
@@ -78,6 +78,7 @@ class FusionFilter(ConcatFilter):
 		dirtySequences = []
 		#mark every query gene for fission if a suitable partner is found
 		for event in events:
+			found = False
 			subseqs = event.getSubseqs()
 			for subseq in subseqs.keys():
 				for candidate in subseqs.keys():
@@ -85,4 +86,9 @@ class FusionFilter(ConcatFilter):
 						ms = event.getMainSeq()
 						self.mark(ms, subseq, candidate)
 						dirtySequences.append(ms)
+						found = True
+						break
+				if found:
+					break
+
 		return set(dirtySequences)
