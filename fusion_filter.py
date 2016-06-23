@@ -2,6 +2,9 @@ from concatenation_filter import ConcatFilter
 from concatenation_filter import ConcatEvent
 from fasta_tools import Sequence
 
+EXON_LENGTH = 30
+
+
 class FusionEvent(ConcatEvent):
 	def getScore():
 		return 0
@@ -30,6 +33,21 @@ class FusionFilter(ConcatFilter):
 					events[seq].setCoords(ss, (int(row.getQueryFrom()), int(row.getQueryTo())))
 				row = reader.readRow()
 		return events.values()
+
+	def checkSuitability(self, sequenceCoords, candidateCoords):
+		"""
+		Checks Suitability of Fission candidate, requiring overlap of less than 1 exon
+		"""
+		s = range(sequenceCoords[0], sequenceCoords[1])
+		c = range(candidateCoords[0], candidateCoords[1])
+		ss = set(s)
+		i = ss.intersection(c)
+		return len(i) < EXON_LENGTH
+
+
+	def mark(self, seq, fus1, fus2):
+		seq.addNote("Sequence contains Fusion of " + fus1.getIdentity() + " with sequence " + fus2.getIdentity())
+
 
 	def scanEvents(self, events):
 		#create temporary dictionary
@@ -60,6 +78,7 @@ class FusionFilter(ConcatFilter):
 			for subseq in subseqs.keys():
 				for candidate in subseqs.keys():
 					if self.checkSuitability(subseqs[subseq], subseqs[candidate]):
-						self.mark(subseq, candidate, event.getMainSeq())
-						dirtySequences.append(subseq)
+						ms = event.getMainSeq()
+						self.mark(ms, subseq, candidate)
+						dirtySequences.append(ms)
 		return set(dirtySequences)
