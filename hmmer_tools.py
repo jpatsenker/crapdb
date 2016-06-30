@@ -152,7 +152,9 @@ class DomTableReader:
 								rowArr[21],
 								rowArr[22])
 		except IndexError as e:
-			print "Check Format of HMMER domtblout file: " + e
+			print row
+			print rowArr
+			print "Check Format of HMMER domtblout file: " + str(e)
 			return DomTableReader.BADFORMAT
 
 		return tblRow
