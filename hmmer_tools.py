@@ -124,7 +124,8 @@ class DomTableReader:
 		"""
 		Method for reading a tbl row from file
 		"""
-		row = self.__file_stream__.readline().rstrip()
+		rowRaw = self.__file_stream__.readline()
+		row = rowRaw.rstrip()
 		if not row:
 			return DomTableReader.EOF
 		while row[0] == '#':
@@ -152,6 +153,7 @@ class DomTableReader:
 								rowArr[21],
 								rowArr[22])
 		except IndexError as e:
+			print rowRaw
 			print row
 			print rowArr
 			print "Check Format of HMMER domtblout file: " + str(e)
