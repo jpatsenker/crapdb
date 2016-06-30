@@ -105,6 +105,7 @@ class DomTableReader:
 		"""
 		self.__input_file__ = input_file
 		self.__file_stream__ = open(self.__input_file__, "r")
+		self.__line_number__ = 0
 
 	def __enter__(self):
 		assert not self.__file_stream__.closed
@@ -117,6 +118,7 @@ class DomTableReader:
 		assert reduce(lambda b,c: b and c, map(lambda a: a>=0, map(lambda x: string.find(check, x), ref)), True)
 
 		check = self.__file_stream__.readline().rstrip()
+		self.__line_number__+=3
 		#assert check == "#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------"
 		return self
 
@@ -125,11 +127,13 @@ class DomTableReader:
 		Method for reading a tbl row from file
 		"""
 		rowRaw = self.__file_stream__.readline()
+		self.__line_number__+=1
 		row = rowRaw.rstrip()
 		if not row:
 			return DomTableReader.EOF
 		while row[0] == '#':
 			row = self.__file_stream__.readline().rstrip()
+			self.__line_number__+=1
 			if not row:
 				return DomTableReader.EOF
 
@@ -156,6 +160,7 @@ class DomTableReader:
 			print rowRaw
 			print row
 			print rowArr
+			print self.__line_number__
 			print "Check Format of HMMER domtblout file: " + str(e)
 			return DomTableReader.BADFORMAT
 
