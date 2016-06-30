@@ -48,10 +48,8 @@ class FusionFilter(ConcatFilter):
 		i = ss.intersection(c)
 		return len(i) < EXON_LENGTH
 
-
 	def mark(self, seq, fus1, fus2):
 		seq.addNote("Sequence contains Fusion of " + fus1.getIdentity() + " with sequence " + fus2.getIdentity())
-
 
 	def scanEvents(self, events):
 		#create temporary dictionary

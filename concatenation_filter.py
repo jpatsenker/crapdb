@@ -107,11 +107,17 @@ class ConcatFilter(SewageFilter):
         #parse all concat events into concat event objects
         events = [] #list of concat events
 
+        ###DEBUG!!!!
+        hmmerOut = "tmp/767502.hmmerOut"
+        ###
+
+        """
         hmmerOut = "tmp/" + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
 
         hmmer_tools.loadHmmer()
 
         hmmer_tools.runHmmer(input_file, self.__reference_genome__, hmmerOut)
+        """
 
         events = self.parseHmmerIntoConcatEvents(hmmerOut)
 
