@@ -108,11 +108,15 @@ class DomTableReader:
 	def __enter__(self):
 		assert not self.__file_stream__.closed
 		check = self.__file_stream__.readline().rstrip()
-		assert check == "#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord"
+		#assert check == "#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord"
 		check = self.__file_stream__.readline().rstrip()
-		assert check == "# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target"
+		
+		#assert check == "# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target"
+		ref = ['target name', 'accession', 'tlen', 'query name', 'qlen', 'E-value', 'score', 'bias', '#', 'of', 'c-Evalue', 'i-Evalue', 'from', 'to', 'acc', 'description of target']
+		assert reduce(lambda b,c: b and c, map(lambda a: a>=0, map(lambda x: string.find(check, x), ref)), True)
+
 		check = self.__file_stream__.readline().rstrip()
-		assert check == "#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------"
+		#assert check == "#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------"
 		return self
 
 	def readRow(self):
