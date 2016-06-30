@@ -108,7 +108,7 @@ class ConcatFilter(SewageFilter):
         events = [] #list of concat events
 
         ###DEBUG!!!!
-        hmmerOut = "tmp/767502.hmmerOut"
+        hmmerOut = "tmp/sturgeon_frog.hmmerOut"
         ###
 
         """
