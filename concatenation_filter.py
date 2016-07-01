@@ -63,7 +63,7 @@ class ConcatEvent:
         return self.__mainseq__
 
     def removeSubseq(self, subseq):
-        if subseq in self.__subseqs__:
+        if subseq in self.__subseqs__:  
             self.__subseqs__.pop(subseq)
             return True
         return False
@@ -149,6 +149,7 @@ class ConcatFilter(SewageFilter):
                                 raise Exception("Dirty Sequence should have notes!!!")
                             dirtyWriter.writeSequence(nextSeq)
                         else:
+                            print nextSeq
                             if nextSeq.getNotes() is not "":
                                 raise Exception("Clean Sequence shouldn't have notes!!!")
                             cleanWriter.writeSequence(nextSeq)
