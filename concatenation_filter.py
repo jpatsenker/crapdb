@@ -126,7 +126,8 @@ class ConcatFilter(SewageFilter):
 
         dirtySequences = self.scanEvents(events)
 
-        #print dirtySequences
+        import sys
+        print >> sys.stderr, dirtySequences
 
         with FastaReader(input_file) as reader:
             with FastaWriter(output_file) as cleanWriter:
