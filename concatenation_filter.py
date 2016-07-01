@@ -63,7 +63,10 @@ class ConcatEvent:
         return self.__mainseq__
 
     def removeSubseq(self, subseq):
-        self.__subseqs__.pop(subseq)
+        if subseq in self.__subseqs__
+            self.__subseqs__.pop(subseq)
+            return True
+        return False
 
     def __str__(self):
         return "Main Sequence: " + str(self.__mainseq__) + "\n" + "---Subsequences: " + str(self.__subseqs__) + "\n"
