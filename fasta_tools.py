@@ -42,7 +42,7 @@ class Sequence:
 		return str(self.__identity__)
 
 	def __eq__(self, other):
-		return self.__identity__.split()[0] == other.getIdentity.split()[0]
+		return self.__identity__.split()[0] == other.getIdentity().split()[0]
 
 	def __ne__(self, other):
 		return not self.__eq__(other)
