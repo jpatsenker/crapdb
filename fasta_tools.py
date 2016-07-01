@@ -33,7 +33,7 @@ class Sequence:
 		return self.__notes__
 
 	def __hash__(self):
-		return hash(self.__identity__)
+		return hash(self.__identity__.split()[0])
 
 	def __str__(self):
 		return str(self.__identity__)
@@ -42,7 +42,7 @@ class Sequence:
 		return str(self.__identity__)
 
 	def __eq__(self, other):
-		return self.__hash__() == other.__hash__()
+		return self.__identity__.split()[0] == other.getIdentity.split()[0]
 
 	def __ne__(self, other):
 		return not self.__eq__(other)
@@ -81,6 +81,7 @@ class FastaReader:
 		sequence = self.__file_stream__.readline().rstrip()
 		if not sequence:
 			return FastaReader.BADFORMAT
+
 		return Sequence(identity, sequence)
 
 	def __exit__(self ,type, value, traceback):
