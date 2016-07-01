@@ -46,11 +46,12 @@ class FissionFilter(ConcatFilter):
 		"""
 		Checks Suitability of Fission candidate, requiring overlap of less than 1 exon
 		"""
-		s = range(sequenceCoords[0], sequenceCoords[1])
-		c = range(candidateCoords[0], candidateCoords[1])
-		ss = set(s)
-		i = ss.intersection(c)
-		return len(i) < EXON_LENGTH
+		# s = range(sequenceCoords[0], sequenceCoords[1])
+		# c = range(candidateCoords[0], candidateCoords[1])
+		# ss = set(s)
+		# i = ss.intersection(c)
+		# return len(i) < EXON_LENGTH
+		return sequenceCoords[1] - candidateCoords[0] < EXON_LENGTH or candidateCoords[1] - sequenceCoords[0] < EXON_LENGTH
 
 
 	def mark(self, seq, pair, ref):
