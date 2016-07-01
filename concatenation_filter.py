@@ -126,7 +126,7 @@ class ConcatFilter(SewageFilter):
 
         dirtySequences = self.scanEvents(events)
 
-        print dirtySequences
+        #print dirtySequences
 
         with FastaReader(input_file) as reader:
             with FastaWriter(output_file) as cleanWriter:
@@ -134,22 +134,22 @@ class ConcatFilter(SewageFilter):
                     nextSeq = reader.readSequence()
                     while nextSeq is not FastaReader.EOF:
                         if nextSeq in dirtySequences:
-                            print nextSeq
+                            print "Dirty: " + nextSeq
                             tmpDirtySeq = set()
                             placeholderSeq = dirtySequences.pop()
                             while placeholderSeq != nextSeq:
-                                print placeholderSeq
-                                print dirtySequences
+                                #print placeholderSeq
+                                #print dirtySequences
                                 tmpDirtySeq.add(placeholderSeq)
                                 placeholderSeq = dirtySequences.pop()
                             dirtySequences = dirtySequences.union(tmpDirtySeq)
-                            print dirtySequences
+                            #print dirtySequences
                             nextSeq.addNote(placeholderSeq.getNotes().rstrip())
                             if placeholderSeq.getNotes() is "":
                                 raise Exception("Dirty Sequence should have notes!!!")
                             dirtyWriter.writeSequence(nextSeq)
                         else:
-                            print nextSeq
+                            print "Clean: " + nextSeq
                             if nextSeq.getNotes() is not "":
                                 raise Exception("Clean Sequence shouldn't have notes!!!")
                             cleanWriter.writeSequence(nextSeq)
