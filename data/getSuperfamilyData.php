@@ -1,5 +1,5 @@
 <?php
-	$servername = "devkirschner_superfamily";
+	$servername = "localhost";
 	$username = "jp263";
 	$password = "ronda,1n,ropesM";
 
