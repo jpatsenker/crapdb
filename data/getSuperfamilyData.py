@@ -1,11 +1,5 @@
 import string
 
-
-class Genome:
-	def __init__(self, name, )
-
-
-
 header = None
 
 #convert into csv and get header
