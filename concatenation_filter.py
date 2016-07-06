@@ -7,6 +7,7 @@ import hmmer_tools
 from hmmer_tools import DomTableRow
 from hmmer_tools import DomTableReader
 import random
+import sys
 
 
 
@@ -36,14 +37,14 @@ class ConcatEvent:
         Method for adding subsequence to event
         """
         if not self.__subseqs__.has_key(subseq):
-            self.__subseqs__[subseq] = 0
+            self.__subseqs__[subseq] = (sys.maxint,0)
 
     def setCoords(self, subseq, coordinate):
         """
         Method for setting coordinates of sequence
         """
         if self.__subseqs__.has_key(subseq):
-            self.__subseqs__[subseq] = coordinate
+            self.__subseqs__[subseq] = ConcatEvent.merge(self.__subseqs__[subseq], coordinate)
         else:
             raise Exception("Cannot set coordinates for non-existant subsequence " + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
 
@@ -76,6 +77,10 @@ class ConcatEvent:
 
     def getMatchingLength(self, subseq):
         return self.__subseqs__[subseq][1]-self.__subseqs__[subseq][0]
+
+    @staticmethod
+    def merge(tA, tB):
+        return (min(tA[0], tB[0]), max(tA[1], tB[1]))
 
 class ConcatFilter(SewageFilter):
     __metaclass__ = ABCMeta
