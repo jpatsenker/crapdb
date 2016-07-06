@@ -29,6 +29,7 @@ class FissionFilter(ConcatFilter):
 				if row == DomTableReader.BADFORMAT:
 					break
 				if row.getEvalue() > E_VALUE_CUTOFF:
+					print "Evalue too low"
 					row = reader.readRow()
 					continue
 				seq = Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))
