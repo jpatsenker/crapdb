@@ -55,7 +55,7 @@ class FissionFilter(ConcatFilter):
 
 
 	def mark(self, seq, pair, ref):
-		seq.addNote("Sequence is Fission of " + ref.getIdentity() + " with sequence " + seq.getIdentity())
+		seq.addNote("Sequence is Fission of " + ref.getIdentity() + " with sequence " + pair.getIdentity())
 
 	def scanEvents(self, events):
 		#create temporary dictionary
