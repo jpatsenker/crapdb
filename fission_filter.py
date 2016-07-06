@@ -5,6 +5,7 @@ from fasta_tools import Sequence
 
 
 EXON_LENGTH = 30
+E_VALUE_CUTOFF = 1e-20
 
 
 class FissionEvent(ConcatEvent):
@@ -27,6 +28,9 @@ class FissionFilter(ConcatFilter):
 			while not row == DomTableReader.EOF:
 				if row == DomTableReader.BADFORMAT:
 					break
+				if row.getEvalue() > E_VALUE_CUTOFF:
+					row = reader.readRow()
+					continue
 				seq = Sequence(row.getTarget(), Sequence.PLACEHOLDER(row.getTLen()))
 				ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 				try:
