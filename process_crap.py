@@ -175,8 +175,8 @@ try:
     aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
 except Exception:
     print "A Filter has broken!"
-    logtools.add_fatal_error(logfil, "<><><><><><><><><><><><><><><><><><>\nFATAL ERROR CAUGHT SENDING EMAIL\n<><><><><><><><><><><><><><><><><><>")
-    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").replace("/www/","") + '/' + logfil + '"> Log File </a><br>', eAddress)
+    logtools.add_fatal_error(logfil, "\n<><><><><><><><><><><><><><><><><><>\nFATAL ERROR CAUGHT SENDING EMAIL\n<><><><><><><><><><><><><><><><><><>\n!!!!!!!")
+    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").split("/www/")[1] + '/' + logfil + '"> Log File </a><br>', eAddress)
     exit(1)
 
 with open(aFiles[0], "r") as analysisFile:
