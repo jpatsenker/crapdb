@@ -12,7 +12,7 @@
                                 <br><b>FASTA: </b> <input type="file" name="fastaseq"><p>
                                 <b>EMAIL: </b> <input type="text" name="email"></input>
                                 <p><b>PARAMETERS</b></p>
-                                <table border=1>
+                                <table>
                                     <tr>
                                         <td><b>Sequence Length:</b>
                                     </tr>
