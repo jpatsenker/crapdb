@@ -47,7 +47,7 @@
                                         <td class="setting">
                                             Identity (t):
                                             <input type="text" name="ct" value="0.7"></input>
-                                            Fractional Length (f):</td>
+                                            Fractional Length (f):
                                             <input type="text" name="cl" value="0.8"></input>
                                         </td>
                                     </tr>
