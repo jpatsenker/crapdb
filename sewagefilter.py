@@ -7,6 +7,7 @@ class SewageFilter:
 
     def __init__(self):
         super(SewageFilter, self).__init__()
+        self.__logfile__ = None
 
 
 
@@ -24,6 +25,12 @@ class SewageFilter:
 
     def get_name(self):
         return self.__name__
+
+    def set_logfile(self, logfile):
+        self.__logfile__ = logfile
+
+    def has_logfile(self):
+        return self.__logfile__ is not None
 
     @staticmethod
     def break_filter():

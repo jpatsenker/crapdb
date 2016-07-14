@@ -135,32 +135,47 @@ for i in range(5):
     a.append(NumSeqAnalyzer(logfil, dFile))
 
 
+logtools.add_to_log("STAGING ALL FILTERS", logfil)
+logtools.add_start(logfil)
+
 #FILTERS
 ss.add_module(fasta_filter)
+logtools.add_line_to_log(logfil, "<Staging Fasta Filter>")
 ss.add_module(a[0])
 ss.add_module(simple_filter)
+logtools.add_line_to_log(logfil, "<Staging Simple Filter>")
 if not no_len:
     ss.add_module(a[1])
     ss.add_module(len_filter)
+    logtools.add_line_to_log(logfil, "<Staging Length Filter>")
     print "Staging Length Filter"
 if not no_comp:
     ss.add_module(a[2])
     ss.add_module(comp_filter)
+    logtools.add_line_to_log(logfil, "<Staging Complexity Filter>")
     print "Staging Complexity Filter"
 if not no_red:
     ss.add_module(a[3])
     ss.add_module(red_filter)
+    logtools.add_line_to_log(logfil, "<Staging Redundancy Filter>")
     print "Staging Redundancy Filter"
 if not no_fusfis:
     ss.add_module(a[4])
     ss.add_module(fusfis_filter)
+    logtools.add_line_to_log(logfil, "<Staging Fission/Fusion Filter>")
     print "Staging Fusion/Fission Filter"
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
+logtools.add_end(logfil)
+
 open(dFile, "w").close()
 
-aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
+try:
+    aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
+except Exception:
+    print "Oh no! Broken filter: " + self.modules[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
+    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").replace("/www/","") + '"> Log File </a><br>')
 
 with open(aFiles[0], "r") as analysisFile:
     before_seq = analysisFile.read()

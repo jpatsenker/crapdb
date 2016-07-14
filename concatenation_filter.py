@@ -10,6 +10,35 @@ import random
 import sys
 
 
+class AlignmentInfo:
+
+    def __init__(self, qf, qt, tf, tt, e):
+        self.__queryFrom__ = qf
+        self.__queryTo__ = qt
+        self.__targetFrom__ = tf
+        self.__targetTo__ = tt
+        self.__evalue__ = e
+
+    def getQueryFrom(self):
+        return self.__queryFrom__
+    def getQueryTo(self):
+        return self.__queryTo__
+    def getTargetFrom(self):
+        return self.__targetFrom__
+    def getTargetTo(self):
+        return self.__targetTo__
+    def getEValue(self):
+        return self.__evalue__
+    def setQueryFrom(self, qf):
+        self.__queryFrom__ = qf
+    def setQueryTo(self, qt):
+        self.__queryTo__ = qt
+    def setTargetFrom(self, tf):
+        self.__targetFrom__ = tf
+    def setTargetTo(self, tt):
+        self.__targetTo__ = tt
+    def setEValue(self, e):
+        self.__evalue__ = e
 
 
 class ConcatEvent:
@@ -37,14 +66,14 @@ class ConcatEvent:
         Method for adding subsequence to event
         """
         if not self.__subseqs__.has_key(subseq):
-            self.__subseqs__[subseq] = (sys.maxint,0)
+            self.__subseqs__[subseq] = []
 
-    def setCoords(self, subseq, coordinate):
+    def setCoords(self, subseq, coordinates):
         """
         Method for setting coordinates of sequence
         """
         if self.__subseqs__.has_key(subseq):
-            self.__subseqs__[subseq] = ConcatEvent.merge(self.__subseqs__[subseq], coordinate)
+            self.__subseqs__[subseq].append(coordinates)
         else:
             raise Exception("Cannot set coordinates for non-existant subsequence " + str(subseq) + " (main sequence: " + str(self.__mainseq__) + ")")
 
@@ -75,12 +104,43 @@ class ConcatEvent:
     def __repr__(self):
         return "Main Sequence: " + str(self.__mainseq__) + "\n" + "---Subsequences: " + str(self.__subseqs__) + "\n"
 
-    def getMatchingLength(self, subseq):
-        return self.__subseqs__[subseq][1]-self.__subseqs__[subseq][0]
+    def finalize(self):
+        for subseq in self.__subseqs__:
+            if not self.attemptMergeRegions(subseq):
+                self.removeSubseq(subseq)
 
-    @staticmethod
-    def merge(tA, tB):
-        return (min(tA[0], tB[0]), max(tA[1], tB[1]))
+    def attemptMergeRegions(self, subseq):
+        if self.checkIfReshuffled(subseq):
+            return False
+        final = AlignmentInfo(sys.maxint, 0, sys.maxint, 0, 0)
+        for ai in self.__subseqs__[subseq]:
+            if ai.getQueryFrom()<final.getQueryFrom():
+                final.setQueryFrom(ai.getQueryFrom())
+            if ai.getQueryTo()>final.getQueryTo():
+                final.setQueryTo(ai.getQueryTo())
+            if ai.getTargetFrom()<final.getTargetFrom():
+                final.setTargetFrom(ai.getTargetFrom())
+            if ai.getTargetTo()<final.getTargetTo():
+                final.setTargetTo(ai.getTargetTo())
+            final.setEValue(ai.getEValue())
+        self.__subseqs__[subseq] = [final]
+        return True
+
+    def getMatchingLength(self, subseq):
+        length = 0
+        full = set()
+        for ai in self.__subseqs__[subseq]:
+            full.union(set(range(ai.getQueryFrom(), ai.getQueryTo)))
+        return len(full)
+
+    def checkIfReshuffled(self, subseq):
+        sortedSubseqs = dict( zip( map(AlignmentInfo.getQueryFrom, list(self.__subseqs__[subseq])), list(self.__subseqs__[subseq])))
+        currentBottom = 0
+        for bot in sortedSubseqs:
+            if sortedSubseqs[bot].getTargetFrom() < currentBottom:
+                return True
+        return False
+
 
 class ConcatFilter(SewageFilter):
     __metaclass__ = ABCMeta
@@ -115,10 +175,8 @@ class ConcatFilter(SewageFilter):
         #parse all concat events into concat event objects
         events = [] #list of concat events
 
-        ###DEBUG!!!!
+        ###"""DEBUG!!!!
         hmmerOut = "test/sturgeon_frog.hmmerOut"
-        ###
-
         """
         hmmerOut = "tmp/" + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
 
@@ -128,6 +186,10 @@ class ConcatFilter(SewageFilter):
         """
 
         events = self.parseHmmerIntoConcatEvents(hmmerOut)
+
+        #finalize events
+        for event in events:
+            event.finalize()
 
         dirtySequences = self.scanEvents(events)
 

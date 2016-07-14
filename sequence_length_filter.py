@@ -1,4 +1,5 @@
 from sewagefilter import SewageFilter
+import logtools
 
 
 class SeqLengthFilter(SewageFilter):
@@ -7,6 +8,8 @@ class SeqLengthFilter(SewageFilter):
 
     __lower_thresh__ = None #smallest protein
     __upper_thresh__ = None #longest protein
+
+    ERROR = -666
 
     def __init__(self, lthresh, uthresh):
         super(SewageFilter, self).__init__()
@@ -23,7 +26,8 @@ class SeqLengthFilter(SewageFilter):
                     assert line[0] == ">"
                 except AssertionError:
                     print line
-                    exit(1)
+                    logtools.add_fatal_error(self.__logfile__, "The input fasta file to this filter has invalid formatting, error on line: " + line)
+                    raise Exception("Oh no!")
                 sequence = input_stream.readline()
                 sequence = sequence.rstrip("\n")
                 if len(sequence) > self.__upper_thresh__:

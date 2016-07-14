@@ -1,19 +1,19 @@
 from os.path import basename
 from sewagefilter import SewageFilter
 import lsftools as lsf
+import logtools
 
 
 
 
 class RedundancyFilter(SewageFilter):
 
-    __name__ = "CDHIT_CHECK_FILTER"
+    __name__ = "INTERSEQUENCE_REDUNDANCY_FILTER"
 
     __cd_hit__ = "/opt/cdhit-4.6/cd-hit"
 
     __threshold_level__ = None
     __fractional_level__ = None
-    __log_file__ = None
 
 
     __temp_hash__ = None
@@ -22,7 +22,7 @@ class RedundancyFilter(SewageFilter):
         super(SewageFilter, self).__init__()
         self.__threshold_level__ = thresh
         self.__fractional_level__ = frac
-        self.__log_file__ = lfil
+        self.__logfile__ = lfil
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
@@ -35,8 +35,9 @@ class RedundancyFilter(SewageFilter):
 
         temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
-        lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__) + " -d 0", wait=True, lfil=self.__log_file__) #submit lsf job
+        lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__) + " -d 0", wait=True, lfil=self.__logfile__) #submit lsf job
         self.prepare_temp_hash(input_file, temporary + ".clstr")
+        logtools.add_line_to_log(self.__logfile__, "---Filtering redundant sequences")
         with open(temporary + ".clstr", "r") as temp_stream:
             with open(output_file, "w") as out_stream:
                 with open(diagnostics_file, "a") as d_stream:
@@ -63,6 +64,8 @@ class RedundancyFilter(SewageFilter):
                             #print "seeking back to " + str(savpos)
                         tline = temp_stream.readline()
                         #print tline
+        logtools.add_line_to_log(self.__logfile__, "---Filtering Complete")
+
 
     def getCdhitfileIDLength(self, cdhit_file):
         #print cdhit_file
@@ -76,11 +79,13 @@ class RedundancyFilter(SewageFilter):
                 l = cd_stream.readline()
         if length == 0:
             print "No proper cdhit file present: " + cdhit_file
-            exit(1)
+            logtools.add_fatal_error(self.__logfile__, "No proper cdhit file found!!! Expected: " + cdhit_file)
+            raise Exception("Oh no!")
         return length
 
 
     def prepare_temp_hash(self, input_file, cdhit_file):
+        logtools.add_line_to_log(self.__logfile__, "---Preparing Temporary Hash of CDHIT raw output")
         r = self.getCdhitfileIDLength(cdhit_file)
         self.__temp_hash__ = {}
         with open(input_file, "r") as in_stream:
@@ -89,6 +94,7 @@ class RedundancyFilter(SewageFilter):
                 self.__temp_hash__[l[:r].split()[0]]=in_stream.tell()-len(l)
                 in_stream.readline()
                 l = in_stream.readline()
+        logtools.add_line_to_log(self.__logfile__, "---Completed Temporary Hash")
 
 
     def find_corresponding_line(self, cdhitline, in_stream, bad=None, rseq = False):
@@ -99,7 +105,8 @@ class RedundancyFilter(SewageFilter):
             print "Improperly put together hash in CDHIT filter!!! Couldn't find start" + prot + "end"
             print "From line: " + cdhitline
             print self.__temp_hash__
-            exit(1)
+            logtools.add_fatal_error(self.__logfile__, "Hash Error in Redundancy Filter. Couldn't find '" + prot + "'")
+            raise Exception("Oh no!")
         in_stream.seek(position)
         l = in_stream.readline()
         seq = in_stream.readline()

@@ -3,14 +3,33 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 
+def send_error(error, email):
+    sender = 'noreply@kirschner.med.harvard.edu'
+    receivers = email
+
+    message = MIMEMultipart(
+        From="CRA Server <noreply@kirschner.med.harvard.edu>",
+        Subject="CRA SERVER ERROR!!!"
+    )
+
+    body = MIMEText(error, 'html')
+    message.attach(body)
+
+    try:
+        smtpObj = smtplib.SMTP('localhost')
+        smtpObj.sendmail(sender, receivers, message.as_string())
+        print "Successfully sent email"
+    except smtplib.SMTPException:
+        print "Error: unable to send email"
+
 
 def send_email(info, email, files):
     sender = 'noreply@kirschner.med.harvard.edu'
     receivers = email
 
     message = MIMEMultipart(
-        From="CRAP DB <noreply@kirschner.med.harvard.edu>",
-        Subject="CRAP Score"
+        From="CRA Server <noreply@kirschner.med.harvard.edu>",
+        Subject="CRA Results"
     )
 
     body = MIMEText(info, 'html')

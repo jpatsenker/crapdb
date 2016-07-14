@@ -14,12 +14,14 @@ def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "s
     """
 
     if lfil is not None:
-        logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command)
+        logtools.add_line_to_log(lfil, "<CMD:> bsub -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command)
         #logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " " + command)
 
     a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command])
     if wait:
         a.wait()
+        if lfil is not None:
+            logtools.add_line_to_log(lfil, "<CMD EXECUTED>")
     if bsub_output!="/dev/null" and not dont_clean:
         clean_file(bsub_output)
     if return_process:

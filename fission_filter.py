@@ -36,14 +36,14 @@ class FissionFilter(ConcatFilter):
 				ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 				try:
 					events[seq].addSubseq(ss)
-					events[seq].setCoords(ss, (int(row.getTargetFrom()), int(row.getTargetTo())))
+					events[seq].setCoords(ss, (int(row.getTargetFrom()), int(row.getTargetTo()), int(row.getQueryFrom()), int(row.getQueryTo()), float(row.getEValue())))
 				except KeyError as e:
 					#print e
 					#print "Making new event for sequence, " + str(seq) + " (Hash: " + str(hash(seq)) + ")"
 					#print events
 					events[seq] = FissionEvent(seq)
 					events[seq].addSubseq(ss)
-					events[seq].setCoords(ss, (int(row.getTargetFrom()), int(row.getTargetTo())))
+					events[seq].setCoords(ss, (int(row.getTargetFrom()), int(row.getTargetTo()), int(row.getQueryFrom()), int(row.getQueryTo()), float(row.getEValue())))
 				row = reader.readRow()
 		return events.values()
 
@@ -87,15 +87,18 @@ class FissionFilter(ConcatFilter):
 							needClean = True
 			events = list(new_events.values())
 
-
+		infoCSV = "fissionInfo.csv"
 		dirtySequences = []
-		#mark every query gene for fission if a suitable partner is found
-		for event in events:
-			subseqs = event.getSubseqs()
-			for subseq in subseqs.keys():
-				for candidate in subseqs.keys():
-					if self.checkSuitability(subseqs[subseq], subseqs[candidate]):
-						self.mark(subseq, candidate, event.getMainSeq())
-						dirtySequences.append(subseq)
+		with open(infoCSV, "w") as csvWriter:
+			csvWriter.write("Query,Pair,Reference,Evalue,QueryFrom,QueryTo,TargetFrom,TargetTo")
+			#mark every query gene for fission if a suitable partner is found
+			for event in events:
+				subseqs = event.getSubseqs()
+				for subseq in subseqs.keys():
+					for candidate in subseqs.keys():
+						if self.checkSuitability(subseqs[subseq], subseqs[candidate]):
+							self.mark(subseq, candidate, event.getMainSeq())
+							csvWriter.write(subseq + "," + "")
+							dirtySequences.append(subseq)
 
 		return set(dirtySequences)

@@ -27,5 +27,7 @@ with open("superfamily/genomes", "r") as reader:
 
 with open("superfamily/genomeInfo.csv", "r") as csvReader:
 	with open("superfamily/filteredGenomeInfo.csv", "w") as csvWriter:
-		map(lambda line: csvWriter.write(line.split(",")[1] + "," + line.split(",")[8] + "\n"), csvReader)
-
+		map(
+			lambda line:
+				csvWriter.write(line.split(",")[1] + "," + line.split(",")[8] + "\n"),
+			csvReader)

@@ -1,22 +1,21 @@
 from os.path import basename
 from sewagefilter import SewageFilter
 import lsftools as lsf
+import logtools
 
 
 class ComplexityFilter(SewageFilter):
 
-    __name__ = "0J_CHECK_FILTER"
+    __name__ = "COMPLEXITY_FILTER"
 
     __zero_j__ = "/www/kirschner.med.harvard.edu/docroot/genomes/code/0j/0j.py"
 
     __threshold_level__ = None
 
-    __log_fil__ = None
-
     def __init__(self, thresh, lfil = None):
         super(SewageFilter, self).__init__()
         self.__threshold_level__ = thresh
-        self.__log_fil__ = lfil
+        self.__logfile__ = lfil
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
@@ -27,7 +26,7 @@ class ComplexityFilter(SewageFilter):
         :return:
         """
         temporary = "tmp/" + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
-        lsf.run_job('"' + self.__zero_j__ + " -scores_only " + input_file + " > " + temporary + '"', wait=True, lfil=self.__log_fil__) #submit lsf job
+        lsf.run_job('"' + self.__zero_j__ + " -scores_only " + input_file + " > " + temporary + '"', wait=True, lfil=self.__logfile__) #submit lsf job
         with open(temporary, "r") as complexity_data: #open output
             with open(input_file, "r") as check_stream: #open input_file for lengths of sequences as well as checking names
                 with open(output_file, "w") as out_stream: #open out_file
@@ -44,12 +43,14 @@ class ComplexityFilter(SewageFilter):
                             except AssertionError:
                                 print "Caught assert err\n"
                                 print "-" + info[0] + "-\n-" + corresponding_line_id[1:].rstrip("\n") + "-\n"
-                                exit(1)
+                                logtools.add_fatal_error(self.__logfile__, "Sequence order doesn't match up in 0j and input files")
+                                raise Exception("Oh no!")
                             try:
                                 complexity = float(1) - float(info[2])/len(sequence) #calc. complexity (1-compressability)
                             except ValueError:
                                 print "Error Parsing raw 0j output"
-                                exit(1)
+                                logtools.add_fatal_error(self.__logfile__, "Cannot parse 0j raw output")
+                                raise Exception("Oh no!")
                             if complexity > self.__threshold_level__:
                                 out_stream.write(corresponding_line + sequence + "\n")
                             else:

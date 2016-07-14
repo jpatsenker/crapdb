@@ -1,9 +1,10 @@
 from sewagefilter import SewageFilter
+import logtools
 
 
 class SimpleFilter(SewageFilter):
 
-    __name__ = "SIMPLE_CRAP_FILTER"
+    __name__ = "SIMPLE_FILTER"
 
     __ms__ = None
     __xs__ = None
@@ -15,6 +16,9 @@ class SimpleFilter(SewageFilter):
         self.__xs__=xs
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
+        logtools.add_line_to_log(self.__logfile__, "---Filtering out sequences with more than " + self.__xs__ + " Xs")
+        if self.__ms__:
+            logtools.add_line_to_log(self.__logfile__, "---Filtering out sequences that don't start with M")
         open(output_file, "w").close()
         with open(input_file, "r") as input_stream:
             line = input_stream.readline()

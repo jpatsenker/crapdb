@@ -30,13 +30,21 @@ class SewageSystem:
         if exclude_modules is None:
             exclude_modules = []
 
-        #print 'rm' + ' ' +  '-f ' +  temp_dir + os.path.basename(input_file) + "*"
+        logtools.add_to_log("ALLOCATING FILES FOR CURRENT JOB", log)
+        
+        logtools.add_start(log)
+        logtools.add_line_to_log(log, 'Running CMD: rm -f ' +  temp_dir + os.path.basename(input_file) + "*")
         subprocess.Popen(['rm', '-f', temp_dir + os.path.basename(input_file) + "*"]).wait()
 
+        logtools.add_line_to_log(log, 'Running CMD: cp ' + input_file + ' ' + temp_dir + os.path.basename(input_file))
         shutil.copyfile(input_file, temp_dir + os.path.basename(input_file))
+
+        logtools.add_end(log)
 
         tfile_base = temp_dir + os.path.basename(input_file)
         tfiles = [tfile_base]
+
+
 
         for fnum in range(len(self.modules) - len(exclude_modules)):
             tfiles.append(tfile_base + "." + str(fnum))
@@ -53,14 +61,13 @@ class SewageSystem:
             if isinstance(self.modules[fnum], SewageFilter):
                 try:
                     if log is not None:
+                        if not self.modules[fnum].has_logfile():
+                            self.modules[fnum].set_logfile(log)
                         logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running filter. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
                         logtools.add_start(log)
                     self.modules[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
                     if log is not None:
                         logtools.add_end(log)
-                except BrokenFilterError:
-                    print "Oh no! Broken filter: " + self.modules[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
-                    exit(1)
                 except TypeError as e:
                     print "Its this type: " + str(self.modules[fnum]) + "\n"
                     print str(e) + "\n"
