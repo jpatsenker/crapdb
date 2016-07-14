@@ -12,9 +12,9 @@
                                 <br><b>FASTA: </b> <input type="file" name="fastaseq"><p>
                                 <b>EMAIL: </b> <input type="text" name="email"></input>
                                 <p><b>PARAMETERS</b></p>
-                                <table>
+                                <table border=1>
                                     <tr>
-                                        <td><b>SEQUENCE LENGTH SETTINGS:</b>
+                                        <td><b>Sequence Length:</b>
                                     </tr>
                                     <tr>
                                         <td>Minimum (m): </td>
@@ -27,7 +27,7 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td><b>INTRA-SEQUENCE COMPLEXITY SETTINGS</b></td>
+                                        <td><b>Intra-Sequence Complexity</b></td>
                                     </tr>
                                     <tr>
                                         <td>Complexity (c): </td>
@@ -38,7 +38,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td><b>INTER-SEQUENCE REDUNDANCY SETTINGS</b></td>
+                                        <td><b>Inter-Sequence Redundancy</b></td>
                                     <tr>
                                         <td>Identity (t):</td>
                                         <td><input type="text" name="ct" value="0.7"></input></td>
@@ -50,7 +50,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td><b>MISC. SETTINGS</b></td>
+                                        <td><b>Miscellaneous Settings</b></td>
                                     </tr>
                                     <tr>
                                         <td>"X" tolerance (x):</td>
