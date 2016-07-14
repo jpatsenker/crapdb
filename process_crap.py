@@ -175,7 +175,7 @@ try:
     aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
 except Exception:
     print "A Filter has broken!"
-    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").replace("/www/","") + '"> Log File </a><br>', eAddress)
+    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").replace("/www/","") + '/' + logfil + '"> Log File </a><br>', eAddress)
     exit(1)
 
 with open(aFiles[0], "r") as analysisFile:
