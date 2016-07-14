@@ -6,7 +6,6 @@ class SewageFilter:
     __name__ = None
 
     def __init__(self):
-        super(SewageFilter, self).__init__()
         self.__logfile__ = None
 
 
@@ -31,10 +30,6 @@ class SewageFilter:
 
     def has_logfile(self):
         return self.__logfile__ is not None
-
-    @staticmethod
-    def break_filter():
-        raise BrokenFilterError
 
 class BrokenFilterError(Exception):
     def __init__(self, fil):
