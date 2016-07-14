@@ -14,44 +14,57 @@
                                 <p><b>PARAMETERS</b></p>
                                 <table>
                                     <tr>
-                                        <td>CD-HIT Threshold:</td>
-                                        <td><input type="text" name="ct" value="0.7"></input></td>
+                                        <td><b>SEQUENCE LENGTH SETTINGS:</b>
                                     </tr>
                                     <tr>
-                                        <td>CD-HIT Fractional Length:</td>
-                                        <td><input type="text" name="cl" value="0.8"></input></td>
-                                    </tr>
-                                    <tr>
-                                        <td>0j Minimum Complexity: </td>
-                                        <td><input type="text" name="zj" value="0.9"></input></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Minimum Length: </td>
+                                        <td>Minimum (m): </td>
                                         <td><input type="text" name="min" value="30"></input></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Maximum Length: </td>
+                                        <td>Maximum (n): </td>
                                         <td><input type="text" name="max" value="30000"></input></td>
                                     </tr>
                                     <tr>
-                                        <td>Maximum Number of "X"s to be ignored:</td>
+                                        <td>Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td><b>INTRA-SEQUENCE COMPLEXITY SETTINGS</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complexity (c): </td>
+                                        <td><input type="text" name="zj" value="0.9"></input></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
+                                    </tr>
+
+                                    <tr>
+                                        <td><b>INTER-SEQUENCE REDUNDANCY SETTINGS</b></td>
+                                    <tr>
+                                        <td>Identity (t):</td>
+                                        <td><input type="text" name="ct" value="0.7"></input></td>
+                                        <td>Fractional Length (f):</td>
+                                        <td><input type="text" name="cl" value="0.8"></input></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
+                                    </tr>
+
+                                    <tr>
+                                        <td><b>MISC. SETTINGS</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td>"X" tolerance (x):</td>
                                         <td><input type="text" name="xs" value="0"></input></td>
                                     </tr>
                                     <tr>
-                                        <td>Fusion/Fission Threshold:</td>
-                                        <td><input type="text" name="fft" value="0.7"></input></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fusion/Fission Fractional Length:</td>
-                                        <td><input type="text" name="ffl" value="0.8"></input></td>
+                                        <td>Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
                                     </tr>
                                 </table>
                                 <div style="height:20px;"></div>
                                 <input type="checkbox" name="ms"> Check for M at beginning of sequence? <br>
-                                <input type="checkbox" name="dlen"> Destage Length Filter? <br>
-                                <input type="checkbox" name="dcomp"> Destage Complexity (0j) Filter? <br>
-                                <input type="checkbox" name="dred"> Destage Redundancy (CD-HIT) Filter? <br>
-                                <input type="checkbox" name="dff"> Destage Fusion/Fission (CD-HIT w/ Human Genome) Filter? <br>
+                                <input type="checkbox" name="dlen"> Bypass Length Filter? <br>
+                                <input type="checkbox" name="dcomp"> Bypass Intra-Sequence Complexity Filter? <br>
+                                <input type="checkbox" name="dred"> Bypass Inter-Sequence Redundancy Filter? <br>
                                 <p></p>
                                 <input type="submit"/>
                             </div>
