@@ -56,7 +56,6 @@
                                 <input type="submit"/>
                             </div>
 <p>
-                    <a href="index.php"><div class="headline">C.R.A.P. web server</div> <p> </a>
                         </form>
                     </div>
                 </div>
