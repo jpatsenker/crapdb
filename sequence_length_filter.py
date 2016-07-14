@@ -1,4 +1,5 @@
 from sewagefilter import SewageFilter
+from sewagefilter import BrokenFilterError
 import logtools
 
 
@@ -27,7 +28,7 @@ class SeqLengthFilter(SewageFilter):
                 except AssertionError:
                     print line
                     logtools.add_fatal_error(self.__logfile__, "The input fasta file to this filter has invalid formatting, error on line: " + line)
-                    raise Exception("Oh no!")
+                    raise BrokenFilterError(SeqLengthFilter.__name__)
                 sequence = input_stream.readline()
                 sequence = sequence.rstrip("\n")
                 if len(sequence) > self.__upper_thresh__:

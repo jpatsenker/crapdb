@@ -37,4 +37,5 @@ class SewageFilter:
         raise BrokenFilterError
 
 class BrokenFilterError(Exception):
-    pass
+    def __init__(self, fil):
+        super(self, BrokenFilterError).__init__("The filter <" + str(fil) + "> has broken!!!")

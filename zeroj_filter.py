@@ -1,5 +1,6 @@
 from os.path import basename
 from sewagefilter import SewageFilter
+from sewagefilter import BrokenFilterError
 import lsftools as lsf
 import logtools
 
@@ -44,13 +45,13 @@ class ComplexityFilter(SewageFilter):
                                 print "Caught assert err\n"
                                 print "-" + info[0] + "-\n-" + corresponding_line_id[1:].rstrip("\n") + "-\n"
                                 logtools.add_fatal_error(self.__logfile__, "Sequence order doesn't match up in 0j and input files")
-                                raise Exception("Oh no!")
+                                raise BrokenFilterError(ComplexityFilter.__name__)
                             try:
                                 complexity = float(1) - float(info[2])/len(sequence) #calc. complexity (1-compressability)
                             except ValueError:
                                 print "Error Parsing raw 0j output"
                                 logtools.add_fatal_error(self.__logfile__, "Cannot parse 0j raw output")
-                                raise Exception("Oh no!")
+                                raise BrokenFilterError(ComplexityFilter.__name__)
                             if complexity > self.__threshold_level__:
                                 out_stream.write(corresponding_line + sequence + "\n")
                             else:

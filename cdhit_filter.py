@@ -1,5 +1,6 @@
 from os.path import basename
 from sewagefilter import SewageFilter
+from sewagefilter import BrokenFilterError
 import lsftools as lsf
 import logtools
 
@@ -80,7 +81,7 @@ class RedundancyFilter(SewageFilter):
         if length == 0:
             print "No proper cdhit file present: " + cdhit_file
             logtools.add_fatal_error(self.__logfile__, "No proper cdhit file found!!! Expected: " + cdhit_file)
-            raise Exception("Oh no!")
+            raise BrokenFilterError(RedundancyFilter.__name__)
         return length
 
 
@@ -106,7 +107,7 @@ class RedundancyFilter(SewageFilter):
             print "From line: " + cdhitline
             print self.__temp_hash__
             logtools.add_fatal_error(self.__logfile__, "Hash Error in Redundancy Filter. Couldn't find '" + prot + "'")
-            raise Exception("Oh no!")
+            raise BrokenFilterError(RedundancyFilter.__name__)
         in_stream.seek(position)
         l = in_stream.readline()
         seq = in_stream.readline()
