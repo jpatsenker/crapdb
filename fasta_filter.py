@@ -11,7 +11,7 @@ class FastaCheckerFilter(SewageFilter):
     __fasta_checker__ = "/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker_for_crap.pl"
 
     def __init__(self):
-        super(SewageFilter, self).__init__()
+        super(FastaCheckerFilter, self).__init__()
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
