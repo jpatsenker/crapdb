@@ -59,39 +59,39 @@ class SewageSystem:
             if con:
                 continue
             if isinstance(self.modules[fnum], SewageFilter):
-                try:
-                    if log is not None:
-                        if not self.modules[fnum].has_logfile():
-                            self.modules[fnum].set_logfile(log)
-                        logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running filter. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
-                        logtools.add_start(log)
-                    self.modules[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
-                    if log is not None:
-                        logtools.add_end(log)
-                except TypeError as e:
-                    print "Its this type: " + str(self.modules[fnum]) + "\n"
-                    print str(e) + "\n"
-                    exit(1)
+                #try:
+                if log is not None:
+                    if not self.modules[fnum].has_logfile():
+                        self.modules[fnum].set_logfile(log)
+                    logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running filter. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
+                    logtools.add_start(log)
+                self.modules[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
+                if log is not None:
+                    logtools.add_end(log)
+                #except TypeError as e:
+                #    print "Its this type: " + str(self.modules[fnum]) + "\n"
+                #    print str(e) + "\n"
+                #    exit(1)
             else:
                 assert isinstance(self.modules[fnum], SewageAnalyzer)
+                #try:
+                aFile = str(tfile_base) + self.modules[fnum].get_name() + str(fnum)
                 try:
-                    aFile = str(tfile_base) + self.modules[fnum].get_name() + str(fnum)
-                    try:
-                        os.remove(aFile)
-                    except (OSError, IOError):
-                        pass
-                    if log is not None:
-                        logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running analysis. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
-                        logtools.add_start(log)
-                    self.modules[fnum].analyze_crap(tfiles[fnum], aFile, graphic=False)
-                    shutil.copyfile(tfiles[fnum], tfiles[fnum+1])
-                    aFiles.append(aFile)
-                    if log is not None:
-                        logtools.add_end(log)
-                except TypeError as e:
-                    print "Its this type: " + str(self.modules[fnum]) + "\n"
-                    print str(e) + "\n"
-                    exit(1)
+                    os.remove(aFile)
+                except (OSError, IOError):
+                    pass
+                if log is not None:
+                    logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running analysis. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
+                    logtools.add_start(log)
+                self.modules[fnum].analyze_crap(tfiles[fnum], aFile, graphic=False)
+                shutil.copyfile(tfiles[fnum], tfiles[fnum+1])
+                aFiles.append(aFile)
+                if log is not None:
+                    logtools.add_end(log)
+                #except TypeError as e:
+                #    print "Its this type: " + str(self.modules[fnum]) + "\n"
+                #    print str(e) + "\n"
+                #    exit(1)
 
         shutil.copyfile(tfiles[-1], output_file)
         return aFiles

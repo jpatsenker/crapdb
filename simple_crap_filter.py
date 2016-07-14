@@ -16,7 +16,7 @@ class SimpleFilter(SewageFilter):
         self.__xs__=xs
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
-        logtools.add_line_to_log(self.__logfile__, "---Filtering out sequences with more than " + self.__xs__ + " Xs")
+        logtools.add_line_to_log(self.__logfile__, "---Filtering out sequences with more than " + str(self.__xs__) + " Xs")
         if self.__ms__:
             logtools.add_line_to_log(self.__logfile__, "---Filtering out sequences that don't start with M")
         open(output_file, "w").close()
