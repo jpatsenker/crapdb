@@ -65,5 +65,6 @@
 }
 
 .param{
-    width:2em;
+    width:4em;
+    text-align: right;
 }
