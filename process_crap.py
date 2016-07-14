@@ -175,7 +175,7 @@ try:
     aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
 except Exception:
     #print "Oh no! Broken filter: " + self.modules[fnum].get_name() + " (#" + str(fnum) + ") \n Sewage Clogged!!! \n"
-    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").replace("/www/","") + '"> Log File </a><br>')
+    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").replace("/www/","") + '"> Log File </a><br>', eAddress)
 
 with open(aFiles[0], "r") as analysisFile:
     before_seq = analysisFile.read()
