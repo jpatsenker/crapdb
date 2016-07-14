@@ -25,7 +25,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
+                                        <td class="descript">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
                                     </tr>
                                     
                                     <tr>
@@ -38,7 +38,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
+                                        <td class="descript">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
                                     </tr>
 
                                     <tr>
@@ -52,7 +52,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
+                                        <td class="descript">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
                                     </tr>
 
                                     <tr>
@@ -65,7 +65,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
+                                        <td class="descript">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="ms"> Check for M at beginning of sequence? </td>
