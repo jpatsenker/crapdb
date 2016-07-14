@@ -19,9 +19,9 @@
                                     <tr>
                                         <td class="setting">
                                             Minimum (m):
-                                            <input type="text" name="min" value="30"></input>
+                                            <input type="text" name="min" value="30" class="param"></input>
                                             Maximum (n):
-                                            <input type="text" name="max" value="30000"></input>
+                                            <input type="text" name="max" value="30000" class="param"></input>
                                         </td>
                                     </tr>
                                     <tr>
@@ -34,7 +34,7 @@
                                     <tr>
                                         <td class="setting">
                                             Complexity (c):
-                                            <input type="text" name="zj" value="0.9"></input>
+                                            <input type="text" name="zj" value="0.9" class="param"></input>
                                         </td>
                                     </tr>
                                     <tr>
@@ -46,9 +46,9 @@
                                     <tr>
                                         <td class="setting">
                                             Identity (t):
-                                            <input type="text" name="ct" value="0.7"></input>
+                                            <input type="text" name="ct" value="0.7" class="param"></input>
                                             Fractional Length (f):
-                                            <input type="text" name="cl" value="0.8"></input>
+                                            <input type="text" name="cl" value="0.8" class="param"></input>
                                         </td>
                                     </tr>
                                     <tr>
@@ -61,7 +61,7 @@
                                     <tr>
                                         <td class="setting">
                                             "X" tolerance (x):
-                                            <input type="text" name="xs" value="0"></input>
+                                            <input type="text" name="xs" value="0" class="param"></input>
                                         </td>
                                     </tr>
                                     <tr>
