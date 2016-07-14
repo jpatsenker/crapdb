@@ -17,7 +17,7 @@
                                         <td><b>Sequence Length:</b>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td class="setting">
                                             Minimum (m):
                                             <input type="text" name="min" value="30"></input>
                                             Maximum (n):
@@ -25,26 +25,26 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="descript">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
+                                        <td class="descript setting">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td><b>Intra-Sequence Complexity:</b></td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td class="setting">
                                             Complexity (c):
                                             <input type="text" name="zj" value="0.9"></input>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="descript">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
+                                        <td class="descript setting">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
                                     </tr>
 
                                     <tr>
                                         <td><b>Inter-Sequence Redundancy:</b></td>
                                     <tr>
-                                        <td>
+                                        <td class="setting">
                                             Identity (t):
                                             <input type="text" name="ct" value="0.7"></input>
                                             Fractional Length (f):</td>
@@ -52,20 +52,20 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="descript">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
+                                        <td class="descript setting">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
                                     </tr>
 
                                     <tr>
                                         <td><b>Miscellaneous Settings:</b></td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td class="setting">
                                             "X" tolerance (x):
                                             <input type="text" name="xs" value="0"></input>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="descript">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
+                                        <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="ms"> Check for M at beginning of sequence? </td>
