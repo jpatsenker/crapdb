@@ -175,6 +175,8 @@ except BrokenFilterError:
     mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").split("/www/")[1] + '/' + logfil + '"> Log File </a><br>', eAddress)
     exit(1)
 
+logtools.end_log(logfil)
+
 with open(aFiles[0], "r") as analysisFile:
     before_seq = analysisFile.read()
 with open(aFiles[-1], "r") as analysisFile:
