@@ -1,6 +1,7 @@
 from sequence_length_filter import SeqLengthFilter
 from num_seq_analyzer import NumSeqAnalyzer
 from sewagesystem import SewageSystem
+from sewagesystem import BrokenFilterError
 from zeroj_filter import ComplexityFilter
 from cdhit_filter import RedundancyFilter
 from simple_crap_filter import SimpleFilter
@@ -168,7 +169,7 @@ open(dFile, "w").close()
 
 try:
     aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
-except BrokenFilterException:
+except BrokenFilterError:
     print "A Filter has broken!"
     logtools.add_fatal_error(logfil, "\n<><><><><><><><><><><><><><><><><><>\nFATAL ERROR CAUGHT SENDING EMAIL\n<><><><><><><><><><><><><><><><><><>\n!!!!!!!")
     mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").split("/www/")[1] + '/' + logfil + '"> Log File </a><br>', eAddress)
