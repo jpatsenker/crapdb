@@ -13,7 +13,7 @@ class SeqLengthFilter(SewageFilter):
     ERROR = -666
 
     def __init__(self, lthresh, uthresh):
-        super(SewageFilter, self).__init__()
+        super(SeqLengthFilter, self).__init__()
         self.__lower_thresh__ = lthresh
         self.__upper_thresh__ = uthresh
 
