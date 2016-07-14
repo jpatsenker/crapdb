@@ -131,7 +131,7 @@ ss.add_module(num_seq_bef_anlzr) #check before
 
 #for debugging
 a = []
-for i in range(5):
+for i in range(4):
     a.append(NumSeqAnalyzer(logfil, dFile))
 
 
@@ -159,11 +159,6 @@ if not no_red:
     ss.add_module(red_filter)
     logtools.add_line_to_log(logfil, "<Staging Redundancy Filter>")
     print "Staging Redundancy Filter"
-if not no_fusfis:
-    ss.add_module(a[4])
-    ss.add_module(fusfis_filter)
-    logtools.add_line_to_log(logfil, "<Staging Fission/Fusion Filter>")
-    print "Staging Fusion/Fission Filter"
 
 ss.add_module(num_seq_aft_anlzr) #check after
 

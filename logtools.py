@@ -42,9 +42,9 @@ def add_line_to_log(log_file, line):
 
 def add_fatal_error(log_file, error):
     with open(log_file, "a") as lfil:
-        lfil.write("!!!!!!!FATAL ERROR\n")
+        lfil.write("!!!!!!!FATAL ERROR!!!!!!!\n")
         lfil.write("!!!!!!!" + error + "\n")
-        lfil.write("!!!!!!!FATAL ERROR\n")
+        lfil.write("!!!!!!!FATAL ERROR!!!!!!!\n")
         lfil.write("Please contact " + CONTACT_EMAIL + " for support\n")
 
 def end_log(log_file):
