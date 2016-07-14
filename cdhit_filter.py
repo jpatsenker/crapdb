@@ -20,7 +20,7 @@ class RedundancyFilter(SewageFilter):
     __temp_hash__ = None
 
     def __init__(self, thresh, frac, lfil = None):
-        super(SewageFilter, self).__init__()
+        super(RedundancyFilter, self).__init__()
         self.__threshold_level__ = thresh
         self.__fractional_level__ = frac
         self.__logfile__ = lfil

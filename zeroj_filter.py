@@ -14,7 +14,7 @@ class ComplexityFilter(SewageFilter):
     __threshold_level__ = None
 
     def __init__(self, thresh, lfil = None):
-        super(SewageFilter, self).__init__()
+        super(ComplexityFilter, self).__init__()
         self.__threshold_level__ = thresh
         self.__logfile__ = lfil
 

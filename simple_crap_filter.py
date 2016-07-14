@@ -11,7 +11,7 @@ class SimpleFilter(SewageFilter):
 
 
     def __init__(self, ms, xs):
-        super(SewageFilter, self).__init__()
+        super(SimpleFilter, self).__init__()
         self.__ms__=ms
         self.__xs__=xs
 
