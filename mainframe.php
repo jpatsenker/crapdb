@@ -64,12 +64,15 @@
                                         <td class="descript setting">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
                                     </tr>
                                     <tr>
-                                        <td class="setting" style="width:15em;">
-                                            Complexity (c):
-                                        </td>
-                                        <td>
-                                            <input type="text" name="zj" value="0.9" class="param"></input>
-                                        </td>
+                                        <table>
+                                            <tr>
+                                                <td class="setting" style="width:15em;">
+                                                    Complexity (c):
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="zj" value="0.9" class="param"></input>
+                                                </td>
+                                            </tr>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="dcomp"> Bypass Intra-Sequence Complexity Filter? </td>
