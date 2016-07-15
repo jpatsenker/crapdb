@@ -112,7 +112,7 @@
     
     echo "</div></td></tr></table>";
 
-    include "mainframe.php";
+    echo "<button>Back</button>"
 
 ?>
 
