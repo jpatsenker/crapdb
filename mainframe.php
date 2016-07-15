@@ -29,7 +29,7 @@
                                             <a href="javascript:toggle('Length_Description')"> (?) </a>
                                         </td>
                                     </tr>
-                                    <tr id = "Length_Description" style="display: none;width: 100%;">
+                                    <tr id = "Length_Description" style="display: none;width: 30em;">
                                         <td class="descript setting">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
                                     </tr>
                                     <tr>
@@ -46,7 +46,7 @@
                                     <tr>
                                         <td><b>Intra-Sequence Complexity:</b><a href="javascript:toggle('ISC_Description')"> (?) </a></td>
                                     </tr>
-                                    <tr id = "ISC_Description" style="display: none;width: 100%;">
+                                    <tr id = "ISC_Description" style="display: none;width: 30em;">
                                         <td class="descript setting">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
                                     </tr>
                                     <tr>
@@ -62,7 +62,7 @@
                                     <tr>
                                         <td><b>Inter-Sequence Redundancy:</b><a href="javascript:toggle('ISR_Description')"> (?) </a></td>
                                     </tr>
-                                    <tr id = 'ISR_Description' style="display: none;width: 100%;">
+                                    <tr id = 'ISR_Description' style="display: none;width: 30em;">
                                         <td class="descript setting">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
                                     </tr>
                                     <tr>
@@ -90,7 +90,7 @@
                                             <a href="javascript:toggle('XS_Description')"> (?) </a>
                                         </td>
                                     </tr>
-                                    <tr id = 'XS_Description' style="display: none;width: 10em">
+                                    <tr id = 'XS_Description' style="display: none;width: 30em">
                                         <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
                                     </tr>
                                     <tr>
