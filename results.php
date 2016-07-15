@@ -109,11 +109,10 @@
             }
             
     	}
-
-    echo '<form action="index.php"><input type="submit" value="Back"></form>'
     
     echo "</div></td></tr></table>";
 
+    echo '<form action="index.php"><input type="submit" value="Back"></form>'
 
 ?>
 
