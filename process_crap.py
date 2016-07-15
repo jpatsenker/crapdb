@@ -12,6 +12,7 @@ import sys
 import os
 import fasta_fixer
 import logtools
+import helptools
 
 
 iFile = None
@@ -79,38 +80,41 @@ no_red = False
 no_fusfis = False
 
 
-
-if len(sys.argv) > 5:
-    if "-0j" in sys.argv[5:]:
-        zeroj_param = float(sys.argv[sys.argv.index("-0j")+1])
-    if "-ct" in sys.argv[5:]:
-        cdhit_param_thresh = float(sys.argv[sys.argv.index("-ct")+1])
-    if "-cl" in sys.argv[5:]:
-        cdhit_param_flength = float(sys.argv[sys.argv.index("-cl")+1])
-    if "-min" in sys.argv[5:]:
-        min_len_param = int(sys.argv[sys.argv.index("-min")+1])
-    if "-max" in sys.argv[5:]:
-        max_len_param = int(sys.argv[sys.argv.index("-max")+1])
-    if "-fft" in sys.argv[5:]:
-        ff_param_thresh = float(sys.argv[sys.argv.index("-fft")+1])
-    if "-ffl" in sys.argv[5:]:
-        ff_param_flength = float(sys.argv[sys.argv.index("-ffl")+1])
-    if "-ms" in sys.argv[5:]:
-        ms_check = True
-    if "-xs" in sys.argv[5:]:
-        xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
-    # if "-nofasta" in sys.argv[5:]: #not recommended
-    #     no_fasta = True
-    # if "-nosimple" in sys.argv[5:]: #not recommended
-    #     no_simple = True
-    if "-nolen" in sys.argv[5:]:
-        no_len = True
-    if "-nocomp" in sys.argv[5:]:
-        no_comp = True
-    if "-nored" in sys.argv[5:]:
-        no_red = True
-    if "-noff" in sys.argv[5:]:
-        no_fusfis = True
+try:
+    if len(sys.argv) > 5:
+        if "-0j" in sys.argv[5:]:
+            zeroj_param = float(sys.argv[sys.argv.index("-0j")+1])
+        if "-ct" in sys.argv[5:]:
+            cdhit_param_thresh = float(sys.argv[sys.argv.index("-ct")+1])
+        if "-cl" in sys.argv[5:]:
+            cdhit_param_flength = float(sys.argv[sys.argv.index("-cl")+1])
+        if "-min" in sys.argv[5:]:
+            min_len_param = int(sys.argv[sys.argv.index("-min")+1])
+        if "-max" in sys.argv[5:]:
+            max_len_param = int(sys.argv[sys.argv.index("-max")+1])
+        if "-fft" in sys.argv[5:]:
+            ff_param_thresh = float(sys.argv[sys.argv.index("-fft")+1])
+        if "-ffl" in sys.argv[5:]:
+            ff_param_flength = float(sys.argv[sys.argv.index("-ffl")+1])
+        if "-ms" in sys.argv[5:]:
+            ms_check = True
+        if "-xs" in sys.argv[5:]:
+            xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
+        # if "-nofasta" in sys.argv[5:]: #not recommended
+        #     no_fasta = True
+        # if "-nosimple" in sys.argv[5:]: #not recommended
+        #     no_simple = True
+        if "-nolen" in sys.argv[5:]:
+            no_len = True
+        if "-nocomp" in sys.argv[5:]:
+            no_comp = True
+        if "-nored" in sys.argv[5:]:
+            no_red = True
+        if "-noff" in sys.argv[5:]:
+            no_fusfis = True
+except ValueError:
+    helptools.printHelp()
+    exit(1)
 
 logtools.start_new_log(iFile, eAddress, logfil)
 
