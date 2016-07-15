@@ -2,7 +2,7 @@
     <HEAD>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <title>
-            CRAP
+            CRA
         </title>
         
     </HEAD>
@@ -112,7 +112,7 @@
     
     echo "</div></td></tr></table>";
 
-    echo '<form action="."><input type="submit" value="Back"></form>'
+    echo '<form action="index.php"><input type="submit" value="Back"></form>'
 
 ?>
 
