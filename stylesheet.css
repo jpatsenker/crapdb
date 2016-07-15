@@ -62,9 +62,8 @@
 
 .descript{
     font-size:75%;
-    border-style:solid;
-    border-width:1px;
-    border-color:#993333;
+    background-color:#993333;
+    color:#ffffff;
 }
 
 .param{
