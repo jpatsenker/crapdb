@@ -120,7 +120,7 @@
                                             <tr>
                                                 <td>
                                                     <tr>
-                                                        <td class="setting">
+                                                        <td class="setting" style="width:15em;">
                                                             "X" tolerance (x):
                                                         </td>
                                                         <td>
