@@ -63,7 +63,7 @@
 .descript{
     font-size:75%;
     border-style:solid;
-    border-size:2px;
+    border-width:2px;
 }
 
 .param{
