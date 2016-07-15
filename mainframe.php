@@ -64,7 +64,7 @@
                                         <td class="descript setting">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
                                     </tr>
                                     <tr>
-                                        <td class="setting">
+                                        <td class="setting" style="width:15em;">
                                             Complexity (c):
                                         </td>
                                         <td>
