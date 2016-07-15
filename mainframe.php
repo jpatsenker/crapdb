@@ -147,7 +147,7 @@
                             </div>
                             <p>
                             <div style="font-size:50%;">
-                                Contact with questions at moc.liamg@nikhsep backwards or moc.reknestap@nahtanoj
+                                <b>Contact:</b><i><br>moc.liamg@nikhsep backwards<br>moc.reknestap@nahtanoj backwards</i>
                             </div>
                         </form>
                     </div>
