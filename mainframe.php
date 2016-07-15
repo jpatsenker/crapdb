@@ -56,6 +56,8 @@
                                     <tr>
                                         <td class="setting">
                                             Complexity (c):
+                                        </td>
+                                        <td>
                                             <input type="text" name="zj" value="0.9" class="param"></input>
                                         </td>
                                     </tr>
@@ -72,12 +74,16 @@
                                     <tr>
                                         <td class="setting">
                                             Identity (t):
+                                        </td>
+                                        <td>
                                             <input type="text" name="ct" value="0.7" class="param"></input>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="setting">
                                             Fractional Length (f):
+                                        </td>
+                                        <td>
                                             <input type="text" name="cl" value="0.8" class="param"></input>
                                         </td>
                                     </tr>
