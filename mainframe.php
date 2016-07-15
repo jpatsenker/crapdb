@@ -122,6 +122,8 @@
                                                     <tr>
                                                         <td class="setting">
                                                             "X" tolerance (x):
+                                                        </td>
+                                                        <td>
                                                             <input type="text" name="xs" value="0" class="param"></input>
                                                             <a href="javascript:toggle('XS_Description')">(?)</a>
                                                         </td>
