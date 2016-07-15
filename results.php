@@ -112,7 +112,7 @@
     
     echo "</div></td></tr></table>";
 
-    echo "<button>Back</button>"
+    echo '<form action="."><input type="submit" value="Back"></form>'
 
 ?>
 
