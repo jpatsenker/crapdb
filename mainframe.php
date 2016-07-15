@@ -48,7 +48,7 @@
                                         <td><input type="checkbox" name="dlen"> Bypass Length Filter? </td>
                                     </tr>
                                     <tr>
-                                        <td><b>Intra-Sequence Complexity:</b><a href="javascript:toggle('ISC_Description')"> (?) </a></td>
+                                        <td><b>Intra-Sequence Complexity: </b><a href="javascript:toggle('ISC_Description')">(?)</a></td>
                                     </tr>
                                     <tr id = "ISC_Description" style="display: none;width: 20em;">
                                         <td class="descript setting">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
