@@ -116,17 +116,19 @@
                                         <td><b>Miscellaneous Settings:</b></td>
                                     </tr>
                                     <tr>
-                                        <table>
-                                            <tr>
-                                                <td class="setting" style="width:15em;">
-                                                    "X" tolerance (x):
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="xs" value="0" class="param"></input>
-                                                    <a href="javascript:toggle('XS_Description')">(?)</a>
-                                                </td>
-                                            </tr>
-                                        </table>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td class="setting" style="width:15em;">
+                                                        "X" tolerance (x):
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="xs" value="0" class="param"></input>
+                                                        <a href="javascript:toggle('XS_Description')">(?)</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
                                     </tr>
                                     <tr id = 'XS_Description' style="display: none;width: 20em">
                                         <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
