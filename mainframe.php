@@ -145,7 +145,10 @@
                                 <p></p>
                                 <input type="submit"/>
                             </div>
-<p>
+                            <p>
+                            <div style="font-size:50%;">
+                                Contact with questions at moc.liamg@nikhsep backwards or moc.reknestap@nahtanoj
+                            </div>
                         </form>
                     </div>
                 </div>
