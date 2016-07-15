@@ -90,7 +90,7 @@
                                             <a href="javascript:toggle('XS_Description')"> (?) </a>
                                         </td>
                                     </tr>
-                                    <tr id = 'XS_Description' style="display: none;width: 100%;">
+                                    <tr id = 'XS_Description' style="display: none;width: 10em">
                                         <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
                                     </tr>
                                     <tr>
