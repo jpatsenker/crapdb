@@ -61,13 +61,18 @@
 
                                     <tr>
                                         <td><b>Inter-Sequence Redundancy:</b><a href="javascript:toggle('ISR_Description')"> (?) </a></td>
-                                    <tr>
+                                    </tr>
                                     <tr id = 'ISR_Description' style="display: none;">
                                         <td class="descript setting">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
                                     </tr>
+                                    <tr>
                                         <td class="setting">
                                             Identity (t):
                                             <input type="text" name="ct" value="0.7" class="param"></input>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="setting">
                                             Fractional Length (f):
                                             <input type="text" name="cl" value="0.8" class="param"></input>
                                         </td>
