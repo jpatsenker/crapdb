@@ -118,16 +118,12 @@
                                     <tr>
                                         <table>
                                             <tr>
+                                                <td class="setting" style="width:15em;">
+                                                    "X" tolerance (x):
+                                                </td>
                                                 <td>
-                                                    <tr>
-                                                        <td class="setting" style="width:15em;">
-                                                            "X" tolerance (x):
-                                                        </td>
-                                                        <td>
-                                                            <input type="text" name="xs" value="0" class="param"></input>
-                                                            <a href="javascript:toggle('XS_Description')">(?)</a>
-                                                        </td>
-                                                    </tr>
+                                                    <input type="text" name="xs" value="0" class="param"></input>
+                                                    <a href="javascript:toggle('XS_Description')">(?)</a>
                                                 </td>
                                             </tr>
                                         </table>
