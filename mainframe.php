@@ -29,6 +29,9 @@
                                             <a href="javascript:toggle('Length_Description')"> (?) </a>
                                         </td>
                                     </tr>
+                                    <tr id = "Length_Description" style="display: none;">
+                                        <td class="descript setting">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
+                                    </tr>
                                     <tr>
                                         <td class="setting">
                                             Minimum (m):
@@ -37,14 +40,14 @@
                                             <input type="text" name="max" value="30000" class="param"></input>
                                         </td>
                                     </tr>
-                                    <tr id = "Length_Description" style="display: none;">
-                                        <td class="descript setting">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
-                                    </tr>
                                     <tr>
                                         <td><input type="checkbox" name="dlen"> Bypass Length Filter? </td>
                                     </tr>
                                     <tr>
-                                        <td><b>Intra-Sequence Complexity:</b></td>
+                                        <td><b>Intra-Sequence Complexity:</b><a href="javascript:toggle('ISC_Description')"> (?) </a></td>
+                                    </tr>
+                                    <tr id = "ISC_Description" style="display: none;">
+                                        <td class="descript setting">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
                                     </tr>
                                     <tr>
                                         <td class="setting">
@@ -53,15 +56,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="descript setting">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
-                                    </tr>
-                                    <tr>
                                         <td><input type="checkbox" name="dcomp"> Bypass Intra-Sequence Complexity Filter? </td>
                                     </tr>
 
                                     <tr>
-                                        <td><b>Inter-Sequence Redundancy:</b></td>
+                                        <td><b>Inter-Sequence Redundancy:</b><a href="javascript:toggle('ISR_Description')"> (?) </a></td>
                                     <tr>
+                                    <tr id = 'ISR_Description' style="display: none;">
+                                        <td class="descript setting">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
+                                    </tr>
                                         <td class="setting">
                                             Identity (t):
                                             <input type="text" name="ct" value="0.7" class="param"></input>
@@ -70,22 +73,19 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="descript setting">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
-                                    </tr>
-                                    <tr>
                                         <td><input type="checkbox" name="dred"> Bypass Inter-Sequence Redundancy Filter? </td>
                                     </tr>
                                     <tr>
                                         <td><b>Miscellaneous Settings:</b></td>
                                     </tr>
                                     <tr>
+                                        <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
+                                    </tr>
+                                    <tr>
                                         <td class="setting">
                                             "X" tolerance (x):
                                             <input type="text" name="xs" value="0" class="param"></input>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="ms"> Check for M at beginning of sequence? </td>
