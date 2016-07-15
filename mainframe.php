@@ -73,6 +73,7 @@
                                                     <input type="text" name="zj" value="0.9" class="param"></input>
                                                 </td>
                                             </tr>
+                                        </table>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="dcomp"> Bypass Intra-Sequence Complexity Filter? </td>
