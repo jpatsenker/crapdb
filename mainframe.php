@@ -25,8 +25,8 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            <b>Sequence Length:</b>
-                                            <a href="javascript:toggle('Length_Description')"> (?) </a>
+                                            <b>Sequence Length: </b>
+                                            <a href="javascript:toggle('Length_Description')">(?)</a>
                                         </td>
                                     </tr>
                                     <tr id = "Length_Description" style="display: none;width: 20em;">
@@ -64,7 +64,7 @@
                                     </tr>
 
                                     <tr>
-                                        <td><b>Inter-Sequence Redundancy:</b><a href="javascript:toggle('ISR_Description')"> (?) </a></td>
+                                        <td><b>Inter-Sequence Redundancy: </b><a href="javascript:toggle('ISR_Description')">(?)</a></td>
                                     </tr>
                                     <tr id = 'ISR_Description' style="display: none;width: 20em;">
                                         <td class="descript setting">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
@@ -91,7 +91,7 @@
                                         <td class="setting">
                                             "X" tolerance (x):
                                             <input type="text" name="xs" value="0" class="param"></input>
-                                            <a href="javascript:toggle('XS_Description')"> (?) </a>
+                                            <a href="javascript:toggle('XS_Description')">(?)</a>
                                         </td>
                                     </tr>
                                     <tr id = 'XS_Description' style="display: none;width: 20em">
