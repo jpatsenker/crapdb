@@ -27,7 +27,9 @@
                                     <tr>
                                         <td class="descript setting">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
                                     </tr>
-                                    
+                                    <tr>
+                                        <td><input type="checkbox" name="dlen"> Bypass Length Filter? </td>
+                                    </tr>
                                     <tr>
                                         <td><b>Intra-Sequence Complexity:</b></td>
                                     </tr>
@@ -39,6 +41,9 @@
                                     </tr>
                                     <tr>
                                         <td class="descript setting">Sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="dcomp"> Bypass Intra-Sequence Complexity Filter? </td>
                                     </tr>
 
                                     <tr>
@@ -54,7 +59,9 @@
                                     <tr>
                                         <td class="descript setting">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
                                     </tr>
-
+                                    <tr>
+                                        <td><input type="checkbox" name="dred"> Bypass Inter-Sequence Redundancy Filter? </td>
+                                    </tr>
                                     <tr>
                                         <td><b>Miscellaneous Settings:</b></td>
                                     </tr>
@@ -70,15 +77,9 @@
                                     <tr>
                                         <td><input type="checkbox" name="ms"> Check for M at beginning of sequence? </td>
                                     </tr>
-                                    <tr>
-                                        <td><input type="checkbox" name="dlen"> Bypass Length Filter? </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" name="dcomp"> Bypass Intra-Sequence Complexity Filter? </td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="checkbox" name="dred"> Bypass Inter-Sequence Redundancy Filter? </td>
-                                    </tr>
+                                    
+                                    
+                                    
                                 </table>
                                 <div style="height:20px;"></div>
                                 
