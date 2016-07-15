@@ -89,7 +89,7 @@
             if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
                 echo '<div class="notout">';
                 echo 'Error Moving File <br>';
-                echo '<form action="index.php"><input type="submit" value="Back"></form>'
+                echo '<form action="index.php"><input type="submit" value="Back"></form>';
 
             }else{
                 echo '<div class="outputs">';
@@ -108,7 +108,7 @@
                 
                 echo '<p> You will receive an email when the results are ready. </p>';
                 echo '<p><a href="logs/' . $next_id . '.log"> Log file for job </a></p>';
-                echo '<form action="index.php"><input type="submit" value="Back"></form>'
+                echo '<form action="index.php"><input type="submit" value="Back"></form>';
 
             }
             
