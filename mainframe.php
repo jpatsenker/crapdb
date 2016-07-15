@@ -71,24 +71,28 @@
                                     <tr id = 'ISR_Description' style="display: none;width: 20em;">
                                         <td class="descript setting">Catch sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
                                     </tr>
-                                    <table>
-                                        <tr>
-                                            <td class="setting">
-                                                Identity (t):
-                                            </td>
-                                            <td>
-                                                <input type="text" name="ct" value="0.7" class="param"></input>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="setting">
-                                                Fractional Length (f):
-                                            </td>
-                                            <td>
-                                                <input type="text" name="cl" value="0.8" class="param"></input>
-                                            </td>
-                                        </tr>
-                                    </table>
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td class="setting">
+                                                        Identity (t):
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="ct" value="0.7" class="param"></input>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="setting">
+                                                        Fractional Length (f):
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="cl" value="0.8" class="param"></input>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td><input type="checkbox" name="dred"> Bypass Inter-Sequence Redundancy Filter? </td>
                                     </tr>
