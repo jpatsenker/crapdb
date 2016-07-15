@@ -1,0 +1,22 @@
+#                                                                                         --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                     accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#             ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp261291_c2        -            312  4.8e-179  579.9   1.2   1   1  8.9e-179  8.9e-179  579.0   1.2     1   306  1461  1769  1461  1769 0.99 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp272258_c1        -            741  2.5e-197  643.3 151.7   1   8   6.7e-48   6.7e-48  149.4   1.6     2   115     5   118     4   150 0.92 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp272258_c1        -            741  2.5e-197  643.3 151.7   2   8  3.4e-127  3.4e-127  411.5  68.8   114   613   203   698   179   700 0.91 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp272258_c1        -            741  2.5e-197  643.3 151.7   3   8         1         1  -15.0  54.8   291   401   685   792   681   810 0.47 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp272258_c1        -            741  2.5e-197  643.3 151.7   4   8   2.3e-23   2.3e-23   68.3   0.1   666   733   839   906   830   912 0.92 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp272258_c1        -            741  2.5e-197  643.3 151.7   5   8   1.3e-06   1.3e-06   12.9   0.1   669   728   983  1039   967  1053 0.81 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp272258_c1        -            741  2.5e-197  643.3 151.7   6   8   3.8e-06   3.8e-06   11.4   0.1   669   727  1065  1119  1057  1132 0.84 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp272258_c1        -            741  2.5e-197  643.3 151.7   7   8   4.2e-06   4.2e-06   11.2   0.1   674   728  1142  1200  1127  1209 0.76 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+Xetro.I02019|Xetro.I02019.1|itsn2 -           1769 comp272258_c1        -            741  2.5e-197  643.3 151.7   8   8   4.1e-06   4.1e-06   11.3   0.0   670   727  1212  1267  1205  1271 0.83 (XP_004918242: PREDICTED: intersectin-2 isoform X1 [Xenopus (Silurana) tropicalis] {E=0})
+#
+# Program:         phmmer
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      test/ministurgeon2.fa
+# Target file:     test/minifrog2.fa
+# Option settings: phmmer --domtblout test/minisf2.hmmerOut test/ministurgeon2.fa test/minifrog2.fa 
+# Current dir:     /www/kirschner.med.harvard.edu/docroot/crap_site/crapdb04
+# Date:            Wed Jul  6 16:58:09 2016
+# [ok]
