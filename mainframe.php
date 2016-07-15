@@ -36,7 +36,7 @@
                                         <td>
                                             <table>
                                                 <tr>
-                                                    <td class="setting" style="width:120%;">
+                                                    <td class="setting" style="width:15em;">
                                                         Minimum (m):
                                                     </td>
                                                     <td>
@@ -44,7 +44,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="setting" style="width:120%;">
+                                                    <td class="setting" style="width:15em;">
                                                         Maximum (n):
                                                     </td>
                                                     <td>
@@ -93,7 +93,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="setting" style="width:120%;">
+                                                    <td class="setting" style="width:15em;">
                                                         Fractional Length (f):
                                                     </td>
                                                     <td>
