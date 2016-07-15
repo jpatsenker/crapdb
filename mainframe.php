@@ -14,7 +14,10 @@
                                 <p><b>PARAMETERS</b></p>
                                 <table>
                                     <tr>
-                                        <td><b>Sequence Length:</b>
+                                        <td>
+                                            <b>Sequence Length:</b>
+                                            <a href="javascript: toggle('File_Size')"> (help) </a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="setting">
@@ -24,7 +27,7 @@
                                             <input type="text" name="max" value="30000" class="param"></input>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr id = "Length_Description">
                                         <td class="descript setting">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
                                     </tr>
                                     <tr>
