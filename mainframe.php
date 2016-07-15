@@ -79,13 +79,14 @@
                                         <td><b>Miscellaneous Settings:</b></td>
                                     </tr>
                                     <tr>
-                                        <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
-                                    </tr>
-                                    <tr>
                                         <td class="setting">
                                             "X" tolerance (x):
                                             <input type="text" name="xs" value="0" class="param"></input>
+                                            <a href="javascript:toggle('XS_Description')"> (?) </a>
                                         </td>
+                                    </tr>
+                                    <tr id = 'XS_Description' style="display: none;">
+                                        <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="ms"> Check for M at beginning of sequence? </td>
