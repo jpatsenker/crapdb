@@ -28,22 +28,28 @@ try:
     dFile = sys.argv[3]
     eAddress = sys.argv[4]
 except IndexError:
-    print "Too Few Arguments for process_crap.py \n"
+    helptools.printHelp()
     exit(1)
 
-if "@" not in eAddress:
-    print "Invalid email given to process_crap.py \n"
-    exit(1)
-
-if not os.path.isdir(tDir):
-    print "Invalid temporary directory\n"
-    exit(1)
 
 if not os.path.exists(iFile):
     print "Invalid input fasta\n"
     exit(1)
 
 logfil = "logs/" + os.path.basename(iFile) + ".log"
+
+if "@" not in eAddress:
+    print "Invalid email given to process_crap.py \n"
+    logtools.add_fatal_error(logfil, "Invalid email address")
+    exit(1)
+
+if not os.path.isdir(tDir):
+    print "Invalid temporary directory\n"
+    logtools.add_fatal_error(logfil, "Invalid temporary directory set. FURTHER SERVER SETUP REQUIRED")
+    mailtools.send_error("Invalid temporary directory set. FURTHER SERVER SETUP REQUIRED", eAddress)
+    exit(1)
+
+
 
 try:
     os.remove(logfil)
