@@ -36,6 +36,10 @@
                                         <td class="setting">
                                             Minimum (m):
                                             <input type="text" name="min" value="30" class="param"></input>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="setting">
                                             Maximum (n):
                                             <input type="text" name="max" value="30000" class="param"></input>
                                         </td>
