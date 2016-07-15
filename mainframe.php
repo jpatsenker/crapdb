@@ -33,15 +33,25 @@
                                         <td class="descript setting">Catch sequences that are less <b>m</b> or more than <b>n</b> amino acids long.</td>
                                     </tr>
                                     <tr>
-                                        <td class="setting">
-                                            Minimum (m):
-                                            <input type="text" name="min" value="30" class="param"></input>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="setting">
-                                            Maximum (n):
-                                            <input type="text" name="max" value="30000" class="param"></input>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td class="setting" style="width:100%;">
+                                                        Minimum (m):
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="min" value="30" class="param"></input>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="setting" style="width:100%;">
+                                                        Maximum (n):
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="max" value="30000" class="param"></input>
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </td>
                                     </tr>
                                     <tr>
@@ -83,7 +93,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="setting">
+                                                    <td class="setting" style="width:100%;">
                                                         Fractional Length (f):
                                                     </td>
                                                     <td>
