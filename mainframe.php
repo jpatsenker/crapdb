@@ -16,7 +16,7 @@
                                     <tr>
                                         <td>
                                             <b>Sequence Length:</b>
-                                            <a href="javascript: toggle('File_Size')"> (?) </a>
+                                            <a href="javascript:toggle('File_Size')"> (?) </a>
                                         </td>
                                     </tr>
                                     <tr>
