@@ -116,11 +116,19 @@
                                         <td><b>Miscellaneous Settings:</b></td>
                                     </tr>
                                     <tr>
-                                        <td class="setting">
-                                            "X" tolerance (x):
-                                            <input type="text" name="xs" value="0" class="param"></input>
-                                            <a href="javascript:toggle('XS_Description')">(?)</a>
-                                        </td>
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <tr>
+                                                        <td class="setting">
+                                                            "X" tolerance (x):
+                                                            <input type="text" name="xs" value="0" class="param"></input>
+                                                            <a href="javascript:toggle('XS_Description')">(?)</a>
+                                                        </td>
+                                                    </tr>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </tr>
                                     <tr id = 'XS_Description' style="display: none;width: 20em">
                                         <td class="descript setting">Catch sequences with regions containing more than <b>x</b> consecutive "X"s</td>
