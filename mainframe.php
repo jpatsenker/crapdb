@@ -26,7 +26,7 @@
                                     <tr>
                                         <td>
                                             <b>Sequence Length:</b>
-                                            <a href="javascript:toggle('File_Size')"> (?) </a>
+                                            <a href="javascript:toggle('Length_Description')"> (?) </a>
                                         </td>
                                     </tr>
                                     <tr>
