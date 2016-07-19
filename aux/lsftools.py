@@ -20,7 +20,7 @@ def run_job(command, bsub_output="/dev/null", bsub_error="/dev/null", queue = "s
         logtools.add_line_to_log(lfil, "<CMD:> bsub -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command)
         #logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " " + command)
 
-    a = subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command])
+    a = subprocess.Popen(["/bin/bash", "-c" ,"./aux/run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command])
     if wait:
         a.wait()
         if lfil is not None:
@@ -51,7 +51,7 @@ def run_job_set(commands, bsub_output="/dev/null", bsub_error="/dev/null", queue
     a = []
     for i in range(len(commands)):
         print commands[i]
-        a.append(subprocess.Popen(["/bin/bash", "-c" ,"./run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + commands[i]]))
+        a.append(subprocess.Popen(["/bin/bash", "-c" ,"./aux/run_with_profile.sh -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + commands[i]]))
     for i in range(len(a)):
         a[i].wait()
     if bsub_output!="/dev/null" and not dont_clean:
