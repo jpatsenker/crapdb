@@ -56,6 +56,6 @@ class ComplexityFilter(SewageFilter):
                                 out_stream.write(corresponding_line + sequence + "\n")
                             else:
                                 with open(diagnostics_file, "a") as diag_stream:
-                                    diag_stream.write(corresponding_line.rstrip("\n") + " Too Low Complexity " + str(complexity) + " < " + str(self.__threshold_level__) + "\n" + sequence + "\n")
+                                    diag_stream.write(corresponding_line.rstrip("\n") + " Complexity Too Low:  " + ("%.3f" % str(complexity)) + " < " + str(self.__threshold_level__) + "\n" + sequence + "\n")
                             line = complexity_data.readline()
                             corresponding_line = check_stream.readline()
