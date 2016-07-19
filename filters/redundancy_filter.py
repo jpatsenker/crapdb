@@ -144,4 +144,4 @@ class RedundancyFilter(SewageFilter):
         linfo = l.split("\n")
         for line in linfo:
             if line.split()[-1]=="*":
-                return line.split()[2].rstrip(".")
+                return line.split()[2].rstrip(".").lstrip(">")
