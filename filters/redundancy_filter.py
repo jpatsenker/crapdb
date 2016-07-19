@@ -42,6 +42,7 @@ class RedundancyFilter(SewageFilter):
                 with open(diagnostics_file, "a") as d_stream:
                     tline = temp_stream.readline()
                     central_len = 0
+                    central_seq = ""
                     while tline:
                         if tline[0] != ">":
                             with open(input_file, "r") as in_stream:
@@ -53,12 +54,14 @@ class RedundancyFilter(SewageFilter):
                                     out_stream.write(self.find_corresponding_line(tline, in_stream))
                             else:
                                 with open(input_file, "r") as in_stream:
-                                    d_stream.write(self.find_corresponding_line(tline, in_stream, bad=" Sequence Is Redundant Fragment"))
+                                    d_stream.write(self.find_corresponding_line(tline, in_stream, bad=" Sequence is a Redundant Fragment with Central Sequence: " + central_seq))
                         else:
                             savpos = temp_stream.tell()
                             #print str(savpos)
                             central_len = self.getCentralLen(temp_stream, input_file)
                             #print "central len: " + str(central_len)
+                            temp_stream.seek(savpos)
+                            central_seq = self.getCentralSeq(temp_stream)
                             temp_stream.seek(savpos)
                             #print "seeking back to " + str(savpos)
                         tline = temp_stream.readline()
@@ -130,3 +133,15 @@ class RedundancyFilter(SewageFilter):
             if line.split()[-1]=="*":
                 with open(input_file, "r") as in_stream:
                     return len(self.find_corresponding_line(line, in_stream, rseq=True))
+
+    def getCentralSeq(self, temp_stream):
+        l = ""
+        n = temp_stream.readline()
+        while n and n[0] != ">":
+            l += n
+            n = temp_stream.readline()
+        #print "Cluster: " + l
+        linfo = l.split("\n")
+        for line in linfo:
+            if line.split()[-1]=="*":
+                return line.split()[2].rstrip(".")
