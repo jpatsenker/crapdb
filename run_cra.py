@@ -4,12 +4,11 @@ import os
 from filters.sequence_length_filter import SeqLengthFilter
 from analyzers.num_seq_analyzer import NumSeqAnalyzer
 from sewagesystem import SewageSystem
-from sewagesystem import BrokenFilterError
+from filters.sewagefilter import BrokenFilterError
 from filters.complexity_filter import ComplexityFilter
 from filters.redundancy_filter import RedundancyFilter
 from filters.simple_filter import SimpleFilter
 from filters.fasta_filter import FastaCheckerFilter
-from fusfis_filter import FusionFissionFilter
 from aux import logtools, mailtools, fasta_fixer, helptools
 
 iFile = None

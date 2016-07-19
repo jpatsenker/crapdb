@@ -8,7 +8,6 @@ from filters.complexity_filter import ComplexityFilter
 from filters.redundancy_filter import RedundancyFilter
 from filters.simple_filter import SimpleFilter
 from filters.fasta_filter import FastaCheckerFilter
-from fusfis_filter import FusionFissionFilter
 from aux import logtools, fasta_fixer
 
 iFile = None
