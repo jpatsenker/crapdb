@@ -65,7 +65,8 @@ class SewageSystem:
                         self.modules[fnum].set_logfile(log)
                     logtools.add_to_log(self.modules[fnum].get_name(), log, description="Running filter. File transition: " + tfiles[fnum] + " -> " + tfiles[fnum+1])
                     logtools.add_start(log)
-                self.modules[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
+                if os.stat(tfiles[fnum]).st_size != 0:
+                    self.modules[fnum].filter_crap(tfiles[fnum], tfiles[fnum+1], diagnostics_file)
                 if log is not None:
                     logtools.add_end(log)
                 #except TypeError as e:
