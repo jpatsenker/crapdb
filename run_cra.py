@@ -187,7 +187,7 @@ with open(aFiles[0], "r") as analysisFile:
 with open(aFiles[-1], "r") as analysisFile:
     after_seq = analysisFile.read()
 
-crap_score = 1 - float(after_seq)/float(before_seq)
+cra_score = 1 - float(after_seq)/float(before_seq)
 
 fullpath = os.getcwd()[os.getcwd().find("/www/") + 5:] +  "/" +  logfil
 
@@ -200,4 +200,4 @@ for a in sys.argv[1:]:
     else:
         para_str += " " + a
 
-mailtools.send_email("We ran CRAP version 2.0 on file " + iFile + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Original Num Sequences: " + str(before_seq) + "<br>Filtered Num Sequences: " + str(after_seq) + "<br>Final Crap Score: " + str(crap_score) + '<br> See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile])
+mailtools.send_email("We ran CRA version 1.0 on file " + iFile + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Initial Number of Sequences: " + str(before_seq) + "<br>Number of Clean Sequences: " + str(after_seq) + "<br>Final CRA Score: " + str(cra_score) + '<br> See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile])
