@@ -1,10 +1,11 @@
-from sewagefilter import SewageFilter
-from sewagefilter import BrokenFilterError
-from sewageanalyzer import SewageAnalyzer
 import shutil
 import subprocess
 import os
-import logtools
+
+from filters.sewagefilter import SewageFilter
+from analyzers.sewageanalyzer import SewageAnalyzer
+from aux import logtools
+
 
 class SewageSystem:
 
