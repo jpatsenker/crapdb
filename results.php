@@ -10,7 +10,6 @@
 
 
 <?php
-        die();
         function get_next_id(){
             $file_handle = fopen("INCREMENTFILE.num", "r+");
             while (!flock($file_handle, LOCK_EX)){
@@ -82,10 +81,8 @@
         $next_id = get_next_id();
         $fname = $_FILES['fastaseq']['tmp_name'];
         echo $fname;
-        die();
         $target_fname = explode(".", $fname)[0] . $next_id;
         $target_file = $target_dir . $target_fname;
-                 
         
         
         #move file into uploaded folder
