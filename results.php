@@ -81,13 +81,15 @@
         
         $target_dir = "uploaded_fasta/";
         $next_id = get_next_id();
-        $target_fname = explode(".", $_FILES['fastaseq']['tmp_name'])[0] . $next_id;
+        $fname = $_FILES['fastaseq']['tmp_name']);
+        echo $fname;
+        $target_fname = explode(".", $fname)[0] . $next_id;
         $target_file = $target_dir . $target_fname;
                  
         
         
         #move file into uploaded folder
-        if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
+        if(!move_uploaded_file($fname, $target_file)){
             echo '<div class="notout">';
             echo 'Error Moving File <br>';
 
