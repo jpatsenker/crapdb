@@ -78,10 +78,9 @@
             $ms = "";
         }
         
-        
+        die();
         $target_dir = "uploaded_fasta/";
         $next_id = get_next_id();
-        die();
         $fname = $_FILES['fastaseq']['tmp_name'];
         echo $fname;
         die();
