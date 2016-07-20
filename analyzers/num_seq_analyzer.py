@@ -24,10 +24,10 @@ class NumSeqAnalyzer(SewageAnalyzer):
         with open(analysis_file, "w") as analysis_stream:
             analysis_stream.write(str(num_seq))
         if self.__log_fil__ is not None:
-            logtools.add_line_to_log(self.__log_fil__, "Number of non-CRAP sequences left: " + str(num_seq))
+            logtools.add_line_to_log(self.__log_fil__, "Number of non-CRA sequences left: " + str(num_seq))
         if self.__mess_fil__ is not None:
             with open(self.__mess_fil__, "r") as input_stream:
                 every = input_stream.read()
                 stuff = every.split("\n")
                 mess_seq = int(len(stuff)/2)
-            logtools.add_line_to_log(self.__log_fil__, "Number of CRAP sequences currently: " + str(mess_seq))
+            logtools.add_line_to_log(self.__log_fil__, "Number of CRA sequences currently: " + str(mess_seq))

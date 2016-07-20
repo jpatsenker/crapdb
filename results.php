@@ -81,7 +81,8 @@
         
         $target_dir = "uploaded_fasta/";
         $next_id = get_next_id();
-        $target_file = $target_dir . $next_id;
+        $target_fname = $_FILES['fastaseq']['tmp_name'] . $next_id;
+        $target_file = $target_dir . $target_fname;
                  
         
         
@@ -97,7 +98,7 @@
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-            $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $next_id . ".log";
+            $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $target_fname . ".log";
             $fullpath = str_replace("/docroot/", "/", $fullpath);
             mail($email, "CRAP REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
             
