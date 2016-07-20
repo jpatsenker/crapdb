@@ -81,7 +81,7 @@
         $next_id = get_next_id();
         $fname = $_FILES['fastaseq']['name'];
         echo $fname;
-        $target_fname = explode(".", $fname)[0] . $next_id;
+        $target_fname = 'test';#explode(".", $fname)[0] . $next_id;
         $target_file = $target_dir . $target_fname;
         
         
