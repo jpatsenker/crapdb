@@ -81,7 +81,7 @@
         
         $target_dir = "uploaded_fasta/";
         $next_id = get_next_id();
-        $target_fname = $_FILES['fastaseq']['tmp_name'] . $next_id;
+        $target_fname = explode(".", $_FILES['fastaseq']['tmp_name']) . $next_id;
         $target_file = $target_dir . $target_fname;
                  
         
