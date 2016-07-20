@@ -2,6 +2,7 @@ from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
+import string
 
 def send_error(error, email):
     sender = 'noreply@kirschner.med.harvard.edu'
@@ -43,7 +44,7 @@ def send_email(info, email, files):
             open(f, "w").close()
             with open(f, "rb") as fil:
                 attach_file = MIMEApplication(fil.read())
-        attach_file.add_header('Content-Disposition', 'attachment', filename=f)
+        attach_file.add_header('Content-Disposition', 'attachment', filename=f.split('uploaded_fasta/')[1])
         message.attach(attach_file)
 
     try:
