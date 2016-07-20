@@ -10,7 +10,7 @@
 
 
 <?php
-
+        die();
         function get_next_id(){
             $file_handle = fopen("INCREMENTFILE.num", "r+");
             while (!flock($file_handle, LOCK_EX)){
@@ -78,7 +78,6 @@
             $ms = "";
         }
         
-        die();
         $target_dir = "uploaded_fasta/";
         $next_id = get_next_id();
         $fname = $_FILES['fastaseq']['tmp_name'];
