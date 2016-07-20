@@ -83,7 +83,6 @@
         $next_id = get_next_id();
         $fname = $_FILES['fastaseq']['tmp_name']);
         echo $fname;
-        /*
         $target_fname = explode(".", $fname)[0] . $next_id;
         $target_file = $target_dir . $target_fname;
                  
@@ -119,7 +118,7 @@
     echo '<form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>';
 
     echo "</div></td></tr></table>";
-*/
+
 ?>
 
     </BODY>
