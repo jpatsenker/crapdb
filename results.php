@@ -62,7 +62,7 @@
         }else{
             $dRed = "";
         }
-        if ($dComp -= "on"){
+        if ($dComp == "on"){
             $dComp = " -nocomp ";
         }else{
             $dComp = "";
