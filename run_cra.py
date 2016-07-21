@@ -125,9 +125,9 @@ except ValueError:
     exit(1)
 
 
-if refGenome is "human":
+if refGenome == "human":
     refGenome = HUMAN_GENOME_FILE
-if refGenome is "xtrop":
+if refGenome == "xtrop":
     refGenome = XTROP_GENOME_FILE
 else:
     if not os.path.exists(refGenome):
