@@ -29,7 +29,7 @@ class SimpleFilter(SewageFilter):
                     with open(diagnostics_file, "a") as diag_stream:
                         diag_stream.write(line.rstrip("\n") + " Invalid Characters in Sequence \n" + sequence + "\n")
                     line = input_stream.readline()
-                    continue;
+                    continue
                 if sequence[0] != 'M' and self.__ms__:
                     with open(diagnostics_file, "a") as diag_stream:
                         diag_stream.write(line.rstrip("\n") + " Sequence Does Not Start With M \n" + sequence + "\n")

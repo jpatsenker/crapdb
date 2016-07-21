@@ -19,7 +19,7 @@ def fix_file(input_file, output_file, lfil = None):
                         nl = True
                     final = ifile.read(1)
                 if datum == "":
-                    break;
+                    break
 
                 if datum.isspace() or len(datum) == 0:
                     continue

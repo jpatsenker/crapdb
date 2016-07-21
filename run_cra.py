@@ -204,6 +204,11 @@ except BrokenFilterError:
     logtools.add_fatal_error(logfil, "\n<><><><><><><><><><><><><><><><><><>\nFATAL ERROR CAUGHT SENDING EMAIL\n<><><><><><><><><><><><><><><><><><>\n!!!!!!!")
     mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").split("/www/")[1] + '/' + logfil + '"> Log File </a><br>', eAddress, lfil=logfil)
     exit(1)
+except Exception as e:
+    print "A Filter has broken!"
+    logtools.add_fatal_error(logfil, "\n<><><><><><><><><><><><><><><><><><>\nFATAL ERROR CAUGHT SENDING EMAIL\n<><><><><><><><><><><><><><><><><><>\n!!!!!!!")
+    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").split("/www/")[1] + '/' + logfil + '"> Log File </a><br>', eAddress, lfil=logfil)
+    raise e
 
 with open(aFiles[0], "r") as analysisFile:
     before_seq = analysisFile.read()
