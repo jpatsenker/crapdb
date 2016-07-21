@@ -44,8 +44,9 @@ def run_job_set(commands, bsub_output="/dev/null", bsub_error="/dev/null", queue
     :return: subprocess object in case return_process=True.
     """
 
-    if lfil is not None:
-        logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command)
+    for command in commands:
+        if lfil is not None:
+            logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " -o " + bsub_output + " -e " + bsub_error + " " + command)
         #logtools.add_line_to_log(lfil, "bsub -q " + queue + " -K -W " + str(timelim) + " " + command)
 
     a = []
@@ -58,6 +59,16 @@ def run_job_set(commands, bsub_output="/dev/null", bsub_error="/dev/null", queue
         clean_file(bsub_output)
     if return_process:
         return a
+
+def run_hmmer_parallel(inputFile, referenceFile, outputFile, bsub_output="/dev/null", bsub_error="/dev/null", lfil = None):
+    if lfil is not None:
+        logtools.add_line_to_log(lfil, 'bsub -q parallel -K -W 16:00 -o test/testParallel.stdout -e test/testParallel.stderr -n 50 -R "rusage[mem=2000]span[ptile=8]" -o ' + bsub_output + ' -e ' + bsub_error + ' phmmer --domtblout ' + outputFile + " " + inputFile + " " + referenceFile)
+    a = subprocess.Popen(["/bin/bash", "-c" ,'./aux/run_with_profile.sh -q parallel -K -W 16:00 -o test/testParallel.stdout -e test/testParallel.stderr -n 50 -R "rusage[mem=2000]span[ptile=8]" -o ' + bsub_output + ' -e ' + bsub_error + ' phmmer --domtblout ' + outputFile + " " + inputFile + " " + referenceFile])
+    a.wait()
+    if lfil is not None:
+        logtools.add_line_to_log(lfil, "<HMMER COMPLETE>")
+    return a
+
 
 def clean_file(file_name):
     """

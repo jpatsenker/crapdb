@@ -10,8 +10,8 @@ MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init"
 HMMER_PATH = "seq/hmmer/3.1"
 
 
-def runHmmer(sequences, reference, output):
-	run = lsftools.run_job("phmmer --domtblout " + output + " " + sequences + " " + reference, wait=True)
+def runHmmer(sequences, reference, output, lfil = None):
+	run = lsftools.run_hmmer_parallel(sequences, reference, output, lfil)
 	#print "phmmer --domtblout " + output + " " + sequences + " " + reference
 	#run = subprocess.Popen(["phmmer", "--domtblout", output, sequences, reference])
 	#run.wait()

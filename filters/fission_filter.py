@@ -18,6 +18,8 @@ class FissionEvent(ConcatEvent):
 
 class FissionFilter(ConcatFilter):
 
+	__name__ = "FISSION_FILTER"
+
 	def __init__(self, reference_genome):
 		super(FissionFilter, self).__init__(reference_genome)
 

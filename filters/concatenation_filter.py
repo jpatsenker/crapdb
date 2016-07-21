@@ -2,9 +2,12 @@ from abc import ABCMeta, abstractmethod
 import sys
 
 from filters.sewagefilter import SewageFilter
+from filters.sewagefilter import BrokenFilterError
 from model.fasta_tools import FastaReader
 from model.fasta_tools import FastaWriter
-
+from aux import hmmer_tools
+import random
+from aux import logtools
 
 class AlignmentInfo:
 
@@ -45,7 +48,6 @@ class ConcatEvent:
     """
 
     __metaclass__ = ABCMeta
-
     def __init__(self, mainseq):
         self.__mainseq__ = mainseq
         self.__subseqs__ = {} #dictionary of Sequence -> (Int, Int)
@@ -171,15 +173,15 @@ class ConcatFilter(SewageFilter):
         #parse all concat events into concat event objects
         events = [] #list of concat events
 
-        ###"""DEBUG!!!!
+        """DEBUG!!!!
         hmmerOut = "test/sturgeon_frog.hmmerOut"
         """
         hmmerOut = "tmp/" + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
 
         hmmer_tools.loadHmmer()
 
-        hmmer_tools.runHmmer(input_file, self.__reference_genome__, hmmerOut)
-        """
+        hmmer_tools.runHmmer(input_file, self.__reference_genome__, hmmerOut, self.__logfile__)
+        ###"""
 
         events = self.parseHmmerIntoConcatEvents(hmmerOut)
 
@@ -210,11 +212,13 @@ class ConcatFilter(SewageFilter):
                             #print dirtySequences
                             nextSeq.addNote(placeholderSeq.getNotes().rstrip())
                             if placeholderSeq.getNotes() is "":
-                                raise Exception("Dirty Sequence should have notes!!!")
+                                logtools.add_fatal_error("Dirty Sequence should have notes!!!", self.__logfile__)
+                                raise BrokenFilterError("Dirty Sequence should have notes!!!")
                             dirtyWriter.writeSequence(nextSeq)
                         else:
                             print "Clean: " + str(nextSeq)
                             if nextSeq.getNotes() is not "":
-                                raise Exception("Clean Sequence shouldn't have notes!!!")
+                                logtools.add_fatal_error("Clean Sequence should not have notes!!!", self.__logfile__)
+                                raise BrokenFilterError("Clean Sequence shouldn't have notes!!!")
                             cleanWriter.writeSequence(nextSeq)
                         nextSeq = reader.readSequence()
