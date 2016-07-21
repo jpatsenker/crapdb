@@ -11,7 +11,7 @@ HMMER_PATH = "seq/hmmer/3.1"
 
 
 def runHmmer(sequences, reference, output, lfil = None):
-	run = lsftools.run_hmmer_parallel(sequences, reference, output, lfil)
+	run = lsftools.run_hmmer_parallel(sequences, reference, output, lfil=lfil)
 	#print "phmmer --domtblout " + output + " " + sequences + " " + reference
 	#run = subprocess.Popen(["phmmer", "--domtblout", output, sequences, reference])
 	#run.wait()
