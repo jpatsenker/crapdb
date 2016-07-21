@@ -3,8 +3,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import smtplib
 import string
+import logtools
 
-def send_error(error, email):
+def send_error(error, email, lfil=None):
     sender = 'noreply@kirschner.med.harvard.edu'
     receivers = email
 
@@ -21,10 +22,12 @@ def send_error(error, email):
         smtpObj.sendmail(sender, receivers, message.as_string())
         print "Successfully sent email"
     except smtplib.SMTPException:
+        if lfil is not None:
+            logtools.add_fatal_error(lfil, "UNABLE TO SEND EMAIL!!!")
         print "Error: unable to send email"
 
 
-def send_email(info, email, files):
+def send_email(info, email, files, lfil=None):
     sender = 'noreply@kirschner.med.harvard.edu'
     receivers = email
 
@@ -52,4 +55,6 @@ def send_email(info, email, files):
         smtpObj.sendmail(sender, receivers, message.as_string())
         print "Successfully sent email"
     except smtplib.SMTPException:
+        if lfil is not None:
+            logtools.add_fatal_error(lfil, "UNABLE TO SEND EMAIL!!!")
         print "Error: unable to send email"

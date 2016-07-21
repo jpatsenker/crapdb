@@ -132,7 +132,7 @@ if refGenome is "xtrop":
 else:
     if not os.path.exists(refGenome):
         logtools.add_fatal_error(logfil, "Invalid Reference Genome File")
-        mailtools.send_error("Invalid Reference Genome File", eAddress)
+        mailtools.send_error("Invalid Reference Genome File", eAddress, lfil=logfil)
         print "Invalid Reference Genome File\n"
         exit(1)
 
@@ -202,10 +202,8 @@ try:
 except BrokenFilterError:
     print "A Filter has broken!"
     logtools.add_fatal_error(logfil, "\n<><><><><><><><><><><><><><><><><><>\nFATAL ERROR CAUGHT SENDING EMAIL\n<><><><><><><><><><><><><><><><><><>\n!!!!!!!")
-    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").split("/www/")[1] + '/' + logfil + '"> Log File </a><br>', eAddress)
+    mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").split("/www/")[1] + '/' + logfil + '"> Log File </a><br>', eAddress, lfil=logfil)
     exit(1)
-
-logtools.end_log(logfil)
 
 with open(aFiles[0], "r") as analysisFile:
     before_seq = analysisFile.read()
@@ -225,4 +223,6 @@ for a in sys.argv[1:]:
     else:
         para_str += " " + a
 
-mailtools.send_email("We ran CRA version 1.0 on file " + iFile + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Initial Number of Sequences: " + str(before_seq) + "<br>Number of Clean Sequences: " + str(after_seq) + "<br>Final CRA Score: " + ("%.3f" % cra_score) + '<br> See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile])
+mailtools.send_email("We ran CRA version 1.0 on file " + iFile + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Initial Number of Sequences: " + str(before_seq) + "<br>Number of Clean Sequences: " + str(after_seq) + "<br>Final CRA Score: " + ("%.3f" % cra_score) + '<br> See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile], lfil=logfil)
+
+logtools.end_log(logfil)
