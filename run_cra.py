@@ -9,7 +9,12 @@ from filters.complexity_filter import ComplexityFilter
 from filters.redundancy_filter import RedundancyFilter
 from filters.simple_filter import SimpleFilter
 from filters.fasta_filter import FastaCheckerFilter
+from filters.fission_filter import FissionFilter
 from aux import logtools, mailtools, fasta_fixer, helptools
+
+HUMAN_GENOME_FILE = "data/reference_genomes/hgfix.fa"
+XTROP_GENOME_FILE = "data/reference_genomes/xtfix.fa"
+
 
 iFile = None
 oFile = None
@@ -73,13 +78,14 @@ ff_param_thresh = .7
 ff_param_flength = .8
 ms_check = False
 xs_tolerance = 0
+refGenome = "human"
 
-no_fasta = False
-no_simple = False
+
 no_len = False
 no_comp = False
 no_red = False
-no_fusfis = False
+no_fis = False
+no_fus = False
 
 
 try:
@@ -102,21 +108,34 @@ try:
             ms_check = True
         if "-xs" in sys.argv[5:]:
             xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
-        # if "-nofasta" in sys.argv[5:]: #not recommended
-        #     no_fasta = True
-        # if "-nosimple" in sys.argv[5:]: #not recommended
-        #     no_simple = True
+        if "-rg" in sys.argv[5:]:
+            refGenome = sys.argv[sys.argv.index("-rg")+1]
         if "-nolen" in sys.argv[5:]:
             no_len = True
         if "-nocomp" in sys.argv[5:]:
             no_comp = True
         if "-nored" in sys.argv[5:]:
             no_red = True
-        if "-noff" in sys.argv[5:]:
-            no_fusfis = True
+        if "-nofis" in sys.argv[5:]:
+            no_fis = True
+        if "-nofus" in sys.argv[5:]:
+            no_fus = True
 except ValueError:
     helptools.printHelp()
     exit(1)
+
+
+if refGenome is "human":
+    refGenome = HUMAN_GENOME_FILE
+if refGenome is "xtrop":
+    refGenome = XTROP_GENOME_FILE
+else:
+    if not os.path.exists(refGenome):
+        logtools.add_fatal_error(logfil, "Invalid Reference Genome File")
+        mailtools.send_error("Invalid Reference Genome File", eAddress)
+        print "Invalid Reference Genome File\n"
+        exit(1)
+
 
 logtools.start_new_log(iFile, eAddress, logfil)
 
@@ -132,12 +151,13 @@ comp_filter = ComplexityFilter(zeroj_param, lfil=logfil)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength, lfil=logfil)
 simple_filter = SimpleFilter(ms_check, xs_tolerance)
 fasta_filter = FastaCheckerFilter()
+fission_filter = FissionFilter(refGenome)
 
 ss.add_module(num_seq_bef_anlzr) #check before
 
 #for debugging
 a = []
-for i in range(4):
+for i in range(5):
     a.append(NumSeqAnalyzer(logfil, dFile))
 
 
@@ -165,6 +185,11 @@ if not no_red:
     ss.add_module(red_filter)
     logtools.add_line_to_log(logfil, "<Staging Redundancy Filter>")
     print "Staging Redundancy Filter"
+if not no_fis:
+    ss.add_module(a[4])
+    ss.add_module(fission_filter)
+    logtools.add_line_to_log(logfil, "<Staging Fission Filter>")
+    print "Staging Fission Filter"
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
