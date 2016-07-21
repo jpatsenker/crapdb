@@ -196,7 +196,7 @@ class ConcatFilter(SewageFilter):
 
         with FastaReader(input_file) as reader:
             with FastaWriter(output_file) as cleanWriter:
-                with FastaWriter(diagnostics_file) as dirtyWriter:
+                with FastaWriter(diagnostics_file, options="a") as dirtyWriter:
                     nextSeq = reader.readSequence()
                     while nextSeq is not FastaReader.EOF:
                         if nextSeq in dirtySequences:
