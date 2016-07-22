@@ -79,6 +79,7 @@ class FissionFilter(ConcatFilter):
 				if len(subseqs) == 0 or len(subseqs) == 1:
 					if event.getMainSeq() in new_events:
 						new_events.pop(event.getMainSeq())
+						print "Popping event " + event.getMainSeq() + " -> " + event.getSubseqs()
 				else:
 					for subseq in subseqs.keys():
 						#if it isn't a realistic match, (< Exon length)
@@ -87,6 +88,7 @@ class FissionFilter(ConcatFilter):
 						if event.getMatchingLength(subseq) > event.getMainSeq().getSequenceLength() - EXON_LENGTH or event.getMatchingLength(subseq) < EXON_LENGTH:
 							for e in new_events.values():
 								e.removeSubseq(subseq)
+								print "Removing subseq " + subseq + " from " + event.getMainSeq()
 							needClean = True
 			events = list(new_events.values())
 
@@ -103,5 +105,5 @@ class FissionFilter(ConcatFilter):
 							self.mark(subseq, candidate, event.getMainSeq())
 							csvWriter.write(subseq + "," + "")
 							dirtySequences.append(subseq)
-
+		print dirtySequences
 		return set(dirtySequences)
