@@ -215,7 +215,7 @@ class ConcatFilter(SewageFilter):
                                 raise BrokenFilterError("Dirty Sequence should have notes!!!")
                             dirtyWriter.writeSequence(nextSeq)
                         else:
-                            print "Clean: " + str(nextSeq)
+                            #print "Clean: " + str(nextSeq)
                             if nextSeq.getNotes() is not "":
                                 logtools.add_fatal_error("Clean Sequence should not have notes!!!", self.__logfile__)
                                 raise BrokenFilterError("Clean Sequence shouldn't have notes!!!")
