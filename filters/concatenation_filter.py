@@ -124,7 +124,7 @@ class ConcatEvent:
                 final.setQueryTo(ai.getQueryTo())
             if ai.getTargetFrom()<final.getTargetFrom():
                 final.setTargetFrom(ai.getTargetFrom())
-            if ai.getTargetTo()<final.getTargetTo():
+            if ai.getTargetTo()>final.getTargetTo():
                 final.setTargetTo(ai.getTargetTo())
             final.setEValue(ai.getEValue())
         self.__subseqs__[subseq] = [final]
