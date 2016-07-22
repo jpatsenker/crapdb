@@ -39,6 +39,7 @@ class FissionFilter(ConcatFilter):
 				ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 				try:
 					events[seq].addSubseq(ss)
+					print "Setting " + str(ss) + " to " + str(AlignmentInfo(int(row.getQueryFrom()), int(row.getQueryTo()), int(row.getTargetFrom()), int(row.getTargetTo()), float(row.getEValue()))) + " -> " + str(seq)
 					events[seq].setCoords(ss, AlignmentInfo(int(row.getQueryFrom()), int(row.getQueryTo()), int(row.getTargetFrom()), int(row.getTargetTo()), float(row.getEValue())))
 				except KeyError as e:
 					#print e
