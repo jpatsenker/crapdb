@@ -128,7 +128,7 @@ class ConcatEvent:
                 final.setTargetTo(ai.getTargetTo())
             final.setEValue(ai.getEValue())
         self.__subseqs__[subseq] = [final]
-        print "finalized " + self.getMainSeq()
+        print "finalized " + str(self.getMainSeq())
         return True
 
     def getMatchingLength(self, subseq):
