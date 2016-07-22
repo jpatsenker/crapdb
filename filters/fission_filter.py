@@ -110,7 +110,7 @@ class FissionFilter(ConcatFilter):
 					for candidate in subseqs.keys():
 						if self.checkSuitability(subseqs[subseq][0], subseqs[candidate][0]):
 							self.mark(subseq, candidate, event.getMainSeq())
-							csvWriter.write(subseq + "," + "")
+							csvWriter.write(str(subseq) + "," + "")
 							dirtySequences.append(subseq)
 		print dirtySequences
 		return set(dirtySequences)
