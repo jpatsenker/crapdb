@@ -61,7 +61,7 @@ class FissionFilter(ConcatFilter):
 		# ss = set(s)
 		# i = ss.intersection(c)
 		# return len(i) < EXON_LENGTH
-		return sequenceCoords[1] - candidateCoords[0] < EXON_LENGTH or candidateCoords[1] - sequenceCoords[0] < EXON_LENGTH
+		return sequenceCoords.getTargetTo() - candidateCoords.getTargetFrom() < EXON_LENGTH or candidateCoords.getTargetTo() - sequenceCoords.getTargetFrom() < EXON_LENGTH
 
 
 	def mark(self, seq, pair, ref):
@@ -108,7 +108,7 @@ class FissionFilter(ConcatFilter):
 				subseqs = event.getSubseqs()
 				for subseq in subseqs.keys():
 					for candidate in subseqs.keys():
-						if self.checkSuitability(subseqs[subseq], subseqs[candidate]):
+						if self.checkSuitability(subseqs[subseq][0], subseqs[candidate][0]):
 							self.mark(subseq, candidate, event.getMainSeq())
 							csvWriter.write(subseq + "," + "")
 							dirtySequences.append(subseq)
