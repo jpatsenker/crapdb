@@ -89,6 +89,7 @@ class FissionFilter(ConcatFilter):
 							print event.getMatchingLength(subseq)
 							print event.getMainSeq()
 							print subseq
+							print event.getSubseqs()[subseq]
 							print event.getMainSeq().getSequenceLength()
 							for e in new_events.values():
 								e.removeSubseq(subseq)
