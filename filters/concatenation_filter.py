@@ -137,7 +137,7 @@ class ConcatEvent:
         for ai in self.__subseqs__[subseq]:
             print "-----adding region " + str(ai)
             print "---------" + str(range(ai.getQueryFrom(), ai.getQueryTo()))
-            full.union(set(range(ai.getQueryFrom(), ai.getQueryTo())))
+            full = full.union(set(range(ai.getQueryFrom(), ai.getQueryTo())))
         print "FINAL: " + str(full)
         print "FINAL LEN: " + str(len(full))
         return len(full)
