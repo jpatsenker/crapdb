@@ -127,7 +127,7 @@ class ConcatEvent:
     def getMatchingLength(self, subseq):
         full = set()
         for ai in self.__subseqs__[subseq]:
-            full.union(set(range(ai.getQueryFrom(), ai.getQueryTo)))
+            full.union(set(range(ai.getQueryFrom(), ai.getQueryTo())))
         return len(full)
 
     def checkIfReshuffled(self, subseq):
