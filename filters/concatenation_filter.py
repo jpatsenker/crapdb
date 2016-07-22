@@ -114,6 +114,8 @@ class ConcatEvent:
     def attemptMergeRegions(self, subseq):
         if self.checkIfReshuffled(subseq):
             return False
+        print subseq
+        print self.__subseqs__[subseq]
         final = AlignmentInfo(sys.maxint, 0, sys.maxint, 0, 0)
         for ai in self.__subseqs__[subseq]:
             if ai.getQueryFrom()<final.getQueryFrom():
@@ -126,6 +128,7 @@ class ConcatEvent:
                 final.setTargetTo(ai.getTargetTo())
             final.setEValue(ai.getEValue())
         self.__subseqs__[subseq] = [final]
+        print "finalized " + self.getMainSeq()
         return True
 
     def getMatchingLength(self, subseq):
