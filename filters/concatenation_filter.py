@@ -40,6 +40,8 @@ class AlignmentInfo:
         self.__evalue__ = e
     def __str__(self):
         return "Query: (" + str(self.__queryFrom__) + "->" + str(self.__queryTo__) + "), Target: (" + str(self.__targetFrom__) + "->" + str(self.__targetTo__) + "), e-value: " + str(self.__evalue__)
+    def __repr__(self):
+        return str(self)
 
 
 class ConcatEvent:
