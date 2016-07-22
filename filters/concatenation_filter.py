@@ -137,6 +137,8 @@ class ConcatEvent:
         for ai in self.__subseqs__[subseq]:
             print "-----adding region " + str(ai)
             full.union(set(range(ai.getQueryFrom(), ai.getQueryTo())))
+        print "FINAL: " + str(full)
+        print "FINAL LEN: " + str(len(full))
         return len(full)
 
     def checkIfReshuffled(self, subseq):
