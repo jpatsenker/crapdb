@@ -133,7 +133,9 @@ class ConcatEvent:
 
     def getMatchingLength(self, subseq):
         full = set()
+        print "Getting Matching Length of " + str(subseq) + " on " + str(self.getMainSeq())
         for ai in self.__subseqs__[subseq]:
+            print "-----adding region " + str(ai)
             full.union(set(range(ai.getQueryFrom(), ai.getQueryTo())))
         return len(full)
 
