@@ -1,5 +1,6 @@
 from filters.concatenation_filter import ConcatFilter
 from filters.concatenation_filter import ConcatEvent
+from filters.concatenation_filter import AlignmentInfo
 from aux.hmmer_tools import DomTableReader
 from model.fasta_tools import Sequence
 
@@ -38,14 +39,14 @@ class FissionFilter(ConcatFilter):
 				ss = Sequence(row.getQuery(), Sequence.PLACEHOLDER(row.getQLen()))
 				try:
 					events[seq].addSubseq(ss)
-					events[seq].setCoords(ss, (int(row.getTargetFrom()), int(row.getTargetTo()), int(row.getQueryFrom()), int(row.getQueryTo()), float(row.getEValue())))
+					events[seq].setCoords(ss, AlignmentInfo(int(row.getTargetFrom()), int(row.getTargetTo()), int(row.getQueryFrom()), int(row.getQueryTo()), float(row.getEValue())))
 				except KeyError as e:
 					#print e
 					#print "Making new event for sequence, " + str(seq) + " (Hash: " + str(hash(seq)) + ")"
 					#print events
 					events[seq] = FissionEvent(seq)
 					events[seq].addSubseq(ss)
-					events[seq].setCoords(ss, (int(row.getTargetFrom()), int(row.getTargetTo()), int(row.getQueryFrom()), int(row.getQueryTo()), float(row.getEValue())))
+					events[seq].setCoords(ss, AlignmentInfo(int(row.getTargetFrom()), int(row.getTargetTo()), int(row.getQueryFrom()), int(row.getQueryTo()), float(row.getEValue())))
 				row = reader.readRow()
 		return events.values()
 

@@ -125,7 +125,6 @@ class ConcatEvent:
         return True
 
     def getMatchingLength(self, subseq):
-        length = 0
         full = set()
         for ai in self.__subseqs__[subseq]:
             full.union(set(range(ai.getQueryFrom(), ai.getQueryTo)))
