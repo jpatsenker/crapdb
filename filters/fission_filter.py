@@ -46,6 +46,7 @@ class FissionFilter(ConcatFilter):
 					#print events
 					events[seq] = FissionEvent(seq)
 					events[seq].addSubseq(ss)
+					print "Setting " + str(ss) + " to " + str(AlignmentInfo(int(row.getQueryFrom()), int(row.getQueryTo()), int(row.getTargetFrom()), int(row.getTargetTo()), float(row.getEValue()))) + " -> " + str(seq)
 					events[seq].setCoords(ss, AlignmentInfo(int(row.getQueryFrom()), int(row.getQueryTo()), int(row.getTargetFrom()), int(row.getTargetTo()), float(row.getEValue())))
 				row = reader.readRow()
 		return events.values()
