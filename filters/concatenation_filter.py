@@ -144,7 +144,7 @@ class ConcatEvent:
 
     def checkIfReshuffled(self, subseq):
         print "Check if Reshuffled: " + str(subseq)
-        sortedSubsegments = dict( zip( map(AlignmentInfo.getQueryFrom, list(self.__subseqs__[subseq])), list(self.__subseqs__[subseq])))
+        sortedSubsegments = dict( zip( map(AlignmentInfo.getTargetFrom, list(self.__subseqs__[subseq])), list(self.__subseqs__[subseq])))
         print sortedSubsegments
         currentBottom = 0
         for bot in sortedSubsegments:
