@@ -152,7 +152,7 @@ class ConcatEvent:
                 print "RESHUFFLED!!!"
                 return True
             else:
-                currentBottom = sortedSubsegments.getTargetFrom()
+                currentBottom = sortedSubsegments[bot].getTargetFrom()
         return False
 
 
