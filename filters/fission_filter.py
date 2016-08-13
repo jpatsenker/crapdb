@@ -14,7 +14,7 @@ class FissionEvent(ConcatEvent):
 	def __init__(self, mainseq):
 		super(FissionEvent, self).__init__(mainseq)
 
-	def getScore():
+	def getScore(self):
 		return 0
 
 class FissionFilter(ConcatFilter):

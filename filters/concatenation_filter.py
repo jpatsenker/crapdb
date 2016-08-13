@@ -143,10 +143,12 @@ class ConcatEvent:
         return len(full)
 
     def checkIfReshuffled(self, subseq):
-        sortedSubseqs = dict( zip( map(AlignmentInfo.getQueryFrom, list(self.__subseqs__[subseq])), list(self.__subseqs__[subseq])))
+        print "Check if Reshuffled: " + subseq
+        sortedSubsegments = dict( zip( map(AlignmentInfo.getQueryFrom, list(self.__subseqs__[subseq])), list(self.__subseqs__[subseq])))
+        print sortedSubsegments
         currentBottom = 0
-        for bot in sortedSubseqs:
-            if sortedSubseqs[bot].getTargetFrom() < currentBottom:
+        for bot in sortedSubsegments:
+            if sortedSubsegments[bot].getTargetFrom() < currentBottom:
                 return True
         return False
 
@@ -184,8 +186,8 @@ class ConcatFilter(SewageFilter):
         #parse all concat events into concat event objects
         events = [] #list of concat events
 
-        """DEBUG!!!!
-        hmmerOut = "test/sturgeon_frog.hmmerOut"
+        """DEBUG!!!!"""
+        hmmerOut = "tmp/678968.hmmerOut"
         """
         hmmerOut = "tmp/" + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
 
