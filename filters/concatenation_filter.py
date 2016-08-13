@@ -107,7 +107,8 @@ class ConcatEvent:
         return "Main Sequence: " + str(self.__mainseq__) + "\n" + "---Subsequences: " + str(self.__subseqs__) + "\n"
 
     def finalize(self):
-        for subseq in self.__subseqs__:
+        subseqCopy = dict(self.__subseqs__)
+        for subseq in subseqCopy:
             if not self.attemptMergeRegions(subseq):
                 self.removeSubseq(subseq)
 
