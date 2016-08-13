@@ -151,6 +151,8 @@ class ConcatEvent:
             if sortedSubsegments[bot].getTargetFrom() < currentBottom:
                 print "RESHUFFLED!!!"
                 return True
+            else:
+                currentBottom = sortedSubsegments.getTargetFrom()
         return False
 
 
