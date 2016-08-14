@@ -32,9 +32,9 @@ def send_email(info, email, files, lfil=None, sub="CRA Results"):
     sender = 'noreply@kirschner.med.harvard.edu'
     receivers = email
 
-    message = MIMEMultipart(
-        From="CRA Server <noreply@kirschner.med.harvard.edu>",
-    )
+    message = MIMEMultipart()
+    message['To'] = email
+    message['From'] = "CRA Server <noreply@kirschner.med.harvard.edu>"
     message['Subject'] = sub
 
     body = MIMEText(info, 'html')
