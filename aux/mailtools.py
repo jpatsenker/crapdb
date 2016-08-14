@@ -53,7 +53,7 @@ def send_email(info, email, files, lfil=None, sub="CRA Results"):
 
     try:
         smtpObj = smtplib.SMTP('localhost')
-        print smtpObj.sendmail(sender, receivers, message.as_string())
+        smtpObj.sendmail(sender, receivers, message.as_string())
         print "Successfully sent email"
     except smtplib.SMTPException:
         if lfil is not None:
