@@ -11,8 +11,9 @@ def send_error(error, email, lfil=None):
 
     message = MIMEMultipart(
         From="CRA Server <noreply@kirschner.med.harvard.edu>",
-        Subject="CRA SERVER ERROR!!!"
     )
+
+    message['Subject'] = "CRA SERVER ERROR!!!"
 
     body = MIMEText(error, 'html')
     message.attach(body)
@@ -27,14 +28,14 @@ def send_error(error, email, lfil=None):
         print "Error: unable to send email"
 
 
-def send_email(info, email, files, lfil=None):
+def send_email(info, email, files, lfil=None, sub="CRA Results"):
     sender = 'noreply@kirschner.med.harvard.edu'
     receivers = email
 
     message = MIMEMultipart(
         From="CRA Server <noreply@kirschner.med.harvard.edu>",
-        Subject="CRA Results"
     )
+    message['Subject'] = sub
 
     body = MIMEText(info, 'html')
     message.attach(body)
