@@ -25,9 +25,17 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            <b>Sequence Length: </b>
-                                            <a href="javascript:toggle('Length_Description')">(?)</a>
-                                            <input type="checkbox" name="dlen"> Bypass?
+                                            <table>
+                                                <tr>
+                                                    <td class="setting_title">
+                                                        <b>Sequence Length: </b>
+                                                        <a href="javascript:toggle('Length_Description')">(?)</a>
+                                                    </td>
+                                                    <td>
+                                                        <input type="checkbox" name="dlen"> Bypass?
+                                                    </td>
+                                                </tr>
+                                            </table>
                                         </td>
                                     </tr>
                                     <tr id = "Length_Description" style="display: none;width: 20em;">
@@ -126,10 +134,7 @@
                                     </tr>
                                     <tr>
                                         <td><input type="checkbox" name="ms"> Check for M at beginning of sequence? </td>
-                                    </tr>
-                                    
-                                    
-                                    
+                                    </tr>                       
                                 </table>
                                 <div style="height:20px;"></div>
                                 

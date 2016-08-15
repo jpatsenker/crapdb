@@ -60,6 +60,10 @@
     padding-left:5%;
 }
 
+.setting_title{
+    width:20em;
+}
+
 .descript{
     font-size:75%;
     background-color:#CCB2B2;
