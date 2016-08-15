@@ -27,11 +27,11 @@
                                         <td>
                                             <b>Sequence Length: </b>
                                             <a href="javascript:toggle('Length_Description')">(?)</a>
+                                            <td><input type="checkbox" name="dlen"> Bypass Length Filter? </td>
                                         </td>
                                     </tr>
                                     <tr id = "Length_Description" style="display: none;width: 20em;">
                                         <td class="descript setting">Flag sequences that are less that <b>m</b> or more than <b>n</b> amino acids long.</td>
-                                        <td><input type="checkbox" name="dlen"> Bypass Length Filter? </td>
                                     </tr>
                                     <tr>
                                         <td>
