@@ -45,7 +45,7 @@
                                         <td>
                                             <table>
                                                 <tr>
-                                                    <td class="setting" style="width:15em;">
+                                                    <td class="setting">
                                                         Minimum (m):
                                                     </td>
                                                     <td>
@@ -53,7 +53,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="setting" style="width:15em;">
+                                                    <td class="setting">
                                                         Maximum (n):
                                                     </td>
                                                     <td>
@@ -79,7 +79,7 @@
                                         <td>
                                             <table>
                                                 <tr>
-                                                    <td class="setting" style="width:15em;">
+                                                    <td class="setting">
                                                         Complexity (c):
                                                     </td>
                                                     <td>
