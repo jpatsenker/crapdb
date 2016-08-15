@@ -27,7 +27,7 @@
                                         <td>
                                             <b>Sequence Length: </b>
                                             <a href="javascript:toggle('Length_Description')">(?)</a>
-                                            <td><input type="checkbox" name="dlen"> Bypass Length Filter? </td>
+                                            <input type="checkbox" name="dlen"> Bypass?
                                         </td>
                                     </tr>
                                     <tr id = "Length_Description" style="display: none;width: 20em;">
@@ -56,8 +56,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><b>Intra-Sequence Complexity: </b><a href="javascript:toggle('ISC_Description')">(?)</a></td>
-                                        <td><input type="checkbox" name="dcomp"> Bypass? </td>
+                                        <td><b>Intra-Sequence Complexity: </b><a href="javascript:toggle('ISC_Description')">(?)</a> <input type="checkbox" name="dcomp"> Bypass? </td>
                                     </tr>
                                     <tr id = "ISC_Description" style="display: none;width: 20em;">
                                         <td class="descript setting">Flag sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
@@ -77,8 +76,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><b>Inter-Sequence Redundancy: </b><a href="javascript:toggle('ISR_Description')">(?)</a></td>
-                                        <td><input type="checkbox" name="dred"> Bypass? </td>
+                                        <td><b>Inter-Sequence Redundancy: </b><a href="javascript:toggle('ISR_Description')">(?)</a> <input type="checkbox" name="dred"> Bypass? </td>
                                     </tr>
                                     <tr id = 'ISR_Description' style="display: none;width: 20em;">
                                         <td class="descript setting">Flag sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
