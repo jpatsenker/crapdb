@@ -113,7 +113,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="setting" style="width:15em;">
+                                                    <td class="setting">
                                                         Fractional Length (f):
                                                     </td>
                                                     <td>
@@ -130,7 +130,7 @@
                                         <td>
                                             <table>
                                                 <tr>
-                                                    <td class="setting" style="width:15em;">
+                                                    <td class="setting">
                                                         "X" tolerance (x):
                                                     </td>
                                                     <td>
