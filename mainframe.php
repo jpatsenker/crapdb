@@ -147,7 +147,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>
+                                                    <td class = "setting">
                                                         <input type="checkbox" name="xtrop"> Xenopus Tropicalis
                                                     </td>
                                                 </tr>
