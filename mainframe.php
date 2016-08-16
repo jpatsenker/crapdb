@@ -124,6 +124,43 @@
                                         </td>
                                     </tr>
                                     <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td class="setting_title"><b>Fission: </b><a href="javascript:toggle('FIS_Description')">(?)</a></td><td> <input type="checkbox" name="dfis"> Bypass? </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr id = 'FIS_Description' style="display: none;width: 20em;">
+                                        <td class="descript setting">Flag sequences that are potentially joinable fragments of <b>Reference Genome</b>.
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    Reference Genome:
+                                                </tr>
+                                                <tr>
+                                                    <td class="setting">
+                                                        <input type="checkbox" name="human"> Homo Sapiens
+                                                    </td>
+                                                    <td>
+                                                        <input type="checkbox" name="xtrop"> Xenopus Tropicalis
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="setting">
+                                                        ADD FILE HERE
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="cl" value="0.8" class="param"></input>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td><b>Miscellaneous Settings:</b></td>
                                     </tr>
                                     <tr>
