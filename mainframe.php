@@ -154,7 +154,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="setting">
-                                                        ADD FILE HERE
+                                                        <input type="file" name="refgm"> Custom
                                                     </td>
                                                 </tr>
                                             </table>
