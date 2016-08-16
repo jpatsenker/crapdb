@@ -139,7 +139,8 @@
                                         <td>
                                             <table>
                                                 <tr>
-                                                    Reference Genome:
+
+                                                    <td class="setting"><i>Reference Genome:</i></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="setting">
