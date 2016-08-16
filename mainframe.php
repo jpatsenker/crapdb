@@ -145,6 +145,8 @@
                                                     <td class="setting">
                                                         <input type="checkbox" name="human"> Homo Sapiens
                                                     </td>
+                                                </tr>
+                                                <tr>
                                                     <td>
                                                         <input type="checkbox" name="xtrop"> Xenopus Tropicalis
                                                     </td>
@@ -152,9 +154,6 @@
                                                 <tr>
                                                     <td class="setting">
                                                         ADD FILE HERE
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" name="cl" value="0.8" class="param"></input>
                                                     </td>
                                                 </tr>
                                             </table>
