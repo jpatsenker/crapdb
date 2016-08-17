@@ -44,7 +44,7 @@
         $dComp = $_POST['dcomp'];
         $dRed = $_POST['dred'];
         $dLen = $_POST['dlen'];
-        $dFf = $_POST['dff'];
+        $dFis = $_POST['dfis'];
         $zj = $_POST['zj'];
         $xs = $_POST['xs'];
         $ms = $_POST['ms'];
@@ -67,10 +67,10 @@
         }else{
             $dComp = "";
         }
-        if ($dFf == "on"){
-            $dFf = " -noff ";
+        if ($dFis == "on"){
+            $dFis = " -nofis ";
         }else{
-            $dFf = "";
+            $dFis = "";
         }
         if ($ms == "on"){
             $ms = " -ms ";
@@ -126,8 +126,8 @@
             }
             
             echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
-            echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . ' -rg ' . $rg . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed . $dFf .' > superlog 2>&1 &';
-            exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . ' -rg ' . $rg . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed . $dFf .' > superlog 2>&1 &');
+            echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . ' -rg ' . $rg . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed . $dFis .' > superlog 2>&1 &';
+            exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . ' -rg ' . $rg . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed . $dFis .' > superlog 2>&1 &');
             
             echo '<p> You will receive an email when the results are ready. </p>';
             echo '<p><a href="logs/' . $target_fname . '.log"> Log file for job </a></p>';
