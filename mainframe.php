@@ -144,17 +144,22 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="setting">
-                                                        <input type="checkbox" name="human"> Homo Sapiens
+                                                        <input type="checkbox" name="refgm"> Homo Sapiens
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class = "setting">
-                                                        <input type="checkbox" name="xtrop"> Xenopus Tropicalis
+                                                        <input type="checkbox" name="refgm"> Xenopus Tropicalis
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="setting">
-                                                        <input type="file" name="refgm"> Custom
+                                                        <input type="checkbox" name="refgm"> Custom
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="setting">
+                                                        <input type="file" name="refgm_file" placeholder="Upload Custom Genome">
                                                     </td>
                                                 </tr>
                                             </table>
