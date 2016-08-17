@@ -7,6 +7,13 @@
             x.style.display = "none";
         }
     }
+    $("#custom_checkbox").change(function() {
+        if(this.checked){
+            $("#CustomGenome").show();
+        }else{
+            $("#CustomGenome").hide();
+        }
+    });
 </script>
 
 <div style="width:100%;">
@@ -161,7 +168,7 @@
                                                 </tr>
                                                 <tr id = 'CustomGenome' style="display:none;">
                                                     <td class="setting">
-                                                        <input type="file" name="refgm_file" placeholder="Upload Custom Genome">
+                                                        <input type="file" name="refgm_file">
                                                     </td>
                                                 </tr>
                                             </table>
