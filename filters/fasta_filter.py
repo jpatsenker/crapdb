@@ -11,8 +11,9 @@ class FastaCheckerFilter(SewageFilter):
 
     __fasta_checker__ = "/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker_for_crap.pl"
 
-    def __init__(self):
+    def __init__(self, tempDir):
         super(FastaCheckerFilter, self).__init__()
+        self.__tDir__ = tempDir
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
@@ -22,10 +23,10 @@ class FastaCheckerFilter(SewageFilter):
         :param diagnostics_file: fasta output with compressable sequences (appended to)
         :return:
         """
-        temporary = "tmp/" + basename(input_file) + ".raw"
+        temporary = self.__tDir__ + basename(input_file) + ".raw"
         open(temporary, "w").close()
-        temporary_errors = "tmp/" + basename(input_file) + ".errors"
-        lsf.run_job('"perl ' + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " > " + temporary + '"', bsub_output="tmp/test.out", wait=True, dont_clean=True, lfil = self.__logfile__) #submit lsf job
+        temporary_errors = self.__tDir__ + basename(input_file) + ".errors"
+        lsf.run_job('"perl ' + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " > " + temporary + '"', bsub_output=self.__tDir__ + "test.out", wait=True, dont_clean=True, lfil = self.__logfile__) #submit lsf job
         # with open(temporary_errors, "r") as tempErrors:
         #     if len(tempErrors.read()) > 0:
         #         SewageFilter.break_filter() #incase of errors break filter, cause system to halt with improper format errors

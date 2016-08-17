@@ -147,11 +147,11 @@ ss = SewageSystem()
 num_seq_bef_anlzr = NumSeqAnalyzer(logfil, dFile)
 num_seq_aft_anlzr = NumSeqAnalyzer(logfil, dFile)
 len_filter = SeqLengthFilter(min_len_param, max_len_param)
-comp_filter = ComplexityFilter(zeroj_param, lfil=logfil)
-red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength, lfil=logfil)
+comp_filter = ComplexityFilter(zeroj_param, tDir, lfil=logfil)
+red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength, tDir, lfil=logfil)
 simple_filter = SimpleFilter(ms_check, xs_tolerance)
-fasta_filter = FastaCheckerFilter()
-fission_filter = FissionFilter(refGenome)
+fasta_filter = FastaCheckerFilter(tDir)
+fission_filter = FissionFilter(refGenome, tDir)
 
 ss.add_module(num_seq_bef_anlzr) #check before
 

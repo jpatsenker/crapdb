@@ -17,11 +17,12 @@ class RedundancyFilter(SewageFilter):
 
     __temp_hash__ = None
 
-    def __init__(self, thresh, frac, lfil = None):
+    def __init__(self, thresh, frac, tempDir, lfil = None):
         super(RedundancyFilter, self).__init__()
         self.__threshold_level__ = thresh
         self.__fractional_level__ = frac
         self.__logfile__ = lfil
+        self.__tDir__= tempDir
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
@@ -32,7 +33,7 @@ class RedundancyFilter(SewageFilter):
         :return:
         """
 
-        temporary = "tmp/" + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
+        temporary = self.__tDir__ + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
         #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
         lsf.run_job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__) + " -d 0", wait=True, lfil=self.__logfile__) #submit lsf job
         self.prepare_temp_hash(input_file, temporary + ".clstr")

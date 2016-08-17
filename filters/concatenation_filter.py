@@ -160,11 +160,12 @@ class ConcatEvent:
 class ConcatFilter(SewageFilter):
     __metaclass__ = ABCMeta
 
-    def __init__(self, reference_genome):
+    def __init__(self, reference_genome, temp_directory):
         super(ConcatFilter, self).__init__()
         self.__reference_genome__ = reference_genome
         self.__clean_file__ = None
         self.__messy_file__ = None
+        self.__tDir__ = temp_directory
 
     @abstractmethod
     def parseHmmerIntoConcatEvents(self, hmmerOutFile):
@@ -193,7 +194,7 @@ class ConcatFilter(SewageFilter):
         """DEBUG!!!!
         hmmerOut = "tmp/678968.hmmerOut"
         """
-        hmmerOut = "tmp/" + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
+        hmmerOut = self.__tDir__ + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
 
         hmmer_tools.loadHmmer()
 

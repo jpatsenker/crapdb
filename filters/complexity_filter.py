@@ -13,10 +13,11 @@ class ComplexityFilter(SewageFilter):
 
     __threshold_level__ = None
 
-    def __init__(self, thresh, lfil = None):
+    def __init__(self, thresh, tempDir, lfil = None):
         super(ComplexityFilter, self).__init__()
         self.__threshold_level__ = thresh
         self.__logfile__ = lfil
+        self.__tDir__ = tempDir
 
     def filter_crap(self, input_file, output_file, diagnostics_file):
         """
@@ -26,7 +27,7 @@ class ComplexityFilter(SewageFilter):
         :param diagnostics_file: fasta output with compressable sequences (appended to)
         :return:
         """
-        temporary = "tmp/" + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
+        temporary = self.__tDir__ + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
         lsf.run_job('"' + self.__zero_j__ + " -scores_only " + input_file + " > " + temporary + '"', wait=True, lfil=self.__logfile__) #submit lsf job
         with open(temporary, "r") as complexity_data: #open output
             with open(input_file, "r") as check_stream: #open input_file for lengths of sequences as well as checking names

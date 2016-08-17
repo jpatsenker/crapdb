@@ -21,8 +21,8 @@ class FissionFilter(ConcatFilter):
 
 	__name__ = "FISSION_FILTER"
 
-	def __init__(self, reference_genome):
-		super(FissionFilter, self).__init__(reference_genome)
+	def __init__(self, reference_genome, tempDir):
+		super(FissionFilter, self).__init__(reference_genome, tempDir)
 
 	def parseHmmerIntoConcatEvents(self, hmmerOutFile):
 		events = {}
