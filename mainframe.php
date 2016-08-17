@@ -8,8 +8,10 @@
             x.style.display = "none";
         }
     }
-    $("#custom_checkbox").change(function() {
-        $("#CustomGenome").show();
+    $(function() {
+        $("#custom_checkbox").change(function() {
+            $("#CustomGenome").show();
+        });
     });
 </script>
 
