@@ -2,7 +2,9 @@
 	
 	echo "<HTML><HEAD><TITLE>TEST</TITLE><HEAD><BODY>";
 
-	echo "Testing Load Module of seq/hmmer/3.1";
+	echo "HELLO WORLD"
+
+	//echo "Testing Load Module of seq/hmmer/3.1";
 	// exec 'module load seq/hmmer/3.1 > superlog';
 	// echo "Load Module Complete";
 
