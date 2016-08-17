@@ -161,9 +161,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="setting">
-                                                        <a href="javascript:toggle('CustomGenome')">
-                                                            <input type="checkbox" name="refgm"> Custom
-                                                        </a>
+                                                        <input type="checkbox" id="custom_checkbox" name="refgm"> Custom
                                                     </td>
                                                 </tr>
                                                 <tr id = 'CustomGenome' style="display:none;">
