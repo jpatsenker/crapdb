@@ -94,7 +94,7 @@
         }else{
 
             if($rg == "custom"){
-                $rfname = $_FILES['fastaseq']['name']
+                $rfname = $_FILES['fastaseq']['name'];
                 $target_reference_file = $target_dir . substr($rfname,0,strpos($rfname,'.')) . '_' . $next_id;
                 if(!move_uploaded_file($_FILES['refgm_file']['tmp_name'], $target_reference_file)){
                     echo '<div class="notout">';
@@ -103,7 +103,7 @@
                     echo "</div></td></tr></table>";
                     die();
                 }
-                $rg = $target_reference_file
+                $rg = $target_reference_file;
             }
 
 
