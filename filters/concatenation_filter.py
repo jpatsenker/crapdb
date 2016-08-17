@@ -190,7 +190,7 @@ class ConcatFilter(SewageFilter):
         #parse all concat events into concat event objects
         events = [] #list of concat events
 
-        """DEBUG!!!!"""
+        """DEBUG!!!!
         hmmerOut = "tmp/678968.hmmerOut"
         """
         hmmerOut = "tmp/" + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
