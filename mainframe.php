@@ -8,11 +8,7 @@
         }
     }
     $("#custom_checkbox").change(function() {
-        if(this.checked){
-            $("#CustomGenome").show();
-        }else{
-            $("#CustomGenome").hide();
-        }
+        $("#CustomGenome").toggle();
     });
 </script>
 
