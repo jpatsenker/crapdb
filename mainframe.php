@@ -10,7 +10,7 @@
     }
     $(function() {
         $("#custom_checkbox").change(function() {
-            $("#CustomGenome").show();
+            $("#CustomGenome").toggle();
         });
     });
 </script>
