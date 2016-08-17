@@ -9,7 +9,7 @@
         }
     }
     $("#custom_checkbox").change(function() {
-        $("#CustomGenome").toggle();
+        $("#CustomGenome").show();
     });
 </script>
 
