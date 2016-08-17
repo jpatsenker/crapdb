@@ -150,17 +150,17 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="setting">
-                                                        <input type="checkbox" name="refgm"> Homo Sapiens
+                                                        <input type="checkbox" name="refgm" value="human"> Homo Sapiens
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class = "setting">
-                                                        <input type="checkbox" name="refgm"> Xenopus Tropicalis
+                                                        <input type="checkbox" name="refgm" value="xtrop"> Xenopus Tropicalis
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td class="setting">
-                                                        <input type="checkbox" id="custom_checkbox" name="refgm"> Custom
+                                                        <input type="checkbox" id="custom_checkbox" name="refgm" value="custom"> Custom
                                                     </td>
                                                 </tr>
                                                 <tr id = 'CustomGenome' style="display:none;">
