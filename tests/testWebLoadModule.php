@@ -3,7 +3,7 @@
 	echo "<HTML><HEAD><TITLE>TEST</TITLE><HEAD><BODY>";
 
 	echo "Initial test phmmer (expect error) <br>";
-	exec 'phmmer > superlog';
+	exec 'phmmer > superlog 2>&1 &';
 	echo "PHMMER Complete <p>";
 
 	echo "Testing Load Module of seq/hmmer/3.1 <br>";
