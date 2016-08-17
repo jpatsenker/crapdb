@@ -154,10 +154,12 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="setting">
-                                                        <input type="checkbox" name="refgm"> Custom
+                                                        <a href="javascript:toggle('CustomGenome')">
+                                                            <input type="checkbox" name="refgm"> Custom
+                                                        </a>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <tr id = 'CustomGenome' style="display:none;">
                                                     <td class="setting">
                                                         <input type="file" name="refgm_file" placeholder="Upload Custom Genome">
                                                     </td>
