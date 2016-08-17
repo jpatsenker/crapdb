@@ -19,7 +19,7 @@ XTROP_GENOME_FILE = "data/reference_genomes/xtfix.fa"
 iFile = None
 oFile = None
 dFile = None
-tDir = "tmp/"
+tDir = "/n/scratch2/cra/"
 eAddress = None
 
 try:
