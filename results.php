@@ -98,7 +98,7 @@
                 $target_reference_file = $target_dir . substr($rfname,0,strpos($rfname,'.')) . '_' . $next_id;
                 if(!move_uploaded_file($_FILES['refgm_file']['tmp_name'], $target_reference_file)){
                     echo '<div class="notout">';
-                    echo 'Error Uploading Reference Genome File'
+                    echo 'Error Uploading Reference Genome File';
                     echo '<form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>';
                     echo "</div></td></tr></table>";
                     die();
