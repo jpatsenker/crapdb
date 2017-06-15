@@ -10,6 +10,10 @@ E_VALUE_CUTOFF = 1e-100
 
 
 class FissionEvent(ConcatEvent):
+	"""
+	Fission type ConcatEvent
+	Use to set main sequence
+	"""
 
 	def __init__(self, mainseq):
 		super(FissionEvent, self).__init__(mainseq)
@@ -18,6 +22,10 @@ class FissionEvent(ConcatEvent):
 		return 0
 
 class FissionFilter(ConcatFilter):
+	"""
+	Fission Filter
+	Extends ConcatFilter
+	"""
 
 	__name__ = "FISSION_FILTER"
 
@@ -25,7 +33,13 @@ class FissionFilter(ConcatFilter):
 		super(FissionFilter, self).__init__(reference_genome, tempDir)
 
 	def parseHmmerIntoConcatEvents(self, hmmerOutFile):
+		"""
+		Parse the hmmer file into events
+		Main Seq is the
+		"""
+		#initialize
 		events = {}
+		#open DomTableReader to read HMMER as AlignmentInfo objects
 		with DomTableReader(hmmerOutFile) as reader:
 			row = reader.readRow()
 			while not row == DomTableReader.EOF:
@@ -42,9 +56,7 @@ class FissionFilter(ConcatFilter):
 					print "Setting " + str(ss) + " to " + str(AlignmentInfo(int(row.getQueryFrom()), int(row.getQueryTo()), int(row.getTargetFrom()), int(row.getTargetTo()), float(row.getEValue()))) + " -> " + str(seq)
 					events[seq].setCoords(ss, AlignmentInfo(int(row.getQueryFrom()), int(row.getQueryTo()), int(row.getTargetFrom()), int(row.getTargetTo()), float(row.getEValue())))
 				except KeyError as e:
-					#print e
-					#print "Making new event for sequence, " + str(seq) + " (Hash: " + str(hash(seq)) + ")"
-					#print events
+					#set main sequence
 					events[seq] = FissionEvent(seq)
 					events[seq].addSubseq(ss)
 					print "Setting " + str(ss) + " to " + str(AlignmentInfo(int(row.getQueryFrom()), int(row.getQueryTo()), int(row.getTargetFrom()), int(row.getTargetTo()), float(row.getEValue()))) + " -> " + str(seq)

@@ -2,6 +2,13 @@ import subprocess
 import random
 
 def runBlast(sequences, reference, output):
+	"""
+	Run Blast on the sequences fasta file, with a reference fasta file, write to output
+	:param sequences:
+	:param reference:
+	:param output:
+	:return:
+	"""
 	loadBlast()
 	name = random.random()
 	out = random.random()
@@ -11,5 +18,9 @@ def runBlast(sequences, reference, output):
 	run.wait()
 
 def loadBlast():
+	"""
+	Load Blast
+	:return:
+	"""
 	p = subprocess.Popen("module load seq")
 	p.wait()

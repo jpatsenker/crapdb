@@ -1,8 +1,12 @@
 from sewageanalyzer import SewageAnalyzer
 from model.fasta_tools import FastaReader
+from model.fasta_tools import FastaWriter
 
-
+#TODO: FINISH THIS ANALYZER
 class CompletenessAnalyzer(SewageAnalyzer):
+	"""
+	Analyzer the genome for completeness, whether it satisfies a core set of genes specified by the self.__complete_set__ fasta file
+	"""
 
 	__name__ = "Completeness Analyzer"
 
@@ -14,7 +18,10 @@ class CompletenessAnalyzer(SewageAnalyzer):
 		numSeq = 0
 
 		namedFile = input_file + ".named"
-		#naming process
+
+		#TODO: run gene name assignment
+
+		#TODO: here check if the assignment matches to a complete set, print results to analyzer
 		with FastaReader(namedFile) as namedReader:
 			with FastaReader(self.__complete_set__) as completeReader:
 				querySeq = namedReader.readSequence()

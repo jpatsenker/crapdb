@@ -5,6 +5,7 @@ import zipfile
 
 from aux import lsftools, mailtools
 
+"""RUNS BATCH, not sure if this works"""
 
 def stop(iFilesDir):
     shutil.rmtree(iFilesDir)

@@ -12,16 +12,19 @@ from filters.fasta_filter import FastaCheckerFilter
 from filters.fission_filter import FissionFilter
 from aux import logtools, mailtools, fasta_fixer, helptools
 
+#DEFAULT REFERENCE FILES FOR CONCAT FILTER
 HUMAN_GENOME_FILE = "data/reference_genomes/hgfix.fa"
 XTROP_GENOME_FILE = "data/reference_genomes/xtfix.fa"
 
 
+#params init
 iFile = None
 oFile = None
 dFile = None
 tDir = "/n/scratch2/cra/"
 eAddress = None
 
+#pull params from command line
 try:
     iFile = sys.argv[1]
     iFile_new = iFile + "fix"
@@ -37,13 +40,16 @@ if not os.path.exists(iFile):
     print "Invalid input fasta\n"
     exit(1)
 
+#create the log file
 logfil = "logs/" + os.path.basename(iFile) + ".log"
 
+#make sure email is somewhat valid
 if "@" not in eAddress:
     print "Invalid email given to run_cra.py \n"
     logtools.add_fatal_error(logfil, "Invalid email address")
     exit(1)
 
+#make sure the the tmp directory exists
 if not os.path.isdir(tDir):
     print "Invalid temporary directory\n"
     logtools.add_fatal_error(logfil, "Invalid temporary directory set. FURTHER SERVER SETUP REQUIRED")
@@ -51,24 +57,26 @@ if not os.path.isdir(tDir):
     exit(1)
 
 
-
+#if log file exists, remove it
 try:
     os.remove(logfil)
 except OSError:
     pass
 
+#if output file exists, remove it
 try:
     os.remove(oFile)
 except OSError:
     pass
 
-
+#if diagnosis file exists, remove it
 try:
     os.remove(dFile)
 except OSError:
     pass
 
 
+#Default Parameters
 zeroj_param = .9
 cdhit_param_thresh = .7
 cdhit_param_flength = .8
@@ -80,14 +88,14 @@ ms_check = False
 xs_tolerance = 0
 refGenome = "human"
 
-
+#ignore filters params
 no_len = False
 no_comp = False
 no_red = False
 no_fis = False
 no_fus = False
 
-
+#pull parameters from command line
 try:
     if len(sys.argv) > 5:
         if "-0j" in sys.argv[5:]:
@@ -124,26 +132,30 @@ except ValueError:
     helptools.printHelp()
     exit(1)
 
-
-if refGenome == "human":
+#reference genome set
+if refGenome == "human": #default
     refGenome = HUMAN_GENOME_FILE
-if refGenome == "xtrop":
+if refGenome == "xtrop": #default
     refGenome = XTROP_GENOME_FILE
 else:
-    if not os.path.exists(refGenome):
+    if not os.path.exists(refGenome): #use file
         logtools.add_fatal_error(logfil, "Invalid Reference Genome File: " + refGenome)
         mailtools.send_error("Invalid Reference Genome File: " + refGenome, eAddress, lfil=logfil)
         print "Invalid Reference Genome File: " + refGenome + "\n"
         exit(1)
 
-
+#start log file
 logtools.start_new_log(iFile, eAddress, logfil)
 
+#run fasta fixer
 fasta_fixer.fix_file(iFile, iFile_new)
 iFile = iFile_new
+"""^THIS IS STILL NECESSARY AS NOT ALL FILTERS/ANALYZERS USE FastaReader/FastaWriter"""
 
+#initialize system object
 ss = SewageSystem()
 
+#initialize all filters/analyzers
 num_seq_bef_anlzr = NumSeqAnalyzer(logfil, dFile)
 num_seq_aft_anlzr = NumSeqAnalyzer(logfil, dFile)
 len_filter = SeqLengthFilter(min_len_param, max_len_param)
@@ -153,9 +165,10 @@ simple_filter = SimpleFilter(ms_check, xs_tolerance)
 fasta_filter = FastaCheckerFilter(tDir)
 fission_filter = FissionFilter(refGenome, tDir)
 
+#queue all modules in order
 ss.add_module(num_seq_bef_anlzr) #check before
 
-#for debugging
+#for debugging/log files, create a few more analyzers
 a = []
 for i in range(5):
     a.append(NumSeqAnalyzer(logfil, dFile))
@@ -197,6 +210,7 @@ logtools.add_end(logfil)
 
 open(dFile, "w").close()
 
+#run the system
 try:
     aFiles = ss.flush_the_toilet(iFile, oFile, dFile, tDir, log=logfil)
 except BrokenFilterError:
@@ -210,11 +224,13 @@ except Exception as e:
     mailtools.send_error('An internal error occured running your job, please check the log for more information:<br> Log: <a href="' + os.getcwd().replace("/docroot","").split("/www/")[1] + '/' + logfil + '"> Log File </a><br>', eAddress, lfil=logfil)
     raise e, None, sys.exc_info()[2]
 
+#Prepare output
 with open(aFiles[0], "r") as analysisFile:
     before_seq = analysisFile.read()
 with open(aFiles[-1], "r") as analysisFile:
     after_seq = analysisFile.read()
 
+#score
 cra_score = 1 - float(after_seq)/float(before_seq)
 
 fullpath = os.getcwd()[os.getcwd().find("/www/") + 5:] +  "/" +  logfil
@@ -230,6 +246,7 @@ for a in sys.argv[1:]:
 
 inputFileName = iFile[iFile.rfind('/')+1:iFile.rfind('fix')]
 
+#send email
 mailtools.send_email("We ran CRA version 1.1 on file " + inputFileName + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Initial Number of Sequences: " + str(before_seq) + "<br>Number of Clean Sequences: " + str(after_seq) + "<br>Final CRA Score: " + ("%.3f" % cra_score) + '<br> See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile], lfil=logfil, sub="CRA run on " + inputFileName)
-
+#log
 logtools.end_log(logfil)

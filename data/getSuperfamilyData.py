@@ -1,5 +1,14 @@
 import string
 
+"""
+SCRIPT
+run to load all the superfamily data into fasta files
+
+
+NOT SURE IF THIS WORKS!!!!!!
+"""
+
+
 header = None
 
 #convert into csv and get header

@@ -6,17 +6,35 @@ from aux import lsftools
 #MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init/python.py"
 MODULE_PYTHON_INIT = "/opt/Modules/3.2.10/init"
 
-
+'''
+Hmmer location on orchestra
+'''
 HMMER_PATH = "seq/hmmer/3.1"
 
+"""
+Toolbox for working with HMMER
+"""
 
 def runHmmer(sequences, reference, output, lfil = None):
+	"""
+	Run HMMER parallel-like
+	TODO: make sure this doesn't stall - requests a lot of resources
+	:param sequences:
+	:param reference:
+	:param output:
+	:param lfil:
+	:return:
+	"""
 	run = lsftools.run_hmmer_parallel(sequences, reference, output, lfil=lfil)
 	#print "phmmer --domtblout " + output + " " + sequences + " " + reference
 	#run = subprocess.Popen(["phmmer", "--domtblout", output, sequences, reference])
 	#run.wait()
 
 def loadHmmer():
+	"""
+	Load HMMER
+	:return:
+	"""
 	sys.path.append(MODULE_PYTHON_INIT)
 	import python
 	#execfile(MODULE_PYTHON_INIT)
@@ -25,7 +43,7 @@ def loadHmmer():
 
 class DomTableRow:
 	"""
-	Class to hold information about a single domtblout row for phmmer. TRY TO KEEP IMMUTABLE
+	Class to hold information about a single domtblout row for phmmer. PLEASE KEEP IMMUTABLE
 	"""
 	def __init__(self, target, targetAccession, tlen, query, queryAccession, qlen, eValue, score, bias, queryFrom, queryTo, targetFrom, targetTo, acc, description):
 		self.__target__ = target

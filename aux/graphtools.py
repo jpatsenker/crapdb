@@ -1,3 +1,6 @@
+"""
+DEPRECATED
+"""
 import matplotlib
 
 matplotlib.use('Agg')

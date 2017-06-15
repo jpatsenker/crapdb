@@ -1,5 +1,10 @@
 import time
 
+"""
+Toolbox for working with LOGS
+"""
+
+
 CONTACT_EMAIL = "<contact-email>"
 
 def clear_log(log_file):

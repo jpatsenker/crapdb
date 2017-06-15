@@ -1,6 +1,10 @@
 import sys
 
 from aux import lsftools
+"""
+Interface for running run_cra from php
+"""
+
 
 command_string = "python run_cra.py"
 
