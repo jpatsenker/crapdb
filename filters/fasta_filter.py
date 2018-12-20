@@ -34,9 +34,8 @@ class FastaCheckerFilter(SewageFilter):
         temporary = self.__tDir__ + basename(input_file) + ".raw" #create out file
         open(temporary, "w").close() #wipe file if exists
         temporary_errors = self.__tDir__ + basename(input_file) + ".errors" #create error out file
-        job = Job('"perl ' + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " > " + temporary + '"',
-        job.run(out=self.__tDir__ + "test.out", wait=True, lfil = self.__logfile__) #submit job
-
+        job = Job('"perl ' + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " > " + temporary + '"', lfil = self.__logfile__)
+        job.run(out=self.__tDir__ + "test.out", wait=True) #submit job
         '''
         Parse output of fasta checker
         '''
