@@ -2,7 +2,8 @@ from os.path import basename
 
 from filters.sewagefilter import SewageFilter
 from filters.sewagefilter import BrokenFilterError
-from aux import lsftools as lsf, logtools
+from aux import logtools
+from aux.jobs import Job
 
 
 class ComplexityFilter(SewageFilter):
@@ -32,7 +33,8 @@ class ComplexityFilter(SewageFilter):
         Run 0j
         '''
         temporary = self.__tDir__ + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
-        lsf.run_job('"' + self.__zero_j__ + " -scores_only " + input_file + " > " + temporary + '"', wait=True, lfil=self.__logfile__) #submit lsf job
+        job = Job('"' + self.__zero_j__ + " -scores_only " + input_file + " > " + temporary + '"', lfil=self.__logfile__)
+        job.run(wait=True) #submit job
 
         '''
         Parse 0j Output
