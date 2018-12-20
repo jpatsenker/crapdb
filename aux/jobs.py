@@ -11,7 +11,7 @@ class Job:
         if self.lfil is not None: 
             logtools.add_line_to_log(self.lfil, "<CMD:> [SRUN] " + self.job_string)
         
-        proc = srun(self.job_string, error, out, queue, timelim, wait, return_process)
+        proc = srun(self.job_string, error, out, queue, timelim, wait)
         
         if wait and self.lfil is not None:
             logtools.add_line_to_log(self.lfil, "<CMD EXECUTED>")
