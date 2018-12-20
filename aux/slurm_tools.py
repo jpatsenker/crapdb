@@ -7,5 +7,6 @@ def srun(command, error, output, queue, timelim, wait):
     proc = 'lol'
     #proc = subprocess.Popen([full_command])
     if wait:
-        proc.wait()
+        pass
+        #proc.wait()
     return proc
