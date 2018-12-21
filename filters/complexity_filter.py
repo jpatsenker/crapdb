@@ -2,7 +2,7 @@ from os.path import basename
 
 from filters.sewagefilter import SewageFilter
 from filters.sewagefilter import BrokenFilterError
-from aux.file_paths import *
+from file_paths import *
 from aux import logtools
 from aux.jobs import Job
 

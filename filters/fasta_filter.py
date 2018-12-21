@@ -2,7 +2,7 @@ from os.path import basename
 import os
 
 from filters.sewagefilter import SewageFilter
-from aux.file_paths import *
+from file_paths import *
 from aux.jobs import Job
 
 
