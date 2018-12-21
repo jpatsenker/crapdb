@@ -34,7 +34,7 @@ class ComplexityFilter(SewageFilter):
         Run 0j
         '''
         temporary = self.__tDir__ + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
-        job = Job('"' + self.__zero_j__ + " -scores_only " + input_file + " > " + temporary + '"', lfil=self.__logfile__)
+        job = Job(self.__zero_j__ + " -scores_only " + input_file + " > " + temporary, lfil=self.__logfile__)
         job.run(wait=True) #submit job
 
         '''
