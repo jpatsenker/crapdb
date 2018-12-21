@@ -1,6 +1,7 @@
 import subprocess
+import os
 
-p = subprocess.Popen(['/bin/bash', '-c', './run_with_profile.sh -q short -W 1 -K -o superlog -e superlog "echo \'Hello World\' >> superlog"'])
+p = subprocess.Popen(['srun -p short -t 1 -o stdout.txt -e stderr.txt echo \'Hello World\''], preexec_fn=lambda: os.system("sudo -i -u kirshner"))
 p.wait()
 print "Done"
 
