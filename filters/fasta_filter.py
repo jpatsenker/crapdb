@@ -2,6 +2,7 @@ from os.path import basename
 import os
 
 from filters.sewagefilter import SewageFilter
+from aux.file_paths import *
 from aux.jobs import Job
 
 
@@ -13,8 +14,8 @@ class FastaCheckerFilter(SewageFilter):
     __name__ = "FASTA_CHECK_FILTER"
 
     #location of the fasta checker script
-    __fasta_checker__ = "/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker_for_crap.pl"
-
+    __fasta_checker__ = FASTACHECKER_PATH
+    
     def __init__(self, tempDir):
         super(FastaCheckerFilter, self).__init__()
         #needs location of the temporary directory for fasta checker output
@@ -34,7 +35,7 @@ class FastaCheckerFilter(SewageFilter):
         temporary = self.__tDir__ + basename(input_file) + ".raw" #create out file
         open(temporary, "w").close() #wipe file if exists
         temporary_errors = self.__tDir__ + basename(input_file) + ".errors" #create error out file
-        job = Job('"perl ' + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " > " + temporary + '"', lfil = self.__logfile__)
+        job = Job('"'+ PERL_PATH + " " + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " > " + temporary + '"', lfil = self.__logfile__)
         job.run(output=self.__tDir__ + "test.out", wait=True) #submit job
         '''
         Parse output of fasta checker

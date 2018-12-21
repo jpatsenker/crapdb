@@ -2,6 +2,7 @@ from os.path import basename
 
 from filters.sewagefilter import SewageFilter
 from filters.sewagefilter import BrokenFilterError
+from aux.file_paths import *
 from aux import logtools
 from aux.jobs import Job
 
@@ -10,7 +11,7 @@ class ComplexityFilter(SewageFilter):
 
     __name__ = "COMPLEXITY_FILTER"
 
-    __zero_j__ = "/www/kirschner.med.harvard.edu/docroot/genomes/code/0j/0j.py"
+    __zero_j__ = ZEROJ_PATH
 
     __threshold_level__ = None
 

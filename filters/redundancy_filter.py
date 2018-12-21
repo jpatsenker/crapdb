@@ -2,6 +2,7 @@ from os.path import basename
 
 from filters.sewagefilter import SewageFilter
 from filters.sewagefilter import BrokenFilterError
+from aux.file_paths import *
 from aux import logtools
 from aux.jobs import Job
 
@@ -18,7 +19,7 @@ class RedundancyFilter(SewageFilter):
     '''
     Location of CD-HIT on orchestra
     '''
-    __cd_hit__ = "/opt/cdhit-4.6/cd-hit"
+    __cd_hit__ = CDHIT_PATH
 
     __threshold_level__ = None
     __fractional_level__ = None
