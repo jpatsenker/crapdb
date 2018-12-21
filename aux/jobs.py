@@ -4,7 +4,7 @@ from aux import logtools
 
 class Job:
     def __init__(self, job_string, lfil=None):
-        self.job_string = '"' + job_string + '"'
+        self.job_string = job_string
         self.lfil = lfil
         
     def run(self, error = 'error_test', output='output_test', queue='short', timelim = 60, wait = False, return_process = False):
