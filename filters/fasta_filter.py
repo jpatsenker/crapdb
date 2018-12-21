@@ -59,6 +59,7 @@ class FastaCheckerFilter(SewageFilter):
                         if line != cline:
                             sequence = in_stream.readline()
                             with open(diagnostics_file, "a") as diag_stream:
+                                print line, "is not", cline
                                 diag_stream.write(line.rstrip("\n") + " Sequence Discarded by Fasta Checker\n" + sequence)
                         else:
                             cline = good_seq_stream.readline()

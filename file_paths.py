@@ -3,7 +3,6 @@ PYTHON_PATH = '/usr/bin/python'
 PERL_PATH = '/usr/bin/perl'
 
 
-
 #RELEVANT SCRIPTS
 FASTACHECKER_PATH = "/www/kirschner.med.harvard.edu/docroot/genomes/code/fasta_checker_for_crap.pl"
 CDHIT_PATH = "FIND"
