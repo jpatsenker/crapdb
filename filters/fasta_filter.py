@@ -35,14 +35,13 @@ class FastaCheckerFilter(SewageFilter):
         temporary = self.__tDir__ + basename(input_file) + ".raw" #create out file
         open(temporary, "w").close() #wipe file if exists
         temporary_errors = self.__tDir__ + basename(input_file) + ".errors" #create error out file
-        job = Job(PERL_PATH + " " + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " > " + temporary, lfil = self.__logfile__)
+        job = Job(PERL_PATH + " " + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " 1> " + temporary, lfil = self.__logfile__)
         job.run(output=self.__tDir__ + "test.out", wait=True) #submit job
         '''
         Parse output of fasta checker
         '''
         #the temporary out is already a clean fasta file
         os.rename(temporary, output_file)
-        print input_file, output_file, temporary
         '''
         find if dirty sequences exist and put them into dirty file
         '''
@@ -50,9 +49,7 @@ class FastaCheckerFilter(SewageFilter):
         with open(input_file, "r") as in_stream:
             with open(output_file, "r") as good_seq_stream:
                 line = in_stream.readline()
-                print "THIS IS", line
                 cline = good_seq_stream.readline()
-                print "THIS IS", cline
                 while line:
                     #if on sequence line keep going, else check if that exists in the temp file
                     if line[0] == ">":
@@ -61,13 +58,10 @@ class FastaCheckerFilter(SewageFilter):
                         if line != cline:
                             sequence = in_stream.readline()
                             with open(diagnostics_file, "a") as diag_stream:
-                                print line[0:50], "is not", cline[0:50]
                                 diag_stream.write(line.rstrip("\n") + " Sequence Discarded by Fasta Checker\n" + sequence)
                         else:
                             cline = good_seq_stream.readline()
-                            print "THIS IS", cline
                         line = in_stream.readline()
-                        print "THIS IS", line
                     else:
                         #continue
                         cline = good_seq_stream.readline()
