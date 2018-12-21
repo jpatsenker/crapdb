@@ -7,7 +7,7 @@ class Job:
         self.job_string = job_string
         self.lfil = lfil
         
-    def run(self, error = '/dev/null/', output='/dev/null', queue='short', timelim = 60, wait = False, return_process = False):
+    def run(self, error = '/dev/null', output='/dev/null', queue='short', timelim = 60, wait = False, return_process = False):
         if self.lfil is not None: 
             logtools.add_line_to_log(self.lfil, "<CMD:> [SRUN] " + self.job_string)
         
