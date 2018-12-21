@@ -42,7 +42,7 @@ class FastaCheckerFilter(SewageFilter):
         '''
         #the temporary out is already a clean fasta file
         os.rename(temporary, output_file)
-
+        print input_file, output_file
         '''
         find if dirty sequences exist and put them into dirty file
         '''
@@ -50,7 +50,9 @@ class FastaCheckerFilter(SewageFilter):
         with open(input_file, "r") as in_stream:
             with open(output_file, "r") as good_seq_stream:
                 line = in_stream.readline()
+                print "THIS IS", line
                 cline = good_seq_stream.readline()
+                print "THIS IS", cline
                 while line:
                     #if on sequence line keep going, else check if that exists in the temp file
                     if line[0] == ">":
@@ -63,7 +65,9 @@ class FastaCheckerFilter(SewageFilter):
                                 diag_stream.write(line.rstrip("\n") + " Sequence Discarded by Fasta Checker\n" + sequence)
                         else:
                             cline = good_seq_stream.readline()
+                            print "THIS IS", cline
                         line = in_stream.readline()
+                        print "THIS IS", line
                     else:
                         #continue
                         cline = good_seq_stream.readline()
