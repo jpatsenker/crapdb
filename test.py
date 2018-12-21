@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-p = subprocess.Popen(['srun -p short -t 1 -o stdout.txt -e stderr.txt python slurm_test.py'], preexec_fn=lambda: os.system("sudo -s -u kirschner"))
+p = subprocess.Popen(['sudo -u kirschner srun -p short -t 1 -o stdout.txt -e stderr.txt python slurm_test.py'])
 p.wait()
 print "Done"
 
