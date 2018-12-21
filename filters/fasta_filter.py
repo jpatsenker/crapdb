@@ -42,7 +42,7 @@ class FastaCheckerFilter(SewageFilter):
         '''
         #the temporary out is already a clean fasta file
         os.rename(temporary, output_file)
-        print input_file, output_file
+        print input_file, output_file, temporary
         '''
         find if dirty sequences exist and put them into dirty file
         '''
