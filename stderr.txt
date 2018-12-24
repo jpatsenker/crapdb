@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "test_slurm.py", line 2, in <module>
+    raise Exception
+Exception

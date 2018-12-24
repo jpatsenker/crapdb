@@ -1,0 +1,5 @@
+The set of files here are essentially those provided by Aaron Watters in his
+kjbuckets distribution. There have been a couple changes to reflect
+changes in compiler etc, and other minor fixes.
+
+Sep 2006. Makefile finally replaced by setup.py, for use by distutils
