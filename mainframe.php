@@ -26,7 +26,7 @@
                         <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
                             <div id="download_area">
                                 <br><b>FASTA: </b> <input type="file" name="fastaseq"><p>
-                                <b>EMAIL: </b> <input type="text" name="email"></input>
+                                <b>EMAIL (optional): </b> <input type="text" name="email"></input>
                                 <p><b>PARAMETERS</b></p>
                                 <table>
                                     <tr>
