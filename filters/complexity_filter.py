@@ -1,4 +1,5 @@
 from os.path import basename
+import os
 
 from filters.sewagefilter import SewageFilter
 from filters.sewagefilter import BrokenFilterError
@@ -29,12 +30,16 @@ class ComplexityFilter(SewageFilter):
         :param diagnostics_file: fasta output with compressable sequences (appended to)
         :return:
         """
-
+        
         '''
         Run 0j
         '''
         temporary = self.__tDir__ + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
+        curr_dir = os.getcwd()
+        dir_of_0j = self.__zero_j__[:self.__zero_j__.rfind('/')]
+        os.chdir(dir_of_0j)
         job = Job(self.__zero_j__ + " -scores_only " + input_file + " > " + temporary, lfil=self.__logfile__)
+        os.chdir(curr_dir)
         job.run(wait=True) #submit job
 
         '''
