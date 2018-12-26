@@ -7,7 +7,7 @@
         
     </HEAD>
     <BODY>
-<?php print_r($_POST); ?>
+        Hello World
 <!--
 <?php
     function get_next_id(){
