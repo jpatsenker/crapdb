@@ -198,7 +198,7 @@
                                         <td>
                                             <table>
                                                 <tr>
-                                                    <td class="setting">
+                                                    <td class="checkbox">
                                                         Check for M at beginning of sequence?
                                                     </td>
                                                     <td>
