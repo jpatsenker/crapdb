@@ -7,8 +7,8 @@
         
     </HEAD>
     <BODY>
-
-
+<?php print_r($_POST); ?>
+<!--
 <?php
     function get_next_id(){
         $file_handle = fopen("INCREMENTFILE.num", "r+");
@@ -135,7 +135,7 @@
 
     echo "</div></td></tr></table>";
 
-?>
+?> -->
 
     </BODY>
 </HTML>
