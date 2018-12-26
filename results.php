@@ -1,4 +1,6 @@
-<HTML>
+<?php phpinfo(); ?>
+
+<!--<HTML>
     <HEAD>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <title>
@@ -7,8 +9,7 @@
         
     </HEAD>
     <BODY>
-        Hello World
-<!--
+
 <?php
     function get_next_id(){
         $file_handle = fopen("INCREMENTFILE.num", "r+");
@@ -135,7 +136,7 @@
 
     echo "</div></td></tr></table>";
 
-?> -->
+?>
 
     </BODY>
-</HTML>
+</HTML> -->
