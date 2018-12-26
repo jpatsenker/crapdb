@@ -38,14 +38,14 @@
                                                         <a href="javascript:toggle('Length_Description')">(?)</a>
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" name="dlen"> Bypass?
+                                                        <input type="checkbox" name="dlen"> <b>Skip?</b>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
                                     <tr id = "Length_Description" style="display: none;width: 20em;">
-                                        <td class="descript setting">Flag sequences that are less that <b>m</b> or more than <b>n</b> amino acids long.</td>
+                                        <td class="descript setting">Flag sequences that are less that <b>m</b> or more than <b>n</b> amino acids long. Check <b>Skip</b> to bypass</td>
                                     </tr>
                                     <tr>
                                         <td>
