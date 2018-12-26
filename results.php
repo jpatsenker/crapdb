@@ -28,7 +28,7 @@
         
         parse_ini_file("php.ini");
         
-        echo '<table><tr><td>';
+        echo '<table style="margin:0 auto;"><tr><td>';
         #echo '<div>';
     if(!$_POST['email']){
         echo '<div class="notout">';
