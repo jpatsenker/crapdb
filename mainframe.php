@@ -79,7 +79,7 @@
                                         </td>
                                     </tr>
                                     <tr id = "ISC_Description" style="display: none;width: 20em;">
-                                        <td class="descript setting">Flag sequences compressible at least down to <b>c</b> of the original length (repetitive structure)
+                                        <td class="descript setting">Flag sequences compressible at least down to <b>c</b> of the original length (repetitive structure). Check <b>Skip</b> to bypass
                                     </tr>
                                     <tr>
                                         <td>
@@ -105,7 +105,7 @@
                                         </td>
                                     </tr>
                                     <tr id = 'ISR_Description' style="display: none;width: 20em;">
-                                        <td class="descript setting">Flag sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set.
+                                        <td class="descript setting">Flag sequences contained with atleast <b>t</b> sequence identity within up to <b>f</b> fractional length of another sequence in this set. Check <b>Skip</b> to bypass
                                     </tr>
                                     <tr>
                                         <td>
@@ -129,6 +129,7 @@
                                             </table>
                                         </td>
                                     </tr>
+<!--
                                     <tr>
                                         <td>
                                             <table>
@@ -138,8 +139,9 @@
                                             </table>
                                         </td>
                                     </tr>
+
                                     <tr id = 'FIS_Description' style="display: none;width: 20em;">
-                                        <td class="descript setting">Flag sequences that are potentially joinable fragments of <b>Reference Genome</b>.
+                                        <td class="descript setting">Flag sequences that are potentially joinable fragments of <b>Reference Genome</b>. Check <b>Skip</b> to bypass
                                     </tr>
                                     <tr>
                                         <td>
@@ -170,7 +172,7 @@
                                                 </tr>
                                             </table>
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                     <tr>
                                         <td><b>Miscellaneous Settings:</b></td>
                                     </tr>
