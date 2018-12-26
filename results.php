@@ -9,11 +9,6 @@
     <BODY>
 
 <?php
-    
-    function get_next_id(){
-        return rand(1,100000)
-    }
-    
 
     parse_ini_file("php.ini");
     echo '<table style="margin:0 auto;"><tr><td>';
@@ -61,7 +56,7 @@
     }
     
     $target_dir = "uploaded_fasta/";
-    $next_id = get_next_id();
+    $next_id = rand(1,1000000)
 
 ?>
 
