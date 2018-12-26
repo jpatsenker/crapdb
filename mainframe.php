@@ -201,7 +201,7 @@
                                                     <td class="setting">
                                                         Check for M at beginning of sequence?
                                                     </td>
-                                                    <td style="padding-left:5%;">
+                                                    <td>
                                                         <input type="checkbox" name="ms"><a href="javascript:toggle('MS_Description')">(?)</a>
                                                     </td>
                                                 </tr>
