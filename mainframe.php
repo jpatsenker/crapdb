@@ -15,7 +15,7 @@
     });
 </script>
 
-<div style="width:100%;">
+<div style="width:100%; align:center">
     <table>
         <tr>
             <td>
@@ -219,7 +219,7 @@
                             </div>
                             <p>
                             <div style="font-size:50%;">
-                                <b>Contact:</b><i><br>moc.liamg@nikhsep backwards<br>moc.reknestap@nahtanoj backwards</i>
+                                <b>Contact:</b><i><br>leonid_peshkin (at) hms.harvard.edu <br> jonathan (at) patsenker.com</i>
                             </div>
                         </form>
                     </div>
