@@ -20,7 +20,7 @@
         <tr>
             <td>
                 <div class="bigblock">
-                    <div class="subtitle"> <b>C</b>omprehensive <b>R</b>edundancy <b>A</b>nalysis for Complete Proteomes </div>
+                    <div class="subtitle"> <b>Co</b>mprehensive <b>Re</b>dundancy Analysis for <b>Co</b>mplete <b>P</b>roteomes </div>
 
                     <div class="general">
                         <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
