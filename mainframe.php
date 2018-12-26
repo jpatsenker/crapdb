@@ -195,9 +195,21 @@
                                         <td class="descript setting">Flag sequences with regions containing more than <b>x</b> consecutive "X"s</td>
                                     </tr>
                                     <tr>
-                                        <td>Check for M at beginning of sequence? <input type="checkbox" name="ms"></td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td class="setting">
+                                                        Check for M at beginning of sequence?
+                                                    </td>
+                                                    <td>
+                                                        <input type="checkbox" name="ms">
+                                                        <a href="javascript:toggle('MS_Description')">(?)</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
                                     </tr>
-                                    <tr id = 'XS_Description' style="display: none;">
+                                    <tr id = 'MS_Description' style="display: none;">
                                         <td class="descript setting">When checked flag sequences not beggining with "M"</td>
                                     </tr>
                                 </table>
