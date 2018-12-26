@@ -57,7 +57,17 @@
     
     $target_dir = "uploaded_fasta/";
     $next_id = rand(1,1000000);
-    echo($next_id)
+    $fname = $_FILES['fastaseq']['name'];
+    $target_fname = substr($fname,0,strpos($fname,'.')) . '_' . $next_id;
+    $target_file = $target_dir . $target_fname;
+
+
+    #move file into uploaded folder
+    if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
+        echo '<div class="notout">';
+        echo 'Error Uploading Input File <br>';
+
+    }
 
 ?>
 
