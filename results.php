@@ -10,26 +10,26 @@
 
 
 <?php
-        function get_next_id(){
-            $file_handle = fopen("INCREMENTFILE.num", "r+");
-            while (!flock($file_handle, LOCK_EX)){
-                //print "Please reset INCREMENTFILE.num, php flock() error";
-                //exit(1);
-            }
-            $id = stream_get_contents($file_handle);
-            $next = ($id+1)%10000;
-            fseek($file_handle,0);
-            ftruncate($file_handle,0);
-            fwrite($file_handle, $next);
-            flock($file_handle, LOCK_UN);
-            fclose($file_handle);
-            return $id;
+    function get_next_id(){
+        $file_handle = fopen("INCREMENTFILE.num", "r+");
+        while (!flock($file_handle, LOCK_EX)){
+            //print "Please reset INCREMENTFILE.num, php flock() error";
+            //exit(1);
         }
-        
-        parse_ini_file("php.ini");
-        
-        echo '<table style="margin:0 auto;"><tr><td>';
-        #echo '<div>';
+        $id = stream_get_contents($file_handle);
+        $next = ($id+1)%10000;
+        fseek($file_handle,0);
+        ftruncate($file_handle,0);
+        fwrite($file_handle, $next);
+        flock($file_handle, LOCK_UN);
+        fclose($file_handle);
+        return $id;
+    }
+
+    #parse_ini_file("php.ini");
+
+    echo '<table style="margin:0 auto;"><tr><td>';
+    #echo '<div>';
     if(!$_POST['email']){
         echo '<div class="notout">';
         echo '<p>  Please fill in all fields </p>';
@@ -76,7 +76,6 @@
         }else{
             $ms = "";
         }
-        echo 'set parameters'
         $target_dir = "uploaded_fasta/";
         $next_id = get_next_id();
         $fname = $_FILES['fastaseq']['name'];
@@ -125,8 +124,8 @@
             }
             
             echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
-            echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . ' -rg ' . $rg . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed . $dFis .' > superlog 2>&1 &';
-            exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . ' -rg ' . $rg . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &');
+            echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &';
+            exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &');
             
             if(!$_POST['email']){
                 echo '<p> You will receive an email when the results are ready. </p>';
