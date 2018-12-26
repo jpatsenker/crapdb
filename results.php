@@ -76,7 +76,7 @@
         }else{
             $ms = "";
         }
-        
+        echo 'set parameters'
         $target_dir = "uploaded_fasta/";
         $next_id = get_next_id();
         $fname = $_FILES['fastaseq']['name'];
