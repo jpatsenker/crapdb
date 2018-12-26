@@ -56,7 +56,8 @@
     }
     
     $target_dir = "uploaded_fasta/";
-    $next_id = rand(1,1000000)
+    $next_id = rand(1,1000000);
+    echo($next_id)
 
 ?>
 
