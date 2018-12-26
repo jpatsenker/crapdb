@@ -9,6 +9,23 @@
     <BODY>
 
 <?php
+    
+    function get_next_id(){
+        $file_handle = fopen("INCREMENTFILE.num", "r+");
+        while (!flock($file_handle, LOCK_EX)){
+            //print "Please reset INCREMENTFILE.num, php flock() error";
+            //exit(1);
+        }
+        $id = stream_get_contents($file_handle);
+        $next = ($id+1)%10000;
+        fseek($file_handle,0);
+        ftruncate($file_handle,0);
+        fwrite($file_handle, $next);
+        flock($file_handle, LOCK_UN);
+        fclose($file_handle);
+        return $id;
+    }
+    
 
     parse_ini_file("php.ini");
     echo '<table style="margin:0 auto;"><tr><td>';
@@ -54,12 +71,10 @@
     }else{
         $ms = "";
     }
+    
+    $target_dir = "uploaded_fasta/";
+    $next_id = get_next_id();
 
-    echo $email;
-    echo $dComp;
-    echo $xs;
-    echo $ms;
-    echo $max;
 ?>
 
     </BODY>
