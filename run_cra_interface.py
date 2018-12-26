@@ -1,6 +1,6 @@
 import sys
 
-from aux import lsftools
+from aux.jobs import Job
 """
 Interface for running run_cra from php
 """
@@ -13,7 +13,7 @@ for a in sys.argv[1:]:
 
 print command_string + "\n"
 
-Job = 
-lsftools.run_job(command_string, wait=True, dont_clean=True, bsub_output="/dev/null", bsub_error="/dev/null")
+job = Job(command_string)
+job.run(wait=True, output="/dev/null", error="/dev/null")
 
 print "done"
