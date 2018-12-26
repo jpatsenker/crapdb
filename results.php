@@ -12,7 +12,7 @@
 
     parse_ini_file("php.ini");
     echo '<table style="margin:0 auto;"><tr><td>';
-    echo $_POST;
+    print_r($_POST);
     #get information
     $email = $_POST['email'];
     $ct = $_POST['ct'];
