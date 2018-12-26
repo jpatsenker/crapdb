@@ -16,7 +16,7 @@
 </script>
 
 <div style="width:100%; align:center">
-    <table>
+    <table style="margin:0 auto;">
         <tr>
             <td>
                 <div class="bigblock">
