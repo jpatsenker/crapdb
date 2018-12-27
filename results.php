@@ -22,8 +22,6 @@
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    $sent = mail($email, "CoreCop REQUEST SENT", "hello world", $headers);
-
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
     $email = $_POST['email'];
