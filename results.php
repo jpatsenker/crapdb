@@ -11,6 +11,8 @@
 <?php
 
     parse_ini_file("php.ini");
+    ini_set("log_errors", 1);
+    ini_set("error_log", "webserver_php_errors.log");
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
     $email = $_POST['email'];
