@@ -9,12 +9,12 @@ from filters.complexity_filter import ComplexityFilter
 from filters.redundancy_filter import RedundancyFilter
 from filters.simple_filter import SimpleFilter
 from filters.fasta_filter import FastaCheckerFilter
-from filters.fission_filter import FissionFilter
+#from filters.fission_filter import FissionFilter
 from aux import logtools, mailtools, fasta_fixer, helptools
 
 #DEFAULT REFERENCE FILES FOR CONCAT FILTER
-HUMAN_GENOME_FILE = "data/reference_genomes/hgfix.fa"
-XTROP_GENOME_FILE = "data/reference_genomes/xtfix.fa"
+#HUMAN_GENOME_FILE = "data/reference_genomes/hgfix.fa"
+#XTROP_GENOME_FILE = "data/reference_genomes/xtfix.fa"
 
 
 #params init
@@ -86,7 +86,7 @@ ff_param_thresh = .7
 ff_param_flength = .8
 ms_check = False
 xs_tolerance = 0
-refGenome = "human"
+#refGenome = "human"
 
 #ignore filters params
 no_len = False
@@ -116,8 +116,8 @@ try:
             ms_check = True
         if "-xs" in sys.argv[5:]:
             xs_tolerance = int(sys.argv[sys.argv.index("-xs")+1])
-        if "-rg" in sys.argv[5:]:
-            refGenome = sys.argv[sys.argv.index("-rg")+1]
+        #if "-rg" in sys.argv[5:]:
+        #    refGenome = sys.argv[sys.argv.index("-rg")+1]
         if "-nolen" in sys.argv[5:]:
             no_len = True
         if "-nocomp" in sys.argv[5:]:
@@ -133,16 +133,16 @@ except ValueError:
     exit(1)
 
 #reference genome set
-if refGenome == "human": #default
-    refGenome = HUMAN_GENOME_FILE
-if refGenome == "xtrop": #default
-    refGenome = XTROP_GENOME_FILE
-else:
-    if not os.path.exists(refGenome): #use file
-        logtools.add_fatal_error(logfil, "Invalid Reference Genome File: " + refGenome)
-        mailtools.send_error("Invalid Reference Genome File: " + refGenome, eAddress, lfil=logfil)
-        print "Invalid Reference Genome File: " + refGenome + "\n"
-        exit(1)
+#if refGenome == "human": #default
+#    refGenome = HUMAN_GENOME_FILE
+#if refGenome == "xtrop": #default
+#    refGenome = XTROP_GENOME_FILE
+#else:
+#    if not os.path.exists(refGenome): #use file
+#        logtools.add_fatal_error(logfil, "Invalid Reference Genome File: " + refGenome)
+#        mailtools.send_error("Invalid Reference Genome File: " + refGenome, eAddress, lfil=logfil)
+#        print "Invalid Reference Genome File: " + refGenome + "\n"
+#        exit(1)
 
 #start log file
 logtools.start_new_log(iFile, eAddress, logfil)
@@ -163,7 +163,7 @@ comp_filter = ComplexityFilter(zeroj_param, tDir, lfil=logfil)
 red_filter = RedundancyFilter(cdhit_param_thresh, cdhit_param_flength, tDir, lfil=logfil)
 simple_filter = SimpleFilter(ms_check, xs_tolerance)
 fasta_filter = FastaCheckerFilter(tDir)
-fission_filter = FissionFilter(refGenome, tDir)
+#fission_filter = FissionFilter(refGenome, tDir)
 
 #queue all modules in order
 ss.add_module(num_seq_bef_anlzr) #check before
@@ -198,11 +198,12 @@ if not no_red:
     ss.add_module(red_filter)
     logtools.add_line_to_log(logfil, "<Staging Redundancy Filter>")
     print "Staging Redundancy Filter"
-if not no_fis:
-    ss.add_module(a[4])
-    ss.add_module(fission_filter)
-    logtools.add_line_to_log(logfil, "<Staging Fission Filter>")
-    print "Staging Fission Filter"
+
+# if not no_fis:
+#     ss.add_module(a[4])
+#     ss.add_module(fission_filter)
+#     logtools.add_line_to_log(logfil, "<Staging Fission Filter>")
+#     print "Staging Fission Filter"
 
 ss.add_module(num_seq_aft_anlzr) #check after
 
