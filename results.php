@@ -27,6 +27,9 @@
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
     $email = $_POST['email'];
+    
+    $sent = mail($email, "CoreCop REQUEST SENT", "hello world", $headers);
+
     $ct = $_POST['ct'];
     $cl = $_POST['cl'];
     $min = $_POST['min'];
