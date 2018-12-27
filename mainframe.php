@@ -219,7 +219,7 @@
                             </div>
                             <p>
                             <div style="font-size:50%;">
-                                <b>Contact:</b><i><br>leonid_peshkin (at) hms.harvard.edu <br> jonathan (at) patsenker.com</i>
+                                <b>Contact:</b><i><br>pesha (at) hms.harvard.edu <br> jonathan (at) patsenker.com</i>
                             </div>
                         </form>
                     </div>
