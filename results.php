@@ -14,7 +14,7 @@
     error_reporting(E_ALL); // Error engine - always ON!
     ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
     ini_set('log_errors', TRUE); // Error logging
-    ini_set('error_log', '/corecop/webserver_php_errors.log'); // Logging file
+    ini_set('error_log', '/www/kirschner.med.harvard.edu/docroot/corecop/log/webserver_php_errors.log'); // Logging file
     ini_set('log_errors_max_len', 1024); // Logging file size
 
     error_log('hello world');
