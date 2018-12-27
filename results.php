@@ -27,7 +27,8 @@
     $email = $_POST['email'];
     
     $sent = mail($email, "CoreCop REQUEST SENT", "hello world", $headers);
-    error_log("Mail sent?" . $sent);
+    echo "Mail sent?" . $sent;
+
     $ct = $_POST['ct'];
     $cl = $_POST['cl'];
     $min = $_POST['min'];
