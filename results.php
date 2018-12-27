@@ -55,7 +55,7 @@
     }
     
     $target_dir = "uploaded_fasta/";
-    $next_id = rand(1,1000000);
+    $next_id = rand(1,PHP_INT_MAX);
     $fname = $_FILES['fastaseq']['name'];
     $target_fname = substr($fname,0,strpos($fname,'.')) . '_' . $next_id;
     $target_file = $target_dir . $target_fname;
@@ -68,28 +68,30 @@
 
     }else{
         echo '<div class="outputs">';
+        
+        if($_POST['email']){
+            $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>\r\n';
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-        $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>\r\n';
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-        $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $target_fname . ".log";
-        $fullpath = str_replace("/docroot/", "/", $fullpath);
-        $sent = @mail($email, "CoreCop REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
-        if($sent){
-            echo "<p> Email Validated... </p>";
-        }else{
-            echo "<p> INVALID EMAIL! TERMINATING JOB! </p>";
-            echo '<form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>';
-            echo "</div></td></tr></table>";
-            die();
+            $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $target_fname . ".log";
+            $fullpath = str_replace("/docroot/", "/", $fullpath);
+            $sent = @mail($email, "CoreCop REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
+            if($sent){
+                echo "<p> Email Validated... </p>";
+            }else{
+                echo "<p> INVALID EMAIL! SEE LINK BELOW</p>";
+                #echo '<form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>';
+                #echo "</div></td></tr></table>";
+                #die();
+            }
         }
 
         echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
         echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &';
         exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &');
 
-        if(!$_POST['email']){
+        if($_POST['email']){
             echo '<p> You will receive an email when the results are ready. </p>';
         }
         echo '<p><a href="logs/' . $target_fname . '.log"> Log file for job </a></p>';
