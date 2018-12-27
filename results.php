@@ -11,8 +11,12 @@
 <?php
 
     parse_ini_file("php.ini");
-    ini_set("log_errors", 1);
-    ini_set("error_log", "webserver_php_errors.log");
+    error_reporting(E_ALL); // Error engine - always ON!
+    ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
+    ini_set('log_errors', TRUE); // Error logging
+    ini_set('error_log', 'webserver_php_errors.log'); // Logging file
+    ini_set('log_errors_max_len', 1024); // Logging file size
+
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
     $email = $_POST['email'];
