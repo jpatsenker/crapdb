@@ -70,7 +70,7 @@
 
     }else{
         echo '<div class="outputs">';
-        
+        echo '<p>Sending Mail...</p>';
         if($_POST['email']){
             $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>\r\n';
             $headers .= "MIME-Version: 1.0\r\n";
