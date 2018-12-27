@@ -27,7 +27,7 @@
     $email = $_POST['email'];
     
     $sent = mail($email, "CoreCop REQUEST SENT", "hello world", $headers);
-
+    error_log("Mail sent?" . $sent)
     $ct = $_POST['ct'];
     $cl = $_POST['cl'];
     $min = $_POST['min'];
@@ -90,7 +90,7 @@
 
             $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $target_fname . ".log";
             $fullpath = str_replace("/docroot/", "/", $fullpath);
-            $sent = mail($email, "CoreCop REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
+            ` = mail($email, "CoreCop REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
             if($sent){
                 echo "<p> Email Validated... </p>";
             }else{
