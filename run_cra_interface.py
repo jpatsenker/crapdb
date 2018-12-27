@@ -14,6 +14,6 @@ for a in sys.argv[1:]:
 print command_string + "\n"
 
 job = Job(command_string)
-job.run(wait=True, output="/dev/null", error="/dev/null")
+job.run(wait=True, output="interface_test_out", error="interface_test_err")
 
 print "done"
