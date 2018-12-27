@@ -14,7 +14,7 @@
     error_reporting(E_ALL); // Error engine - always ON!
     ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
     ini_set('log_errors', TRUE); // Error logging
-    ini_set('error_log', 'webserver_php_errors.log'); // Logging file
+    ini_set('error_log', '/www/kirschner.med.harvard.edu/docroot/corecop/webserver_php_errors.log'); // Logging file
     ini_set('log_errors_max_len', 1024); // Logging file size
 
     error_log('hello world');
@@ -94,7 +94,7 @@
             }
         }
 
-        echo "<p> We are processing your file as: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
+        echo "<p> Your file in our system: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
         echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &';
         exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &');
 

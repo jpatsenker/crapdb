@@ -38,7 +38,7 @@
                                                         <a href="javascript:toggle('Length_Description')">(?)</a>
                                                     </td>
                                                     <td>
-                                                        <input type="checkbox" name="dlen"> <b>Skip?</b>
+                                                        <input type="checkbox" name="dlen"> <b>Skip</b>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -73,7 +73,7 @@
                                         <td>
                                             <table>
                                                 <tr>
-                                                    <td class="setting_title"><b>Intra-Sequence Complexity: </b><a href="javascript:toggle('ISC_Description')">(?)</a></td><td><input type="checkbox" name="dcomp"> <b>Skip?</b> </td>
+                                                    <td class="setting_title"><b>Intra-Sequence Complexity: </b><a href="javascript:toggle('ISC_Description')">(?)</a></td><td><input type="checkbox" name="dcomp"> <b>Skip</b> </td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -99,7 +99,7 @@
                                         <td>
                                             <table>
                                                 <tr>
-                                                    <td class="setting_title"><b>Inter-Sequence Redundancy: </b><a href="javascript:toggle('ISR_Description')">(?)</a></td><td> <input type="checkbox" name="dred"> <b>Skip?</b> </td>
+                                                    <td class="setting_title"><b>Inter-Sequence Redundancy: </b><a href="javascript:toggle('ISR_Description')">(?)</a></td><td> <input type="checkbox" name="dred"> <b>Skip</b> </td>
                                                 </tr>
                                             </table>
                                         </td>
