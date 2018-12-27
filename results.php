@@ -17,6 +17,7 @@
     ini_set('error_log', 'webserver_php_errors.log'); // Logging file
     ini_set('log_errors_max_len', 1024); // Logging file size
 
+    error_log('hello world');
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
     $email = $_POST['email'];
