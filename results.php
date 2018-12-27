@@ -14,13 +14,14 @@
     error_reporting(E_ALL); // Error engine - always ON!
     ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
     ini_set('log_errors', TRUE); // Error logging
-    ini_set('error_log', '/www/kirschner.med.harvard.edu/docroot/corecop/webserver_php_errors.log'); // Logging file
+    ini_set('error_log', '/corecop/webserver_php_errors.log'); // Logging file
     ini_set('log_errors_max_len', 1024); // Logging file size
 
     error_log('hello world');
     $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>\r\n';
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
     $sent = @mail($email, "CoreCop REQUEST SENT", "hello world", $headers);
 
     echo '<table style="margin:0 auto;"><tr><td>';
