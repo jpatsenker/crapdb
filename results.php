@@ -103,8 +103,8 @@
             echo '<p> You will receive an email when the results are ready. </p>';
         }
         
-        echo '<p> <a href="' . $target_file . '.clean.fa ' . '">Clean Result File</a> Contains remaining sequences (will be available when results are done) </p>';
-        echo '<p> <a href="' . $target_file . '.dirty.fa ' . '">Annotated Result File</a> Contains filtered and annotated sequences (will be available when results are done) </p>';
+        echo '<p> <a href="' . $target_file . '.clean.fa ' . '">Clean Result File</a> Contains remaining sequences (will be available when results are done) <br>';
+        echo '<a href="' . $target_file . '.dirty.fa ' . '">Annotated Result File</a> Contains filtered and annotated sequences (will be available when results are done) </p>';
         
         echo '<p><a href="logs/' . $target_fname . '.log"> Log File</a></p>';
 
