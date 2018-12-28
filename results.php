@@ -82,13 +82,13 @@
         echo '<div class="outputs">';
         echo '<p>Sending Mail...</p>';
         if($_POST['email']){
-            $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>\r\n';
-            $headers .= 'MIME-Version: 1.0\r\n';
-            $headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
+            $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>';
+            #$headers .= 'MIME-Version: 1.0\r\n';
+            #$headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
 
             $fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
             $fullpath = str_replace('/docroot/', '/', $fullpath);
-            $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>');#, $headers);
+            $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.\n ' . $fullpath . '\n', $headers);
             if($sent){
                 echo '<p> Email Sent... </p>';
             }else{
