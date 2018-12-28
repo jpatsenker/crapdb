@@ -92,16 +92,17 @@
             }
         }
         
-        echo '<p> File: ' . $fname . '</p>';
-        echo '<p> Size: ' . filesize($target_file) . ' bytes </p>';
-        echo '<p> ID: ' . $target_fname . '</p>';
+        echo '<p> File: ' . $fname . '<br>';
+        echo 'Size: ' . filesize($target_file) . ' bytes <br>';
+        echo 'ID: ' . $target_fname . '</p>';
         echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
         exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > log/php_to_python.log 2>&1');
         
         #exec('python test_python.py > log/php_to_python.log 2>&1');
         
         if($_POST['email']){
-            echo '<p> You will receive an email when the results are ready. </p>';
+            echo '<p> You will receive an email when the results are ready. <br>';
+            echo 'Email ' . $email . '</p>';
         }
         
         echo '<p> <a href="' . $target_file . '.clean.fa ' . '">Clean Result File</a> Contains remaining sequences (will be available when results are done) <br>';
