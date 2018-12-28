@@ -3,3 +3,6 @@ tmp/*
 uploaded_fasta/*
 logs/*
 INCREMENTFILE.num
+log/*
+superlog
+kjbuckets.so

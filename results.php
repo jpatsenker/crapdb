@@ -11,23 +11,15 @@
 <?php
 
     parse_ini_file("php.ini");
-    error_reporting(E_ALL); // Error engine - always ON!
+    error_reporting(-1);
+    #error_reporting(E_ALL); // Error engine - always ON!
     ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
     ini_set('log_errors', TRUE); // Error logging
     ini_set('error_log', '/www/kirschner.med.harvard.edu/docroot/corecop/log/webserver_php_errors.log'); // Logging file
-    
-    error_log('hello world');
-    $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>\r\n';
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
-    $email = $_POST['email'];
-    
-    $sent = mail($email, "CoreCop REQUEST SENT", "hello world", $headers);
-    echo "Mail sent?" . $sent;
-    
+    $email = $_POST['email'];    
     $ct = $_POST['ct'];
     $cl = $_POST['cl'];
     $min = $_POST['min'];
@@ -74,7 +66,7 @@
     $target_fname = substr($fname,0,strpos($fname,'.')) . '_' . $next_id;
     $target_file = $target_dir . $target_fname;
 
-
+    
     #move file into uploaded folder
     if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
         echo '<div class="notout">';
@@ -85,38 +77,38 @@
         echo '<p>Sending Mail...</p>';
         if($_POST['email']){
             $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>\r\n';
-            $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            $headers .= 'MIME-Version: 1.0\r\n';
+            $headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
 
-            $fullpath = substr(getcwd(),strpos(getcwd(), "/www/") + 5) . "/logs/" . $target_fname . ".log";
-            $fullpath = str_replace("/docroot/", "/", $fullpath);
-            ` = mail($email, "CoreCop REQUEST SENT", "We are processing your file as: " . $target_file . " size: " . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
+            $fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
+            $fullpath = str_replace('/docroot/', '/', $fullpath);
+            $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
             if($sent){
-                echo "<p> Email Validated... </p>";
+                echo '<p> Email Validated... </p>';
             }else{
-                echo "<p> INVALID EMAIL! SEE LINK BELOW</p>";
+                echo '<p> Couldn\'t send email! See link below... </p>';
                 #echo '<form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>';
                 #echo "</div></td></tr></table>";
                 #die();
             }
         }
-
-        echo "<p> Your file in our system: " . $target_file . " size: " . filesize($target_file) . " bytes </p>";
-        echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &';
-        exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > superlog 2>&1 &');
-
+        
+        echo '<p> Your file in our system: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes </p>';
+        echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
+        exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > log/php_to_python.log 2>&1');
+        
+        
         if($_POST['email']){
             echo '<p> You will receive an email when the results are ready. </p>';
         }
-        echo '<p><a href="logs/' . $target_fname . '.log"> Log file for job </a></p>';
+        
+        echo '<p> <a href="' . $target_file . '">Result File</a> (will be available when results are done) </p>';
+        
+        echo '<p><a href="logs/' . $target_fname . '.log"> Log File</a></p>';
 
     }
 
-    echo '<form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>';
-
-    echo "</div></td></tr></table>";
-
 ?>
-
+    <form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form></div></td></tr></table>
     </BODY>
 </HTML>
