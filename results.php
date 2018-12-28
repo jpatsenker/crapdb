@@ -62,7 +62,14 @@
     $target_dir = "uploaded_fasta/";
     $next_id = rand(1,PHP_INT_MAX);
     $fname = $_FILES['fastaseq']['name'];
-    $target_fname = substr($fname,0,strpos($fname,'.')) . '_' . $next_id;
+    $target_fname = substr($fname,0,strpos($fname,'.'));
+    if($target_fname==""){
+           $target_fname = $fname;
+    }
+    #limit size of file name
+    $target_fname = substr($target_fname,0,10);
+    #add random num to end of file name
+    $target_fname .= '_' . $next_id;
     $target_file = $target_dir . $target_fname;
 
     
