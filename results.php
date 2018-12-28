@@ -88,7 +88,7 @@
 
             $fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
             $fullpath = str_replace('/docroot/', '/', $fullpath);
-            $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>', $headers);
+            $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.<br> ' . $fullpath . '<br>');#, $headers);
             if($sent){
                 echo '<p> Email Sent... </p>';
             }else{
@@ -102,7 +102,7 @@
         echo '<p> File: ' . $fname . '<br>';
         echo 'Size: ' . filesize($target_file) . ' bytes <br>';
         echo 'ID: ' . $target_fname . '</p>';
-        echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
+        echo 'python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1 &';
         exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > log/php_to_python.log 2>&1 &');
         
         #exec('python test_python.py > log/php_to_python.log 2>&1 &');
