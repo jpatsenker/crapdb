@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+if eval $1 > results 2> errs
+then
+  echo
+  if cmp results $2 
+  then
+    echo "Test passed"
+  else
+    echo "Test output differs from expected"
+  fi
+else
+  echo
+  echo "Problems with test"
+  cat errs
+fi
+rm errs
