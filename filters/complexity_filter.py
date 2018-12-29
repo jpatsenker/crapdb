@@ -37,9 +37,11 @@ class ComplexityFilter(SewageFilter):
         temporary = self.__tDir__ + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
         curr_dir = os.getcwd()
         dir_of_0j = self.__zero_j__[:self.__zero_j__.rfind('/')]
+        print curr_dir
         os.chdir(dir_of_0j)
         job = Job(self.__zero_j__ + " -scores_only " + input_file + " > " + temporary, lfil=self.__logfile__)
         os.chdir(curr_dir)
+        print os.getcwd()
         job.run(wait=True) #submit job
 
         '''
