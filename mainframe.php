@@ -89,7 +89,7 @@
                                                         Complexity (c):
                                                     </td>
                                                     <td>
-                                                        <input type="text" name="zj" value="0.9" class="param"></input>
+                                                        <input type="text" name="zj" value="0.7" class="param"></input>
                                                     </td>
                                                 </tr>
                                             </table>
