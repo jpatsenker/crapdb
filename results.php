@@ -30,6 +30,7 @@
     $zj = $_POST['zj'];
     $xs = $_POST['xs'];
     $ms = $_POST['ms'];
+    $ef = $_POST['exfile'];
     #$fft = $_POST['fft'];
     #$ffl = $_POST['ffl'];
     #$rg = $_POST['refgm'];
@@ -62,21 +63,26 @@
     $target_dir = "uploaded_fasta/";
     $next_id = rand(1,PHP_INT_MAX);
     $fname = $_FILES['fastaseq']['name'];
+    echo $fname
     $target_fname = substr($fname,0,strpos($fname,'.'));
     if($target_fname==""){
-           $target_fname = $fname;
+        $target_fname = $fname;
     }
     #limit size of file name
     $target_fname = substr($target_fname,0,10);
     #add random num to end of file name
     $target_fname .= '_' . $next_id;
     $target_file = $target_dir . $target_fname;
-
+    
     
     #move file into uploaded folder
     if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
-        echo '<div class="notout">';
-        echo 'Error Uploading Input File <br>';
+        if($ef){
+            echo "EXAMPLE FILE"
+        }else{
+            echo '<div class="notout">';
+            echo 'Error Uploading Input File <br>';
+        }
 
     }else{
         echo '<div class="outputs">';
