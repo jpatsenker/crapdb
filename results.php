@@ -82,53 +82,54 @@
         }else{
             echo '<div class="notout">';
             echo 'Error Uploading Input File <br>';
+            die();
         }
-
-    }else{
-        echo '<div class="outputs">';
-        echo '<p>Sending Mail...</p>';
-        if($_POST['email']){
-            $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>';
-            #$headers .= 'MIME-Version: 1.0\r\n';
-            #$headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
-
-            $fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
-            $fullpath = str_replace('/docroot/', '/', $fullpath);
-            $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.\n ' . $fullpath . '\n', $headers);
-            if($sent){
-                echo '<p> Email Sent... </p>';
-            }else{
-                echo '<p> Couldn\'t send email! See link below... </p>';
-                #echo '<form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>';
-                #echo "</div></td></tr></table>";
-                #die();
-            }
-        }
-        
-        echo '<p> File: ' . $fname . '<br>';
-        echo 'Size: ' . filesize($target_file) . ' bytes <br>';
-        echo 'ID: ' . $target_fname . '</p>';
-        
-        echo gethostname() . '</p>';
-        
-        $cmd_str = 'python -v  run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
-       	#exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > log/php_to_python.log 2>&1 &');
-        echo $cmd_str;        
-        exec($cmd_str);
-        #exec('python test_python.py > log/php_to_python.log 2>&1 &');
-        #exec('whoami > log/php_to_python.log 2>&1');
-        
-        if($_POST['email']){
-            echo '<p> You will receive an email when the results are ready. <br>';
-            echo 'Email ' . $email . '</p>';
-        }
-        
-        echo '<p> <a href="' . $target_file . '.clean.fa ' . '">Clean Result File</a> Contains remaining sequences (will be available when results are done) <br>';
-        echo '<a href="' . $target_file . '.messy.fa ' . '">Annotated Result File</a> Contains filtered and annotated sequences (will be available when results are done) </p>';
-        
-        echo '<p><a href="logs/' . $target_fname . '.log"> Log File</a></p>';
 
     }
+    
+    echo '<div class="outputs">';
+    echo '<p>Sending Mail...</p>';
+    if($_POST['email']){
+        $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>';
+        #$headers .= 'MIME-Version: 1.0\r\n';
+        #$headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
+
+        $fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
+        $fullpath = str_replace('/docroot/', '/', $fullpath);
+        $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.\n ' . $fullpath . '\n', $headers);
+        if($sent){
+            echo '<p> Email Sent... </p>';
+        }else{
+            echo '<p> Couldn\'t send email! See link below... </p>';
+            #echo '<form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form>';
+            #echo "</div></td></tr></table>";
+            #die();
+        }
+    }
+
+    echo '<p> File: ' . $fname . '<br>';
+    echo 'Size: ' . filesize($target_file) . ' bytes <br>';
+    echo 'ID: ' . $target_fname . '</p>';
+
+    echo gethostname() . '</p>';
+
+    $cmd_str = 'python -v  run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
+    #exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > log/php_to_python.log 2>&1 &');
+    echo $cmd_str;        
+    exec($cmd_str);
+    #exec('python test_python.py > log/php_to_python.log 2>&1 &');
+    #exec('whoami > log/php_to_python.log 2>&1');
+
+    if($_POST['email']){
+        echo '<p> You will receive an email when the results are ready. <br>';
+        echo 'Email ' . $email . '</p>';
+    }
+
+    echo '<p> <a href="' . $target_file . '.clean.fa ' . '">Clean Result File</a> Contains remaining sequences (will be available when results are done) <br>';
+    echo '<a href="' . $target_file . '.messy.fa ' . '">Annotated Result File</a> Contains filtered and annotated sequences (will be available when results are done) </p>';
+
+    echo '<p><a href="logs/' . $target_fname . '.log"> Log File</a></p>';
+
 
 ?>
     <form action="index.php"><input type="button" value="Back" onClick="history.go(-1);return true;"></form></div></td></tr></table>
