@@ -79,7 +79,7 @@
     if(!move_uploaded_file($_FILES['fastaseq']['tmp_name'], $target_file)){
         if($ef){
             $target_fname="/www/kirschner.med.harvard.edu/docroot/corecop/test_combined.fa";
-            $fname = "test_combined.fa"
+            $fname = "test_combined.fa";
         }else{
             echo '<div class="notout">';
             echo 'Error Uploading Input File <br>';
