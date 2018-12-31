@@ -80,7 +80,7 @@
             $target_fname="test_combined.fa";
             $fname = "test_combined.fa";
             $target_file=$target_dir . $target_fname;
-            copy("test_combined.fa",$target_dir);
+            copy("test_combined.fa",$target_file);
         }else{
             echo '<div class="notout">';
             echo 'Error Uploading Input File <br>';
