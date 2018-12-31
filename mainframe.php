@@ -25,7 +25,8 @@
                     <div class="general">
                         <form name="download" action="results.php" method="POST" enctype="multipart/form-data">
                             <div id="download_area">
-                                <br><b>FASTA: </b> <input type="file" name="fastaseq"><p>
+                                <br><b>FASTA: </b> <input type="file" name="fastaseq"><br>
+                                <input type='checkbox' name="exfile"> Use Example File? <p>
                                 <b>EMAIL (optional): </b> <input type="text" name="email"></input>
                                 <p><b>PARAMETERS</b></p>
                                 <table>
