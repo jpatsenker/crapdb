@@ -5,7 +5,8 @@ import os
 #Interface for running run_cra from php
 """
 
-os.chdir('/n/www/kirschner.med.harvard.edu/docroot/corecop')
+#os.chdir('/n/www/kirschner.med.harvard.edu/docroot/corecop')
+
 #sys.path.append('/n/www/kirschner.med.harvard.edu/docroot/corecop')
 #sys.path.append('/n/www/kirschner.med.harvard.edu/docroot/corecop/aux')
 
