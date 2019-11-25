@@ -27,15 +27,15 @@ def add_line_to_log(log_file, line):
 
 
 def srun(command, error, output, queue, timelim, wait):
-    full_command = ['/usr/bin/srun', '--partition='+str(queue),
+    full_command = ['/usr/bin/sbatch', '-D'+str(os.getcwd()), '--partition='+str(queue),
                     '--time='+str(timelim), '--output='+str(output),
-                    '--error='+str(error)]
-    full_command.extend(command.split())
+                    '--error='+str(error), "--wrap='%s'" % command ]
     full_command_str = " ".join(full_command)
     print full_command_str
     proc = subprocess.Popen(full_command)
-    if wait:
-        proc.wait()
+    #temporarily disabled
+#    if wait:
+#        proc.wait()
     return proc
 
 
