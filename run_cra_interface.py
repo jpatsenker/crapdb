@@ -18,7 +18,7 @@ import subprocess
 Toolbox for working with LOGS
 """
 
-"""
+
 CONTACT_EMAIL = "<contact-email>"
 
 def add_line_to_log(log_file, line):
@@ -27,7 +27,9 @@ def add_line_to_log(log_file, line):
 
 
 def srun(command, error, output, queue, timelim, wait):
-    full_command = ['/usr/bin/srun', '--partition='+str(queue), '--time='+str(timelim), '--output='+str(output), '--error='+str(error)]
+    full_command = ['/usr/bin/srun', '--partition='+str(queue),
+                    '--time='+str(timelim), '--output='+str(output),
+                    '--error='+str(error)]
     full_command.extend(command.split())
     full_command_str = " ".join(full_command)
     print full_command_str
@@ -55,7 +57,6 @@ class Job:
         if return_process:
             return proc
 
-"""
 #print os.getcwd()
 #import aux
 #import aux.jobs
