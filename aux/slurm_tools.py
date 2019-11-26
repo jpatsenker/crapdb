@@ -10,3 +10,15 @@ def srun(command, error, output, queue, timelim, wait):
     if wait:
         proc.wait()
     return proc
+
+
+def sbatch(command, error, output, queue, timelim, wait):
+    full_command=['/bin/sbatch', '--partition='+str(queue), '--time='+str(timelim), '--output='+str(output), '--error='+str(error)]
+    if wait:
+        full_command.append('--wait')
+    full_command.append("--wrap='%s'" % command)
+    print ' '.join(full_command)
+    proc=subprocess.Popen(full_command)
+    if wait:
+        proc.wait()
+    return proc
