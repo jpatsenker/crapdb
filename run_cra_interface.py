@@ -17,7 +17,7 @@ def add_line_to_log(log_file, line):
         lfil.write(str(line) + "\n")
 
 if __name__ == '__main__':
-    sys.stout.write('%s\n' % os.getcwd())
+    sys.stdout.write('%s\n' % os.getcwd())
     sys.stdout.flush()
     sys.stderr.flush()
     command_string = "python run_cra.py %s" % ' '.join(sys.argv[1:])
