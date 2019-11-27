@@ -49,7 +49,7 @@ class RedundancyFilter(SewageFilter):
         Run CD-HIT
         '''
         # temporary file for cdhit raw output
-        temporary = os.path.join(self.__tDir__, basename(input_file), ".cdhit.raw")
+        temporary = os.path.join(self.__tDir__, "%s.cdhit.raw" % basename(input_file))
         # print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
         job = Job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__) + " -d 0",lfil=self.__logfile__)
         job.run(wait=True) #submit job
