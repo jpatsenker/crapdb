@@ -1,4 +1,5 @@
 from os.path import basename
+import os
 
 from filters.sewagefilter import SewageFilter
 from filters.sewagefilter import BrokenFilterError
@@ -47,8 +48,9 @@ class RedundancyFilter(SewageFilter):
         '''
         Run CD-HIT
         '''
-        temporary = self.__tDir__ + basename(input_file) + ".cdhit.raw" #temporary file for cdhit raw output
-        #print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
+        # temporary file for cdhit raw output
+        temporary = os.path.join(self.__tDir__, basename(input_file), ".cdhit.raw")
+        # print self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__)
         job = Job(self.__cd_hit__ + " -i " + input_file + " -o " + temporary + " -c " + str(self.__threshold_level__) + " -d 0",lfil=self.__logfile__)
         job.run(wait=True) #submit job
         

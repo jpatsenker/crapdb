@@ -1,5 +1,6 @@
 from abc import ABCMeta, abstractmethod
 import sys
+import os
 
 from filters.sewagefilter import SewageFilter
 from filters.sewagefilter import BrokenFilterError
@@ -245,7 +246,7 @@ class ConcatFilter(SewageFilter):
 		"""use for debug
 		hmmerOut = "tmp/678968.hmmerOut"
 		"""
-		hmmerOut = self.__tDir__ + str(int(random.random()*1000000)) + ".hmmerOut" #make hmmerout
+		hmmerOut = os.path.join(self.__tDir__, str(int(random.random()*1000000)), ".hmmerOut") #make hmmerout
 
 		hmmer_tools.loadHmmer()
 
