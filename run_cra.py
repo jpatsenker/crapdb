@@ -44,7 +44,7 @@ if not os.path.exists(iFile):
     exit(1)
 
 #create the log file
-logfil = "logs/" + os.path.basename(iFile) + ".log"
+logfil = os.path.join("logs/", os.path.basename(iFile) + ".log")
 
 #make sure email is somewhat valid
 if "@" not in eAddress:

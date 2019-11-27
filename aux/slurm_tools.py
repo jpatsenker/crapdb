@@ -34,8 +34,8 @@ def sbatch_params(command, **params):
 def sbatch(command, error, output, queue, timelim, wait):
     timestamp=datetime.today().strftime("%Y%m%d-%H%M%S-%f")
     params=sbatch_params(command,
-                         error="%s.%s" % (error, timestamp),
-                         output="%s.%s" % (output, timestamp), partition=queue, time=timelim, wait=wait)
+                         error=error,
+                         output=output, partition=queue, time=timelim, wait=wait)
     cmdlogout="log/cmdlogfile.%s.out" % timestamp
     cmdlogerr="log/cmdlogfile.%s.err" % timestamp
     full_command='sbatch %s' % params
