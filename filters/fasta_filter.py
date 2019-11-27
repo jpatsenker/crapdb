@@ -32,9 +32,9 @@ class FastaCheckerFilter(SewageFilter):
         '''
         Run fasta checker
         '''
-        temporary = os.path.join(self.__tDir__, basename(input_file) + ".raw")
+        temporary = os.path.join(self.__tDir__, "%s.raw" % basename(input_file))
         open(temporary, "w").close() #wipe file if exists
-        temporary_errors = os.path.join(self.__tDir__, basename(input_file), ".errors")
+        temporary_errors = os.path.join(self.__tDir__, "%s.errors" % basename(input_file))
         #job = Job(PERL_PATH + " " + self.__fasta_checker__ + " " + input_file + " 0 2>" + temporary_errors + " 1>" + temporary, lfil = self.__logfile__)
         job = Job(PERL_PATH + " " + self.__fasta_checker__ + " " + input_file + " 0", lfil = self.__logfile__)
         job.run(error = temporary_errors, output=temporary, wait=True) #submit job
