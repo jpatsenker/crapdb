@@ -20,6 +20,7 @@ if __name__ == '__main__':
     sys.stdout.write('%s\n' % os.getcwd())
     sys.stdout.flush()
     sys.stderr.flush()
+    os.environ['CRA_SCRATCH']='/n/groups/kirschner_www/corecop'
     command_string = "python run_cra.py %s" % ' '.join(sys.argv[1:])
     sys.stdout.write(command_string + "\n\n")
     job = aux.jobs.Job(command_string)
