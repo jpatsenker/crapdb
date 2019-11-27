@@ -1,3 +1,4 @@
+import sys
 import subprocess
 from proctools import process
 
