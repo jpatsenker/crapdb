@@ -18,12 +18,14 @@ def sbatch_params(command, **params):
     for param in params:
         if len(param) == 1:
             if isinstance(params[param], bool):
-                param_list.append('-%s' % param)
+                if params[param]:
+                    param_list.append('-%s' % param)
             else:
                 param_list.append('-%s %s' % (param, params[param]))
         else:
             if isinstance(params[param], bool):
-                param_list.append('--%s' % param)
+                if params[param]:
+                    param_list.append('--%s' % param)
             else:
                 param_list.append('--%s=%s' % (param, params[param]))
     param_list.append("--wrap='%s'" % command)
@@ -39,7 +41,7 @@ def sbatch(command, error, output, queue, timelim, wait):
     full_command='sbatch %s' % params
     cmdout=open(cmdlogout, 'w')
     cmderr=open(cmdlogerr, 'w')
-    cmdout.write("%s\n" % ' '.join(full_command))
+    cmdout.write("%s\n" % full_command)
     rc, op, er = process(full_command)
     cmdout.write(op)
     cmderr.write(er)
