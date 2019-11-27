@@ -1,6 +1,7 @@
 import sys
 import subprocess
 from proctools import process
+from datetime import datetime
 
 def srun(command, error, output, queue, timelim, wait):
     full_command = ['/usr/bin/srun', '--partition='+str(queue), '--time='+str(timelim), '--output='+str(output), '--error='+str(error)]
@@ -29,10 +30,19 @@ def sbatch_params(command, **params):
     return ' '.join(param_list)
 
 def sbatch(command, error, output, queue, timelim, wait):
-    params=sbatch_params(command, error=error, output=output, partition=queue, time=timelim, wait=wait)
+    timestamp=datetime.today().strftime("%Y%m%d-%H%M%S-%f")
+    params=sbatch_params(command,
+                         error="%s.%s" % (error, timestamp),
+                         output="%s.%s" % (output, timestamp), partition=queue, time=timelim, wait=wait)
+    cmdlogout="log/cmdlogfile.%s.out" % timestamp
+    cmdlogerr="log/cmdlogfile.%s.err" % timestamp
     full_command='sbatch %s' % params
-    sys.stdout.write("%s\n" % ' '.join(full_command))
+    cmdout=open(cmdlogout, 'w')
+    cmderr=open(cmdlogerr, 'w')
+    cmdout.write("%s\n" % ' '.join(full_command))
     rc, op, er = process(full_command)
-    sys.stdout.write(op)
-    sys.stderr.write(er)
+    cmdout.write(op)
+    cmderr.write(er)
+    cmdout.close()
+    cmderr.close()
     return rc
