@@ -21,7 +21,10 @@ from aux import logtools, mailtools, fasta_fixer, helptools
 iFile = None
 oFile = None
 dFile = None
-tDir = "/n/scratch2/cra/"
+if os.getenv('CRA_SCRATCH') is not None:
+    tDir = os.getenv('CRA_SCRATCH')
+else:
+    tDir = "/n/scratch2/cra/"
 eAddress = None
 
 #pull params from command line
