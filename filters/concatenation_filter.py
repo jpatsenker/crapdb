@@ -246,7 +246,8 @@ class ConcatFilter(SewageFilter):
 		"""use for debug
 		hmmerOut = "tmp/678968.hmmerOut"
 		"""
-		hmmerOut = os.path.join(self.__tDir__, str(int(random.random()*1000000)) + ".hmmerOut") #make hmmerout
+		hmmerOut = os.path.join(self.__tDir__,
+					str(int(random.random()*1000000)) + ".hmmerOut") #make hmmerout
 
 		hmmer_tools.loadHmmer()
 
