@@ -11,7 +11,7 @@
 <?php
 
     parse_ini_file("php.ini");
-    date_timezone_set('America/New_York');
+    date_default_timezone_set("America/New_York");
     error_reporting(-1);
     #error_reporting(E_ALL); // Error engine - always ON!
     ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
