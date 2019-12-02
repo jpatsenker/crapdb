@@ -24,7 +24,6 @@ if __name__ == '__main__':
     tag=datetime.today().strftime("%Y%m%d-%H%M%S-%f")
     opfile="interface.%s.out" % tag
     erfile="interface.%s.err" % tag
-    os.environ['CRA_SCRATCH']='/n/groups/kirschner_www/corecop/'
     command_string = "python run_cra.py %s" % ' '.join(sys.argv[1:])
     sys.stdout.write(command_string + "\n\n")
     job = aux.jobs.Job(command_string)

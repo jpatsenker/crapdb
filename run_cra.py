@@ -21,10 +21,8 @@ from aux import logtools, mailtools, fasta_fixer, helptools
 iFile = None
 oFile = None
 dFile = None
-if os.getenv('CRA_SCRATCH') is not None:
-    tDir = os.getenv('CRA_SCRATCH')
-else:
-    tDir = "/n/scratch2/cra/"
+tDir = os.getenv('CRA_SCRATCH', default="/n/groups/kirschner_www/corecop/")
+
 eAddress = None
 
 #pull params from command line
