@@ -22,8 +22,8 @@ if __name__ == '__main__':
     sys.stdout.flush()
     sys.stderr.flush()
     tag=datetime.today().strftime("%Y%m%d-%H%M%S-%f")
-    opfile="interface.%s.out" % tag
-    erfile="interface.%s.err" % tag
+    opfile=os.path.join('log', "interface.%s.out" % tag)
+    erfile=os.path.join('log', "interface.%s.err" % tag)
     command_string = "python run_cra.py %s" % ' '.join(sys.argv[1:])
     sys.stdout.write(command_string + "\n\n")
     job = aux.jobs.Job(command_string)
