@@ -11,11 +11,11 @@
 <?php
 
     parse_ini_file("php.ini");
+    date_default_timezone_set("America/New_York");
     error_reporting(-1);
     #error_reporting(E_ALL); // Error engine - always ON!
     ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
     ini_set('log_errors', TRUE); // Error logging
-
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
     $email = $_POST['email'];    
@@ -115,7 +115,7 @@
 
     echo gethostname() . '</p>';
 
-    $cmd_str = 'python -v  run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
+    $cmd_str = 'python -v run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
     #exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > log/php_to_python.log 2>&1 &');
     echo $cmd_str;        
     exec($cmd_str);

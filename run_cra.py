@@ -21,7 +21,8 @@ from aux import logtools, mailtools, fasta_fixer, helptools
 iFile = None
 oFile = None
 dFile = None
-tDir = "/n/scratch2/cra/"
+tDir = os.getenv('CRA_SCRATCH', default="/n/groups/kirschner_www/corecop/")
+
 eAddress = None
 
 #pull params from command line
@@ -41,7 +42,7 @@ if not os.path.exists(iFile):
     exit(1)
 
 #create the log file
-logfil = "logs/" + os.path.basename(iFile) + ".log"
+logfil = os.path.join("logs/", os.path.basename(iFile) + ".log")
 
 #make sure email is somewhat valid
 if "@" not in eAddress:

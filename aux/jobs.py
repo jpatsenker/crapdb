@@ -1,4 +1,4 @@
-from aux.slurm_tools import srun
+from aux.slurm_tools import sbatch
 from aux import logtools
 
 
@@ -9,9 +9,9 @@ class Job:
         
     def run(self, error = 'error_test', output='output_test', queue='short', timelim = 120, wait = False, return_process = False):
         if self.lfil is not None:
-            logtools.add_line_to_log(self.lfil, "<CMD:> [SRUN] " + self.job_string)
+            logtools.add_line_to_log(self.lfil, "<CMD:> [SBATCH] " + self.job_string)
         
-        proc = srun(self.job_string, error, output, queue, timelim, wait)
+        proc = sbatch(self.job_string, error, output, queue, timelim, wait)
         
         if wait and self.lfil is not None:
             logtools.add_line_to_log(self.lfil, "<CMD EXECUTED>")
