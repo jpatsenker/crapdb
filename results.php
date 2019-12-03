@@ -14,7 +14,7 @@
     date_default_timezone_set("America/New_York");
     error_reporting(-1);
     #error_reporting(E_ALL); // Error engine - always ON!
-    ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
+    ini_set('display_errors', FALSE); // Error display - OFF in production env or real server
     ini_set('log_errors', TRUE); // Error logging
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
