@@ -100,8 +100,15 @@
         $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>';
         #$headers .= 'MIME-Version: 1.0\r\n';
         #$headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
-
-        $url = $_SERVER['HTTP_HOST'] . '/' . $corecop_base . '/logs/' . $target_fname . '.log';
+	# Prefer https, unless the request has a non-standard port in which case it won't be.
+	if (endsWith($_SERVER['HTTP_HOST'], ':80')) {
+	    $urlbegin = "https://" . substr($_SERVER['HTTP_HOST'], 0, -3);
+	} elseif (endsWith($_SERVER['HTTP_HOST'], ':443')) {
+	    $urlbegin = "https://" . substr($_SERVER['HTTP_HOST'], 0, -4);
+	}else{
+	    $urlbegin = "http://" . $_SERVER['HTTP_HOST'];
+	}
+        $url = $urlbegin . '/' . $corecop_base . '/logs/' . $target_fname . '.log';
         #$fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
         #$fullpath = str_replace('/docroot/', '/', $fullpath);
         $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . " bytes.\n" . $url . "\n", $headers);
