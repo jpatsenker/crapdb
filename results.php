@@ -16,6 +16,15 @@
     #error_reporting(E_ALL); // Error engine - always ON!
     ini_set('display_errors', FALSE); // Error display - OFF in production env or real server
     ini_set('log_errors', TRUE); // Error logging
+
+    function endsWith($haystack, $needle){
+        $length = strlen($needle);
+        if ($length == 0) {
+            return true;
+        }
+        return (substr($haystack, -$length) === $needle);
+    }
+
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
     $email = $_POST['email'];    
