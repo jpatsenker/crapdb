@@ -96,9 +96,10 @@
         #$headers .= 'MIME-Version: 1.0\r\n';
         #$headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
 
-        $fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
-        $fullpath = str_replace('/docroot/', '/', $fullpath);
-        $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.\n ' . $fullpath . '\n', $headers);
+        $url = $_SERVER['HTTP_HOST'] . '/logs/' . $target_fname . '.log';
+        #$fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
+        #$fullpath = str_replace('/docroot/', '/', $fullpath);
+        $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . " bytes.\n" . $url . "\n", $headers);
         if($sent){
             echo '<p> Email Sent... </p>';
         }else{

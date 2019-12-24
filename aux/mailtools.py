@@ -4,10 +4,13 @@ from email.mime.text import MIMEText
 import smtplib
 import string
 import logtools
+import os
 
 """
 Toolbox for sending emails through SMTP
 """
+
+SMTP_SERVER=os.getenv('SMTP_SERVER', default='localhost')
 
 def send_error(error, email, lfil=None):
     sender = 'noreply@kirschner.med.harvard.edu'
@@ -24,7 +27,7 @@ def send_error(error, email, lfil=None):
 
     #make sure email can be send, and send
     try:
-        smtpObj = smtplib.SMTP('localhost')
+        smtpObj = smtplib.SMTP(SMTP_SERVER)
         smtpObj.sendmail(sender, receivers, message.as_string())
         print "Successfully sent email"
     except smtplib.SMTPException:
@@ -57,7 +60,7 @@ def send_email(info, email, files, lfil=None, sub="CoreRep Results"):
         message.attach(attach_file)
 
     try:
-        smtpObj = smtplib.SMTP('localhost')
+        smtpObj = smtplib.SMTP(SMTP_SERVER)
         smtpObj.sendmail(sender, receivers, message.as_string())
         print "Successfully sent email"
     except smtplib.SMTPException:
