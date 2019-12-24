@@ -101,7 +101,7 @@
         #$headers .= 'MIME-Version: 1.0\r\n';
         #$headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
 
-        $url = $_SERVER['HTTP_HOST'] . $corecop_base . '/logs/' . $target_fname . '.log';
+        $url = $_SERVER['HTTP_HOST'] . '/' . $corecop_base . '/logs/' . $target_fname . '.log';
         #$fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
         #$fullpath = str_replace('/docroot/', '/', $fullpath);
         $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . " bytes.\n" . $url . "\n", $headers);
