@@ -249,6 +249,6 @@ for a in sys.argv[1:]:
 inputFileName = iFile[iFile.rfind('/')+1:iFile.rfind('fix')]
 
 #send email
-mailtools.send_email("We ran CoReCop version 1.1 on file " + inputFileName + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Initial Number of Sequences: " + str(before_seq) + "<br>Number of Clean Sequences: " + str(after_seq) + "<br>Final CoReCop Score: " + ("%.3f" % cra_score) + '<br> See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile], lfil=logfil, sub="CoReCop run on " + inputFileName)
+mailtools.send_email("We ran CoReCop version 1.1 on file " + inputFileName + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Initial Number of Sequences: " + str(before_seq) + "<br>Number of Clean Sequences: " + str(after_seq) + "<br>Final CoReCop Score: " + ("%.3f" % cra_score) + '<br> See clean and messy files below, and log here: https://' + fullpath + '<br>', eAddress, [oFile, dFile], lfil=logfil, sub="CoReCop run on " + inputFileName)
 #log
 logtools.end_log(logfil)
