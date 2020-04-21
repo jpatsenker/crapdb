@@ -1,10 +1,12 @@
 from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from pprint import pformat
 import smtplib
 import string
 import logtools
 import os
+import sys
 
 """
 Toolbox for sending emails through SMTP
@@ -33,6 +35,7 @@ def send_error(error, email, lfil=None):
     except smtplib.SMTPException:
         if lfil is not None:
             logtools.add_fatal_error(lfil, "UNABLE TO SEND EMAIL!!!")
+            logtools.add_line_to_log(lfil, pformat(sys.exc_info()))
         print "Error: unable to send email"
 
 
@@ -66,4 +69,5 @@ def send_email(info, email, files, lfil=None, sub="CoreRep Results"):
     except smtplib.SMTPException:
         if lfil is not None:
             logtools.add_fatal_error(lfil, "UNABLE TO SEND EMAIL!!!")
+            logtools.add_line_to_log(lfil, pformat(sys.exc_info()))
         print "Error: unable to send email"
