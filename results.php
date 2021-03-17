@@ -11,10 +11,19 @@
 <?php
 
     parse_ini_file("php.ini");
+    date_default_timezone_set("America/New_York");
     error_reporting(-1);
     #error_reporting(E_ALL); // Error engine - always ON!
-    ini_set('display_errors', TRUE); // Error display - OFF in production env or real server
+    ini_set('display_errors', FALSE); // Error display - OFF in production env or real server
     ini_set('log_errors', TRUE); // Error logging
+
+    function endsWith($haystack, $needle){
+        $length = strlen($needle);
+        if ($length == 0) {
+            return true;
+        }
+        return (substr($haystack, -$length) === $needle);
+    }
 
     echo '<table style="margin:0 auto;"><tr><td>';
     #get information
@@ -59,7 +68,12 @@
     }else{
         $ms = "";
     }
-    
+
+    if (isset($_SERVER['CORECOP'])){
+      $corecop_base = $_SERVER['CORECOP'];
+    }else{
+      $corecop_base = 'corecop';
+    }
     $target_dir = "uploaded_fasta/";
     $next_id = rand(1,PHP_INT_MAX);
     $fname = $_FILES['fastaseq']['name'];
@@ -95,10 +109,18 @@
         $headers = 'From: "CoreCop Pipeline" <noreply@kirschner.med.harvard.edu>';
         #$headers .= 'MIME-Version: 1.0\r\n';
         #$headers .= 'Content-Type: text/html; charset=ISO-8859-1\r\n';
-
-        $fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
-        $fullpath = str_replace('/docroot/', '/', $fullpath);
-        $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . ' bytes.\n ' . $fullpath . '\n', $headers);
+	# Prefer https, unless the request has a non-standard port in which case it won't be.
+	if (endsWith($_SERVER['HTTP_HOST'], ':80')) {
+	    $urlbegin = "https://" . substr($_SERVER['HTTP_HOST'], 0, -3);
+	} elseif (endsWith($_SERVER['HTTP_HOST'], ':443')) {
+	    $urlbegin = "https://" . substr($_SERVER['HTTP_HOST'], 0, -4);
+	}else{
+	    $urlbegin = "http://" . $_SERVER['HTTP_HOST'];
+	}
+        $url = $urlbegin . '/' . $corecop_base . '/logs/' . $target_fname . '.log';
+        #$fullpath = substr(getcwd(),strpos(getcwd(), '/www/') + 5) . '/logs/' . $target_fname . '.log';
+        #$fullpath = str_replace('/docroot/', '/', $fullpath);
+        $sent = mail($email, 'CoreCop REQUEST SENT', 'We are processing your file as: ' . $target_file . ' size: ' . filesize($target_file) . " bytes.\n" . $url . "\n", $headers);
         if($sent){
             echo '<p> Email Sent... </p>';
         }else{
@@ -115,7 +137,7 @@
 
     echo gethostname() . '</p>';
 
-    $cmd_str = 'python -v  run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
+    $cmd_str = 'python -v run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' >  log/php_to_python.log 2>&1';
     #exec('python run_cra_interface.py ' . $target_file . ' ' . $target_file . '.clean.fa ' . $target_file . '.messy.fa ' . $email . ' -ct ' . $ct . ' -cl ' . $cl . ' -0j ' . $zj . ' -min ' . $min . ' -max ' . $max . $ms . ' -xs ' . $xs . $dComp . $dLen . $dRed .' > log/php_to_python.log 2>&1 &');
     echo $cmd_str;        
     exec($cmd_str);

@@ -6,3 +6,10 @@ INCREMENTFILE.num
 log/*
 superlog
 kjbuckets.so
+*~
+\#*\#
+*.pyc
+interface_test_err
+interface_test_out
+interface.*
+.virtualenv

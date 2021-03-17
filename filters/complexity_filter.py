@@ -6,7 +6,7 @@ from filters.sewagefilter import BrokenFilterError
 from file_paths import *
 from aux import logtools
 from aux.jobs import Job
-
+import os
 
 class ComplexityFilter(SewageFilter):
 
@@ -34,7 +34,7 @@ class ComplexityFilter(SewageFilter):
         '''
         Run 0j
         '''
-        temporary = self.__tDir__ + basename(input_file) + ".0j.raw" #temporary file for 0j raw output
+        temporary = os.path.join(self.__tDir__, "%s.0j.raw" % basename(input_file)) #temporary file for 0j raw output
         curr_dir = os.getcwd()
         dir_of_0j = self.__zero_j__[:self.__zero_j__.rfind('/')]
         print curr_dir

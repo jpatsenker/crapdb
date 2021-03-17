@@ -21,7 +21,8 @@ from aux import logtools, mailtools, fasta_fixer, helptools
 iFile = None
 oFile = None
 dFile = None
-tDir = "/n/scratch2/cra/"
+tDir = os.getenv('CRA_SCRATCH', default="/n/groups/kirschner_www/corecop/")
+
 eAddress = None
 
 #pull params from command line
@@ -41,7 +42,7 @@ if not os.path.exists(iFile):
     exit(1)
 
 #create the log file
-logfil = "logs/" + os.path.basename(iFile) + ".log"
+logfil = os.path.join("logs/", os.path.basename(iFile) + ".log")
 
 #make sure email is somewhat valid
 if "@" not in eAddress:
@@ -248,6 +249,6 @@ for a in sys.argv[1:]:
 inputFileName = iFile[iFile.rfind('/')+1:iFile.rfind('fix')]
 
 #send email
-mailtools.send_email("We ran CoReCop version 1.1 on file " + inputFileName + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Initial Number of Sequences: " + str(before_seq) + "<br>Number of Clean Sequences: " + str(after_seq) + "<br>Final CoReCop Score: " + ("%.3f" % cra_score) + '<br> See clean and messy files below, and log here: ' + fullpath + '<br>', eAddress, [oFile, dFile], lfil=logfil, sub="CoReCop run on " + inputFileName)
+mailtools.send_email("We ran CoReCop version 1.1 on file " + inputFileName + "<br>Here is a list of parameters used: <br>" + para_str + "<p>Initial Number of Sequences: " + str(before_seq) + "<br>Number of Clean Sequences: " + str(after_seq) + "<br>Final CoReCop Score: " + ("%.3f" % cra_score) + '<br> See clean and messy files below, and log here: https://' + fullpath + '<br>', eAddress, [oFile, dFile], lfil=logfil, sub="CoReCop run on " + inputFileName)
 #log
 logtools.end_log(logfil)
